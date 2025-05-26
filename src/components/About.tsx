@@ -44,12 +44,12 @@ I design thoughtful, intuitive digital products that are grounded in user needs 
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-       Originally from France, I’ve worked in the US, the Netherlands, and now Canada, where I’m currently at Microsoft. I believe great design has the power to improve everyday life and help people do more, with less friction.
+       Originally from France, I’ve worked in the US, the Netherlands, and now Canada, where I’m currently at Microsoft. I believe technology, shaped by thoughtful design, has the power to improve our lives in meaningful ways and make interactions feel more seamless and human.
 
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed">
-When I’m not designing, I’m usually taste-testing the latest trending bakery find, playing with my kids, or walking our corgi, Maple.
+When I’m not designing, I’m usually hunting the latest trendy food find (mochi donuts, bingsu, matcha lattes), playing with my kids, or walking our corgi, Maple.
 
 Want to see how I think?
 Jumpstarting your app conception without drawing any UI
