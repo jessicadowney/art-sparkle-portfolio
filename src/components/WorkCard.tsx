@@ -3,6 +3,7 @@ import React from 'react';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 interface WorkCardProps {
   title: string;
@@ -13,9 +14,15 @@ interface WorkCardProps {
 }
 
 const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, link }) => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
     if (link) {
-      window.open(link, '_blank', 'noopener,noreferrer');
+      if (link.startsWith('http')) {
+        window.open(link, '_blank', 'noopener,noreferrer');
+      } else {
+        navigate(link);
+      }
     }
   };
 
