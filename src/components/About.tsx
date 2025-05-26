@@ -6,23 +6,23 @@ const About: React.FC = () => {
   const principles = [
     {
       icon: Users,
-      title: "User-Centered",
-      description: "Every design decision starts with understanding user needs and behaviors through research and empathy."
+      title: "Human-Centered",
+      description: "Every design decision starts with understanding user needs, behaviors, and motivations through deep research and empathy."
     },
     {
       icon: Lightbulb,
       title: "Innovation",
-      description: "Pushing creative boundaries while maintaining usability and accessibility standards."
+      description: "Pushing creative boundaries while maintaining usability and accessibility standards across all touchpoints."
     },
     {
       icon: Target,
-      title: "Goal-Oriented",
-      description: "Aligning design solutions with business objectives to drive measurable results."
+      title: "Strategic",
+      description: "Aligning design solutions with business objectives to drive measurable outcomes and user satisfaction."
     },
     {
       icon: Award,
       title: "Excellence",
-      description: "Commitment to crafting polished, detailed experiences that delight users."
+      description: "Commitment to crafting polished, detailed experiences that delight users and exceed expectations."
     }
   ];
 
@@ -39,21 +39,23 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="animate-fade-in">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                I'm a senior product designer with over 8 years of experience creating digital 
-                experiences that users love. My journey began in graphic design, but I quickly 
-                fell in love with the intersection of psychology, technology, and visual design.
+                I'm Jessica Downey, a Senior Product Designer with over 10 years of experience 
+                creating digital experiences that users love. My journey spans from early-stage 
+                startups to established companies, where I've helped shape products that millions 
+                of people use every day.
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
                 I believe great design is invisible—it solves problems so elegantly that users 
-                don't even notice the complexity underneath. I specialize in design systems, 
-                user research, and collaborative design processes that bring teams together 
-                around a shared vision.
+                don't even notice the complexity underneath. I specialize in user research, 
+                design systems, and collaborative design processes that bring teams together 
+                around a shared vision for exceptional user experiences.
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed">
-                When I'm not designing, you'll find me exploring new coffee shops, practicing 
-                photography, or contributing to open-source design communities.
+                Currently, I'm passionate about designing for accessibility, sustainability, 
+                and inclusive experiences that make technology more human and approachable 
+                for everyone.
               </p>
             </div>
             

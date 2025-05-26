@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Mail, Linkedin, Twitter, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,26 +8,26 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:alex.chen@example.com",
-      username: "alex.chen@example.com"
+      href: "mailto:jessica@jessicadowney.com",
+      username: "jessica@jessicadowney.com"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/alexchen",
-      username: "/in/alexchen"
+      href: "https://linkedin.com/in/jessicadowney",
+      username: "/in/jessicadowney"
     },
     {
       icon: Twitter,
       label: "Twitter",
-      href: "https://twitter.com/alexchen",
-      username: "@alexchen"
+      href: "https://twitter.com/jessicadowney",
+      username: "@jessicadowney"
     },
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/alexchen",
-      username: "@alexchen"
+      href: "https://github.com/jessicadowney",
+      username: "@jessicadowney"
     }
   ];
 
@@ -36,12 +37,12 @@ const Contact: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-              Let's <span className="bg-gradient-to-r from-pink-400 to-indigo-600 bg-clip-text text-transparent">Connect</span>
+              Let's <span className="bg-gradient-to-r from-pink-500 to-indigo-600 bg-clip-text text-transparent">Connect</span>
             </h2>
             
             <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed">
-              I'm always excited to discuss new opportunities, collaborations, or just chat about design. 
-              Drop me a line and let's create something amazing together.
+              I'm passionate about creating meaningful digital experiences and always excited to discuss 
+              new opportunities. Let's connect and explore how we can create something amazing together.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -66,14 +67,14 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="bg-gradient-to-r from-pink-100/50 to-indigo-100/50 dark:from-pink-900/20 dark:to-indigo-900/20 rounded-2xl p-8 border border-border/50">
-              <h3 className="text-2xl font-semibold mb-4">Exploring new full-time opportunities</h3>
+              <h3 className="text-2xl font-semibold mb-4">Open to exciting full-time opportunities</h3>
               <p className="text-foreground/70 mb-6">
-                I'm currently seeking exciting full-time positions where I can contribute to innovative products 
-                and collaborate with passionate teams to create meaningful user experiences.
+                I'm currently seeking meaningful full-time positions where I can contribute to innovative products, 
+                collaborate with passionate teams, and create impactful user experiences that make a difference.
               </p>
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-pink-400 to-indigo-600 hover:from-pink-500 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-600 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
               >
                 Get In Touch
                 <Mail className="ml-2 h-5 w-5" />

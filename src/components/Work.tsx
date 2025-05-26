@@ -5,30 +5,30 @@ import WorkCard from './WorkCard';
 const Work: React.FC = () => {
   const projects = [
     {
-      title: "Shopify Admin Experience",
-      description: "Led the redesign of core administrative workflows, focusing on merchant efficiency and reducing task completion time by 35% across key user journeys.",
-      tags: ["Product Design", "B2B SaaS", "User Research", "Design Systems"],
+      title: "Sustainable Fashion E-commerce Platform",
+      description: "Led the complete redesign of an eco-conscious fashion marketplace, focusing on transparency and sustainable shopping behaviors. Increased conversion rates by 40% while improving user understanding of sustainability metrics.",
+      tags: ["E-commerce", "Sustainability", "User Research", "Mobile Design"],
       image: "/placeholder-project1.jpg",
       link: "#"
     },
     {
-      title: "E-commerce Checkout Optimization",
-      description: "Redesigned the checkout experience for a major retail platform, resulting in a 28% increase in conversion rates and improved accessibility compliance.",
-      tags: ["UX Design", "Conversion Optimization", "A/B Testing", "Accessibility"],
+      title: "Mental Health App for Gen Z",
+      description: "Designed an accessible mental wellness platform specifically for young adults, incorporating peer support and professional guidance. Achieved 85% user retention rate and positive mental health outcomes.",
+      tags: ["Health Tech", "Mobile App", "Accessibility", "User Journey"],
       image: "/placeholder-project2.jpg",
       link: "#"
     },
     {
-      title: "Mobile Banking App Redesign",
-      description: "Transformed a legacy banking app into a modern, intuitive experience that increased user engagement by 45% and reduced support tickets by 30%.",
-      tags: ["Mobile Design", "FinTech", "User Journey", "Prototyping"],
+      title: "AI-Powered Learning Management System",
+      description: "Created an intuitive LMS that adapts to different learning styles using AI. Simplified complex educational workflows and improved student engagement by 60% across diverse age groups.",
+      tags: ["EdTech", "AI/ML", "Design Systems", "User Testing"],
       image: "/placeholder-project3.jpg",
       link: "#"
     },
     {
-      title: "Design System Architecture",
-      description: "Built a comprehensive design system from the ground up, scaling design consistency across 12 product teams and reducing design-to-development handoff time by 50%.",
-      tags: ["Design Systems", "Component Library", "Documentation", "Scalability"],
+      title: "Smart Home IoT Dashboard",
+      description: "Designed a comprehensive IoT control center that makes smart home technology accessible to non-technical users. Reduced customer support tickets by 45% through intuitive interface design.",
+      tags: ["IoT", "Dashboard Design", "Information Architecture", "Prototyping"],
       image: "/placeholder-project4.jpg",
       link: "#"
     }
@@ -43,7 +43,7 @@ const Work: React.FC = () => {
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             A collection of projects that showcase my approach to solving complex design challenges
-            and creating meaningful user experiences.
+            and creating meaningful, accessible user experiences.
           </p>
         </div>
         
