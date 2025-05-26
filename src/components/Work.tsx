@@ -5,31 +5,31 @@ import WorkCard from './WorkCard';
 const Work: React.FC = () => {
   const projects = [
     {
-      title: "GoFetch.ca - Pet Care Service Platform",
-      description: "Led the complete redesign of a pet care service platform, creating unified experiences across web and iOS. Designed onboarding flows, dashboard interfaces, and maintained UI style guides while providing UX direction for platform diversification.",
+      title: "GoFetch.ca",
+      description: "Led the complete redesign of a pet care service platform as Head of Product Design. Created unified experiences across web and iOS while diversifying service offerings and improving user engagement.",
       tags: ["Product Design", "iOS Design", "Web Platform", "UI Systems"],
-      image: "/placeholder-project1.jpg",
+      image: "https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-Header.jpg",
       link: "/gofetch"
     },
     {
-      title: "Ally - Inclusive Financial Services",
-      description: "Designed accessible financial service interfaces focused on inclusive user experiences. Created intuitive workflows that simplified complex financial processes while ensuring compliance with accessibility standards.",
-      tags: ["Financial Services", "Accessibility", "User Experience", "Interface Design"],
-      image: "/placeholder-project2.jpg",
+      title: "Ally",
+      description: "Design accessible and inclusive financial service interfaces that serve millions of customers. Focus on creating experiences that make complex financial processes simple and accessible to users of all abilities.",
+      tags: ["Financial Services", "Accessibility", "WCAG Compliance", "Inclusive Design"],
+      image: "https://jessicadowney.com/wp-content/uploads/2024/01/Ally-Header.jpg",
       link: "/ally"
     },
     {
-      title: "Slim - Health & Wellness Platform",
-      description: "Developed user-centered design solutions for a health and wellness platform, focusing on behavior change and user engagement. Created interfaces that motivated users while maintaining simplicity and clarity.",
-      tags: ["Health Tech", "Behavior Design", "Mobile Experience", "User Engagement"],
-      image: "/placeholder-project3.jpg",
+      title: "Slim",
+      description: "Developed user-centered design solutions for a health and wellness platform focused on sustainable behavior change. Created interfaces that motivated users while maintaining simplicity and scientific backing.",
+      tags: ["Health Tech", "Behavior Design", "Mobile UX", "User Research"],
+      image: "https://jessicadowney.com/wp-content/uploads/2024/01/Slim-Header.jpg",
       link: "/slim"
     },
     {
-      title: "Microsoft OneNote - Collaboration Tools",
-      description: "Enhanced OneNote's integration within Microsoft Teams and adapted desktop syncing concepts for web platforms. Improved user workflows for note-taking and collaboration across multiple touchpoints and devices.",
-      tags: ["Microsoft", "Collaboration", "Enterprise Software", "Cross-platform"],
-      image: "/placeholder-project4.jpg",
+      title: "Microsoft OneNote",
+      description: "Enhanced OneNote's integration within Microsoft Teams and adapted desktop syncing concepts for web platforms. Improved collaboration workflows for millions of enterprise and educational users.",
+      tags: ["Microsoft", "Enterprise Software", "Collaboration", "Cross-platform"],
+      image: "https://jessicadowney.com/wp-content/uploads/2024/01/OneNote-Header.jpg",
       link: "/onenote"
     }
   ];

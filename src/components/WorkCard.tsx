@@ -28,11 +28,16 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
 
   return (
     <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer" onClick={handleClick}>
-      <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 relative overflow-hidden">
+      <div className="aspect-video relative overflow-hidden">
+        <img 
+          src={image} 
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         <div className="absolute top-4 right-4">
           <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-            <ExternalLink className="h-5 w-5 text-primary" />
+            <ExternalLink className="h-5 w-5 text-white" />
           </div>
         </div>
       </div>

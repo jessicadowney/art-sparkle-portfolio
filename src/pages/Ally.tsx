@@ -33,34 +33,29 @@ const Ally = () => {
                   <span className="text-primary">Ally</span>
                 </h1>
                 <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-                  Inclusive Financial Services Design
+                  Accessible Financial Services
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="text-center">
-                  <h3 className="font-semibold mb-2 text-primary">Focus</h3>
-                  <p className="text-foreground/70">Financial Accessibility & Inclusion</p>
+                  <h3 className="font-semibold mb-2 text-primary">Role</h3>
+                  <p className="text-foreground/70">Senior Product Designer</p>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-semibold mb-2 text-primary">Duration</h3>
+                  <p className="text-foreground/70">March 2021 - Present</p>
                 </div>
                 <div className="text-center">
                   <h3 className="font-semibold mb-2 text-primary">Platform</h3>
                   <p className="text-foreground/70">Web & Mobile Banking</p>
                 </div>
-                <div className="text-center">
-                  <h3 className="font-semibold mb-2 text-primary">Scope</h3>
-                  <p className="text-foreground/70">UX/UI Design & Research</p>
-                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="mb-12">
                 <img 
-                  src="/lovable-uploads/ally-dashboard.jpg" 
-                  alt="Ally Dashboard Interface" 
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-                <img 
-                  src="/lovable-uploads/ally-mobile.jpg" 
-                  alt="Ally Mobile Banking" 
+                  src="https://jessicadowney.com/wp-content/uploads/2024/01/Ally-Header.jpg" 
+                  alt="Ally Banking Interface" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
               </div>
@@ -68,21 +63,34 @@ const Ally = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Project Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  Designed accessible financial service interfaces with a focus on creating inclusive 
-                  user experiences. The project centered on simplifying complex financial processes 
-                  while ensuring full compliance with accessibility standards and regulations, making 
-                  banking services truly accessible to all users.
+                  At Ally, I work on creating accessible and inclusive financial service interfaces 
+                  that serve millions of customers. My focus is on designing user experiences that 
+                  make complex financial processes simple and accessible to users of all abilities, 
+                  while maintaining compliance with banking regulations and accessibility standards.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/ally-accessibility.jpg" 
-                    alt="Ally Accessibility Features" 
+                    src="https://jessicadowney.com/wp-content/uploads/2024/01/Ally-Mobile-App.jpg" 
+                    alt="Ally Mobile Banking App" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
+                </div>
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">My Role & Impact</h2>
+                <ul className="space-y-3 text-foreground/80 mb-8 text-lg">
+                  <li>• Design accessible financial service interfaces with WCAG 2.1 AA compliance</li>
+                  <li>• Create inclusive user experiences for diverse customer needs and abilities</li>
+                  <li>• Simplify complex financial workflows without sacrificing functionality</li>
+                  <li>• Collaborate with accessibility experts and compliance teams</li>
+                  <li>• Conduct usability testing with users of varying abilities</li>
+                  <li>• Design for multiple platforms including web, mobile, and assistive technologies</li>
+                </ul>
+
+                <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/ally-transactions.jpg" 
-                    alt="Ally Transaction Interface" 
+                    src="https://jessicadowney.com/wp-content/uploads/2024/01/Ally-Dashboard.jpg" 
+                    alt="Ally Account Dashboard" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                 </div>
@@ -91,67 +99,81 @@ const Ally = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="bg-accent/30 p-6 rounded-lg">
                     <h3 className="font-semibold mb-3 text-primary">Accessibility First</h3>
-                    <p className="text-foreground/70">Ensuring WCAG 2.1 AA compliance while maintaining intuitive user flows for all abilities and ensuring screen reader compatibility</p>
+                    <p className="text-foreground/70">Ensuring all financial interfaces meet WCAG guidelines while maintaining usability for all users</p>
                   </div>
                   <div className="bg-accent/30 p-6 rounded-lg">
                     <h3 className="font-semibold mb-3 text-primary">Complex Workflows</h3>
-                    <p className="text-foreground/70">Simplifying banking processes without sacrificing functionality or security requirements</p>
+                    <p className="text-foreground/70">Simplifying banking processes without sacrificing security or regulatory requirements</p>
                   </div>
                   <div className="bg-accent/30 p-6 rounded-lg">
                     <h3 className="font-semibold mb-3 text-primary">Trust & Security</h3>
                     <p className="text-foreground/70">Building user confidence through transparent design and clear security indicators</p>
                   </div>
                   <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Cross-Platform Consistency</h3>
-                    <p className="text-foreground/70">Maintaining unified experiences across web, mobile, and accessibility tools</p>
+                    <h3 className="font-semibold mb-3 text-primary">Inclusive Design</h3>
+                    <p className="text-foreground/70">Creating experiences that work for users with diverse abilities and technological literacy</p>
                   </div>
                 </div>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Key Features</h2>
-                <ul className="space-y-3 text-foreground/80 mb-8 text-lg">
-                  <li>• Simplified account management with clear visual hierarchy and navigation</li>
-                  <li>• Accessible transaction flows with screen reader optimization and keyboard navigation</li>
-                  <li>• Inclusive design patterns supporting diverse user needs and disabilities</li>
-                  <li>• Clear error handling and guidance systems with descriptive error messages</li>
-                  <li>• Mobile-first responsive design with touch accessibility and gesture support</li>
-                  <li>• High contrast modes and customizable display options for visual impairments</li>
-                  <li>• Voice banking capabilities and audio feedback for transactions</li>
-                </ul>
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Key Projects</h2>
+                <div className="space-y-6 mb-8">
+                  <div className="bg-accent/30 p-6 rounded-lg">
+                    <h3 className="font-semibold mb-3 text-primary">Account Management Redesign</h3>
+                    <p className="text-foreground/70">
+                      Led the redesign of core account management features with enhanced accessibility 
+                      and improved user flows for both web and mobile platforms.
+                    </p>
+                  </div>
+                  <div className="bg-accent/30 p-6 rounded-lg">
+                    <h3 className="font-semibold mb-3 text-primary">Transaction Experience</h3>
+                    <p className="text-foreground/70">
+                      Simplified complex transaction flows while maintaining security requirements 
+                      and ensuring screen reader compatibility.
+                    </p>
+                  </div>
+                  <div className="bg-accent/30 p-6 rounded-lg">
+                    <h3 className="font-semibold mb-3 text-primary">Mobile Banking Enhancement</h3>
+                    <p className="text-foreground/70">
+                      Enhanced mobile banking experiences with focus on touch accessibility and 
+                      voice banking capabilities.
+                    </p>
+                  </div>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/ally-settings.jpg" 
-                    alt="Ally Accessibility Settings" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <img 
-                    src="/lovable-uploads/ally-transfers.jpg" 
-                    alt="Ally Transfer Interface" 
+                    src="https://jessicadowney.com/wp-content/uploads/2024/01/Ally-Accessibility.jpg" 
+                    alt="Ally Accessibility Features" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                 </div>
 
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Design Process</h2>
-                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  Conducted extensive user research with diverse user groups including users with 
-                  disabilities, elderly users, and those with varying levels of financial literacy. 
-                  Utilized inclusive design methodologies and accessibility testing throughout the 
-                  design process. Collaborated closely with accessibility experts, compliance teams, 
-                  and assistive technology specialists to ensure all designs met regulatory requirements 
-                  while providing excellent user experiences.
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                  My approach begins with inclusive research, conducting usability testing with users 
+                  of diverse abilities and technological backgrounds. I work closely with accessibility 
+                  experts and utilize assistive technologies throughout the design process to ensure 
+                  all interfaces are truly accessible.
                 </p>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Impact & Results</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  The redesigned interfaces significantly improved usability scores across all user 
-                  segments, with particular success in serving users with accessibility needs. The 
-                  project established new standards for inclusive financial design and compliance, 
-                  resulting in industry recognition and improved customer satisfaction scores. The 
-                  accessible design patterns were adopted across other Ally products and services.
+                  Every design decision is validated through testing with screen readers, keyboard 
+                  navigation, and other assistive technologies. I collaborate extensively with 
+                  compliance teams to ensure all designs meet regulatory requirements while 
+                  providing excellent user experiences.
+                </p>
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Results & Impact</h2>
+                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+                  The accessible design improvements have significantly enhanced usability for all 
+                  users, with particular success in serving customers with disabilities. Customer 
+                  satisfaction scores have increased, and the accessible design patterns have been 
+                  adopted across other Ally products. The work has also contributed to industry 
+                  best practices for inclusive financial design.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-8">
-                  {["Financial Services", "Accessibility", "User Experience", "Interface Design", "Inclusive Design", "WCAG Compliance", "User Research"].map((tag, index) => (
+                  {["Financial Services", "Accessibility", "WCAG Compliance", "Inclusive Design", "User Research", "Mobile Banking", "Enterprise Design"].map((tag, index) => (
                     <span 
                       key={index}
                       className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"

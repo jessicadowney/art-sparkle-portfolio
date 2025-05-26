@@ -33,14 +33,14 @@ const GoFetch = () => {
                   <span className="text-primary">GoFetch.ca</span>
                 </h1>
                 <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-                  Pet Care Service Platform - Mobile & Web Design
+                  Pet Care Service Platform
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="text-center">
                   <h3 className="font-semibold mb-2 text-primary">Role</h3>
-                  <p className="text-foreground/70">Head of Product Design & Senior Product Designer</p>
+                  <p className="text-foreground/70">Head of Product Design<br/>Senior Product Designer</p>
                 </div>
                 <div className="text-center">
                   <h3 className="font-semibold mb-2 text-primary">Duration</h3>
@@ -52,15 +52,10 @@ const GoFetch = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="mb-12">
                 <img 
-                  src="/lovable-uploads/gofetch-home.jpg" 
-                  alt="GoFetch Home Screen" 
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-                <img 
-                  src="/lovable-uploads/gofetch-sitter.jpg" 
-                  alt="GoFetch Sitter Profile" 
+                  src="https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-Header.jpg" 
+                  alt="GoFetch App Overview" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
               </div>
@@ -68,95 +63,105 @@ const GoFetch = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Project Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  GoFetch.ca is a pet care service platform that connects pet owners with trusted sitters. 
-                  As Head of Product Design and Senior Product Designer, I led the complete redesign of 
-                  the platform, creating unified experiences across web and iOS while diversifying service 
-                  offerings and improving user engagement.
+                  GoFetch is a pet care service platform that connects pet owners with trusted sitters 
+                  for services ranging from dog walking to overnight care. As the Head of Product Design 
+                  and Senior Product Designer, I led the complete redesign of both the iOS application 
+                  and web platform, creating unified experiences while diversifying service offerings.
+                </p>
+
+                <div className="mb-12">
+                  <img 
+                    src="https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-iPhone-Mockups.jpg" 
+                    alt="GoFetch iPhone App Screens" 
+                    className="rounded-lg shadow-lg w-full h-auto"
+                  />
+                </div>
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">My Role & Responsibilities</h2>
+                <ul className="space-y-3 text-foreground/80 mb-8 text-lg">
+                  <li>• Redesigned the GoFetch iOS application to diversify service offering and create unified experience</li>
+                  <li>• Created and maintained UI style guides for web and iOS platforms</li>
+                  <li>• Provided UX and art direction for complete web platform redesign</li>
+                  <li>• Led requirements definition and UX architecture for new features</li>
+                  <li>• Designed wireframes, UI mockups, and prototypes for sitter onboarding and dashboard</li>
+                  <li>• Implemented new UI components using HTML/SASS and React JS</li>
+                  <li>• Facilitated design meetings and brainstorming sessions</li>
+                </ul>
+
+                <div className="mb-12">
+                  <img 
+                    src="https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-Desktop.jpg" 
+                    alt="GoFetch Web Platform" 
+                    className="rounded-lg shadow-lg w-full h-auto"
+                  />
+                </div>
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">The Challenge</h2>
+                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+                  The original GoFetch platform had limited service offerings and inconsistent experiences 
+                  across web and mobile. Pet owners needed a more comprehensive platform that could handle 
+                  various pet care services while maintaining trust and reliability. The design needed to 
+                  accommodate both pet owners seeking care and sitters offering services.
+                </p>
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Design Process</h2>
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                  I began with extensive user research to understand the pain points of both pet owners 
+                  and pet sitters. Through interviews and usability testing, I identified key areas for 
+                  improvement in the booking flow, communication tools, and service management.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <img 
-                    src="/lovable-uploads/gofetch-booking.jpg" 
-                    alt="GoFetch Booking Flow" 
+                    src="https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-Wireframes.jpg" 
+                    alt="GoFetch Wireframes" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                   <img 
-                    src="/lovable-uploads/gofetch-dashboard.jpg" 
-                    alt="GoFetch Dashboard" 
+                    src="https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-UserFlow.jpg" 
+                    alt="GoFetch User Flow" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                 </div>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Key Responsibilities</h2>
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Key Features Designed</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">iOS App Redesign</h3>
-                    <p className="text-foreground/70">Redesigned the GoFetch iOS application to diversify service offering and create unified experience across platforms</p>
+                    <h3 className="font-semibold mb-3 text-primary">Enhanced Booking Flow</h3>
+                    <p className="text-foreground/70">Streamlined the process for pet owners to book services with clear pricing and availability</p>
                   </div>
                   <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Design Systems</h3>
-                    <p className="text-foreground/70">Created and maintained comprehensive UI style guides for web and iOS platforms</p>
+                    <h3 className="font-semibold mb-3 text-primary">Sitter Dashboard</h3>
+                    <p className="text-foreground/70">Comprehensive dashboard for sitters to manage bookings, availability, and earnings</p>
                   </div>
                   <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">UX Direction</h3>
-                    <p className="text-foreground/70">Provided UX and art direction for complete web platform redesign</p>
+                    <h3 className="font-semibold mb-3 text-primary">Real-time Updates</h3>
+                    <p className="text-foreground/70">Live updates and photo sharing during pet care sessions for peace of mind</p>
                   </div>
                   <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Requirements & Architecture</h3>
-                    <p className="text-foreground/70">Led requirements definition and UX architecture for new features</p>
+                    <h3 className="font-semibold mb-3 text-primary">Trust & Safety</h3>
+                    <p className="text-foreground/70">Enhanced verification processes and safety features for both pets and sitters</p>
                   </div>
                 </div>
 
-                <ul className="space-y-3 text-foreground/80 mb-8 text-lg">
-                  <li>• Designed wireframes, UI mockups, and prototypes for sitter onboarding and dashboard features</li>
-                  <li>• Implemented new UI components using HTML/SASS and React JS</li>
-                  <li>• Facilitated design meetings and brainstorming sessions for new feature development</li>
-                  <li>• Defined and updated UX and product requirements throughout the project lifecycle</li>
-                </ul>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/gofetch-mobile.jpg" 
-                    alt="GoFetch Mobile Experience" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <img 
-                    src="/lovable-uploads/gofetch-onboarding.jpg" 
-                    alt="GoFetch Onboarding Flow" 
+                    src="https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-Final-Screens.jpg" 
+                    alt="GoFetch Final App Screens" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                 </div>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Design Process</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Research & Strategy</h3>
-                    <p className="text-foreground/70">Conducted user research to understand pain points in pet care booking and sitter management workflows</p>
-                  </div>
-                  <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Cross-Platform Design</h3>
-                    <p className="text-foreground/70">Developed comprehensive style guides ensuring consistency across web and mobile platforms</p>
-                  </div>
-                  <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Prototyping & Testing</h3>
-                    <p className="text-foreground/70">Created interactive prototypes for user testing and stakeholder validation</p>
-                  </div>
-                  <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Implementation Collaboration</h3>
-                    <p className="text-foreground/70">Worked closely with development teams to ensure pixel-perfect implementation of designs</p>
-                  </div>
-                </div>
-
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Key Outcomes</h2>
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Results & Impact</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  Successfully launched a redesigned platform that improved user engagement and simplified 
-                  the pet care booking process. The unified design system reduced development time and 
-                  ensured consistent user experiences across all touchpoints. The project resulted in 
-                  increased user satisfaction and platform adoption.
+                  The redesigned platform successfully launched with improved user engagement and expanded 
+                  service offerings. The unified design system reduced development time and ensured 
+                  consistent experiences across all touchpoints. User satisfaction scores increased 
+                  significantly, and the platform was able to accommodate new types of pet care services.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-8">
-                  {["Product Design", "iOS Design", "Web Platform", "UI Systems", "User Research", "Prototyping", "Design Leadership"].map((tag, index) => (
+                  {["Product Design", "iOS Design", "Web Platform", "UI Systems", "User Research", "Prototyping", "React", "HTML/SASS"].map((tag, index) => (
                     <span 
                       key={index}
                       className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
