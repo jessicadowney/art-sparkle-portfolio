@@ -46,9 +46,9 @@ I design thoughtful, intuitive digital products that are grounded in user needs 
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
        Originally from France, I’ve worked in the US, the Netherlands, and now Canada, where I’m currently at Microsoft. I believe technology, shaped by thoughtful design, has the power to improve our lives in meaningful ways and make interactions feel more seamless and human.
               </p>
-              <p className="text-lg text-foreground/80 leading-relaxed">
+              <p className="text-lg text-foreground/80 leading-relaxed mb-6">
 When I’m not designing, I’m usually hunting the latest trendy food find (mochi donuts, bingsu, matcha lattes), playing with my kids, or walking our corgi, <a target="_blank" href="https://www.instagram.com/maplecorgi/?hl=en">Maple.</a></p>
-                              <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+              <p className="text-lg text-foreground/80 leading-relaxed">
 Curious how I think? Here’s something I wrote:
 <a target="_blank" href="https://medium.com/@jessicadowney/jumpstarting-your-app-conception-without-drawing-any-ui-8e5be35876c9#.h8nbq1bfn/">Jumpstarting your app conception without drawing any UI</a>
               </p>
