@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { useTheme } from './ThemeProvider';
@@ -27,13 +26,13 @@ const ThreeBackground: React.FC = () => {
     return group;
   };
 
-  // Create emoji face
+  // Create emoji face with pink color
   const createEmoji = () => {
     const group = new THREE.Group();
     
-    // Face
+    // Face (pink instead of yellow)
     const faceGeometry = new THREE.SphereGeometry(0.8, 32, 16);
-    const faceMaterial = new THREE.MeshPhongMaterial({ color: 0xffdd44 });
+    const faceMaterial = new THREE.MeshPhongMaterial({ color: 0xffc0cb });
     const face = new THREE.Mesh(faceGeometry, faceMaterial);
     group.add(face);
     
@@ -67,7 +66,7 @@ const ThreeBackground: React.FC = () => {
     for (let i = 0; i < 5; i++) {
       const starGeometry = new THREE.ConeGeometry(0.2, 0.6, 5);
       const starMaterial = new THREE.MeshPhongMaterial({ 
-        color: 0xffd700,
+        color: 0xec4899,
         transparent: true,
         opacity: 0.9 
       });
@@ -89,9 +88,9 @@ const ThreeBackground: React.FC = () => {
     const donut = new THREE.Mesh(donutGeometry, donutMaterial);
     group.add(donut);
     
-    // Frosting
+    // Frosting (pink instead of bright pink)
     const frostingGeometry = new THREE.TorusGeometry(0.82, 0.25, 16, 100);
-    const frostingMaterial = new THREE.MeshPhongMaterial({ color: 0xff69b4 });
+    const frostingMaterial = new THREE.MeshPhongMaterial({ color: 0xffc0cb });
     const frosting = new THREE.Mesh(frostingGeometry, frostingMaterial);
     frosting.position.y = 0.1;
     group.add(frosting);

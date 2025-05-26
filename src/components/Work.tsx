@@ -5,30 +5,30 @@ import WorkCard from './WorkCard';
 const Work: React.FC = () => {
   const projects = [
     {
-      title: "E-commerce Mobile App Redesign",
-      description: "Led the complete redesign of a mobile shopping experience, increasing conversion rates by 40% and user engagement by 60%.",
-      tags: ["Mobile Design", "User Research", "Prototyping", "A/B Testing"],
+      title: "Shopify Admin Experience",
+      description: "Led the redesign of core administrative workflows, focusing on merchant efficiency and reducing task completion time by 35% across key user journeys.",
+      tags: ["Product Design", "B2B SaaS", "User Research", "Design Systems"],
       image: "/placeholder-project1.jpg",
       link: "#"
     },
     {
-      title: "SaaS Dashboard Design System",
-      description: "Created a comprehensive design system for a B2B analytics platform, improving design consistency across 15+ product teams.",
-      tags: ["Design Systems", "Component Library", "Documentation", "Figma"],
+      title: "E-commerce Checkout Optimization",
+      description: "Redesigned the checkout experience for a major retail platform, resulting in a 28% increase in conversion rates and improved accessibility compliance.",
+      tags: ["UX Design", "Conversion Optimization", "A/B Testing", "Accessibility"],
       image: "/placeholder-project2.jpg",
       link: "#"
     },
     {
-      title: "Healthcare Patient Portal",
-      description: "Designed an intuitive patient portal that simplified appointment booking and medical record access for 100k+ users.",
-      tags: ["Healthcare", "Accessibility", "User Journey", "Wireframing"],
+      title: "Mobile Banking App Redesign",
+      description: "Transformed a legacy banking app into a modern, intuitive experience that increased user engagement by 45% and reduced support tickets by 30%.",
+      tags: ["Mobile Design", "FinTech", "User Journey", "Prototyping"],
       image: "/placeholder-project3.jpg",
       link: "#"
     },
     {
-      title: "Financial Planning App",
-      description: "Developed the UX strategy for a personal finance app that helps users track spending and achieve financial goals.",
-      tags: ["FinTech", "Data Visualization", "User Testing", "Mobile"],
+      title: "Design System Architecture",
+      description: "Built a comprehensive design system from the ground up, scaling design consistency across 12 product teams and reducing design-to-development handoff time by 50%.",
+      tags: ["Design Systems", "Component Library", "Documentation", "Scalability"],
       image: "/placeholder-project4.jpg",
       link: "#"
     }
