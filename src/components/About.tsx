@@ -7,12 +7,12 @@ const About: React.FC = () => {
     {
       icon: Users,
       title: "Human-Centered",
-      description: "Every design decision starts with understanding user needs, behaviors, and motivations through deep research and empathy."
+      description: "Every design decision begins with understanding user jobs and motivations, validated through hypotheses to create impactful experiences."
     },
     {
       icon: Lightbulb,
       title: "Innovation",
-      description: "Pushing creative boundaries while maintaining usability and accessibility standards across all touchpoints."
+      description: "Championing fast-paced innovation with design sprints and user-centered frameworks to explore, test and build inclusive solutions"
     },
     {
       icon: Target,
