@@ -5,32 +5,32 @@ import WorkCard from './WorkCard';
 const Work: React.FC = () => {
   const projects = [
     {
-      title: "Sustainable Fashion E-commerce Platform",
-      description: "Led the complete redesign of an eco-conscious fashion marketplace, focusing on transparency and sustainable shopping behaviors. Increased conversion rates by 40% while improving user understanding of sustainability metrics.",
-      tags: ["E-commerce", "Sustainability", "User Research", "Mobile Design"],
+      title: "GoFetch.ca - Pet Care Service Platform",
+      description: "Led the complete redesign of a pet care service platform, creating unified experiences across web and iOS. Designed onboarding flows, dashboard interfaces, and maintained UI style guides while providing UX direction for platform diversification.",
+      tags: ["Product Design", "iOS Design", "Web Platform", "UI Systems"],
       image: "/placeholder-project1.jpg",
-      link: "#"
+      link: "https://jessicadowney.com/gofetchca"
     },
     {
-      title: "Mental Health App for Gen Z",
-      description: "Designed an accessible mental wellness platform specifically for young adults, incorporating peer support and professional guidance. Achieved 85% user retention rate and positive mental health outcomes.",
-      tags: ["Health Tech", "Mobile App", "Accessibility", "User Journey"],
+      title: "Ally - Inclusive Financial Services",
+      description: "Designed accessible financial service interfaces focused on inclusive user experiences. Created intuitive workflows that simplified complex financial processes while ensuring compliance with accessibility standards.",
+      tags: ["Financial Services", "Accessibility", "User Experience", "Interface Design"],
       image: "/placeholder-project2.jpg",
-      link: "#"
+      link: "https://jessicadowney.com/ally"
     },
     {
-      title: "AI-Powered Learning Management System",
-      description: "Created an intuitive LMS that adapts to different learning styles using AI. Simplified complex educational workflows and improved student engagement by 60% across diverse age groups.",
-      tags: ["EdTech", "AI/ML", "Design Systems", "User Testing"],
+      title: "Slim - Health & Wellness Platform",
+      description: "Developed user-centered design solutions for a health and wellness platform, focusing on behavior change and user engagement. Created interfaces that motivated users while maintaining simplicity and clarity.",
+      tags: ["Health Tech", "Behavior Design", "Mobile Experience", "User Engagement"],
       image: "/placeholder-project3.jpg",
-      link: "#"
+      link: "https://jessicadowney.com/slim"
     },
     {
-      title: "Smart Home IoT Dashboard",
-      description: "Designed a comprehensive IoT control center that makes smart home technology accessible to non-technical users. Reduced customer support tickets by 45% through intuitive interface design.",
-      tags: ["IoT", "Dashboard Design", "Information Architecture", "Prototyping"],
+      title: "Microsoft OneNote - Collaboration Tools",
+      description: "Enhanced OneNote's integration within Microsoft Teams and adapted desktop syncing concepts for web platforms. Improved user workflows for note-taking and collaboration across multiple touchpoints and devices.",
+      tags: ["Microsoft", "Collaboration", "Enterprise Software", "Cross-platform"],
       image: "/placeholder-project4.jpg",
-      link: "#"
+      link: "https://jessicadowney.com/onenote"
     }
   ];
 
