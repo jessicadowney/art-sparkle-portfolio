@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Linkedin, Twitter, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -37,7 +36,7 @@ const Contact: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-              Let's <span className="text-primary">Connect</span>
+              Let's <span className="bg-gradient-to-r from-pink-400 to-indigo-600 bg-clip-text text-transparent">Connect</span>
             </h2>
             
             <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -66,14 +65,15 @@ const Contact: React.FC = () => {
               ))}
             </div>
             
-            <div className="bg-gradient-to-r from-primary/10 to-purple-600/10 rounded-2xl p-8 border border-border/50">
-              <h3 className="text-2xl font-semibold mb-4">Ready to start a project?</h3>
+            <div className="bg-gradient-to-r from-pink-100/50 to-indigo-100/50 dark:from-pink-900/20 dark:to-indigo-900/20 rounded-2xl p-8 border border-border/50">
+              <h3 className="text-2xl font-semibold mb-4">Exploring new full-time opportunities</h3>
               <p className="text-foreground/70 mb-6">
-                I'm currently available for freelance work and interesting full-time opportunities.
+                I'm currently seeking exciting full-time positions where I can contribute to innovative products 
+                and collaborate with passionate teams to create meaningful user experiences.
               </p>
               <Button 
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-pink-400 to-indigo-600 hover:from-pink-500 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
               >
                 Get In Touch
                 <Mail className="ml-2 h-5 w-5" />
