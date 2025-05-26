@@ -6,62 +6,90 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       title: "Senior Product Designer",
-      company: "Instacart",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
-      description: "Leading design for Instacart's core shopping experience, focusing on personalization and AI-driven features. Designing end-to-end experiences that serve millions of customers and shoppers daily.",
+      company: "Microsoft",
+      location: "Azure Communication Services",
+      period: "2021 - Present",
+      description: "Owning UX/UI vision and design direction for new Azure Communication Services features in Azure portal, including Short Codes & Sample Builder, improving developer adoption and usability.",
       achievements: [
-        "Led design for AI-powered shopping recommendations serving 50M+ users",
-        "Improved checkout conversion by 23% through UX optimization",
-        "Established design system standards across 15+ product teams"
-      ]
-    },
-    {
-      title: "Senior Product Designer",
-      company: "Square",
-      location: "San Francisco, CA", 
-      period: "2019 - 2022",
-      description: "Designed financial products and tools for small businesses, focusing on payment processing, analytics, and business management solutions.",
-      achievements: [
-        "Designed features used by 2M+ merchants globally",
-        "Increased seller onboarding completion by 40% through UX improvements",
-        "Led accessibility initiative achieving WCAG AA compliance"
+        "Hacked a redesign of telephone number purchasing experience during FHL 2022, securing executive approval for full-scale redesign",
+        "Facilitated cross-functional alignment to drive API evolution supporting UX improvements across global markets",
+        "Validated design hypotheses using hypothesis testing framework with usability testing, A/B testing, and heuristic evaluations",
+        "Led team ideation sessions and cross-functional design sprints with PMs and engineers for data-driven decisions"
       ]
     },
     {
       title: "Product Designer",
-      company: "Airbnb",
-      location: "San Francisco, CA",
-      period: "2016 - 2019", 
-      description: "Worked on host and guest experiences, focusing on trust and safety, booking flows, and mobile-first design for global markets.",
+      company: "Microsoft",
+      location: "Azure Communication Services",
+      period: "Jan 2021 - Sep 2021",
+      description: "Designing wireframes, UI and prototypes for Azure Communication Services, focusing on Direct Routing UX and improving customer onboarding in Azure Portal.",
       achievements: [
-        "Designed booking flow improvements increasing conversion by 18%",
-        "Led internationalization design for 15+ countries",
-        "Mentored junior designers and established design critique processes"
+        "Created UX for Direct Routing functionality",
+        "Improved customer onboarding experience for Azure Communication Services",
+        "Contributed to design systems through wireframes and high-fidelity mockups"
       ]
     },
     {
-      title: "UX Designer",
-      company: "Facebook (Meta)",
-      location: "Menlo Park, CA",
-      period: "2013 - 2016",
-      description: "Designed features for Facebook's core platform, focusing on news feed, messaging, and mobile experiences during period of rapid growth.",
+      title: "Product Designer",
+      company: "Microsoft",
+      location: "OneNote - Vancouver, Canada",
+      period: "2018 - 2021",
+      description: "Designing wireframes, UI and prototypes for Microsoft OneNote, focusing on integration improvements and syncing concepts across platforms.",
       achievements: [
-        "Designed mobile features used by 1B+ daily active users",
-        "Improved news feed engagement metrics by 15%",
-        "Contributed to Facebook's first design system guidelines"
+        "Improved integration of OneNote Online in Microsoft Teams",
+        "Adapted new syncing concept from OneNote Desktop to OneNote Online",
+        "Enhanced cross-platform user experience consistency"
       ]
     },
     {
-      title: "Visual Designer",
-      company: "IDEO",
-      location: "Palo Alto, CA", 
-      period: "2010 - 2013",
-      description: "Worked on human-centered design projects for Fortune 500 companies, focusing on digital transformation and innovation consulting.",
+      title: "Head of Product Design",
+      company: "GoFetch.ca",
+      location: "Vancouver, British Columbia",
+      period: "2017 - 2018",
+      description: "Leading design meetings and running brainstorming sessions for new feature development. Provided UX and art direction to redesign web & iOS platforms.",
       achievements: [
-        "Led design research and strategy for 20+ client projects",
-        "Developed design thinking workshops for enterprise clients",
-        "Created digital experiences across healthcare, finance, and retail"
+        "Led requirements definition and UX architecture for platform redesign",
+        "Designed wireframes, UI and prototypes for web, iOS and Android features",
+        "Created unified experience across all platforms",
+        "Implemented new UI using HTML/SASS and React JS"
+      ]
+    },
+    {
+      title: "Senior Interaction Designer",
+      company: "AVG Technologies",
+      location: "Amsterdam, Netherlands",
+      period: "2015 - 2016",
+      description: "Supported concept development within the Innovation Group, facilitating design sprints and creating high-fidelity prototypes for user testing.",
+      achievements: [
+        "Facilitated design sprints and design iteration sessions",
+        "Created concept designs through storyboards, wireframes & prototypes",
+        "Provided UX support for Scrum development teams",
+        "Coded interactive prototypes for mobile, web & desktop products"
+      ]
+    },
+    {
+      title: "Interaction Designer",
+      company: "AVG Technologies", 
+      location: "Amsterdam, Netherlands",
+      period: "2012 - 2015",
+      description: "Supported concept development within the Innovation Group with focus on concept generation, storyboarding, and rapid prototyping.",
+      achievements: [
+        "Led concept generation and wireframe sketching processes",
+        "Created quick prototypes for concept validation",
+        "Contributed to innovation initiatives across multiple product lines"
+      ]
+    },
+    {
+      title: "IXD/UX Designer",
+      company: "Siemens Corporate Research USA",
+      location: "Princeton, NJ",
+      period: "2011 - 2012", 
+      description: "Designed user interfaces for new Siemens products & systems, leading requirements definition and UX for healthcare & industry sector products.",
+      achievements: [
+        "Led new product development from requirement elicitation to final visual assets",
+        "Conducted user testing and stakeholder alignment for agile teams",
+        "Produced information architecture and wireframes for stakeholder approval",
+        "Provided UX consultancy across healthcare and industry business units"
       ]
     }
   ];
@@ -75,7 +103,7 @@ const Experience: React.FC = () => {
               <span className="text-primary">Experience</span>
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto antialiased">
-              15+ years designing products that millions of people use every day, from startups to Fortune 500 companies.
+              10+ years designing products at Microsoft and leading tech companies, specializing in Azure Communication Services and cross-platform experiences.
             </p>
           </div>
           

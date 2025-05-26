@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
     <section className="min-h-screen flex items-center justify-center relative">
       <div className="container mx-auto px-6 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight antialiased">
+          <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight antialiased leading-tight">
             <span className="block text-foreground/90">Senior</span>
             <span className="block bg-gradient-to-r from-pink-400 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
               Product Designer
@@ -49,16 +49,16 @@ const Hero: React.FC = () => {
           
           <div className="flex justify-center space-x-8 text-sm text-foreground/60 antialiased">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">15+</div>
+              <div className="text-2xl font-bold text-primary">10+</div>
               <div>Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">50M+</div>
-              <div>Users Reached</div>
+              <div className="text-2xl font-bold text-primary">Microsoft</div>
+              <div>Senior Designer</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">$50M+</div>
-              <div>Revenue Impact</div>
+              <div className="text-2xl font-bold text-primary">Global</div>
+              <div>Scale Impact</div>
             </div>
           </div>
         </div>

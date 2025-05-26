@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: #f0f9ff;
+    --background: #fef7ff;
     --foreground: #1e293b;
 
     --card: #ffffff;
@@ -17,20 +17,20 @@
     --primary: #ec4899;
     --primary-foreground: #ffffff;
 
-    --secondary: #e0f2fe;
+    --secondary: #f0f9ff;
     --secondary-foreground: #1e293b;
 
-    --muted: #f1f5f9;
+    --muted: #fdf4ff;
     --muted-foreground: #64748b;
 
-    --accent: #fef3c7;
+    --accent: #fff0f5;
     --accent-foreground: #1e293b;
 
     --destructive: #ef4444;
     --destructive-foreground: #f8fafc;
 
-    --border: #cbd5e1;
-    --input: #e2e8f0;
+    --border: #e879f9;
+    --input: #fdf2f8;
     --ring: #ec4899;
 
     --radius: 0.5rem;
@@ -39,29 +39,29 @@
     --sidebar-foreground: #1e293b;
     --sidebar-primary: #ec4899;
     --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent: #f1f5f9;
+    --sidebar-accent: #fdf4ff;
     --sidebar-accent-foreground: #1e293b;
-    --sidebar-border: #e2e8f0;
+    --sidebar-border: #f3e8ff;
     --sidebar-ring: #ec4899;
   }
 
   .dark {
-    --background: #0f172a;
+    --background: #0f0a1a;
     --foreground: #f8fafc;
 
-    --card: #1e293b;
+    --card: #1e1b2e;
     --card-foreground: #f8fafc;
 
-    --popover: #1e293b;
+    --popover: #1e1b2e;
     --popover-foreground: #f8fafc;
 
     --primary: #ec4899;
-    --primary-foreground: #0f172a;
+    --primary-foreground: #0f0a1a;
 
-    --secondary: #334155;
+    --secondary: #2d1b4e;
     --secondary-foreground: #f8fafc;
 
-    --muted: #475569;
+    --muted: #3f2b5b;
     --muted-foreground: #94a3b8;
 
     --accent: #1e40af;
@@ -74,11 +74,11 @@
     --input: #334155;
     --ring: #ec4899;
 
-    --sidebar-background: #1e293b;
+    --sidebar-background: #1e1b2e;
     --sidebar-foreground: #f8fafc;
     --sidebar-primary: #ec4899;
-    --sidebar-primary-foreground: #0f172a;
-    --sidebar-accent: #334155;
+    --sidebar-primary-foreground: #0f0a1a;
+    --sidebar-accent: #2d1b4e;
     --sidebar-accent-foreground: #f8fafc;
     --sidebar-border: #475569;
     --sidebar-ring: #ec4899;
@@ -91,12 +91,16 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  .dark body {
+    @apply bg-gradient-to-br from-purple-950 via-indigo-950 to-blue-950;
   }
 }
 
