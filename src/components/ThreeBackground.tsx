@@ -158,6 +158,11 @@ const ThreeBackground: React.FC = () => {
     });
     rendererRef.current = renderer;
     
+    // Enable shadows with soft settings
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.autoUpdate = true;
+    
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
@@ -170,6 +175,14 @@ const ThreeBackground: React.FC = () => {
     for (let i = 0; i < 12; i++) {
       const shapeCreator = shapeCreators[i % shapeCreators.length];
       const shape = shapeCreator();
+      
+      // Enable shadows on all meshes
+      shape.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
       
       // Random positioning
       shape.position.set(
@@ -193,21 +206,54 @@ const ThreeBackground: React.FC = () => {
       shapes.push(shape);
     }
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    // Soft global illumination lighting setup
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8); // Higher ambient for global illumination
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    // Main directional light with very soft shadows
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
     directionalLight.position.set(10, 10, 5);
+    directionalLight.castShadow = true;
+    directionalLight.shadow.mapSize.width = 1024;
+    directionalLight.shadow.mapSize.height = 1024;
+    directionalLight.shadow.camera.near = 0.5;
+    directionalLight.shadow.camera.far = 50;
+    directionalLight.shadow.camera.left = -20;
+    directionalLight.shadow.camera.right = 20;
+    directionalLight.shadow.camera.top = 20;
+    directionalLight.shadow.camera.bottom = -20;
+    directionalLight.shadow.bias = -0.0001;
+    directionalLight.shadow.radius = 10; // Very soft shadows
     scene.add(directionalLight);
 
-    const pointLight = new THREE.PointLight(0xFFB3E6, 0.5);
-    pointLight.position.set(-10, -10, -5);
-    scene.add(pointLight);
+    // Multiple soft point lights for global illumination effect
+    const pointLight1 = new THREE.PointLight(0xFFB3E6, 0.2, 30);
+    pointLight1.position.set(-10, -10, -5);
+    pointLight1.castShadow = true;
+    pointLight1.shadow.mapSize.width = 512;
+    pointLight1.shadow.mapSize.height = 512;
+    pointLight1.shadow.radius = 8;
+    scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0xB3CCFF, 0.3);
+    const pointLight2 = new THREE.PointLight(0xB3CCFF, 0.15, 25);
     pointLight2.position.set(10, -10, 5);
+    pointLight2.castShadow = true;
+    pointLight2.shadow.mapSize.width = 512;
+    pointLight2.shadow.mapSize.height = 512;
+    pointLight2.shadow.radius = 8;
     scene.add(pointLight2);
+
+    const pointLight3 = new THREE.PointLight(0xCCFFB3, 0.1, 20);
+    pointLight3.position.set(0, 15, 0);
+    pointLight3.castShadow = true;
+    pointLight3.shadow.mapSize.width = 512;
+    pointLight3.shadow.mapSize.height = 512;
+    pointLight3.shadow.radius = 8;
+    scene.add(pointLight3);
+
+    // Hemisphere light for even softer global illumination
+    const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.4);
+    scene.add(hemisphereLight);
 
     camera.position.z = 15;
 
