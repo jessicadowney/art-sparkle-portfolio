@@ -15,14 +15,14 @@ const Hero: React.FC = () => {
     <section className="min-h-screen flex items-center justify-center relative">
       <div className="container mx-auto px-6 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight">
+          <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight antialiased">
             <span className="block text-foreground/90">Senior</span>
             <span className="block bg-gradient-to-r from-pink-400 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
               Product Designer
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed antialiased">
             Designing intuitive, human-centered digital experiences that solve real problems 
             and create meaningful connections between users and technology.
           </p>
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             <Button 
               onClick={scrollToWork}
               size="lg"
-              className="bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-600 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-600 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
             >
               View My Work
               <ArrowDown className="ml-2 h-5 w-5" />
@@ -40,25 +40,25 @@ const Hero: React.FC = () => {
             <Button 
               variant="outline"
               size="lg"
-              className="px-8 py-3 rounded-full text-lg border-2 hover:bg-accent transition-all duration-300 hover:scale-105"
+              className="px-8 py-3 rounded-full text-lg border-2 hover:bg-accent transition-all duration-300 hover:scale-105 antialiased"
             >
               Download Resume
               <Download className="ml-2 h-5 w-5" />
             </Button>
           </div>
           
-          <div className="flex justify-center space-x-8 text-sm text-foreground/60">
+          <div className="flex justify-center space-x-8 text-sm text-foreground/60 antialiased">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">10+</div>
+              <div className="text-2xl font-bold text-primary">15+</div>
               <div>Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">100+</div>
-              <div>Projects Delivered</div>
+              <div className="text-2xl font-bold text-primary">50M+</div>
+              <div>Users Reached</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">25+</div>
-              <div>Happy Clients</div>
+              <div className="text-2xl font-bold text-primary">$50M+</div>
+              <div>Revenue Impact</div>
             </div>
           </div>
         </div>

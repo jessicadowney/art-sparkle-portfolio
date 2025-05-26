@@ -36,11 +36,11 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight antialiased">
               Let's <span className="bg-gradient-to-r from-pink-500 to-indigo-600 bg-clip-text text-transparent">Connect</span>
             </h2>
             
-            <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed antialiased">
               I'm passionate about creating meaningful digital experiences and always excited to discuss 
               new opportunities. Let's connect and explore how we can create something amazing together.
             </p>
@@ -58,23 +58,23 @@ const Contact: React.FC = () => {
                   <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors duration-300">
                     <link.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-medium mb-2 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="font-medium mb-2 group-hover:text-primary transition-colors duration-300 antialiased">
                     {link.label}
                   </h3>
-                  <p className="text-sm text-foreground/60">{link.username}</p>
+                  <p className="text-sm text-foreground/60 break-all antialiased">{link.username}</p>
                 </a>
               ))}
             </div>
             
             <div className="bg-gradient-to-r from-pink-100/50 to-indigo-100/50 dark:from-pink-900/20 dark:to-indigo-900/20 rounded-2xl p-8 border border-border/50">
-              <h3 className="text-2xl font-semibold mb-4">Open to exciting full-time opportunities</h3>
-              <p className="text-foreground/70 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 antialiased">Open to exciting full-time opportunities</h3>
+              <p className="text-foreground/70 mb-6 antialiased">
                 I'm currently seeking meaningful full-time positions where I can contribute to innovative products, 
                 collaborate with passionate teams, and create impactful user experiences that make a difference.
               </p>
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-600 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-600 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
                 Get In Touch
                 <Mail className="ml-2 h-5 w-5" />

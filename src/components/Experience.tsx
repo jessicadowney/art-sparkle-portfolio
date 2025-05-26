@@ -6,38 +6,62 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       title: "Senior Product Designer",
-      company: "Sustainable Tech Solutions",
-      location: "Remote",
+      company: "Instacart",
+      location: "San Francisco, CA",
       period: "2022 - Present",
-      description: "Leading design strategy for climate-tech products, focusing on user education and behavioral change through design. Managing cross-functional teams and establishing design standards.",
+      description: "Leading design for Instacart's core shopping experience, focusing on personalization and AI-driven features. Designing end-to-end experiences that serve millions of customers and shoppers daily.",
       achievements: [
-        "Increased user engagement with sustainability features by 65%",
-        "Led design system implementation across 5 product teams",
-        "Conducted comprehensive user research informing product roadmap"
+        "Led design for AI-powered shopping recommendations serving 50M+ users",
+        "Improved checkout conversion by 23% through UX optimization",
+        "Established design system standards across 15+ product teams"
+      ]
+    },
+    {
+      title: "Senior Product Designer",
+      company: "Square",
+      location: "San Francisco, CA", 
+      period: "2019 - 2022",
+      description: "Designed financial products and tools for small businesses, focusing on payment processing, analytics, and business management solutions.",
+      achievements: [
+        "Designed features used by 2M+ merchants globally",
+        "Increased seller onboarding completion by 40% through UX improvements",
+        "Led accessibility initiative achieving WCAG AA compliance"
       ]
     },
     {
       title: "Product Designer",
-      company: "HealthTech Innovations",
+      company: "Airbnb",
       location: "San Francisco, CA",
-      period: "2020 - 2022",
-      description: "Designed end-to-end experiences for mental health and wellness applications, with focus on accessibility and inclusive design practices.",
+      period: "2016 - 2019", 
+      description: "Worked on host and guest experiences, focusing on trust and safety, booking flows, and mobile-first design for global markets.",
       achievements: [
-        "Designed features serving 500K+ active users daily",
-        "Improved app accessibility compliance to WCAG AAA standards",
-        "Reduced user onboarding time by 50% through UX optimization"
+        "Designed booking flow improvements increasing conversion by 18%",
+        "Led internationalization design for 15+ countries",
+        "Mentored junior designers and established design critique processes"
       ]
     },
     {
       title: "UX Designer",
-      company: "EduTech Collective",
-      location: "New York, NY",
-      period: "2018 - 2020",
-      description: "Specialized in educational technology and learning experience design, working on products for diverse age groups and learning abilities.",
+      company: "Facebook (Meta)",
+      location: "Menlo Park, CA",
+      period: "2013 - 2016",
+      description: "Designed features for Facebook's core platform, focusing on news feed, messaging, and mobile experiences during period of rapid growth.",
       achievements: [
-        "Designed learning platforms used by 1M+ students globally",
-        "Increased course completion rates by 35% through UX improvements",
-        "Established user research practice and mentored junior designers"
+        "Designed mobile features used by 1B+ daily active users",
+        "Improved news feed engagement metrics by 15%",
+        "Contributed to Facebook's first design system guidelines"
+      ]
+    },
+    {
+      title: "Visual Designer",
+      company: "IDEO",
+      location: "Palo Alto, CA", 
+      period: "2010 - 2013",
+      description: "Worked on human-centered design projects for Fortune 500 companies, focusing on digital transformation and innovation consulting.",
+      achievements: [
+        "Led design research and strategy for 20+ client projects",
+        "Developed design thinking workshops for enterprise clients",
+        "Created digital experiences across healthcare, finance, and retail"
       ]
     }
   ];
@@ -47,11 +71,11 @@ const Experience: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight antialiased">
               <span className="text-primary">Experience</span>
             </h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-              A journey through meaningful work that has shaped my design philosophy and approach to solving complex user problems.
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto antialiased">
+              15+ years designing products that millions of people use every day, from startups to Fortune 500 companies.
             </p>
           </div>
           
@@ -68,11 +92,11 @@ const Experience: React.FC = () => {
                 <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 ml-6 hover:shadow-lg transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold mb-1">{exp.title}</h3>
-                      <h4 className="text-lg text-primary font-medium">{exp.company}</h4>
+                      <h3 className="text-xl font-semibold mb-1 antialiased">{exp.title}</h3>
+                      <h4 className="text-lg text-primary font-medium antialiased">{exp.company}</h4>
                     </div>
                     
-                    <div className="flex flex-col md:items-end text-sm text-foreground/60 mt-2 md:mt-0">
+                    <div className="flex flex-col md:items-end text-sm text-foreground/60 mt-2 md:mt-0 antialiased">
                       <div className="flex items-center mb-1">
                         <Calendar className="h-4 w-4 mr-1" />
                         {exp.period}
@@ -84,7 +108,7 @@ const Experience: React.FC = () => {
                     </div>
                   </div>
                   
-                  <p className="text-foreground/80 mb-4 leading-relaxed">
+                  <p className="text-foreground/80 mb-4 leading-relaxed antialiased">
                     {exp.description}
                   </p>
                   
@@ -92,7 +116,7 @@ const Experience: React.FC = () => {
                     {exp.achievements.map((achievement, achievementIndex) => (
                       <li 
                         key={achievementIndex}
-                        className="flex items-start text-sm text-foreground/70"
+                        className="flex items-start text-sm text-foreground/70 antialiased"
                       >
                         <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         {achievement}

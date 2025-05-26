@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { useTheme } from './ThemeProvider';
@@ -8,14 +9,27 @@ const ThreeBackground: React.FC = () => {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const { theme } = useTheme();
 
+  // Pastel rainbow colors
+  const pastelColors = [
+    0xFFB3E6, // Pastel pink
+    0xFFCCB3, // Pastel peach
+    0xFFFFB3, // Pastel yellow
+    0xCCFFB3, // Pastel green
+    0xB3FFFF, // Pastel cyan
+    0xB3CCFF, // Pastel blue
+    0xCCB3FF, // Pastel purple
+    0xFFB3CC  // Pastel rose
+  ];
+
   // Create cursor shape
   const createCursor = () => {
     const group = new THREE.Group();
     
     // Cursor arrow
     const arrowGeometry = new THREE.ConeGeometry(0.3, 1, 3);
+    const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
     const arrowMaterial = new THREE.MeshPhongMaterial({ 
-      color: 0xffffff,
+      color: randomColor,
       transparent: true,
       opacity: 0.8 
     });
@@ -26,13 +40,14 @@ const ThreeBackground: React.FC = () => {
     return group;
   };
 
-  // Create emoji face with pink color
+  // Create emoji face with pastel colors
   const createEmoji = () => {
     const group = new THREE.Group();
     
-    // Face (pink instead of yellow)
+    // Face with random pastel color
     const faceGeometry = new THREE.SphereGeometry(0.8, 32, 16);
-    const faceMaterial = new THREE.MeshPhongMaterial({ color: 0xffc0cb });
+    const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+    const faceMaterial = new THREE.MeshPhongMaterial({ color: randomColor });
     const face = new THREE.Mesh(faceGeometry, faceMaterial);
     group.add(face);
     
@@ -59,14 +74,15 @@ const ThreeBackground: React.FC = () => {
     return group;
   };
 
-  // Create 5 stars rating
+  // Create 5 stars rating with pastel colors
   const createStars = () => {
     const group = new THREE.Group();
     
     for (let i = 0; i < 5; i++) {
       const starGeometry = new THREE.ConeGeometry(0.2, 0.6, 5);
+      const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
       const starMaterial = new THREE.MeshPhongMaterial({ 
-        color: 0xec4899,
+        color: randomColor,
         transparent: true,
         opacity: 0.9 
       });
@@ -78,29 +94,30 @@ const ThreeBackground: React.FC = () => {
     return group;
   };
 
-  // Create donut
+  // Create donut with pastel colors
   const createDonut = () => {
     const group = new THREE.Group();
     
-    // Donut base
+    // Donut base with pastel color
     const donutGeometry = new THREE.TorusGeometry(0.8, 0.3, 16, 100);
-    const donutMaterial = new THREE.MeshPhongMaterial({ color: 0xd2691e });
+    const baseColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+    const donutMaterial = new THREE.MeshPhongMaterial({ color: baseColor });
     const donut = new THREE.Mesh(donutGeometry, donutMaterial);
     group.add(donut);
     
-    // Frosting (pink instead of bright pink)
+    // Frosting with different pastel color
     const frostingGeometry = new THREE.TorusGeometry(0.82, 0.25, 16, 100);
-    const frostingMaterial = new THREE.MeshPhongMaterial({ color: 0xffc0cb });
+    const frostingColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+    const frostingMaterial = new THREE.MeshPhongMaterial({ color: frostingColor });
     const frosting = new THREE.Mesh(frostingGeometry, frostingMaterial);
     frosting.position.y = 0.1;
     group.add(frosting);
     
-    // Sprinkles
+    // Sprinkles with various pastel colors
     for (let i = 0; i < 12; i++) {
       const sprinkleGeometry = new THREE.CylinderGeometry(0.02, 0.02, 0.2);
-      const sprinkleMaterial = new THREE.MeshPhongMaterial({ 
-        color: new THREE.Color().setHSL(Math.random(), 1, 0.7) 
-      });
+      const sprinkleColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+      const sprinkleMaterial = new THREE.MeshPhongMaterial({ color: sprinkleColor });
       const sprinkle = new THREE.Mesh(sprinkleGeometry, sprinkleMaterial);
       
       const angle = (i / 12) * Math.PI * 2;
@@ -184,11 +201,11 @@ const ThreeBackground: React.FC = () => {
     directionalLight.position.set(10, 10, 5);
     scene.add(directionalLight);
 
-    const pointLight = new THREE.PointLight(0xec4899, 0.5);
+    const pointLight = new THREE.PointLight(0xFFB3E6, 0.5);
     pointLight.position.set(-10, -10, -5);
     scene.add(pointLight);
 
-    const pointLight2 = new THREE.PointLight(0x4f46e5, 0.3);
+    const pointLight2 = new THREE.PointLight(0xB3CCFF, 0.3);
     pointLight2.position.set(10, -10, 5);
     scene.add(pointLight2);
 
