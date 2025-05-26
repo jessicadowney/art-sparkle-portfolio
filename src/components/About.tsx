@@ -39,23 +39,21 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="animate-fade-in">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-           Hi! I’m Jessica — a senior UX designer who loves turning fuzzy ideas into clear, delightful digital experiences.
-I specialize in designing helpful, beautiful, and well-thought-out interfaces that make everyday life a little easier (and a lot more joyful). Whether it’s through early concepts, wireframes, or high-fidelity prototypes, I’m all about validating ideas early and often—because guessing is fun, but knowing is better.
-
+        Hi! I’m Jessica — a senior UX designer who loves making messy ideas make sense.
+I design thoughtful, intuitive digital products that are grounded in user needs and validated early (because why guess when you can know?). From concept to prototype, I bring clarity and delight to complex problems through sharp thinking and clean interfaces.
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-         I believe in the power of technology to make everyday life better and empower people to do more with less friction. Also: I really, really love discovering the latest baked good or trendy new bakery. When I’m not designing or taste-testing pastries, I’m usually hanging out with my kids, walking our very good corgi Maple, or chasing tiny adventures around the city.
-Originally from France, I’ve lived and worked across the USA, the Netherlands, and Canada, collaborating with teams and users from all over the world. These days, I’m based in Vancouver and working at Microsoft, where I help build products that solve real problems and (hopefully) spark a little delight along the way.
+       Originally from France, I’ve worked in the US, the Netherlands, and now Canada, where I’m currently at Microsoft. I believe great design has the power to improve everyday life and help people do more, with less friction.
 
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed">
+When I’m not designing, I’m usually taste-testing the latest trending bakery find, playing with my kids, or walking our corgi, Maple.
 
-
-
-Curious how I think? Here’s something I wrote on early-stage product strategy:
+Want to see how I think?
 Jumpstarting your app conception without drawing any UI
+
               </p>
             </div>
             
