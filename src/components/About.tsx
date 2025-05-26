@@ -39,7 +39,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="animate-fade-in">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                I'm Jessica Downey, a Senior Product Designer with over 10 years of experience 
+                I'm Jessica Downey, a Senior Product Designer with over 15 years of experience 
                 creating digital experiences that users love. My journey spans from early-stage 
                 startups to established companies, where I've helped shape products that millions 
                 of people use every day.
@@ -47,7 +47,7 @@ const About: React.FC = () => {
               
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
                 I believe great design is invisible—it solves problems so elegantly that users 
-                don't even notice the complexity underneath. I specialize in user research, 
+                don't even notice the complexity underneath. I specialize in product design, 
                 design systems, and collaborative design processes that bring teams together 
                 around a shared vision for exceptional user experiences.
               </p>
