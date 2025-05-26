@@ -51,7 +51,7 @@ I design thoughtful, intuitive digital products that are grounded in user needs 
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed">
-When I’m not designing, I’m usually hunting the latest trendy food find (mochi donuts, bingsu, matcha lattes), playing with my kids, or walking our corgi, Maple.</p>
+When I’m not designing, I’m usually hunting the latest trendy food find (mochi donuts, bingsu, matcha lattes), playing with my kids, or walking our corgi, <a href="https://www.instagram.com/maplecorgi/?hl=en">Maple.</a></p>
                               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
 
 Curious how I think? Here’s something I wrote:
