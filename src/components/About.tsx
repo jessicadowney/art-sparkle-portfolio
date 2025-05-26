@@ -39,23 +39,23 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="animate-fade-in">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                I'm Jessica Downey, a Senior Product Designer with over 15 years of experience 
-                creating digital experiences that users love. My journey spans from early-stage 
-                startups to established companies, where I've helped shape products that millions 
-                of people use every day.
+           Hi! I’m Jessica — a senior UX designer who loves turning fuzzy ideas into clear, delightful digital experiences.
+I specialize in designing helpful, beautiful, and well-thought-out interfaces that make everyday life a little easier (and a lot more joyful). Whether it’s through early concepts, wireframes, or high-fidelity prototypes, I’m all about validating ideas early and often—because guessing is fun, but knowing is better.
+
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                I believe great design is invisible—it solves problems so elegantly that users 
-                don't even notice the complexity underneath. I specialize in product design, 
-                design systems, and collaborative design processes that bring teams together 
-                around a shared vision for exceptional user experiences.
+         I believe in the power of technology to make everyday life better and empower people to do more with less friction. Also: I really, really love discovering the latest baked good or trendy new bakery. When I’m not designing or taste-testing pastries, I’m usually hanging out with my kids, walking our very good corgi Maple, or chasing tiny adventures around the city.
+Originally from France, I’ve lived and worked across the USA, the Netherlands, and Canada, collaborating with teams and users from all over the world. These days, I’m based in Vancouver and working at Microsoft, where I help build products that solve real problems and (hopefully) spark a little delight along the way.
+
               </p>
               
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Currently, I'm passionate about designing for accessibility, sustainability, 
-                and inclusive experiences that make technology more human and approachable 
-                for everyone.
+
+
+
+Curious how I think? Here’s something I wrote on early-stage product strategy:
+Jumpstarting your app conception without drawing any UI
               </p>
             </div>
             
