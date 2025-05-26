@@ -51,9 +51,8 @@ I design thoughtful, intuitive digital products that are grounded in user needs 
               <p className="text-lg text-foreground/80 leading-relaxed">
 When I’m not designing, I’m usually hunting the latest trendy food find (mochi donuts, bingsu, matcha lattes), playing with my kids, or walking our corgi, Maple.
 
-Want to see how I think?
-Jumpstarting your app conception without drawing any UI
-
+Curious how I think? Here’s something I wrote:
+<a href="https://medium.com/@jessicadowney/jumpstarting-your-app-conception-without-drawing-any-ui-8e5be35876c9#.h8nbq1bfn/">Jumpstarting your app conception without drawing any UI</a>
               </p>
             </div>
             
