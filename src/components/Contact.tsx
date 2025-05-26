@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Contact: React.FC = () => {
@@ -18,10 +18,10 @@ const Contact: React.FC = () => {
       username: "/in/jessicadowney"
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com/jessicadowney",
-      username: "@jessicadowney"
+      icon: Users,
+      label: "ADP List",
+      href: "https://adplist.org/mentors/jessica-downey",
+      username: "@jessica-downey"
     },
     {
       icon: Github,
