@@ -40,7 +40,7 @@ const Ally = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="text-center">
                   <h3 className="font-semibold mb-2 text-primary">Role</h3>
-                  <p className="text-foreground/70">Staff Product Designer</p>
+                  <p className="text-foreground/70">Senior Product Designer</p>
                 </div>
                 <div className="text-center">
                   <h3 className="font-semibold mb-2 text-primary">Company</h3>
