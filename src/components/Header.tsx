@@ -41,7 +41,7 @@ const Header: React.FC = () => {
             onClick={handleLogoClick}
             className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
           >
-            Jessica Downey
+            JD
           </button>
           
           <div className="hidden md:flex items-center space-x-8">
