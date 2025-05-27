@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Lightbulb, Target, Award } from 'lucide-react';
 
@@ -82,7 +83,7 @@ Curious how I think? Here's something I wrote:
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {principles.map((principle, index) => (
               <div 
                 key={index}
@@ -96,6 +97,17 @@ Curious how I think? Here's something I wrote:
                 <p className="text-sm text-foreground/70 leading-relaxed">{principle.description}</p>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-semibold mb-6 text-primary">Design Sprint Process</h3>
+            <div className="max-w-4xl mx-auto">
+              <img 
+                src="/lovable-uploads/4edd9b31-c7a9-47a5-aaf3-aea2d49ee270.png" 
+                alt="Design Sprint Process showing 6 phases: Understand, Define, Sketch, Decide, Prototype, and Validate with corresponding dates"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </div>
