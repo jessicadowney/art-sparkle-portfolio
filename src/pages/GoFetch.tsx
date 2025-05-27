@@ -95,8 +95,7 @@ const GoFetch = () => {
                   <img 
                     src="https://jessicadowney.com/images/gfinitialioshome.png" 
                     alt="Initial iOS Home Screen" 
-                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                    style={{ height: '50%', maxHeight: '400px', margin: '0 auto' }}
+                    className="rounded-lg shadow-lg h-auto bg-white p-2 max-h-96 mx-auto"
                   />
                 </div>
 
@@ -221,8 +220,7 @@ const GoFetch = () => {
                   <img 
                     src="https://jessicadowney.com/images/gfios-home.png" 
                     alt="Updated GoFetch iOS Home Screen" 
-                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                    style={{ height: '50%', maxHeight: '400px', margin: '0 auto' }}
+                    className="rounded-lg shadow-lg h-auto bg-white p-2 max-h-96 mx-auto"
                   />
                 </div>
 
