@@ -54,34 +54,32 @@ Curious how I think? Here's something I wrote:
             </div>
             
             <div className="animate-scale-in">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex flex-col items-center justify-center p-8">
-                <div className="relative w-80 h-64">
-                  {/* First image - back layer */}
-                  <div className="absolute top-0 left-0 w-48 h-48 group cursor-pointer">
-                    <img 
-                      src="/lovable-uploads/daec6d9b-bfe6-4ff8-a782-31d6d1d0a88f.png" 
-                      alt="Jessica with baby in hiking carrier"
-                      className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
-                    />
-                  </div>
-                  
-                  {/* Second image - middle layer, overlapping */}
-                  <div className="absolute top-6 left-28 w-48 h-48 group cursor-pointer z-10">
-                    <img 
-                      src="/lovable-uploads/90982b97-9bcd-4f49-bde7-1c2f08f108e6.png" 
-                      alt="Jessica under cherry blossoms"
-                      className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
-                    />
-                  </div>
-                  
-                  {/* Third image - front layer, overlapping */}
-                  <div className="absolute top-12 left-56 w-48 h-48 group cursor-pointer z-20">
-                    <img 
-                      src="/lovable-uploads/e1547e16-1b69-4e9f-ad12-438f3d035dd3.png" 
-                      alt="Jessica with heart sunglasses making peace sign"
-                      className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
-                    />
-                  </div>
+              <div className="relative w-80 h-64 mx-auto">
+                {/* First image - positioned higher, back layer */}
+                <div className="absolute top-0 left-12 w-48 h-48 group cursor-pointer z-30">
+                  <img 
+                    src="/lovable-uploads/daec6d9b-bfe6-4ff8-a782-31d6d1d0a88f.png" 
+                    alt="Jessica with baby in hiking carrier"
+                    className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
+                  />
+                </div>
+                
+                {/* Second image - middle layer, overlapping */}
+                <div className="absolute top-16 left-0 w-48 h-48 group cursor-pointer z-10">
+                  <img 
+                    src="/lovable-uploads/90982b97-9bcd-4f49-bde7-1c2f08f108e6.png" 
+                    alt="Jessica under cherry blossoms"
+                    className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
+                  />
+                </div>
+                
+                {/* Third image - front layer, overlapping */}
+                <div className="absolute top-16 left-32 w-48 h-48 group cursor-pointer z-20">
+                  <img 
+                    src="/lovable-uploads/e1547e16-1b69-4e9f-ad12-438f3d035dd3.png" 
+                    alt="Jessica with heart sunglasses making peace sign"
+                    className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
+                  />
                 </div>
               </div>
             </div>
