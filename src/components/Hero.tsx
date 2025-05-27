@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         <div className="animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight antialiased leading-relaxed pb-8">
             <span className="block text-foreground/90">Senior</span>
-            <span className="block bg-gradient-to-r from-pink-400 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-text">
               Product Designer
             </span>
           </h1>
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             <Button 
               onClick={scrollToWork}
               size="lg"
-              className="bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-600 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
+              className="bg-gradient-button hover:bg-gradient-button text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
             >
               View My Work
               <ArrowDown className="ml-2 h-5 w-5" />

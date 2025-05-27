@@ -43,6 +43,9 @@
     --sidebar-accent-foreground: #1e293b;
     --sidebar-border: #f3e8ff;
     --sidebar-ring: #FFB0B0;
+
+    /* Light mode gradient */
+    --gradient-bg: radial-gradient(circle 369px at -2.9% 12.9%, rgba(247,234,163,1) 0%, rgba(236,180,238,0.56) 46.4%, rgba(163,203,247,1) 100.7%);
   }
 
   .dark {
@@ -53,7 +56,7 @@
     --card-foreground: #f8fafc;
 
     --popover: #0a0829;
-    --popover-foreground: #f8fafc;
+    --popover-foreground: #1e293b;
 
     --primary: #FFB0B0;
     --primary-foreground: #03022B;
@@ -82,6 +85,9 @@
     --sidebar-accent-foreground: #f8fafc;
     --sidebar-border: #2a2875;
     --sidebar-ring: #FFB0B0;
+
+    /* Dark mode gradient */
+    --gradient-bg: linear-gradient(89.9deg, rgba(208,246,255,1) 0.1%, rgba(255,237,237,1) 47.9%, rgba(255,255,231,1) 100.2%);
   }
 }
 
@@ -137,6 +143,25 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  /* Gradient text utility */
+  .bg-gradient-text {
+    background-image: var(--gradient-bg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100%;
+  }
+
+  /* Gradient button utility */
+  .bg-gradient-button {
+    background-image: var(--gradient-bg);
+  }
+
+  .bg-gradient-button:hover {
+    background-image: var(--gradient-bg);
+    opacity: 0.9;
   }
 }
 

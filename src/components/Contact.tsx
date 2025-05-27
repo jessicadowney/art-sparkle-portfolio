@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight antialiased">
-              Let's <span className="bg-gradient-to-r from-pink-500 to-indigo-600 bg-clip-text text-transparent">Connect</span>
+              Let's <span className="bg-gradient-text">Connect</span>
             </h2>
             
             <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed antialiased">
@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
               </p>
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-600 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
+                className="bg-gradient-button hover:bg-gradient-button text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
                <a href="mailto:hello@jessicadowney.com"
                   target="_blank"
