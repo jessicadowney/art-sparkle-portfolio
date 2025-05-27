@@ -39,9 +39,9 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <button 
             onClick={handleLogoClick}
-            className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity flex items-center gap-2"
           >
-            JD
+            👩‍💻 JD
           </button>
           
           <div className="hidden md:flex items-center space-x-8">
