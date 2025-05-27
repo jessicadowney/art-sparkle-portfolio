@@ -11,6 +11,7 @@ import Azure from "./pages/Azure";
 import Ally from "./pages/Ally";
 import Slim from "./pages/Slim";
 import OneNote from "./pages/OneNote";
+import PhoneNumberCart from "./pages/PhoneNumberCart";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/phone-number-cart" element={<PhoneNumberCart />} />
           <Route path="/gofetch" element={<GoFetch />} />
           <Route path="/azure" element={<Azure />} />
           <Route path="/ally" element={<Ally />} />

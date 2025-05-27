@@ -5,11 +5,11 @@ import WorkCard from './WorkCard';
 const Work: React.FC = () => {
   const projects = [
     {
-      title: "",
-      description: "",
-      tags: [],
-      image: "",
-      link: "/project1"
+      title: "Phone Number Shopping Cart for Azure Communication Services",
+      description: "A redesigned phone number acquisition experience that replaced rigid one-at-a-time purchasing with a flexible shopping cart, enabling multi-number provisioning and improving user satisfaction.",
+      tags: ["Product Design", "UX Research", "Azure Portal", "Developer Experience", "E-commerce UX"],
+      image: "/placeholder.svg",
+      link: "/phone-number-cart"
     },
     {
       title: "Azure Communication Services: Virtual Visit Sample Builder",
