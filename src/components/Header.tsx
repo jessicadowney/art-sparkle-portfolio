@@ -30,7 +30,12 @@ const Header: React.FC = () => {
   };
 
   const handleLogoClick = () => {
-    navigate('/');
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+    }
+    // Always scroll to top with smooth behavior
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

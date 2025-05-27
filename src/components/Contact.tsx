@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 min-h-fit">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-8 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-scale-in no-underline hover:no-underline"
+                  className="group p-6 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-scale-in no-underline hover:no-underline"
                   style={{ 
                     animationDelay: `${index * 0.1}s`,
                     textDecoration: 'none !important',
@@ -60,10 +60,10 @@ const Contact: React.FC = () => {
                     background: 'rgba(255, 255, 255, 0.5) !important'
                   }}
                 >
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/30 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors duration-300">
                     <link.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-medium mb-3 group-hover:text-primary transition-colors duration-300 antialiased">
+                  <h3 className="font-medium mb-2 group-hover:text-primary transition-colors duration-300 antialiased">
                     {link.label}
                   </h3>
                   <p className="text-sm text-foreground/60 break-all antialiased">{link.username}</p>
