@@ -83,7 +83,7 @@ const PhoneNumberCart = () => {
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                   We introduced a new phone number acquisition experience centered around a flexible shopping cart. Users can:
                 </p>
-                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                <ul className="space-y-2 text-foreground/80 text-lg mb-6">
                   <li>• Search by country, city, area code, and capabilities</li>
                   <li>• Select multiple phone numbers to add to their cart</li>
                   <li>• Review and purchase all selected numbers in a single transaction</li>
@@ -92,6 +92,62 @@ const PhoneNumberCart = () => {
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
                   This design replaces the rigid one-at-a-time flow with a more modern, batch-friendly experience aligned with user expectations.
                 </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="space-y-4">
+                    <img 
+                      src="https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/telephony/media/phone-numbers-portal/get-phone-number-start.png" 
+                      alt="Phone number acquisition starting page"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Starting the phone number acquisition process</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/telephony/media/phone-numbers-portal/get-phone-number-search.png" 
+                      alt="Phone number search interface"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Searching for available phone numbers with filters</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/telephony/media/phone-numbers-portal/get-phone-number-cart.png" 
+                      alt="Phone numbers added to shopping cart"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Adding multiple phone numbers to the cart</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/telephony/media/phone-numbers-portal/get-phone-number-cart-2.png" 
+                      alt="Shopping cart with multiple phone numbers"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Managing multiple numbers in the shopping cart</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/telephony/media/phone-numbers-portal/get-phone-number-review.png" 
+                      alt="Reviewing phone number order before purchase"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Reviewing the order before finalizing purchase</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/telephony/media/phone-numbers-portal/get-phone-number-purchased.png" 
+                      alt="Successful phone number purchase confirmation"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Confirmation of successful phone number purchase</p>
+                  </div>
+                </div>
 
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Outcomes</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
