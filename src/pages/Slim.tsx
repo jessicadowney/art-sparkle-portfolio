@@ -75,13 +75,7 @@ const Slim = () => {
                   </ul>
                 </div>
 
-                                <div className="mb-12">
-                  <img 
-                    src="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.png" 
-                    alt="Streamlined Workflow Management" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                </div>
+  
                 
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-12">
                   <div>
@@ -107,7 +101,14 @@ const Slim = () => {
                     <li>• Important buttons changed location dynamically, frustrating users</li>
                   </ul>
                 </div>
-
+                <div className="mb-12">
+                  <img 
+                    src="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.png" 
+                    alt="Streamlined Workflow Management" 
+                    className="rounded-lg shadow-lg w-full h-auto"
+                  />
+                </div>
+                
                 <div className="mb-12">
                   <img 
                     src="/lovable-uploads/7fb41454-02d2-47d7-b36c-0804a23c8bf6.png" 
