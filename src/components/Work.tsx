@@ -9,6 +9,20 @@ const Work: React.FC = () => {
       description: "",
       tags: [],
       image: "",
+      link: "/project1"
+    },
+    {
+      title: "",
+      description: "",
+      tags: [],
+      image: "",
+      link: "/project2"
+    },
+    {
+      title: "",
+      description: "",
+      tags: [],
+      image: "",
       link: "/gofetch"
     },
     {
@@ -23,14 +37,14 @@ const Work: React.FC = () => {
       description: "",
       tags: [],
       image: "",
-      link: "/slim"
+      link: "/onenote"
     },
     {
-      title: "",
-      description: "",
-      tags: [],
-      image: "",
-      link: "/onenote"
+      title: "syngo® Lab Inventory Manager (sLIM)",
+      description: "A cloud-based inventory management system redesign for Siemens Healthineers, focusing on simplifying complex navigation and improving usability for lab professionals.",
+      tags: ["Information Architecture", "UX Research", "Interface Design", "Healthcare Technology"],
+      image: "/lovable-uploads/1679930e-73ec-4331-bbf1-af89667007ec.png",
+      link: "/slim"
     }
   ];
 
