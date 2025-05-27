@@ -114,7 +114,7 @@ const GoFetch = () => {
 
                 <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/79203c79-54ec-4315-9155-bd95ef97d107.png" 
+                    src="/lovable-uploads/284582bd-5f18-4ffe-957a-3204aab29352.png" 
                     alt="Information Architecture Comparison between iOS and Web" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
@@ -123,12 +123,12 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <img 
-                    src="/lovable-uploads/39a12b50-9924-444b-94a6-c018d2626fd8.png" 
+                    src="/lovable-uploads/28c1745a-4fd1-41d1-943c-9ffe7c4b0d28.png" 
                     alt="GoFetch iOS App Screenshots" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                   <img 
-                    src="/lovable-uploads/9beea901-81cb-420a-88b6-194fa3330c49.png" 
+                    src="/lovable-uploads/2f854d4a-e286-429f-9d93-a00755d55a5e.png" 
                     alt="GoFetch Web Platform Screenshots" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
@@ -156,7 +156,7 @@ const GoFetch = () => {
 
                 <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/5d8b7f40-f027-45bb-b649-888938af482f.png" 
+                    src="/lovable-uploads/33810cc1-c871-466c-a7ca-0a19b5abb118.png" 
                     alt="GoFetch Design System Components" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
@@ -165,24 +165,15 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <img 
-                    src="/lovable-uploads/80dff5ae-a43e-47f8-b3e9-2f8a0104d036.png" 
-                    alt="GoFetch Brand Colors and Typography" 
+                    src="/lovable-uploads/44eb7cd7-93f3-4537-8bfb-5e030fb17b90.png" 
+                    alt="GoFetch Updated iOS Interface" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                   <img 
-                    src="/lovable-uploads/e12a3a45-18df-42cb-ad13-255fe2966928.png" 
-                    alt="GoFetch UI Components Library" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                </div>
-
-                <div className="mb-12">
-                  <img 
-                    src="/lovable-uploads/7fb41454-02d2-47d7-b36c-0804a23c8bf6.png" 
+                    src="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.png" 
                     alt="GoFetch Updated Web Platform" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
-                  <p className="text-sm text-foreground/60 mt-2 text-center">Updated web platform with consistent navigation and branding</p>
                 </div>
 
                 <hr className="my-12 border-border/50" />
@@ -199,17 +190,13 @@ const GoFetch = () => {
                   <li>• Error handling and input validation were poor</li>
                 </ul>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/ec9681c4-9a25-43b2-8134-d97a49899d96.png" 
+                    src="/lovable-uploads/4f7965c9-474f-4fa2-9b1d-aac92f409da6.png" 
                     alt="Original Sitter Application Flow Problems" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
-                  <img 
-                    src="/lovable-uploads/cede914a-c532-4dbe-86e7-5e395cf3e3e9.png" 
-                    alt="Sitter Application User Journey Analysis" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
+                  <p className="text-sm text-foreground/60 mt-2 text-center">Original sitter application flow showing usability issues</p>
                 </div>
 
                 <h3 className="text-2xl font-semibold mb-6 text-primary">The Solution: Mobile-First, Guided Application Flow</h3>
@@ -226,7 +213,7 @@ const GoFetch = () => {
 
                 <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/9cb21830-f039-4a89-be57-e013c6a33982.png" 
+                    src="/lovable-uploads/4ef70443-9eb6-47ea-8fd9-97a1257e8ab6.png" 
                     alt="Redesigned Mobile-First Sitter Application Flow" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
@@ -235,17 +222,17 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <img 
-                    src="/lovable-uploads/3f4dfbe1-d9d2-49eb-96dd-134e23cc0365.png" 
+                    src="/lovable-uploads/4e447225-25bc-414e-8180-3f2d58e1374e.png" 
                     alt="Mobile Application Step 1" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                   <img 
-                    src="/lovable-uploads/3ab16492-9e3d-41b7-95cf-5814e1c06b16.png" 
+                    src="/lovable-uploads/43c5653f-5641-40d0-be8c-5fc6bc7ca71b.png" 
                     alt="Mobile Application Step 2" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
                   <img 
-                    src="/lovable-uploads/4e2579b8-ffbd-43b4-b204-0c6669f4200d.png" 
+                    src="/lovable-uploads/3f8cb404-0f37-4ddd-b25d-b25208d8b1c1.png" 
                     alt="Mobile Application Step 3" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
@@ -260,7 +247,7 @@ const GoFetch = () => {
 
                 <div className="mb-12">
                   <img 
-                    src="/lovable-uploads/a72a1653-35a7-4b9b-8b48-212f2bf038c0.png" 
+                    src="/lovable-uploads/44010bc8-c30e-47aa-b6ac-ad3d9b419761.png" 
                     alt="GoFetch Mobile App Final Screens" 
                     className="rounded-lg shadow-lg w-full h-auto"
                   />
