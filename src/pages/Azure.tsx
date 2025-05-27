@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -42,6 +43,14 @@ const Azure = () => {
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
                   Azure Communication Services enables developers to integrate voice, video, chat, and SMS into their applications using the same reliable platform that powers Microsoft Teams. In May 2021, I led the UX and UI design for the **Virtual Visit Sample Builder**—a tool designed to help developers quickly create and customize virtual healthcare experiences using Azure Communication Services.
                 </p>
+                
+                <div className="mb-8">
+                  <img 
+                    src="/lovable-uploads/dfec2eed-75b5-42ba-b425-61980e91c034.png" 
+                    alt="Azure Communication Services Virtual Visit Sample Builder"
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
+                </div>
                 
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
                   The project began with Azure Communication Services' first remote design sprint, bringing together a cross-functional team to ideate, prototype, and validate a tool that reduces setup friction for customers deploying virtual visits.
@@ -264,3 +273,4 @@ const Azure = () => {
 };
 
 export default Azure;
+
