@@ -14,7 +14,7 @@
     --popover: #ffffff;
     --popover-foreground: #1e293b;
 
-    --primary: #ec4899;
+    --primary: #ff9a9e;
     --primary-foreground: #ffffff;
 
     --secondary: #f0f9ff;
@@ -31,18 +31,18 @@
 
     --border: #e879f9;
     --input: #fdf2f8;
-    --ring: #ec4899;
+    --ring: #ff9a9e;
 
     --radius: 0.5rem;
 
     --sidebar-background: #ffffff;
     --sidebar-foreground: #1e293b;
-    --sidebar-primary: #ec4899;
+    --sidebar-primary: #ff9a9e;
     --sidebar-primary-foreground: #ffffff;
     --sidebar-accent: #fdf4ff;
     --sidebar-accent-foreground: #1e293b;
     --sidebar-border: #f3e8ff;
-    --sidebar-ring: #ec4899;
+    --sidebar-ring: #ff9a9e;
   }
 
   .dark {
@@ -55,7 +55,7 @@
     --popover: #1e1b2e;
     --popover-foreground: #f8fafc;
 
-    --primary: #ec4899;
+    --primary: #ff9a9e;
     --primary-foreground: #0f0a1a;
 
     --secondary: #2d1b4e;
@@ -72,16 +72,16 @@
 
     --border: #475569;
     --input: #334155;
-    --ring: #ec4899;
+    --ring: #ff9a9e;
 
     --sidebar-background: #1e1b2e;
     --sidebar-foreground: #f8fafc;
-    --sidebar-primary: #ec4899;
+    --sidebar-primary: #ff9a9e;
     --sidebar-primary-foreground: #0f0a1a;
     --sidebar-accent: #2d1b4e;
     --sidebar-accent-foreground: #f8fafc;
     --sidebar-border: #475569;
-    --sidebar-ring: #ec4899;
+    --sidebar-ring: #ff9a9e;
   }
 }
 
@@ -91,7 +91,16 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-purple-100 via-pink-50 to-violet-100 text-foreground transition-colors duration-300;
+    @apply text-foreground transition-colors duration-300;
+    background: linear-gradient(135deg, 
+      #ffecd2 0%,
+      #fcb69f 15%,
+      #ff9a9e 30%,
+      #fecfef 45%,
+      #fecfef 55%,
+      #a8edea 70%,
+      #fed6e3 85%,
+      #ffecd2 100%);
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -100,7 +109,12 @@
   }
 
   .dark body {
-    @apply bg-gradient-to-br from-purple-950 via-indigo-950 to-blue-950;
+    background: linear-gradient(135deg, 
+      #2d1b69 0%,
+      #11998e 25%,
+      #38ef7d 50%,
+      #667eea 75%,
+      #764ba2 100%);
   }
 }
 
