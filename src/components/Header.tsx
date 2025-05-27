@@ -16,7 +16,7 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold prism-gradient dark:bg-gradient-to-r dark:from-pink-400 dark:to-indigo-600 dark:bg-clip-text dark:text-transparent">
+          <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-indigo-600 bg-clip-text text-transparent">
             Jessica Downey
           </div>
           

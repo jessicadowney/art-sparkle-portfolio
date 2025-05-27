@@ -114,49 +114,6 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
-
-  /* Pastel rainbow gradient for light mode only */
-  .prism-gradient {
-    background: linear-gradient(135deg, 
-      #FFB3E6 0%, 
-      #FFD9B3 14%, 
-      #FFE6B3 28%, 
-      #E6FFB3 42%, 
-      #B3FFE6 56%, 
-      #B3E6FF 70%, 
-      #CCB3FF 84%, 
-      #FFB3CC 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    animation: prism-shift 8s ease-in-out infinite;
-  }
-
-  .prism-bg {
-    background: linear-gradient(135deg, 
-      #FFB3E6 0%, 
-      #FFD9B3 14%, 
-      #FFE6B3 28%, 
-      #E6FFB3 42%, 
-      #B3FFE6 56%, 
-      #B3E6FF 70%, 
-      #CCB3FF 84%, 
-      #FFB3CC 100%
-    );
-    background-size: 200% 200%;
-    animation: prism-shift 8s ease-in-out infinite;
-  }
-
-  @keyframes prism-shift {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
 }
 
 /* Custom scrollbar */
