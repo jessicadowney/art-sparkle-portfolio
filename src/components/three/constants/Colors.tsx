@@ -1,19 +1,16 @@
 
+// Rainbow colors inspired by three.js webgl_buffergeometry_indexed example
 export const vibrantColors = [
-  0xFF69B4, // Hot pink
-  0x00CED1, // Dark turquoise
-  0xFFD700, // Gold
-  0xFF6347, // Tomato
-  0x7FFF00, // Chartreuse
-  0x1E90FF, // Dodger blue
-  0xDA70D6, // Orchid
-  0xFF1493, // Deep pink
-  0x00FFFF, // Cyan
-  0xADFF2F, // Green yellow
-  0xFF8C00, // Dark orange
-  0x9370DB, // Medium purple
-  0xFF00FF, // Magenta
-  0x00FF7F, // Spring green
-  0xFFA500, // Orange
-  0x8A2BE2  // Blue violet
+  0xff0000, // Red
+  0xff8000, // Orange
+  0xffff00, // Yellow
+  0x80ff00, // Yellow-green
+  0x00ff00, // Green
+  0x00ff80, // Green-cyan
+  0x00ffff, // Cyan
+  0x0080ff, // Cyan-blue
+  0x0000ff, // Blue
+  0x8000ff, // Blue-magenta
+  0xff00ff, // Magenta
+  0xff0080  // Magenta-red
 ];

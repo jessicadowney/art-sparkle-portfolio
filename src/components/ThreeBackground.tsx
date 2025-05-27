@@ -3,14 +3,39 @@ import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { useTheme } from './ThemeProvider';
 import { createMouseCursor } from './three/shapes/MouseCursor';
-import { createHourglass } from './three/shapes/Hourglass';
-import { createHandCursor } from './three/shapes/HandCursor';
-import { createSmilingEmoji } from './three/shapes/SmilingEmoji';
-import { createCroissant } from './three/shapes/Croissant';
-import { createSprinkledDonut } from './three/shapes/SprinkledDonut';
 import { createSceneLighting } from './three/lighting/SceneLighting';
 import { createGlitterParticles } from './three/effects/GlitterParticles';
 import { vibrantColors } from './three/constants/Colors';
+
+// Create tiny sphere
+const createTinySphere = (vibrantColors: number[]) => {
+  const geometry = new THREE.SphereGeometry(0.15, 16, 12);
+  const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+  const material = new THREE.MeshPhysicalMaterial({ 
+    color: randomColor,
+    transparent: true,
+    opacity: 0.9,
+    roughness: 0.1,
+    metalness: 0.2,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.1
+  });
+  const sphere = new THREE.Mesh(geometry, material);
+  return sphere;
+};
+
+// Create sprinkle
+const createSprinkle = (vibrantColors: number[]) => {
+  const geometry = new THREE.CylinderGeometry(0.02, 0.02, 0.2);
+  const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+  const material = new THREE.MeshPhysicalMaterial({ 
+    color: randomColor,
+    roughness: 0.2,
+    metalness: 0.1
+  });
+  const sprinkle = new THREE.Mesh(geometry, material);
+  return sprinkle;
+};
 
 const ThreeBackground: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -49,29 +74,31 @@ const ThreeBackground: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create playful shapes with improved models
+    // Create playful shapes - only spheres, cursors and sprinkles
     const shapes = [];
     const shapeCreators = [
+      createTinySphere,
       createMouseCursor, 
-      createHourglass, 
-      createHandCursor, 
-      createSmilingEmoji, 
-      createCroissant, 
-      createSprinkledDonut
+      createSprinkle
     ];
     
     // Create multiple instances of each shape
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 30; i++) {
       const shapeCreator = shapeCreators[i % shapeCreators.length];
       const shape = shapeCreator(vibrantColors);
       
       // Enable shadows on all meshes
-      shape.traverse((child) => {
-        if (child instanceof THREE.Mesh) {
-          child.castShadow = true;
-          child.receiveShadow = true;
-        }
-      });
+      if (shape instanceof THREE.Mesh) {
+        shape.castShadow = true;
+        shape.receiveShadow = true;
+      } else {
+        shape.traverse((child) => {
+          if (child instanceof THREE.Mesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+          }
+        });
+      }
       
       // Random positioning
       shape.position.set(
@@ -150,14 +177,21 @@ const ThreeBackground: React.FC = () => {
       }
       renderer.dispose();
       shapes.forEach(shape => {
-        shape.traverse((child) => {
-          if (child instanceof THREE.Mesh) {
-            child.geometry.dispose();
-            if (child.material instanceof THREE.Material) {
-              child.material.dispose();
-            }
+        if (shape instanceof THREE.Mesh) {
+          shape.geometry.dispose();
+          if (shape.material instanceof THREE.Material) {
+            shape.material.dispose();
           }
-        });
+        } else {
+          shape.traverse((child) => {
+            if (child instanceof THREE.Mesh) {
+              child.geometry.dispose();
+              if (child.material instanceof THREE.Material) {
+                child.material.dispose();
+              }
+            }
+          });
+        }
       });
     };
   }, []);
