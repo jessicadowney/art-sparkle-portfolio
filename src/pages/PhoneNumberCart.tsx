@@ -47,15 +47,62 @@ const PhoneNumberCart = () => {
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                   Customer feedback highlighted major usability gaps in the Azure Portal's number acquisition experience:
                 </p>
-                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                <ul className="space-y-2 text-foreground/80 text-lg mb-6">
                   <li>• Only one phone number could be purchased per session</li>
                   <li>• The process required navigating multiple steps with unclear terminology</li>
                   <li>• Regulatory requirements caused drop-off due to lack of in-context guidance</li>
                   <li>• Competitors offered multi-number checkout and better filtering options</li>
                 </ul>
-                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                   These limitations directly impacted product adoption and satisfaction for Azure Communication Services.
                 </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="space-y-4">
+                    <img 
+                      src="/lovable-uploads/55c6fc45-24dc-46a3-8d3a-b70cbf703656.png" 
+                      alt="Original phone number wizard showing UI issues"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Double piping and unclear wizard patterns in the original interface</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="/lovable-uploads/b8d28d0e-5db4-4a8f-9c64-1465ef39e899.png" 
+                      alt="Confusing use case selection step"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Lengthy and confusing use case selection that caused customer confusion</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="/lovable-uploads/62a1358d-d1f3-4857-ab2b-0652e4541ecc.png" 
+                      alt="Number availability issues and frustrating experience"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Stock availability issues and frustrating restrictions based on use case selection</p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <img 
+                      src="/lovable-uploads/d6f3a4b2-0c65-4617-b17a-ca7760c5c55b.png" 
+                      alt="Single number limitation with timer pressure"
+                      className="w-full rounded-lg border border-border/50 shadow-sm"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Single number limitation with timer pressure creating urgency and stress</p>
+                  </div>
+                  
+                  <div className="space-y-4 md:col-span-2">
+                    <img 
+                      src="/lovable-uploads/410086e0-e20f-4790-b165-0397804ab49f.png" 
+                      alt="Summary step with poor labeling"
+                      className="w-full rounded-lg border border-border/50 shadow-sm max-w-lg mx-auto"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Summary step with poor labeling and unclear review process</p>
+                  </div>
+                </div>
 
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Research Insights</h2>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
