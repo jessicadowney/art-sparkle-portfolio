@@ -77,7 +77,9 @@ const Contact: React.FC = () => {
                 className="bg-gradient-to-r from-pink-500 to-indigo-600 hover:from-pink-600 hover:to-indigo-700 text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
                <a href="mailto:hello@jessicadowney.com"
-                  target="_blank">Get In Touch</a>
+                  target="_blank"
+                  className="!bg-transparent !border-none !p-0 !rounded-none hover:!bg-transparent !text-inherit !no-underline"
+                  style={{ background: 'none !important', border: 'none !important', textDecoration: 'none !important' }}>Get In Touch</a>
                 <Mail className="ml-2 h-5 w-5" />
               </Button>
             </div>
