@@ -154,7 +154,7 @@ const Azure = () => {
                   The sample builder remains in active development, with new features such as AI meeting capabilities currently being added. It continues to serve as a template for developer-focused onboarding experiences across Azure Communication Services.
                 </p>
 
-                <div className="flex flex-wrap gap-3 mt-8">
+                <div className="flex flex-wrap gap-3 mt-8 mb-12">
                   {["Product Design", "Developer Experience", "UX Research", "Design Systems", "Azure", "Healthcare Technology", "Information Architecture"].map((tag, index) => (
                     <span 
                       key={index}
@@ -163,6 +163,40 @@ const Azure = () => {
                       {tag}
                     </span>
                   ))}
+                </div>
+
+                <hr className="my-12 border-border/50" />
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Project Videos</h2>
+                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
+                  Watch these demonstrations of the Azure Communication Services Virtual Visit Sample Builder in action.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  <div className="aspect-video">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/oYufdHbGJhA?start=3"
+                      title="Azure Communication Services Demo 1"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="rounded-lg"
+                    ></iframe>
+                  </div>
+                  <div className="aspect-video">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/oYufdHbGJhA?start=3"
+                      title="Azure Communication Services Demo 2"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="rounded-lg"
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
