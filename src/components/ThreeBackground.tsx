@@ -7,31 +7,35 @@ import { createSceneLighting } from './three/lighting/SceneLighting';
 import { createGlitterParticles } from './three/effects/GlitterParticles';
 import { vibrantColors } from './three/constants/Colors';
 
-// Create tiny sphere
+// Create tiny sphere with luminous material
 const createTinySphere = (vibrantColors: number[]) => {
   const geometry = new THREE.SphereGeometry(0.15, 16, 12);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
   const material = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
     transparent: true,
-    opacity: 0.9,
-    roughness: 0.1,
-    metalness: 0.2,
-    clearcoat: 1.0,
-    clearcoatRoughness: 0.1
+    opacity: 0.95,
+    roughness: 0.0,
+    metalness: 0.0,
+    clearcoat: 0.0,
+    clearcoatRoughness: 0.0,
+    emissive: randomColor,
+    emissiveIntensity: 0.3
   });
   const sphere = new THREE.Mesh(geometry, material);
   return sphere;
 };
 
-// Create sprinkle
+// Create sprinkle with luminous material
 const createSprinkle = (vibrantColors: number[]) => {
   const geometry = new THREE.CylinderGeometry(0.02, 0.02, 0.2);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
   const material = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
-    roughness: 0.2,
-    metalness: 0.1
+    roughness: 0.0,
+    metalness: 0.0,
+    emissive: randomColor,
+    emissiveIntensity: 0.2
   });
   const sprinkle = new THREE.Mesh(geometry, material);
   return sprinkle;
@@ -63,12 +67,10 @@ const ThreeBackground: React.FC = () => {
     });
     rendererRef.current = renderer;
     
-    // Enable soft shadows
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    renderer.shadowMap.autoUpdate = true;
+    // Disable shadows for luminous effect
+    renderer.shadowMap.enabled = false;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.0;
+    renderer.toneMappingExposure = 1.2;
     
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -87,15 +89,15 @@ const ThreeBackground: React.FC = () => {
       const shapeCreator = shapeCreators[i % shapeCreators.length];
       const shape = shapeCreator(vibrantColors);
       
-      // Enable shadows on all meshes
+      // Disable shadows for luminous effect
       if (shape instanceof THREE.Mesh) {
-        shape.castShadow = true;
-        shape.receiveShadow = true;
+        shape.castShadow = false;
+        shape.receiveShadow = false;
       } else {
         shape.traverse((child) => {
           if (child instanceof THREE.Mesh) {
-            child.castShadow = true;
-            child.receiveShadow = true;
+            child.castShadow = false;
+            child.receiveShadow = false;
           }
         });
       }
@@ -125,7 +127,7 @@ const ThreeBackground: React.FC = () => {
     // Add rainbow glitter particles
     const glitter = createGlitterParticles(scene, vibrantColors);
 
-    // Add lighting
+    // Add soft lighting for luminous effect
     createSceneLighting(scene);
 
     camera.position.z = 25;
@@ -203,13 +205,13 @@ const ThreeBackground: React.FC = () => {
     const isDark = theme === 'dark' || 
       (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-    // Update background and fog
+    // Update background and fog for luminous effect
     if (isDark) {
-      sceneRef.current.fog = new THREE.Fog(0x0f172a, 20, 80);
-      rendererRef.current.setClearColor(0x0f172a, 0.1);
+      sceneRef.current.fog = new THREE.Fog(0x0f172a, 30, 100);
+      rendererRef.current.setClearColor(0x0f172a, 0.05);
     } else {
-      sceneRef.current.fog = new THREE.Fog(0xf0f9ff, 20, 80);
-      rendererRef.current.setClearColor(0xf0f9ff, 0.1);
+      sceneRef.current.fog = new THREE.Fog(0xf0f9ff, 30, 100);
+      rendererRef.current.setClearColor(0xf0f9ff, 0.05);
     }
   }, [theme]);
 

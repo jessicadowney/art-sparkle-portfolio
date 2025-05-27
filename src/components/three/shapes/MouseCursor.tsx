@@ -29,11 +29,13 @@ export const createMouseCursor = (vibrantColors: number[]) => {
   const arrowMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
     transparent: true,
-    opacity: 0.9,
-    roughness: 0.1,
-    metalness: 0.2,
-    clearcoat: 1.0,
-    clearcoatRoughness: 0.1
+    opacity: 0.95,
+    roughness: 0.0,
+    metalness: 0.0,
+    clearcoat: 0.0,
+    clearcoatRoughness: 0.0,
+    emissive: randomColor,
+    emissiveIntensity: 0.25
   });
   const arrow = new THREE.Mesh(arrowGeometry, arrowMaterial);
   arrow.scale.set(0.8, 0.8, 0.8);

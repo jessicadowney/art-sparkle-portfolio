@@ -2,46 +2,33 @@
 import * as THREE from 'three';
 
 export const createSceneLighting = (scene: THREE.Scene) => {
-  // Enhanced lighting setup
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+  // Very soft ambient light for luminous effect
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
   scene.add(ambientLight);
 
-  // Main directional light with very soft shadows
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+  // Extremely soft directional light with no shadows for luminous effect
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.2);
   directionalLight.position.set(20, 20, 10);
-  directionalLight.castShadow = true;
-  directionalLight.shadow.mapSize.width = 4096;
-  directionalLight.shadow.mapSize.height = 4096;
-  directionalLight.shadow.camera.near = 0.5;
-  directionalLight.shadow.camera.far = 120;
-  directionalLight.shadow.camera.left = -40;
-  directionalLight.shadow.camera.right = 40;
-  directionalLight.shadow.camera.top = 40;
-  directionalLight.shadow.camera.bottom = -40;
-  directionalLight.shadow.bias = -0.0001;
-  directionalLight.shadow.radius = 20;
+  directionalLight.castShadow = false; // No shadows for luminous effect
   scene.add(directionalLight);
 
-  // Multiple colored point lights for rainbow effect
+  // Very soft, faint colored point lights for subtle luminosity
   const pointLights = [
-    { color: 0xFF69B4, position: [-20, -20, -10], intensity: 0.4 },
-    { color: 0x00CED1, position: [20, -20, 10], intensity: 0.35 },
-    { color: 0xFFD700, position: [0, 25, 0], intensity: 0.3 },
-    { color: 0x7FFF00, position: [-15, 15, 15], intensity: 0.25 },
-    { color: 0x9370DB, position: [15, 15, -15], intensity: 0.3 }
+    { color: 0xFAFA90, position: [-20, -20, -10], intensity: 0.1 },
+    { color: 0xC7E4EB, position: [20, -20, 10], intensity: 0.08 },
+    { color: 0xFFCCC8, position: [0, 25, 0], intensity: 0.06 },
+    { color: 0xE4F4E1, position: [-15, 15, 15], intensity: 0.05 },
+    { color: 0xEAA1CC, position: [15, 15, -15], intensity: 0.07 }
   ];
 
   pointLights.forEach(lightConfig => {
-    const pointLight = new THREE.PointLight(lightConfig.color, lightConfig.intensity, 50);
+    const pointLight = new THREE.PointLight(lightConfig.color, lightConfig.intensity, 80);
     pointLight.position.set(...lightConfig.position);
-    pointLight.castShadow = true;
-    pointLight.shadow.radius = 15;
-    pointLight.shadow.mapSize.width = 1024;
-    pointLight.shadow.mapSize.height = 1024;
+    pointLight.castShadow = false; // No shadows for luminous effect
     scene.add(pointLight);
   });
 
-  // Hemisphere light for global illumination
-  const hemisphereLight = new THREE.HemisphereLight(0x87CEEB, 0xFFB6C1, 0.3);
+  // Very soft hemisphere light for gentle global illumination
+  const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.4);
   scene.add(hemisphereLight);
 };

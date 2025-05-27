@@ -1,16 +1,14 @@
 
-// Rainbow colors inspired by three.js webgl_buffergeometry_indexed example
+// Soft pastel colors for luminous three.js objects
 export const vibrantColors = [
-  0xff0000, // Red
-  0xff8000, // Orange
-  0xffff00, // Yellow
-  0x80ff00, // Yellow-green
-  0x00ff00, // Green
-  0x00ff80, // Green-cyan
-  0x00ffff, // Cyan
-  0x0080ff, // Cyan-blue
-  0x0000ff, // Blue
-  0x8000ff, // Blue-magenta
-  0xff00ff, // Magenta
-  0xff0080  // Magenta-red
+  0xFAFA90, // Soft yellow
+  0xC7E4EB, // Light blue
+  0xFFCCC8, // Peach pink
+  0xEDEAE3, // Warm white
+  0xE4F4E1, // Light green
+  0xC4EFE4, // Mint green
+  0xADCBE7, // Sky blue
+  0xEAA1CC, // Soft pink
+  0xF28F52, // Warm orange
+  0xEAE37E  // Pale yellow
 ];
