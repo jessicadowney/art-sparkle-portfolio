@@ -92,11 +92,44 @@ const GoFetch = () => {
                   services through a website modeled after Airbnb (circa 2016). However, this resulted in fragmented experiences:
                 </p>
 
+                <div className="mb-8">
+                  <img 
+                    src="https://jessicadowney.com/images/gfinitialioshome.png" 
+                    alt="Initial iOS Home Screen" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
+                </div>
+
                 <ul className="space-y-2 text-foreground/80 text-lg mb-8">
                   <li>• The app and website used different information architectures and terminology</li>
                   <li>• Users struggled to navigate due to inconsistent structure</li>
                   <li>• The web platform prioritized boarding, while the app only highlighted walking</li>
                 </ul>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/GoFetch-Web-Home.png" 
+                      alt="GoFetch Web Home Page" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/Old-GoFetch-Web-Find.png" 
+                      alt="Old GoFetch Web Find Page" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <img 
+                    src="https://jessicadowney.com/images/Old-GoFetch-Web-Sitter.png" 
+                    alt="Old GoFetch Web Sitter Profile" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
+                </div>
 
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold mb-4 text-primary">Examples of the problem:</h3>
@@ -112,19 +145,84 @@ const GoFetch = () => {
                   To address these issues, I created a brand and design system applied across both iOS and web platforms. This included:
                 </p>
 
+                <div className="mb-8">
+                  <img 
+                    src="https://jessicadowney.com/images/gofetch-sitemaps.png" 
+                    alt="GoFetch Site Maps and Information Architecture" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
+                </div>
+
+                <div className="mb-8">
+                  <img 
+                    src="https://jessicadowney.com/images/gf-brand-square001.png" 
+                    alt="GoFetch Brand Guidelines" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
+                </div>
+
                 <ul className="space-y-2 text-foreground/80 text-lg mb-8">
                   <li>• A cohesive visual identity with shared UI components</li>
                   <li>• Color palette, button styles, type system, and iconography</li>
                   <li>• Consistent naming and IA across all platforms</li>
                 </ul>
 
-                <div className="mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/GoFetch_UI_Kit_1.png" 
+                      alt="GoFetch UI Kit Part 1" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/GoFetch_UI_Kit_2.png" 
+                      alt="GoFetch UI Kit Part 2" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-4">
                   <h4 className="text-lg font-semibold mb-3 text-primary">Key updates:</h4>
                   <ul className="space-y-2 text-foreground/80">
                     <li>• Aligned homepage layouts for app and web</li>
                     <li>• Introduced tabs for core services (walks, boarding, daycare)</li>
                     <li>• Redesigned search and profile experiences to reflect consistent logic</li>
                   </ul>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/homepage-integration.png" 
+                      alt="Homepage Integration" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/search-integration.png" 
+                      alt="Search Integration" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/dashboard-integration.png" 
+                      alt="Dashboard Integration" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <img 
+                    src="https://jessicadowney.com/images/gfios-home.png" 
+                    alt="Updated GoFetch iOS Home Screen" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
                 </div>
 
                 <hr className="my-12 border-border/50" />
@@ -134,12 +232,45 @@ const GoFetch = () => {
                   When GoFetch expanded into peer-to-peer services, the sitter application process became a critical funnel. However:
                 </p>
 
+                <div className="mb-8">
+                  <img 
+                    src="https://jessicadowney.com/images/gfinitialsprprocess.png" 
+                    alt="Initial Service Provider Process" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
+                </div>
+
                 <ul className="space-y-2 text-foreground/80 text-lg mb-8">
                   <li>• Only 6% of potential sitters completed their profiles</li>
                   <li>• Out of 1,394 applicants, only 260 were onboarded</li>
                   <li>• Most traffic came from mobile, but the form was not responsive</li>
                   <li>• Error handling and input validation were poor</li>
                 </ul>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/gfga1.png" 
+                      alt="Google Analytics Data Part 1" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/gfga2.png" 
+                      alt="Google Analytics Data Part 2" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <img 
+                    src="https://jessicadowney.com/images/gfinitialmobilesp.png" 
+                    alt="Initial Mobile Service Provider Experience" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
+                </div>
 
                 <h3 className="text-2xl font-semibold mb-6 text-primary">The Solution: Mobile-First, Guided Application Flow</h3>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
@@ -152,6 +283,55 @@ const GoFetch = () => {
                   <li>• Per-step validation and better error recovery</li>
                   <li>• Responsive form layout across devices</li>
                 </ul>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/gfwiz1.png" 
+                      alt="GoFetch Wizard Step 1" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/gfwiz2.png" 
+                      alt="GoFetch Wizard Step 2" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/gfwiz3.png" 
+                      alt="GoFetch Wizard Step 3" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <img 
+                    src="https://jessicadowney.com/images/newgfspform.png" 
+                    alt="New GoFetch Service Provider Form" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/aboutyou-ftu.png" 
+                      alt="About You - First Time User Flow" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                  <div>
+                    <img 
+                      src="https://jessicadowney.com/images/aboutyou-ru.png" 
+                      alt="About You - Returning User Flow" 
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    />
+                  </div>
+                </div>
 
                 <h3 className="text-2xl font-semibold mb-6 text-primary">Results</h3>
                 <ul className="space-y-2 text-foreground/80 text-lg mb-8">
