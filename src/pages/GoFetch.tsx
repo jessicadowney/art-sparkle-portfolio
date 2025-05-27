@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -92,11 +91,12 @@ const GoFetch = () => {
                   services through a website modeled after Airbnb (circa 2016). However, this resulted in fragmented experiences:
                 </p>
 
-                <div className="mb-8">
+                <div className="mb-8 text-center">
                   <img 
                     src="https://jessicadowney.com/images/gfinitialioshome.png" 
                     alt="Initial iOS Home Screen" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    style={{ height: '50%', maxHeight: '400px', margin: '0 auto' }}
                   />
                 </div>
 
@@ -217,11 +217,12 @@ const GoFetch = () => {
                   </div>
                 </div>
 
-                <div className="mb-8">
+                <div className="mb-8 text-center">
                   <img 
                     src="https://jessicadowney.com/images/gfios-home.png" 
                     alt="Updated GoFetch iOS Home Screen" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                    style={{ height: '50%', maxHeight: '400px', margin: '0 auto' }}
                   />
                 </div>
 
