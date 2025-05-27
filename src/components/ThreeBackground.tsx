@@ -3,28 +3,10 @@ import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { useTheme } from './ThemeProvider';
 import { createMouseCursor } from './three/shapes/MouseCursor';
+import { createOctagramStar } from './three/shapes/OctagramStar';
 import { createSceneLighting } from './three/lighting/SceneLighting';
 import { createGlitterParticles } from './three/effects/GlitterParticles';
 import { vibrantColors } from './three/constants/Colors';
-
-// Create tiny sphere with luminous material
-const createTinySphere = (vibrantColors: number[]) => {
-  const geometry = new THREE.SphereGeometry(0.15, 16, 12);
-  const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
-  const material = new THREE.MeshPhysicalMaterial({ 
-    color: randomColor,
-    transparent: true,
-    opacity: 0.95,
-    roughness: 0.0,
-    metalness: 0.0,
-    clearcoat: 0.0,
-    clearcoatRoughness: 0.0,
-    emissive: randomColor,
-    emissiveIntensity: 0.3
-  });
-  const sphere = new THREE.Mesh(geometry, material);
-  return sphere;
-};
 
 // Create sprinkle with luminous material
 const createSprinkle = (vibrantColors: number[]) => {
@@ -76,10 +58,10 @@ const ThreeBackground: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create playful shapes - only spheres, cursors and sprinkles
+    // Create playful shapes - octagram stars, cursors and sprinkles
     const shapes = [];
     const shapeCreators = [
-      createTinySphere,
+      createOctagramStar,
       createMouseCursor, 
       createSprinkle
     ];
