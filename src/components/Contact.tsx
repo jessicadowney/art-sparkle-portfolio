@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Mail, Linkedin, Github, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -73,7 +74,7 @@ const Contact: React.FC = () => {
               </p>
               <Button 
                 size="lg"
-                className="animated-gradient text-white glass-stroke px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
+                className="animated-gradient text-white shiny-glass-stroke px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
                <a href="mailto:hello@jessicadowney.com"
                   target="_blank"
