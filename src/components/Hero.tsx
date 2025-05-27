@@ -16,10 +16,10 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative">
+    <section className="min-h-screen flex items-center justify-center relative py-20">
       <div className="container mx-auto px-6 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight antialiased leading-tight pb-4">
+          <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight antialiased leading-relaxed pb-8">
             <span className="block text-foreground/90">Senior</span>
             <span className="block bg-gradient-to-r from-pink-400 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
               Product Designer
