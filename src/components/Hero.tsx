@@ -11,6 +11,10 @@ const Hero: React.FC = () => {
     }
   };
 
+  const openResume = () => {
+    window.open('https://drive.google.com/file/d/1UCw89u3GRPw3xHg0_14dQt18N3iD9S5E/view?usp=drive_link', '_blank');
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative">
       <div className="container mx-auto px-6 text-center">
@@ -38,6 +42,7 @@ const Hero: React.FC = () => {
             </Button>
             
             <Button 
+              onClick={openResume}
               variant="outline"
               size="lg"
               className="px-8 py-3 rounded-full text-lg border-2 hover:bg-accent transition-all duration-300 hover:scale-105 antialiased"
