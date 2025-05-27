@@ -9,13 +9,13 @@ const Contact: React.FC = () => {
       icon: Mail,
       label: "Email",
       href: "mailto:jessica@jessicadowney.com",
-      username: "jessica@jessicadowney.com"
+      username: "hello@jessicadowney.com"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       href: "https://linkedin.com/in/jessicadowney",
-      username: "/in/jessicadowney"
+      username: "jessicadowney"
     },
     {
       icon: Users,
