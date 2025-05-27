@@ -19,10 +19,10 @@ const Work: React.FC = () => {
       link: "/project2"
     },
     {
-      title: "",
-      description: "",
-      tags: [],
-      image: "",
+      title: "GoFetch.ca",
+      description: "A pet care service platform that connects dog parents with trusted care providers, featuring unified design systems and improved sitter conversion rates through mobile-first experiences.",
+      tags: ["Product Design", "Design Systems", "Mobile UX", "Conversion Optimization", "Brand Design"],
+      image: "https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-Header.jpg",
       link: "/gofetch"
     },
     {

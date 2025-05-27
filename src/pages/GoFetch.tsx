@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -29,7 +30,7 @@ const GoFetch = () => {
             <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 mb-8">
               <div className="text-center mb-12">
                 <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
-                  <span className="text-primary">GoFetch.ca</span>
+                  <span className="text-primary">GoFetch.ca</span> Case Study
                 </h1>
                 <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
                   Pet Care Service Platform
@@ -39,7 +40,7 @@ const GoFetch = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div className="text-center">
                   <h3 className="font-semibold mb-2 text-primary">Role</h3>
-                  <p className="text-foreground/70">Head of Product Design<br/>Senior Product Designer</p>
+                  <p className="text-foreground/70">Lead Product Designer<br/>Head of Design</p>
                 </div>
                 <div className="text-center">
                   <h3 className="font-semibold mb-2 text-primary">Duration</h3>
@@ -60,13 +61,56 @@ const GoFetch = () => {
               </div>
 
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Project Overview</h2>
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  GoFetch is a pet care service platform that connects pet owners with trusted sitters 
-                  for services ranging from dog walking to overnight care. As the Head of Product Design 
-                  and Senior Product Designer, I led the complete redesign of both the iOS application 
-                  and web platform, creating unified experiences while diversifying service offerings.
+                  GoFetch.ca set out to simplify dog ownership by connecting dog parents with trusted care providers. 
+                  The platform offered services like boarding, dog walking, daycare, and house sitting. I joined the 
+                  company in November 2016, when the team was operating from a basement in Vancouver and included two 
+                  cofounders, four engineers, and one junior designer. As the team grew, I led the design practice 
+                  and brought on an illustrator to support the brand and product experience.
                 </p>
+
+                <div className="mb-12">
+                  <h3 className="text-2xl font-semibold mb-4 text-primary">My Role</h3>
+                  <ul className="space-y-2 text-foreground/80 text-lg">
+                    <li>• Lead Product Designer and Head of Design</li>
+                    <li>• UX research, wireframing, interaction design, and UI</li>
+                    <li>• Branding and design system development</li>
+                    <li>• Art direction and hiring</li>
+                  </ul>
+                </div>
+
+                <div className="mb-12">
+                  <h3 className="text-2xl font-semibold mb-4 text-primary">Results</h3>
+                  <ul className="space-y-2 text-foreground/80 text-lg">
+                    <li>• Created a cross-platform design system</li>
+                    <li>• Doubled sitter conversion rate (6% to 12%)</li>
+                    <li>• Brought brand and UX consistency to a fragmented product</li>
+                  </ul>
+                </div>
+
+                <hr className="my-12 border-border/50" />
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Challenge #1: Platform Discrepancies</h2>
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                  GoFetch originally launched as an iOS app offering dog walking only. Later, the company expanded 
+                  services through a website modeled after Airbnb (circa 2016). However, this resulted in fragmented experiences:
+                </p>
+
+                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                  <li>• The app and website used different information architectures and terminology</li>
+                  <li>• Users struggled to navigate due to inconsistent structure</li>
+                  <li>• The web platform prioritized boarding, while the app only highlighted walking</li>
+                </ul>
+
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold mb-4 text-primary">Examples of the problem:</h3>
+                  <ul className="space-y-2 text-foreground/80 text-lg">
+                    <li>• iOS and web homepages showed different services</li>
+                    <li>• Key navigation labels were inconsistent</li>
+                    <li>• Web design borrowed from Airbnb's focus on spaces, which didn't translate to pet care</li>
+                  </ul>
+                </div>
 
                 <div className="mb-12">
                   <img 
@@ -76,16 +120,25 @@ const GoFetch = () => {
                   />
                 </div>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">My Role & Responsibilities</h2>
-                <ul className="space-y-3 text-foreground/80 mb-8 text-lg">
-                  <li>• Redesigned the GoFetch iOS application to diversify service offering and create unified experience</li>
-                  <li>• Created and maintained UI style guides for web and iOS platforms</li>
-                  <li>• Provided UX and art direction for complete web platform redesign</li>
-                  <li>• Led requirements definition and UX architecture for new features</li>
-                  <li>• Designed wireframes, UI mockups, and prototypes for sitter onboarding and dashboard</li>
-                  <li>• Implemented new UI components using HTML/SASS and React JS</li>
-                  <li>• Facilitated design meetings and brainstorming sessions</li>
+                <h3 className="text-2xl font-semibold mb-6 text-primary">The Solution: Unified Design System & Navigation</h3>
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                  To address these issues, I created a brand and design system applied across both iOS and web platforms. This included:
+                </p>
+
+                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                  <li>• A cohesive visual identity with shared UI components</li>
+                  <li>• Color palette, button styles, type system, and iconography</li>
+                  <li>• Consistent naming and IA across all platforms</li>
                 </ul>
+
+                <div className="mb-8">
+                  <h4 className="text-lg font-semibold mb-3 text-primary">Key updates:</h4>
+                  <ul className="space-y-2 text-foreground/80">
+                    <li>• Aligned homepage layouts for app and web</li>
+                    <li>• Introduced tabs for core services (walks, boarding, daycare)</li>
+                    <li>• Redesigned search and profile experiences to reflect consistent logic</li>
+                  </ul>
+                </div>
 
                 <div className="mb-12">
                   <img 
@@ -95,20 +148,19 @@ const GoFetch = () => {
                   />
                 </div>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">The Challenge</h2>
-                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  The original GoFetch platform had limited service offerings and inconsistent experiences 
-                  across web and mobile. Pet owners needed a more comprehensive platform that could handle 
-                  various pet care services while maintaining trust and reliability. The design needed to 
-                  accommodate both pet owners seeking care and sitters offering services.
+                <hr className="my-12 border-border/50" />
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Challenge #2: Improving Pet Sitter Application Conversion</h2>
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                  When GoFetch expanded into peer-to-peer services, the sitter application process became a critical funnel. However:
                 </p>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Design Process</h2>
-                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                  I began with extensive user research to understand the pain points of both pet owners 
-                  and pet sitters. Through interviews and usability testing, I identified key areas for 
-                  improvement in the booking flow, communication tools, and service management.
-                </p>
+                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                  <li>• Only 6% of potential sitters completed their profiles</li>
+                  <li>• Out of 1,394 applicants, only 260 were onboarded</li>
+                  <li>• Most traffic came from mobile, but the form was not responsive</li>
+                  <li>• Error handling and input validation were poor</li>
+                </ul>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <img 
@@ -123,25 +175,17 @@ const GoFetch = () => {
                   />
                 </div>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Key Features Designed</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Enhanced Booking Flow</h3>
-                    <p className="text-foreground/70">Streamlined the process for pet owners to book services with clear pricing and availability</p>
-                  </div>
-                  <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Sitter Dashboard</h3>
-                    <p className="text-foreground/70">Comprehensive dashboard for sitters to manage bookings, availability, and earnings</p>
-                  </div>
-                  <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Real-time Updates</h3>
-                    <p className="text-foreground/70">Live updates and photo sharing during pet care sessions for peace of mind</p>
-                  </div>
-                  <div className="bg-accent/30 p-6 rounded-lg">
-                    <h3 className="font-semibold mb-3 text-primary">Trust & Safety</h3>
-                    <p className="text-foreground/70">Enhanced verification processes and safety features for both pets and sitters</p>
-                  </div>
-                </div>
+                <h3 className="text-2xl font-semibold mb-6 text-primary">The Solution: Mobile-First, Guided Application Flow</h3>
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                  I redesigned the sitter application as a mobile-first experience, introducing:
+                </p>
+
+                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                  <li>• A multi-step wizard for first-time users</li>
+                  <li>• A two-level nav for returning applicants</li>
+                  <li>• Per-step validation and better error recovery</li>
+                  <li>• Responsive form layout across devices</li>
+                </ul>
 
                 <div className="mb-12">
                   <img 
@@ -151,16 +195,15 @@ const GoFetch = () => {
                   />
                 </div>
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Results & Impact</h2>
-                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  The redesigned platform successfully launched with improved user engagement and expanded 
-                  service offerings. The unified design system reduced development time and ensured 
-                  consistent experiences across all touchpoints. User satisfaction scores increased 
-                  significantly, and the platform was able to accommodate new types of pet care services.
-                </p>
+                <h3 className="text-2xl font-semibold mb-6 text-primary">Results</h3>
+                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                  <li>• Doubled conversion from 6% to 12%</li>
+                  <li>• Improved user satisfaction and decreased abandonment</li>
+                  <li>• Set foundation for future service provider onboarding improvements</li>
+                </ul>
 
                 <div className="flex flex-wrap gap-3 mt-8">
-                  {["Product Design", "iOS Design", "Web Platform", "UI Systems", "User Research", "Prototyping", "React", "HTML/SASS"].map((tag, index) => (
+                  {["Product Design", "Design Systems", "Mobile UX", "Conversion Optimization", "Brand Design", "User Research", "Information Architecture"].map((tag, index) => (
                     <span 
                       key={index}
                       className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
