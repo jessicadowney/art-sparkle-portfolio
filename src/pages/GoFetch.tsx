@@ -52,14 +52,6 @@ const GoFetch = () => {
                 </div>
               </div>
 
-              <div className="mb-12">
-                <img 
-                  src="/lovable-uploads/6fc51124-ba16-4f67-b7a0-9ca19ffcc0ff.png" 
-                  alt="GoFetch App Overview" 
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-              </div>
-
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
@@ -112,28 +104,6 @@ const GoFetch = () => {
                   </ul>
                 </div>
 
-                <div className="mb-12">
-                  <img 
-                    src="/lovable-uploads/284582bd-5f18-4ffe-957a-3204aab29352.png" 
-                    alt="Information Architecture Comparison between iOS and Web" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <p className="text-sm text-foreground/60 mt-2 text-center">Information architecture comparison showing platform discrepancies</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                  <img 
-                    src="/lovable-uploads/28c1745a-4fd1-41d1-943c-9ffe7c4b0d28.png" 
-                    alt="GoFetch iOS App Screenshots" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <img 
-                    src="/lovable-uploads/2f854d4a-e286-429f-9d93-a00755d55a5e.png" 
-                    alt="GoFetch Web Platform Screenshots" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                </div>
-
                 <h3 className="text-2xl font-semibold mb-6 text-primary">The Solution: Unified Design System & Navigation</h3>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                   To address these issues, I created a brand and design system applied across both iOS and web platforms. This included:
@@ -154,28 +124,6 @@ const GoFetch = () => {
                   </ul>
                 </div>
 
-                <div className="mb-12">
-                  <img 
-                    src="/lovable-uploads/33810cc1-c871-466c-a7ca-0a19b5abb118.png" 
-                    alt="GoFetch Design System Components" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <p className="text-sm text-foreground/60 mt-2 text-center">Unified design system with shared components across platforms</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                  <img 
-                    src="/lovable-uploads/44eb7cd7-93f3-4537-8bfb-5e030fb17b90.png" 
-                    alt="GoFetch Updated iOS Interface" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <img 
-                    src="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.png" 
-                    alt="GoFetch Updated Web Platform" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                </div>
-
                 <hr className="my-12 border-border/50" />
 
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Challenge #2: Improving Pet Sitter Application Conversion</h2>
@@ -190,15 +138,6 @@ const GoFetch = () => {
                   <li>• Error handling and input validation were poor</li>
                 </ul>
 
-                <div className="mb-12">
-                  <img 
-                    src="/lovable-uploads/4f7965c9-474f-4fa2-9b1d-aac92f409da6.png" 
-                    alt="Original Sitter Application Flow Problems" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <p className="text-sm text-foreground/60 mt-2 text-center">Original sitter application flow showing usability issues</p>
-                </div>
-
                 <h3 className="text-2xl font-semibold mb-6 text-primary">The Solution: Mobile-First, Guided Application Flow</h3>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                   I redesigned the sitter application as a mobile-first experience, introducing:
@@ -211,48 +150,12 @@ const GoFetch = () => {
                   <li>• Responsive form layout across devices</li>
                 </ul>
 
-                <div className="mb-12">
-                  <img 
-                    src="/lovable-uploads/4ef70443-9eb6-47ea-8fd9-97a1257e8ab6.png" 
-                    alt="Redesigned Mobile-First Sitter Application Flow" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <p className="text-sm text-foreground/60 mt-2 text-center">Mobile-first sitter application with improved user experience</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                  <img 
-                    src="/lovable-uploads/4e447225-25bc-414e-8180-3f2d58e1374e.png" 
-                    alt="Mobile Application Step 1" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <img 
-                    src="/lovable-uploads/43c5653f-5641-40d0-be8c-5fc6bc7ca71b.png" 
-                    alt="Mobile Application Step 2" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <img 
-                    src="/lovable-uploads/3f8cb404-0f37-4ddd-b25d-b25208d8b1c1.png" 
-                    alt="Mobile Application Step 3" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                </div>
-
                 <h3 className="text-2xl font-semibold mb-6 text-primary">Results</h3>
                 <ul className="space-y-2 text-foreground/80 text-lg mb-8">
                   <li>• Doubled conversion from 6% to 12%</li>
                   <li>• Improved user satisfaction and decreased abandonment</li>
                   <li>• Set foundation for future service provider onboarding improvements</li>
                 </ul>
-
-                <div className="mb-12">
-                  <img 
-                    src="/lovable-uploads/44010bc8-c30e-47aa-b6ac-ad3d9b419761.png" 
-                    alt="GoFetch Mobile App Final Screens" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                  <p className="text-sm text-foreground/60 mt-2 text-center">Final mobile app screens showcasing the improved user experience</p>
-                </div>
 
                 <div className="flex flex-wrap gap-3 mt-8">
                   {["Product Design", "Design Systems", "Mobile UX", "Conversion Optimization", "Brand Design", "User Research", "Information Architecture"].map((tag, index) => (

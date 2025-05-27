@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import GoFetch from "./pages/GoFetch";
+import Azure from "./pages/Azure";
 import Ally from "./pages/Ally";
 import Slim from "./pages/Slim";
 import OneNote from "./pages/OneNote";
@@ -22,6 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/gofetch" element={<GoFetch />} />
+          <Route path="/azure" element={<Azure />} />
           <Route path="/ally" element={<Ally />} />
           <Route path="/slim" element={<Slim />} />
           <Route path="/onenote" element={<OneNote />} />

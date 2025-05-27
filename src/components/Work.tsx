@@ -12,11 +12,11 @@ const Work: React.FC = () => {
       link: "/project1"
     },
     {
-      title: "",
-      description: "",
-      tags: [],
-      image: "",
-      link: "/project2"
+      title: "Azure Communication Services: Virtual Visit Sample Builder",
+      description: "A developer tool for Azure Communication Services that helps create and customize virtual healthcare experiences with no-code configuration, ARM template generation, and downloadable repositories.",
+      tags: ["Product Design", "Developer Experience", "UX Research", "Design Systems", "Azure", "Healthcare Technology"],
+      image: "/placeholder.svg",
+      link: "/azure"
     },
     {
       title: "GoFetch.ca",
