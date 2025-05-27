@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
           
           <div className="flex justify-center space-x-8 text-sm text-foreground/60 antialiased">
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">10+</div>
+              <div className="text-2xl font-bold text-primary">15+</div>
               <div>Years Experience</div>
             </div>
             <div className="text-center">
