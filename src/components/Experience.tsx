@@ -103,8 +103,7 @@ const Experience: React.FC = () => {
               <span className="text-primary">Experience</span>
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto antialiased">
-              15+ years designing products at Microsoft and leading tech companies, specializing in Azure Communication Services and cross-platform experiences.
-            </p>
+Designing at the intersection of UX and product for 15+ years — across enterprise, industrial, and consumer experiences.            </p>
           </div>
           
           <div className="space-y-8">
