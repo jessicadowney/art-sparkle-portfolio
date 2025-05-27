@@ -39,7 +39,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <button 
             onClick={handleLogoClick}
-            className="text-2xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity"
           >
             Jessica Downey
           </button>

@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +13,7 @@
     --popover: #ffffff;
     --popover-foreground: #1e293b;
 
-    --primary: #dc2626;
+    --primary: #FABAB4;
     --primary-foreground: #ffffff;
 
     --secondary: #f0f9ff;
@@ -29,59 +28,59 @@
     --destructive: #ef4444;
     --destructive-foreground: #f8fafc;
 
-    --border: #f87171;
+    --border: #FABAB4;
     --input: #fdf2f8;
-    --ring: #dc2626;
+    --ring: #FABAB4;
 
     --radius: 0.5rem;
 
     --sidebar-background: #ffffff;
     --sidebar-foreground: #1e293b;
-    --sidebar-primary: #dc2626;
+    --sidebar-primary: #FABAB4;
     --sidebar-primary-foreground: #ffffff;
     --sidebar-accent: #fdf4ff;
     --sidebar-accent-foreground: #1e293b;
     --sidebar-border: #f3e8ff;
-    --sidebar-ring: #dc2626;
+    --sidebar-ring: #FABAB4;
   }
 
   .dark {
-    --background: #0a0a1a;
+    --background: #03022B;
     --foreground: #f8fafc;
 
-    --card: #1a1a2e;
+    --card: #0a0829;
     --card-foreground: #f8fafc;
 
-    --popover: #1a1a2e;
+    --popover: #0a0829;
     --popover-foreground: #f8fafc;
 
-    --primary: #f87171;
-    --primary-foreground: #0a0a1a;
+    --primary: #FABAB4;
+    --primary-foreground: #03022B;
 
-    --secondary: #16213e;
+    --secondary: #0f0e3a;
     --secondary-foreground: #f8fafc;
 
-    --muted: #2a2a4e;
+    --muted: #1a1854;
     --muted-foreground: #94a3b8;
 
-    --accent: #1e3a8a;
+    --accent: #1e1c6b;
     --accent-foreground: #f8fafc;
 
     --destructive: #ef4444;
     --destructive-foreground: #f8fafc;
 
-    --border: #374151;
-    --input: #1f2937;
-    --ring: #f87171;
+    --border: #2a2875;
+    --input: #1a1854;
+    --ring: #FABAB4;
 
-    --sidebar-background: #1a1a2e;
+    --sidebar-background: #0a0829;
     --sidebar-foreground: #f8fafc;
-    --sidebar-primary: #f87171;
-    --sidebar-primary-foreground: #0a0a1a;
-    --sidebar-accent: #16213e;
+    --sidebar-primary: #FABAB4;
+    --sidebar-primary-foreground: #03022B;
+    --sidebar-accent: #0f0e3a;
     --sidebar-accent-foreground: #f8fafc;
-    --sidebar-border: #374151;
-    --sidebar-ring: #f87171;
+    --sidebar-border: #2a2875;
+    --sidebar-ring: #FABAB4;
   }
 }
 
@@ -100,7 +99,7 @@
   }
 
   .dark body {
-    @apply bg-gradient-to-br from-gray-900 via-blue-950 to-indigo-950;
+    background: linear-gradient(135deg, #03022B 0%, #0a0829 50%, #1a1854 100%);
   }
 }
 
