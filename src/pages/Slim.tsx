@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -59,7 +58,7 @@ const Slim = () => {
                 <img 
                   src="/lovable-uploads/43c5653f-5641-40d0-be8c-5fc6bc7ca71b.png" 
                   alt="Siemens Brand Identity" 
-                  className="rounded-lg shadow-lg w-full h-auto"
+                  className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                 />
               </div>
 
@@ -85,7 +84,7 @@ const Slim = () => {
                     <img 
                       src="/lovable-uploads/39a12b50-9924-444b-94a6-c018d2626fd8.png" 
                       alt="sLIM Lab Workstation with RFID Scanner" 
-                      className="rounded-lg shadow-lg w-full h-auto"
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                 </div>
@@ -108,7 +107,7 @@ const Slim = () => {
                   <img 
                     src="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.png" 
                     alt="Streamlined Workflow Management" 
-                    className="rounded-lg shadow-lg w-full h-auto"
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
                 </div>
                 
@@ -116,7 +115,7 @@ const Slim = () => {
                   <img 
                     src="/lovable-uploads/7fb41454-02d2-47d7-b36c-0804a23c8bf6.png" 
                     alt="Original Interface - Complex Navigation System" 
-                    className="rounded-lg shadow-lg w-full h-auto"
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
                 </div>
 
@@ -154,7 +153,7 @@ const Slim = () => {
                   <img 
                     src="/lovable-uploads/e8eda6a9-4f4e-48bb-9024-830d86407f85.png" 
                     alt="Redesigned Interface in Modern Lab Environment" 
-                    className="rounded-lg shadow-lg w-full h-auto"
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
                 </div>
 
@@ -163,24 +162,23 @@ const Slim = () => {
                     <img 
                       src="/lovable-uploads/3ab16492-9e3d-41b7-95cf-5814e1c06b16.png" 
                       alt="Redesigned Current Stock Interface" 
-                      className="rounded-lg shadow-lg w-full h-auto"
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
                       src="/lovable-uploads/5d9f6508-c786-48eb-96a2-53f489f1ee86.png" 
                       alt="Improved Events Management Interface" 
-                      className="rounded-lg shadow-lg w-full h-auto"
+                      className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                 </div>
-
 
                 <div className="mb-12">
                   <img 
                     src="/lovable-uploads/79203c79-54ec-4315-9155-bd95ef97d107.png" 
                     alt="Lab Professionals Using Redesigned sLIM System" 
-                    className="rounded-lg shadow-lg w-full h-auto"
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
                 </div>
 

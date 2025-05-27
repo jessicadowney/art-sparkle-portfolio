@@ -56,8 +56,8 @@ Curious how I think? Here's something I wrote:
             
             <div className="animate-scale-in">
               <div className="relative w-80 h-80 mx-auto">
-                {/* First image - positioned much higher so face is visible */}
-                <div className="absolute -top-8 left-12 w-48 h-48 group cursor-pointer z-30">
+                {/* First image - positioned much higher so face is visible (44+ points higher) */}
+                <div className="absolute -top-20 left-12 w-48 h-48 group cursor-pointer z-30">
                   <img 
                     src="/lovable-uploads/daec6d9b-bfe6-4ff8-a782-31d6d1d0a88f.png" 
                     alt="Jessica with baby in hiking carrier"
