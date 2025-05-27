@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,6 +101,30 @@
 
   .dark body {
     background: linear-gradient(135deg, #03022B 0%, #0a0829 50%, #1a1854 100%);
+  }
+
+  /* Style all anchor links */
+  a[href] {
+    background: linear-gradient(135deg, rgba(255, 176, 176, 0.15), rgba(255, 176, 176, 0.08));
+    border-bottom: 2px dotted var(--primary);
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  a[href]:hover {
+    background: linear-gradient(135deg, rgba(255, 176, 176, 0.25), rgba(255, 176, 176, 0.15));
+    border-bottom-style: solid;
+    transform: translateY(-1px);
+  }
+
+  .dark a[href] {
+    background: linear-gradient(135deg, rgba(255, 176, 176, 0.1), rgba(255, 176, 176, 0.05));
+  }
+
+  .dark a[href]:hover {
+    background: linear-gradient(135deg, rgba(255, 176, 176, 0.2), rgba(255, 176, 176, 0.1));
   }
 }
 
