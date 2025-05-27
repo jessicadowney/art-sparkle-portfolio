@@ -28,7 +28,7 @@ const Work: React.FC = () => {
     {
       title: "Amped Wireless Ally",
       description: "A white-labeled security and parental control app designed for Wi-Fi routers, featuring streamlined setup flows and intuitive network management for families.",
-      tags: ["Mobile Design", "UX Strategy", "Information Architecture", "User Research"],
+      tags: ["Mobile Design", "UX Strategy", "Information Architecture", "Mobile UX"],
       image: "/lovable-uploads/247125df-8a71-4d2d-ab6a-d13b1a061447.png",
       link: "/ally"
     },
