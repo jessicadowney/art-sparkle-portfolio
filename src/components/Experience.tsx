@@ -6,8 +6,8 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       title: "Senior Product Designer",
-      company: "Microsoft",
-      location: "Azure Communication Services",
+      company: "Microsoft - Azure Communication Services",
+      location: "Vancouver, BC, Canada",
       period: "2021 - Present",
       description: "Owning UX/UI vision and design direction for new Azure Communication Services features in Azure portal, including Short Codes & Sample Builder, improving developer adoption and usability.",
       achievements: [
@@ -19,8 +19,8 @@ const Experience: React.FC = () => {
     },
     {
       title: "Product Designer",
-      company: "Microsoft",
-      location: "Azure Communication Services",
+      company: "Microsoft - Azure Communication Services",
+      location: "Vancouver, BC, Canada",
       period: "Jan 2021 - Sep 2021",
       description: "Designing wireframes, UI and prototypes for Azure Communication Services, focusing on Direct Routing UX and improving customer onboarding in Azure Portal.",
       achievements: [
@@ -31,8 +31,8 @@ const Experience: React.FC = () => {
     },
     {
       title: "Product Designer",
-      company: "Microsoft",
-      location: "OneNote - Vancouver, Canada",
+      company: "Microsoft - OneNote",
+      location: "Vancouver, BC, Canada",
       period: "2018 - 2021",
       description: "Designing wireframes, UI and prototypes for Microsoft OneNote, focusing on integration improvements and syncing concepts across platforms.",
       achievements: [
@@ -44,7 +44,7 @@ const Experience: React.FC = () => {
     {
       title: "Head of Product Design",
       company: "GoFetch.ca",
-      location: "Vancouver, British Columbia",
+      location: "Vancouver, BC, Canada",
       period: "2017 - 2018",
       description: "Leading design meetings and running brainstorming sessions for new feature development. Provided UX and art direction to redesign web & iOS platforms.",
       achievements: [
@@ -56,7 +56,7 @@ const Experience: React.FC = () => {
     },
     {
       title: "Senior Interaction Designer",
-      company: "AVG Technologies",
+      company: "AVG Technologies - Innovation Group",
       location: "Amsterdam, Netherlands",
       period: "2015 - 2016",
       description: "Supported concept development within the Innovation Group, facilitating design sprints and creating high-fidelity prototypes for user testing.",
@@ -69,7 +69,7 @@ const Experience: React.FC = () => {
     },
     {
       title: "Interaction Designer",
-      company: "AVG Technologies", 
+      company: "AVG Technologies - Innovation Group",
       location: "Amsterdam, Netherlands",
       period: "2012 - 2015",
       description: "Supported concept development within the Innovation Group with focus on concept generation, storyboarding, and rapid prototyping.",
@@ -82,7 +82,7 @@ const Experience: React.FC = () => {
     {
       title: "IXD/UX Designer",
       company: "Siemens Corporate Research USA",
-      location: "Princeton, NJ",
+      location: "Princeton, NJ, USA",
       period: "2011 - 2012", 
       description: "Designed user interfaces for new Siemens products & systems, leading requirements definition and UX for healthcare & industry sector products.",
       achievements: [
@@ -103,7 +103,7 @@ const Experience: React.FC = () => {
               <span className="text-primary">Experience</span>
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto antialiased">
-              10+ years designing products at Microsoft and leading tech companies, specializing in Azure Communication Services and cross-platform experiences.
+              15+ years designing products at Microsoft and leading tech companies, specializing in Azure Communication Services and cross-platform experiences.
             </p>
           </div>
           
