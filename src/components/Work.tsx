@@ -33,10 +33,10 @@ const Work: React.FC = () => {
       link: "/ally"
     },
     {
-      title: "",
-      description: "",
-      tags: [],
-      image: "",
+      title: "Microsoft OneNote: Cloud Attachment Insertion Prompt",
+      description: "A collaborative note-taking platform feature that reinstated cloud attachment capabilities with contextual options based on file type, improving user workflow and platform parity.",
+      tags: ["Product Design", "UX Research", "Accessibility", "Fluent UI"],
+      image: "/lovable-uploads/ff2b8e20-f09f-46f7-a76b-4c18e3bd0f07.png",
       link: "/onenote"
     },
     {
