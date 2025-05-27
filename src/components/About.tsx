@@ -98,17 +98,6 @@ Curious how I think? Here's something I wrote:
               </div>
             ))}
           </div>
-
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold mb-6 text-primary">Design Sprint Process</h3>
-            <div className="max-w-4xl mx-auto">
-              <img 
-                src="/lovable-uploads/4edd9b31-c7a9-47a5-aaf3-aea2d49ee270.png" 
-                alt="Design Sprint Process showing 6 phases: Understand, Define, Sketch, Decide, Prototype, and Validate with corresponding dates"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
