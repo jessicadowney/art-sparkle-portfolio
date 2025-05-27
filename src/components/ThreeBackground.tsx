@@ -43,11 +43,11 @@ const ThreeBackground: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create playful shapes with more hearts
+    // Create playful shapes with MORE hearts and better positioning
     const shapes = [];
     
-    // Create hearts (60% of shapes)
-    for (let i = 0; i < 40; i++) {
+    // Create hearts (80% of shapes - increased from 60%)
+    for (let i = 0; i < 50; i++) {
       const heart = createTinyHeart(vibrantColors);
       
       // Disable shadows for luminous effect
@@ -58,11 +58,11 @@ const ThreeBackground: React.FC = () => {
         }
       });
       
-      // Random positioning
+      // Better positioning - closer to camera and more spread out
       heart.position.set(
-        (Math.random() - 0.5) * 50,
         (Math.random() - 0.5) * 40,
-        (Math.random() - 0.5) * 30
+        (Math.random() - 0.5) * 30,
+        (Math.random() - 0.5) * 20 - 5 // Bring them closer to camera
       );
       
       // Random rotation
@@ -72,17 +72,19 @@ const ThreeBackground: React.FC = () => {
         Math.random() * Math.PI
       );
 
-      // Random scale for hearts
-      const scale = Math.random() * 0.5 + 0.4;
+      // Better scale variation for hearts
+      const scale = Math.random() * 0.8 + 0.6;
       heart.scale.set(scale, scale, scale);
 
       scene.add(heart);
       shapes.push(heart);
+      
+      console.log(`Added heart ${i + 1} at position:`, heart.position);
     }
 
-    // Create fewer stars and cursors (40% of shapes)
+    // Create fewer stars and cursors (20% of shapes)
     const otherShapeCreators = [createOctagramStar, createMouseCursor];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 12; i++) {
       const shapeCreator = otherShapeCreators[i % otherShapeCreators.length];
       const shape = shapeCreator(vibrantColors);
       
@@ -101,9 +103,9 @@ const ThreeBackground: React.FC = () => {
       
       // Random positioning
       shape.position.set(
-        (Math.random() - 0.5) * 50,
         (Math.random() - 0.5) * 40,
-        (Math.random() - 0.5) * 30
+        (Math.random() - 0.5) * 30,
+        (Math.random() - 0.5) * 20 - 5
       );
       
       // Random rotation
@@ -124,7 +126,9 @@ const ThreeBackground: React.FC = () => {
     // Add soft lighting for luminous effect
     createSceneLighting(scene);
 
-    camera.position.z = 25;
+    camera.position.z = 15; // Moved camera closer to see hearts better
+
+    console.log(`Total shapes created: ${shapes.length} (${50} hearts + ${12} other shapes)`);
 
     // Animation loop
     const animate = () => {
@@ -197,10 +201,10 @@ const ThreeBackground: React.FC = () => {
 
     // Update background and fog for luminous effect
     if (isDark) {
-      sceneRef.current.fog = new THREE.Fog(0x0f172a, 30, 100);
+      sceneRef.current.fog = new THREE.Fog(0x0f172a, 20, 80);
       rendererRef.current.setClearColor(0x0f172a, 0.05);
     } else {
-      sceneRef.current.fog = new THREE.Fog(0xf0f9ff, 30, 100);
+      sceneRef.current.fog = new THREE.Fog(0xf0f9ff, 20, 80);
       rendererRef.current.setClearColor(0xf0f9ff, 0.05);
     }
   }, [theme]);
