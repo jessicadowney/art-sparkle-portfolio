@@ -11,9 +11,10 @@ interface WorkCardProps {
   tags: string[];
   image: string;
   link?: string;
+  year: string;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, link }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, link, year }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -38,6 +39,11 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
         <div className="absolute top-4 right-4">
           <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm">
             <ExternalLink className="h-5 w-5 text-white" />
+          </div>
+        </div>
+        <div className="absolute top-4 left-4">
+          <div className="bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
+            {year}
           </div>
         </div>
       </div>

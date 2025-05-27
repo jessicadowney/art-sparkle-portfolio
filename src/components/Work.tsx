@@ -9,42 +9,48 @@ const Work: React.FC = () => {
       description: "A redesigned phone number acquisition experience that replaced rigid one-at-a-time purchasing with a flexible shopping cart, enabling multi-number provisioning and improving user satisfaction.",
       tags: ["Product Design", "UX Research", "Azure Portal", "Developer Experience", "E-commerce UX"],
       image: "/lovable-uploads/e8fbc49c-4872-4595-a175-5180913da088.png",
-      link: "/phone-number-cart"
+      link: "/phone-number-cart",
+      year: "2022"
     },
     {
       title: "Virtual Visit Sample Builder for Azure Communication Services",
       description: "A developer tool for Azure Communication Services that helps create and customize virtual healthcare experiences with no-code configuration, ARM template generation, and downloadable repositories.",
       tags: ["Product Design", "Developer Experience", "UX Research", "Design Systems", "Azure", "Healthcare Technology"],
       image: "/lovable-uploads/dfec2eed-75b5-42ba-b425-61980e91c034.png",
-      link: "/azure"
+      link: "/azure",
+      year: "2021"
     },
     {
       title: "GoFetch.ca",
       description: "A pet care service platform that connects dog parents with trusted care providers, featuring unified design systems and improved sitter conversion rates through mobile-first experiences.",
       tags: ["Product Design", "Design Systems", "Mobile UX", "Conversion Optimization", "Brand Design"],
       image: "https://jessicadowney.com/wp-content/uploads/2024/01/GoFetch-Header.jpg",
-      link: "/gofetch"
+      link: "/gofetch",
+      year: "2018"
     },
     {
       title: "Amped Wireless Ally",
       description: "A white-labeled security and parental control app designed for Wi-Fi routers, featuring streamlined setup flows and intuitive network management for families.",
       tags: ["Mobile Design", "UX Strategy", "Information Architecture", "Mobile UX"],
       image: "/lovable-uploads/247125df-8a71-4d2d-ab6a-d13b1a061447.png",
-      link: "/ally"
+      link: "/ally",
+      year: "2016"
     },
     {
       title: "Microsoft OneNote: Cloud Attachment Insertion Prompt",
       description: "A collaborative note-taking platform feature that reinstated cloud attachment capabilities with contextual options based on file type, improving user workflow and platform parity.",
       tags: ["Product Design", "UX Research", "Accessibility", "Fluent UI"],
       image: "/lovable-uploads/ff2b8e20-f09f-46f7-a76b-4c18e3bd0f07.png",
-      link: "/onenote"
+      link: "/onenote",
+      year: "2019"
     },
     {
       title: "syngo® Lab Inventory Manager (sLIM)",
       description: "A cloud-based inventory management system redesign for Siemens Healthineers, focusing on simplifying complex navigation and improving usability for lab professionals.",
       tags: ["Information Architecture", "UX Research", "Interface Design", "Healthcare Technology"],
       image: "/lovable-uploads/1679930e-73ec-4331-bbf1-af89667007ec.png",
-      link: "/slim"
+      link: "/slim",
+      year: "2012"
     }
   ];
 
