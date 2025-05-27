@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Lightbulb, Target, Award } from 'lucide-react';
 
@@ -55,9 +54,8 @@ Curious how I think? Here's something I wrote:
             </div>
             
             <div className="animate-scale-in">
-              <div className="relative w-80 h-80 mx-auto">
-                {/* First image - positioned much higher so face is visible (44+ points higher) */}
-                <div className="absolute -top-20 left-12 w-48 h-48 group cursor-pointer z-30">
+              <div className="flex flex-col items-center space-y-6 max-w-xs mx-auto">
+                <div className="w-48 h-48 group cursor-pointer">
                   <img 
                     src="/lovable-uploads/daec6d9b-bfe6-4ff8-a782-31d6d1d0a88f.png" 
                     alt="Jessica with baby in hiking carrier"
@@ -65,8 +63,7 @@ Curious how I think? Here's something I wrote:
                   />
                 </div>
                 
-                {/* Second image - lower position */}
-                <div className="absolute top-20 left-0 w-48 h-48 group cursor-pointer z-10">
+                <div className="w-48 h-48 group cursor-pointer">
                   <img 
                     src="/lovable-uploads/90982b97-9bcd-4f49-bde7-1c2f08f108e6.png" 
                     alt="Jessica under cherry blossoms"
@@ -74,8 +71,7 @@ Curious how I think? Here's something I wrote:
                   />
                 </div>
                 
-                {/* Third image - lower position, overlapping */}
-                <div className="absolute top-20 left-32 w-48 h-48 group cursor-pointer z-20">
+                <div className="w-48 h-48 group cursor-pointer">
                   <img 
                     src="/lovable-uploads/e1547e16-1b69-4e9f-ad12-438f3d035dd3.png" 
                     alt="Jessica with heart sunglasses making peace sign"
