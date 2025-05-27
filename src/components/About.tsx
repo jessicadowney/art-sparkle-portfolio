@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Users, Lightbulb, Target, Award } from 'lucide-react';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const About: React.FC = () => {
   const principles = [
@@ -57,14 +56,35 @@ Curious how I think? Here's something I wrote:
             
             <div className="animate-scale-in">
               <div className="aspect-square bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex flex-col items-center justify-center p-8">
-                <Avatar className="w-32 h-32 mb-6">
-                  <AvatarImage 
-                    src="https://media.licdn.com/dms/image/v2/D5603AQGlAQhW3JFrHA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730312836452?e=1753920000&v=beta&t=8r5gifeRhxy05MAcYJrXWNuEE40NL3KaUXoNUyEo8G8" 
-                    alt="Jessica's profile picture"
-                    className="object-cover"
-                  />
-                  <AvatarFallback className="text-2xl font-semibold">JD</AvatarFallback>
-                </Avatar>
+                <div className="relative w-64 h-48 mb-6">
+                  {/* First image - back layer */}
+                  <div className="absolute top-0 left-0 w-32 h-32 group cursor-pointer">
+                    <img 
+                      src="/lovable-uploads/daec6d9b-bfe6-4ff8-a782-31d6d1d0a88f.png" 
+                      alt="Jessica with baby in hiking carrier"
+                      className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
+                    />
+                  </div>
+                  
+                  {/* Second image - middle layer, overlapping */}
+                  <div className="absolute top-4 left-20 w-32 h-32 group cursor-pointer z-10">
+                    <img 
+                      src="/lovable-uploads/90982b97-9bcd-4f49-bde7-1c2f08f108e6.png" 
+                      alt="Jessica under cherry blossoms"
+                      className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
+                    />
+                  </div>
+                  
+                  {/* Third image - front layer, overlapping */}
+                  <div className="absolute top-8 left-40 w-32 h-32 group cursor-pointer z-20">
+                    <img 
+                      src="/lovable-uploads/e1547e16-1b69-4e9f-ad12-438f3d035dd3.png" 
+                      alt="Jessica with heart sunglasses making peace sign"
+                      className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
+                    />
+                  </div>
+                </div>
+                
                 <div className="text-center">
                   <p className="text-foreground/60 font-medium">Design is not just what it looks like</p>
                   <p className="text-foreground/60">— it's how it works</p>
