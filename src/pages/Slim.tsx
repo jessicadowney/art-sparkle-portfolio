@@ -75,6 +75,14 @@ const Slim = () => {
                   </ul>
                 </div>
 
+                                <div className="mb-12">
+                  <img 
+                    src="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.png" 
+                    alt="Streamlined Workflow Management" 
+                    className="rounded-lg shadow-lg w-full h-auto"
+                  />
+                </div>
+                
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-12">
                   <div>
                     <img 
@@ -163,13 +171,6 @@ const Slim = () => {
                   </div>
                 </div>
 
-                <div className="mb-12">
-                  <img 
-                    src="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.png" 
-                    alt="Streamlined Workflow Management" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                </div>
 
                 <div className="mb-12">
                   <img 
