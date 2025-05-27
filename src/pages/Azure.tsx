@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -39,18 +40,18 @@ const Azure = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  Azure Communication Services enables developers to integrate voice, video, chat, and SMS into their applications using the same reliable platform that powers Microsoft Teams. As part of a cross-functional team, I led the UX and UI design for the **Virtual Visit Sample Builder**—a tool designed to help developers quickly create and customize virtual healthcare experiences using Azure Communication Services.
+                  Azure Communication Services enables developers to integrate voice, video, chat, and SMS into their applications using the same reliable platform that powers Microsoft Teams. In May 2021, I led the UX and UI design for the **Virtual Visit Sample Builder**—a tool designed to help developers quickly create and customize virtual healthcare experiences using Azure Communication Services.
                 </p>
                 
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  The project aimed to reduce integration friction and accelerate adoption by providing a configurable, code-free starting point for developers and product managers.
+                  The project began with Azure Communication Services' first remote design sprint, bringing together a cross-functional team to ideate, prototype, and validate a tool that reduces setup friction for customers deploying virtual visits.
                 </p>
 
                 <div className="mb-12">
                   <h3 className="text-2xl font-semibold mb-4 text-primary">My Role</h3>
                   <ul className="space-y-2 text-foreground/80 text-lg">
                     <li>• Lead Product Designer for developer experience</li>
-                    <li>• Ran and facilitated the design sprint to kick off the project</li>
+                    <li>• Facilitated the remote design sprint</li>
                     <li>• Conducted customer validation and user research</li>
                     <li>• Led research, information architecture, and UX/UI design</li>
                     <li>• Created the design system for all builder components</li>
@@ -69,9 +70,24 @@ const Azure = () => {
 
                 <hr className="my-12 border-border/50" />
 
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Design Sprint Process</h2>
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                  The project followed a structured five-phase design sprint:
+                </p>
+
+                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                  <li>• **Understand:** Lightning talks framed the problem space through customer journeys and competitive analysis.</li>
+                  <li>• **Define:** We framed our core challenge: "How might we stop hand-holding our customers and help them confidently build an Azure Communication Services virtual visits solution?"</li>
+                  <li>• **Sketch & Decide:** Through sketching and critique, we aligned on a storyboard for a no-code virtual visit builder.</li>
+                  <li>• **Prototype:** A clickable prototype was developed in Figma.</li>
+                  <li>• **Validate:** We tested the prototype with real customers including Microsoft CSE, CTCA, NTT, Avanade, and Specsavers.</li>
+                </ul>
+
+                <hr className="my-12 border-border/50" />
+
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Challenge #1: Simplifying Developer Onboarding</h2>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                  Many developers exploring Azure Communication Services were overwhelmed by the amount of code required to build a virtual visits experience from scratch. They needed:
+                  Many customers were overwhelmed by the amount of code required to build a virtual visit experience from scratch. They needed:
                 </p>
 
                 <ul className="space-y-2 text-foreground/80 text-lg mb-8">
@@ -80,7 +96,7 @@ const Azure = () => {
                   <li>• A faster way to visualize Azure Communication Services features in action</li>
                 </ul>
 
-                <h3 className="text-2xl font-semibold mb-6 text-primary">The Solution: Configurable Sample Builder</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-primary">Solution: Configurable Sample Builder</h3>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                   We created an interactive sample builder that:
                 </p>
@@ -92,16 +108,11 @@ const Azure = () => {
                   <li>• Includes embedded documentation and guidance</li>
                 </ul>
 
-                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  This gave developers and product managers the ability to customize and launch a virtual visit experience without digging through multiple tutorials or documentation pages.
-                </p>
-
                 <div className="mb-8">
                   <h4 className="text-xl font-semibold mb-4 text-primary">Key Features:</h4>
                   <ul className="space-y-2 text-foreground/80 text-lg">
                     <li>• No-code configuration UI with live preview</li>
                     <li>• ARM template generation for Azure deployment</li>
-                    <li>• Downloadable repository output</li>
                     <li>• Clear instructional scaffolding for healthcare scenarios</li>
                   </ul>
                 </div>
@@ -110,17 +121,12 @@ const Azure = () => {
 
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Challenge #2: Aligning with Azure & Microsoft Fluent Design</h2>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                  The tool needed to align with both Azure product standards and Microsoft's Fluent UI system. It also had to be usable for:
+                  The builder needed to align with Azure product standards and Microsoft's Fluent UI, and be usable by both developers and non-technical stakeholders.
                 </p>
 
-                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-                  <li>• Technical users (developers)</li>
-                  <li>• Non-technical stakeholders (product managers, solution architects)</li>
-                </ul>
-
-                <h3 className="text-2xl font-semibold mb-6 text-primary">The Solution: Design System & Interaction Patterns</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-primary">Solution: Design System & Interaction Patterns</h3>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                  I established a UI kit and layout guidelines based on Fluent UI and Azure Dev Portal conventions, including:
+                  I created a UI kit based on Fluent UI and Azure Dev Portal conventions, featuring:
                 </p>
 
                 <ul className="space-y-2 text-foreground/80 text-lg mb-8">
@@ -130,7 +136,7 @@ const Azure = () => {
                 </ul>
 
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  I partnered closely with engineering to ensure accessibility compliance, dark mode readiness, and localization support.
+                  I worked closely with engineering to ensure compliance with accessibility standards, dark mode, and localization.
                 </p>
 
                 <div className="grid grid-cols-1 gap-8 mb-8">
@@ -152,22 +158,46 @@ const Azure = () => {
 
                 <hr className="my-12 border-border/50" />
 
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Impact</h2>
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Key Insights from Customer Validation</h2>
+                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                  <li>• Simplicity and accessibility were key, especially in healthcare and retail.</li>
+                  <li>• Customers valued customization of branding, layout, and user roles.</li>
+                  <li>• Must-have features included call recording, file and screen sharing, and integration with existing systems.</li>
+                  <li>• Smaller orgs wanted turnkey solutions; larger enterprises viewed it as a customizable starting point.</li>
+                </ul>
+
+                <hr className="my-12 border-border/50" />
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Design Outcomes</h2>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                  The Virtual Visit Sample Builder became a go-to tool for internal Microsoft field teams and external partners building healthcare solutions with Azure Communication Services.
+                  The final prototype offered:
+                </p>
+
+                <ul className="space-y-2 text-foreground/80 text-lg mb-8">
+                  <li>• A template-driven builder with branding and layout options</li>
+                  <li>• Preview modes by device and user role</li>
+                  <li>• ARM template-based deployment to Azure</li>
+                  <li>• Guided flows and embedded tooltips</li>
+                </ul>
+
+                <hr className="my-12 border-border/50" />
+
+                <h2 className="text-3xl font-semibold mb-6 text-primary">Impact and What's Next</h2>
+                <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+                  The Virtual Visit Sample Builder was adopted by Microsoft field teams and partners as a key tool for Azure Communication Services adoption.
                 </p>
 
                 <div className="mb-8">
                   <h3 className="text-2xl font-semibold mb-4 text-primary">Outcomes:</h3>
                   <ul className="space-y-2 text-foreground/80 text-lg">
-                    <li>• Accelerated Azure Communication Services adoption in healthcare by reducing setup time</li>
-                    <li>• Showcased Azure Communication Services capabilities in a tangible, customizable way</li>
-                    <li>• Contributed to broader platform understanding and confidence</li>
+                    <li>• Accelerated Azure Communication Services implementation</li>
+                    <li>• Helped customers onboard with less friction</li>
+                    <li>• Provided a base for future development</li>
                   </ul>
                 </div>
 
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  The sample builder remains in active development, with new features such as AI meeting capabilities currently being added. It continues to serve as a template for developer-focused onboarding experiences across Azure Communication Services.
+                  The sample builder is still in active development. We are currently adding AI meeting capabilities to support more advanced scenarios and deepen the builder's value across sectors.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-8 mb-12">
