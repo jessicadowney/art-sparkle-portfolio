@@ -75,14 +75,7 @@ const Slim = () => {
                   </ul>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                  <div>
-                    <img 
-                      src="/lovable-uploads/9beea901-81cb-420a-88b6-194fa3330c49.png" 
-                      alt="sLIM in Lab Environment - Desktop Setup" 
-                      className="rounded-lg shadow-lg w-full h-auto"
-                    />
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-12">
                   <div>
                     <img 
                       src="/lovable-uploads/39a12b50-9924-444b-94a6-c018d2626fd8.png" 
