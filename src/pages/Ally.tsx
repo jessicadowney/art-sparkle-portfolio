@@ -67,7 +67,7 @@ const Ally = () => {
                 </p>
 
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  As the Staff Product Designer on this project, I was responsible for the end-to-end user experience, including information architecture, UI mockups and high-fidelity wireframes, end-to-end user flows, user story creation, and close collaboration with developers to ensure implementation quality.
+                  As the Senior Product Designer on this project, I was responsible for the end-to-end user experience, including information architecture, UI mockups and high-fidelity wireframes, end-to-end user flows, user story creation, and close collaboration with developers to ensure implementation quality.
                 </p>
 
                 <div className="mb-12">
