@@ -33,7 +33,7 @@ const OneNote = () => {
                   Microsoft OneNote: <span className="text-primary">Cloud Attachment Insertion Prompt</span>
                 </h1>
                 <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-                  A collaborative note-taking platform feature that reinstated cloud attachment capabilities
+                  Bringing cloud attachment to OneNote UWP and Mac
                 </p>
               </div>
 
