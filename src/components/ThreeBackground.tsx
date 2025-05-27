@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { useTheme } from './ThemeProvider';
 import { createMouseCursor } from './three/shapes/MouseCursor';
 import { createOctagramStar } from './three/shapes/OctagramStar';
+import { createTinyHeart } from './three/shapes/TinyHeart';
 import { createSceneLighting } from './three/lighting/SceneLighting';
 import { createGlitterParticles } from './three/effects/GlitterParticles';
 import { vibrantColors } from './three/constants/Colors';
@@ -43,15 +44,16 @@ const ThreeBackground: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create playful shapes - only octagram stars and mouse cursors
+    // Create playful shapes - octagram stars, mouse cursors, and tiny hearts
     const shapes = [];
     const shapeCreators = [
       createOctagramStar,
-      createMouseCursor
+      createMouseCursor,
+      createTinyHeart
     ];
     
     // Create multiple instances of each shape
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 45; i++) { // Increased count to accommodate hearts
       const shapeCreator = shapeCreators[i % shapeCreators.length];
       const shape = shapeCreator(vibrantColors);
       
@@ -82,8 +84,9 @@ const ThreeBackground: React.FC = () => {
         Math.random() * Math.PI
       );
 
-      // Random scale
-      const scale = Math.random() * 0.8 + 0.6;
+      // Random scale with hearts being smaller
+      const isHeart = i % 3 === 2; // Every third shape is a heart
+      const scale = isHeart ? Math.random() * 0.4 + 0.3 : Math.random() * 0.8 + 0.6;
       shape.scale.set(scale, scale, scale);
 
       scene.add(shape);
