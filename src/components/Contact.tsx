@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Linkedin, Github, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -66,7 +65,7 @@ const Contact: React.FC = () => {
               ))}
             </div>
             
-            <div className="bg-gradient-to-r from-pink-100/50 to-indigo-100/50 dark:from-pink-900/20 dark:to-indigo-900/20 rounded-2xl p-8 border border-border/50">
+            <div className="glass-container rounded-2xl p-8 border border-border/50">
               <h3 className="text-2xl font-semibold mb-4 antialiased">Open to exciting full-time opportunities</h3>
               <p className="text-foreground/70 mb-6 antialiased">
                 I'm currently seeking meaningful full-time positions where I can contribute to innovative products, 
@@ -74,7 +73,7 @@ const Contact: React.FC = () => {
               </p>
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-[#A0EDE6] via-[#D6B5FF] to-[#FFB2BC] hover:from-[#8BE8E0] hover:via-[#C8A8FF] hover:to-[#FF9EB0] text-white px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
+                className="animated-gradient text-white glass-stroke px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
                <a href="mailto:hello@jessicadowney.com"
                   target="_blank"

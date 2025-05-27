@@ -138,6 +138,51 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(45deg, #A0EDE6, #D6B5FF, #FFB2BC, #A0EDE6);
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease infinite;
+  }
+
+  .animated-gradient:hover {
+    background: linear-gradient(45deg, #8BE8E0, #C8A8FF, #FF9EB0, #8BE8E0);
+    background-size: 300% 300%;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  /* Glass stroke effect */
+  .glass-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.6),
+      0 0 20px rgba(255, 255, 255, 0.4),
+      0 0 30px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Glass background container */
+  .glass-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .glass-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
 }
 
 /* Custom scrollbar */
@@ -173,4 +218,17 @@ html {
 .dark .glass {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

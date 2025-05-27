@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Lightbulb, Target, Award } from 'lucide-react';
 
@@ -37,7 +36,7 @@ const About: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="animate-fade-in">
+            <div className="animate-fade-in glass-container rounded-2xl p-8">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
         Hi! I'm Jessica — a senior UX designer who loves making messy ideas make sense.</p>
                                               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
