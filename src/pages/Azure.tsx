@@ -177,7 +177,6 @@ const Azure = () => {
                   <li>• A template-driven builder with branding and layout options</li>
                   <li>• Preview modes by device and user role</li>
                   <li>• ARM template-based deployment to Azure</li>
-                  <li>• Guided flows and embedded tooltips</li>
                 </ul>
 
                 <hr className="my-12 border-border/50" />
@@ -242,30 +241,6 @@ const Azure = () => {
                       allowFullScreen
                       className="rounded-lg"
                     ></iframe>
-                  </div>
-                </div>
-
-                <hr className="my-12 border-border/50" />
-
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Sample Builder Interface</h2>
-                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  Screenshots of the Azure Communication Services Virtual Visit Sample Builder interface, showing the configuration options and live preview capabilities.
-                </p>
-
-                <div className="grid grid-cols-1 gap-8 mb-8">
-                  <div className="rounded-lg overflow-hidden border border-border/50">
-                    <img 
-                      src="/lovable-uploads/2e2bc1f1-189f-4ecf-8660-b1a5a7318da8.png" 
-                      alt="Azure Sample Builder - Template Selection and Call Interface"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                  <div className="rounded-lg overflow-hidden border border-border/50">
-                    <img 
-                      src="/lovable-uploads/6c3557f2-5021-4c11-a363-91319eadb0f8.png" 
-                      alt="Azure Sample Builder - Configuration and Review Interface"
-                      className="w-full h-auto"
-                    />
                   </div>
                 </div>
 
