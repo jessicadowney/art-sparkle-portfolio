@@ -8,21 +8,6 @@ import { createSceneLighting } from './three/lighting/SceneLighting';
 import { createGlitterParticles } from './three/effects/GlitterParticles';
 import { vibrantColors } from './three/constants/Colors';
 
-// Create sprinkle with luminous material
-const createSprinkle = (vibrantColors: number[]) => {
-  const geometry = new THREE.CylinderGeometry(0.02, 0.02, 0.2);
-  const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
-  const material = new THREE.MeshPhysicalMaterial({ 
-    color: randomColor,
-    roughness: 0.0,
-    metalness: 0.0,
-    emissive: randomColor,
-    emissiveIntensity: 0.2
-  });
-  const sprinkle = new THREE.Mesh(geometry, material);
-  return sprinkle;
-};
-
 const ThreeBackground: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
@@ -58,12 +43,11 @@ const ThreeBackground: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create playful shapes - octagram stars, cursors and sprinkles
+    // Create playful shapes - only octagram stars and mouse cursors
     const shapes = [];
     const shapeCreators = [
       createOctagramStar,
-      createMouseCursor, 
-      createSprinkle
+      createMouseCursor
     ];
     
     // Create multiple instances of each shape
