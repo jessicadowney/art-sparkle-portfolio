@@ -6,7 +6,6 @@ import { createMouseCursor } from './three/shapes/MouseCursor';
 import { createOctagramStar } from './three/shapes/OctagramStar';
 import { createTinyHeart } from './three/shapes/TinyHeart';
 import { createSceneLighting } from './three/lighting/SceneLighting';
-import { createGlitterParticles } from './three/effects/GlitterParticles';
 import { vibrantColors } from './three/constants/Colors';
 
 const ThreeBackground: React.FC = () => {
@@ -44,17 +43,47 @@ const ThreeBackground: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create playful shapes - octagram stars, mouse cursors, and tiny hearts
+    // Create playful shapes with more hearts
     const shapes = [];
-    const shapeCreators = [
-      createOctagramStar,
-      createMouseCursor,
-      createTinyHeart
-    ];
     
-    // Create multiple instances of each shape
-    for (let i = 0; i < 45; i++) { // Increased count to accommodate hearts
-      const shapeCreator = shapeCreators[i % shapeCreators.length];
+    // Create hearts (60% of shapes)
+    for (let i = 0; i < 40; i++) {
+      const heart = createTinyHeart(vibrantColors);
+      
+      // Disable shadows for luminous effect
+      heart.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.castShadow = false;
+          child.receiveShadow = false;
+        }
+      });
+      
+      // Random positioning
+      heart.position.set(
+        (Math.random() - 0.5) * 50,
+        (Math.random() - 0.5) * 40,
+        (Math.random() - 0.5) * 30
+      );
+      
+      // Random rotation
+      heart.rotation.set(
+        Math.random() * Math.PI,
+        Math.random() * Math.PI,
+        Math.random() * Math.PI
+      );
+
+      // Random scale for hearts
+      const scale = Math.random() * 0.5 + 0.4;
+      heart.scale.set(scale, scale, scale);
+
+      scene.add(heart);
+      shapes.push(heart);
+    }
+
+    // Create fewer stars and cursors (40% of shapes)
+    const otherShapeCreators = [createOctagramStar, createMouseCursor];
+    for (let i = 0; i < 20; i++) {
+      const shapeCreator = otherShapeCreators[i % otherShapeCreators.length];
       const shape = shapeCreator(vibrantColors);
       
       // Disable shadows for luminous effect
@@ -84,17 +113,13 @@ const ThreeBackground: React.FC = () => {
         Math.random() * Math.PI
       );
 
-      // Random scale with hearts being smaller
-      const isHeart = i % 3 === 2; // Every third shape is a heart
-      const scale = isHeart ? Math.random() * 0.4 + 0.3 : Math.random() * 0.8 + 0.6;
+      // Random scale for other shapes
+      const scale = Math.random() * 0.8 + 0.6;
       shape.scale.set(scale, scale, scale);
 
       scene.add(shape);
       shapes.push(shape);
     }
-
-    // Add rainbow glitter particles
-    const glitter = createGlitterParticles(scene, vibrantColors);
 
     // Add soft lighting for luminous effect
     createSceneLighting(scene);
@@ -116,10 +141,6 @@ const ThreeBackground: React.FC = () => {
         shape.position.x += Math.cos(Date.now() * 0.0008 + index * 0.5) * 0.001;
         shape.position.z += Math.sin(Date.now() * 0.0006 + index * 0.3) * 0.001;
       });
-
-      // Animate glitter
-      glitter.rotation.y += 0.002;
-      glitter.rotation.x += 0.001;
 
       // Gentle camera movement
       camera.position.x = Math.sin(Date.now() * 0.0002) * 2;
