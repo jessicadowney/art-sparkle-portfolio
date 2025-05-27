@@ -36,8 +36,8 @@ const About: React.FC = () => {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-16">
-            <div className="lg:col-span-2 animate-fade-in glass-container rounded-2xl p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="animate-fade-in">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
         Hi! I'm Jessica — a senior UX designer who loves making messy ideas make sense.</p>
                                               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
@@ -47,14 +47,14 @@ I design thoughtful, intuitive digital products that are grounded in user needs 
        Originally from France, I've worked in the US, the Netherlands, and now Canada, where I'm currently at Microsoft. I believe technology, shaped by thoughtful design, has the power to improve our lives in meaningful ways and make interactions feel more seamless and human.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-When I'm not designing, I'm usually hunting the latest trendy food find (mochi donuts, bingsu, matcha lattes), playing with my kids, or walking our corgi, <a target="_blank" href="https://www.instagram.com/maplecorgi/?hl=en">Maple.</a></p>
+When I'm not designing, I'm usually hunting the latest trendy food find (mochi donuts, bingsu, matcha lattes), sharing funny gifs, playing with my kids, or walking my corgi, <a target="_blank" href="https://www.instagram.com/maplecorgi/?hl=en">Maple.</a></p>
               <p className="text-lg text-foreground/80 leading-relaxed">
 Curious how I think? Here's something I wrote:
 <a target="_blank" href="https://medium.com/@jessicadowney/jumpstarting-your-app-conception-without-drawing-any-ui-8e5be35876c9#.h8nbq1bfn/">Jumpstarting your app conception without drawing any UI</a>
               </p>
             </div>
             
-            <div className="lg:col-span-1 animate-scale-in">
+            <div className="animate-scale-in">
               <div className="flex flex-col items-center space-y-6 max-w-xs mx-auto">
                 <div className="w-48 h-48 group cursor-pointer">
                   <img 
