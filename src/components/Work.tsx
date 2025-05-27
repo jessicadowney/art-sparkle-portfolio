@@ -8,14 +8,14 @@ const Work: React.FC = () => {
       title: "Phone Number Shopping Cart for Azure Communication Services",
       description: "A redesigned phone number acquisition experience that replaced rigid one-at-a-time purchasing with a flexible shopping cart, enabling multi-number provisioning and improving user satisfaction.",
       tags: ["Product Design", "UX Research", "Azure Portal", "Developer Experience", "E-commerce UX"],
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/e8fbc49c-4872-4595-a175-5180913da088.png",
       link: "/phone-number-cart"
     },
     {
-      title: "Azure Communication Services: Virtual Visit Sample Builder",
+      title: "Virtual Visit Sample Builder for Azure Communication Services",
       description: "A developer tool for Azure Communication Services that helps create and customize virtual healthcare experiences with no-code configuration, ARM template generation, and downloadable repositories.",
       tags: ["Product Design", "Developer Experience", "UX Research", "Design Systems", "Azure", "Healthcare Technology"],
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/dfec2eed-75b5-42ba-b425-61980e91c034.png",
       link: "/azure"
     },
     {
