@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -93,7 +94,7 @@ const GoFetch = () => {
 
                 <div className="mb-8 text-center">
                   <img 
-                    src="/images/gfinitialioshome.png" 
+                    src="/lovable-uploads/gfinitialioshome.png" 
                     alt="Initial iOS Home Screen" 
                     className="rounded-lg shadow-lg h-auto bg-white p-2 max-h-96 mx-auto"
                   />
@@ -108,14 +109,14 @@ const GoFetch = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
                     <img 
-                      src="/images/GoFetch-Web-Home.png" 
+                      src="/lovable-uploads/GoFetch-Web-Home.png" 
                       alt="GoFetch Web Home Page" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
-                      src="/images/Old-GoFetch-Web-Find.png" 
+                      src="/lovable-uploads/Old-GoFetch-Web-Find.png" 
                       alt="Old GoFetch Web Find Page" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
@@ -124,7 +125,7 @@ const GoFetch = () => {
 
                 <div className="mb-8">
                   <img 
-                    src="/images/Old-GoFetch-Web-Sitter.png" 
+                    src="/lovable-uploads/Old-GoFetch-Web-Sitter.png" 
                     alt="Old GoFetch Web Sitter Profile" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
@@ -146,7 +147,7 @@ const GoFetch = () => {
 
                 <div className="mb-8">
                   <img 
-                    src="/images/gofetch-sitemaps.png" 
+                    src="/lovable-uploads/gofetch-sitemaps.png" 
                     alt="GoFetch Site Maps and Information Architecture" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
@@ -154,7 +155,7 @@ const GoFetch = () => {
 
                 <div className="mb-8">
                   <img 
-                    src="/images/gf-brand-square001.png" 
+                    src="/lovable-uploads/gf-brand-square001.png" 
                     alt="GoFetch Brand Guidelines" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
@@ -169,14 +170,14 @@ const GoFetch = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
                     <img 
-                      src="/images/GoFetch_UI_Kit_1.png" 
+                      src="/lovable-uploads/GoFetch_UI_Kit_1.png" 
                       alt="GoFetch UI Kit Part 1" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
-                      src="/images/GoFetch_UI_Kit_2.png" 
+                      src="/lovable-uploads/GoFetch_UI_Kit_2.png" 
                       alt="GoFetch UI Kit Part 2" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
@@ -195,21 +196,21 @@ const GoFetch = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <div>
                     <img 
-                      src="/images/homepage-integration.png" 
+                      src="/lovable-uploads/homepage-integration.png" 
                       alt="Homepage Integration" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
-                      src="/images/search-integration.png" 
+                      src="/lovable-uploads/search-integration.png" 
                       alt="Search Integration" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
-                      src="/images/dashboard-integration.png" 
+                      src="/lovable-uploads/dashboard-integration.png" 
                       alt="Dashboard Integration" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
@@ -218,7 +219,7 @@ const GoFetch = () => {
 
                 <div className="mb-8 text-center">
                   <img 
-                    src="/images/gfios-home.png" 
+                    src="/lovable-uploads/gfios-home.png" 
                     alt="Updated GoFetch iOS Home Screen" 
                     className="rounded-lg shadow-lg h-auto bg-white p-2 max-h-96 mx-auto"
                   />
@@ -233,7 +234,7 @@ const GoFetch = () => {
 
                 <div className="mb-8">
                   <img 
-                    src="/images/gfinitialsprprocess.png" 
+                    src="/lovable-uploads/gfinitialsprprocess.png" 
                     alt="Initial Service Provider Process" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
@@ -249,14 +250,14 @@ const GoFetch = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
                     <img 
-                      src="/images/gfga1.png" 
+                      src="/lovable-uploads/gfga1.png" 
                       alt="Google Analytics Data Part 1" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
-                      src="/images/gfga2.png" 
+                      src="/lovable-uploads/gfga2.png" 
                       alt="Google Analytics Data Part 2" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
@@ -265,7 +266,7 @@ const GoFetch = () => {
 
                 <div className="mb-8">
                   <img 
-                    src="/images/gfinitialmobilesp.png" 
+                    src="/lovable-uploads/gfinitialmobilesp.png" 
                     alt="Initial Mobile Service Provider Experience" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
@@ -286,21 +287,21 @@ const GoFetch = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <div>
                     <img 
-                      src="/images/gfwiz1.png" 
+                      src="/lovable-uploads/gfwiz1.png" 
                       alt="GoFetch Wizard Step 1" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
-                      src="/images/gfwiz2.png" 
+                      src="/lovable-uploads/gfwiz2.png" 
                       alt="GoFetch Wizard Step 2" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
-                      src="/images/gfwiz3.png" 
+                      src="/lovable-uploads/gfwiz3.png" 
                       alt="GoFetch Wizard Step 3" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
@@ -309,7 +310,7 @@ const GoFetch = () => {
 
                 <div className="mb-8">
                   <img 
-                    src="/images/newgfspform.png" 
+                    src="/lovable-uploads/newgfspform.png" 
                     alt="New GoFetch Service Provider Form" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                   />
@@ -318,14 +319,14 @@ const GoFetch = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
                     <img 
-                      src="/images/aboutyou-ftu.png" 
+                      src="/lovable-uploads/aboutyou-ftu.png" 
                       alt="About You - First Time User Flow" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
                     <img 
-                      src="/images/aboutyou-ru.png" 
+                      src="/lovable-uploads/aboutyou-ru.png" 
                       alt="About You - Returning User Flow" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />

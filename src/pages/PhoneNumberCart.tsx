@@ -146,7 +146,7 @@ const PhoneNumberCart = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="space-y-4">
                     <img 
-                      src="/images/phone-number-start.png" 
+                      src="/lovable-uploads/phone-number-start.png" 
                       alt="Phone number acquisition starting page"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
                     />
@@ -155,7 +155,7 @@ const PhoneNumberCart = () => {
                   
                   <div className="space-y-4">
                     <img 
-                      src="/images/phone-number-search.png" 
+                      src="/lovable-uploads/phone-number-search.png" 
                       alt="Phone number search interface"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
                     />
@@ -164,7 +164,7 @@ const PhoneNumberCart = () => {
                   
                   <div className="space-y-4">
                     <img 
-                      src="/images/phone-number-cart.png" 
+                      src="/lovable-uploads/phone-number-cart.png" 
                       alt="Phone numbers added to shopping cart"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
                     />
@@ -173,7 +173,7 @@ const PhoneNumberCart = () => {
                   
                   <div className="space-y-4">
                     <img 
-                      src="/images/phone-number-cart-2.png" 
+                      src="/lovable-uploads/phone-number-cart-2.png" 
                       alt="Shopping cart with multiple phone numbers"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
                     />
@@ -182,7 +182,7 @@ const PhoneNumberCart = () => {
                   
                   <div className="space-y-4">
                     <img 
-                      src="/images/phone-number-review.png" 
+                      src="/lovable-uploads/phone-number-review.png" 
                       alt="Reviewing phone number order before purchase"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
                     />
@@ -191,7 +191,7 @@ const PhoneNumberCart = () => {
                   
                   <div className="space-y-4">
                     <img 
-                      src="/images/phone-number-purchased.png" 
+                      src="/lovable-uploads/phone-number-purchased.png" 
                       alt="Successful phone number purchase confirmation"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
                     />
