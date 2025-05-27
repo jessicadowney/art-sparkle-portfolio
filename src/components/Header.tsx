@@ -2,23 +2,47 @@
 import React from 'react';
 import { Menu, Mail, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/', { replace: true });
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If we're already on the home page, just scroll
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-indigo-600 bg-clip-text text-transparent">
+          <button 
+            onClick={handleLogoClick}
+            className="text-2xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+          >
             Jessica Downey
-          </div>
+          </button>
           
           <div className="hidden md:flex items-center space-x-8">
             <button 
