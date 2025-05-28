@@ -52,19 +52,20 @@ const Contact: React.FC = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-6 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-scale-in no-underline hover:no-underline"
+                  className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:shadow-lg transition-all duration-300 animate-scale-in no-underline hover:no-underline"
                   style={{ 
                     animationDelay: `${index * 0.1}s`,
                     textDecoration: 'none !important',
-                    borderBottom: 'none !important',
-                    background: 'rgba(255, 255, 255, 0.5) !important'
+                    borderBottom: 'none !important'
                   }}
                 >
-                  <link.icon className="h-6 w-6 text-primary" />
-                  <h3 className="font-medium mb-2 group-hover:text-primary transition-colors duration-300 antialiased">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <link.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors duration-300 antialiased">
                     {link.label}
                   </h3>
-                  <p className="text-sm text-foreground/60 break-all antialiased">{link.username}</p>
+                  <p className="text-sm text-foreground/70 leading-relaxed antialiased">{link.username}</p>
                 </a>
               ))}
             </div>
