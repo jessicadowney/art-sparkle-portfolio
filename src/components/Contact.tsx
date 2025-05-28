@@ -60,9 +60,7 @@ const Contact: React.FC = () => {
                     background: 'rgba(255, 255, 255, 0.5) !important'
                   }}
                 >
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors duration-300">
-                    <link.icon className="h-6 w-6 text-primary" />
-                  </div>
+                  <link.icon className="h-6 w-6 text-primary" />
                   <h3 className="font-medium mb-2 group-hover:text-primary transition-colors duration-300 antialiased">
                     {link.label}
                   </h3>
