@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Calendar, MapPin } from 'lucide-react';
 
@@ -106,7 +105,7 @@ const Experience: React.FC = () => {
 Designing at the intersection of UX and product for 15+ years — across enterprise, industrial, and consumer experiences.            </p>
           </div>
           
-          <div className="space-y-8">
+          <div className="space-y-0">
             {experiences.map((exp, index) => (
               <div 
                 key={index}
