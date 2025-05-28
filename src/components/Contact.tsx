@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Linkedin, Github, Smile } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -45,14 +44,14 @@ const Contact: React.FC = () => {
               new opportunities. Let's connect and explore how we can create something amazing together.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 pb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:shadow-lg transition-all duration-300 animate-scale-in no-underline hover:no-underline"
+                  className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:shadow-lg transition-all duration-300 animate-scale-in no-underline hover:no-underline mb-4"
                   style={{ 
                     animationDelay: `${index * 0.1}s`,
                     textDecoration: 'none !important',
