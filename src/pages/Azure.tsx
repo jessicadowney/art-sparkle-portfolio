@@ -1,6 +1,4 @@
-
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
 import Header from '@/components/Header';
@@ -11,6 +9,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Azure = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
@@ -28,12 +31,12 @@ const Azure = () => {
               Back to Portfolio
             </Button>
             
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 mb-8">
+            <div className="glass-container rounded-lg p-6 md:p-8 mb-8">
               <div className="text-center mb-12">
-                <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
-                  <span className="text-primary">Azure Communication Services</span>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light mb-6 tracking-tight leading-tight">
+                  <span className="text-primary break-words">Azure Communication Services</span>
                 </h1>
-                <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+                <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
                   Virtual Visit Sample Builder
                 </p>
               </div>
@@ -41,7 +44,7 @@ const Azure = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  Azure Communication Services enables developers to integrate voice, video, chat, and SMS into their applications using the same reliable platform that powers Microsoft Teams. In May 2021, I led the UX and UI design for the **Virtual Visit Sample Builder**—a tool designed to help developers quickly create and customize virtual healthcare experiences using Azure Communication Services.
+                  Azure Communication Services enables developers to integrate voice, video, chat, and SMS into their applications using the same reliable platform that powers Microsoft Teams. In May 2021, I led the UX and UI design for the **Virtual Visit Sample Builder**—a tool designed to help developers quickly create and customize virtual appointments experiences using Azure Communication Services.
                 </p>
                 
                 <div className="mb-8">
@@ -91,16 +94,17 @@ const Azure = () => {
                   <li>• **Prototype:** A clickable prototype was developed in Figma.</li>
                   <li>• **Validate:** We tested the prototype with real customers including Microsoft CSE, CTCA, NTT, Avanade, and Specsavers.</li>
                 </ul>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold mb-6 text-primary">Design Sprint Process</h3>
-            <div className="max-w-4xl mx-auto">
-              <img 
-                src="/lovable-uploads/4edd9b31-c7a9-47a5-aaf3-aea2d49ee270.png" 
-                alt="Design Sprint Process showing 6 phases: Understand, Define, Sketch, Decide, Prototype, and Validate with corresponding dates"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
+
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-semibold mb-6 text-primary">Design Sprint Process</h3>
+                  <div className="max-w-4xl mx-auto">
+                    <img 
+                      src="/lovable-uploads/4edd9b31-c7a9-47a5-aaf3-aea2d49ee270.png" 
+                      alt="Design Sprint Process showing 6 phases: Understand, Define, Sketch, Decide, Prototype, and Validate with corresponding dates"
+                      className="w-full h-auto rounded-lg shadow-lg"
+                    />
+                  </div>
+                </div>
                 <hr className="my-12 border-border/50" />
 
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Challenge #1: Simplifying Developer Onboarding</h2>
@@ -144,7 +148,7 @@ const Azure = () => {
 
                 <h3 className="text-2xl font-semibold mb-6 text-primary">Solution: Design System & Interaction Patterns</h3>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                  I created a UI kit based on Fluent UI and Azure Dev Portal conventions, featuring:
+                  I developed a UI concept based on Fluent UI and Azure Dev Portal conventions, featuring:
                 </p>
 
                 <ul className="space-y-2 text-foreground/80 text-lg mb-8">
@@ -282,4 +286,3 @@ const Azure = () => {
 };
 
 export default Azure;
-

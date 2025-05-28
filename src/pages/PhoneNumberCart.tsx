@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
 import Header from '@/components/Header';
@@ -10,6 +10,11 @@ import { useNavigate } from 'react-router-dom';
 
 const PhoneNumberCart = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
@@ -27,15 +32,15 @@ const PhoneNumberCart = () => {
               Back to Portfolio
             </Button>
             
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 mb-8">
+            <div className="glass-container rounded-lg p-6 md:p-8 mb-8">
               <div className="text-center mb-12">
                 <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
                   2022
                 </div>
-                <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
-                  <span className="text-primary">Phone Number Shopping Cart</span>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 tracking-tight leading-tight">
+                  <span className="text-primary break-words">Phone Number Shopping Cart</span>
                 </h1>
-                <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+                <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
                   Redesigned a critical acquisition flow to reduce friction, increase transparency, and lower support burden
                 </p>
               </div>

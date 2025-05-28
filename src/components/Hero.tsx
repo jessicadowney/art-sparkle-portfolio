@@ -19,14 +19,14 @@ const Hero: React.FC = () => {
     <section className="min-h-screen flex items-center justify-center relative py-20">
       <div className="container mx-auto px-6 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight antialiased leading-relaxed pb-8">
-            <span className="block text-foreground/90">Senior</span>
-            <span className="block bg-gradient-to-r from-[#A0EDE6] via-[#D6B5FF] to-[#FFB2BC] bg-clip-text text-transparent glass-stroke" style={{ height: '120px', lineHeight: '120px' }}>
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-light mb-6 tracking-tight antialiased leading-tight md:leading-relaxed">
+            <span className="block text-foreground/90 mb-2 md:mb-0">Senior</span>
+            <span className="block bg-gradient-to-r from-[#A0EDE6] via-[#D6B5FF] to-[#FFB2BC] bg-clip-text text-transparent glass-stroke leading-tight md:leading-[120px]">
               Product Designer
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed antialiased">
+          <p className="text-lg md:text-xl lg:text-2xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed antialiased mt-4">
             Designing intuitive, human-centered digital experiences that solve real problems 
             and create meaningful connections between users and technology.
           </p>
