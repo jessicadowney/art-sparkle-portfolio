@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
 import Header from '@/components/Header';
@@ -10,6 +9,11 @@ import { useNavigate } from 'react-router-dom';
 
 const GoFetch = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
@@ -27,7 +31,7 @@ const GoFetch = () => {
               Back to Portfolio
             </Button>
             
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 mb-8">
+            <div className="glass-container rounded-lg p-6 md:p-8 mb-8">
               <div className="text-center mb-12">
                 <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
                   2018
@@ -58,7 +62,7 @@ const GoFetch = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  GoFetch.ca set out to simplify dog ownership by connecting dog parents with trusted care providers. 
+                  GoFetch set out to simplify dog ownership by connecting dog parents with trusted care providers. 
                   The platform offered services like boarding, dog walking, daycare, and house sitting. I joined the 
                   company in November 2016, when the team was operating from a basement in Vancouver and included two 
                   cofounders, four engineers, and one junior designer. As the team grew, I led the design practice 

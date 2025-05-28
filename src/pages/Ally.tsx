@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
 import Header from '@/components/Header';
@@ -9,6 +9,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Ally = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
@@ -26,7 +31,7 @@ const Ally = () => {
               Back to Portfolio
             </Button>
             
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 mb-8">
+            <div className="glass-container rounded-lg p-6 md:p-8 mb-8">
               <div className="text-center mb-12">
                 <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
                   Amped Wireless <span className="text-primary">Ally</span>
