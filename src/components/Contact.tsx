@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Mail, Linkedin, Github, Smile } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -51,7 +52,7 @@ const Contact: React.FC = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:shadow-lg transition-all duration-300 animate-scale-in no-underline hover:no-underline mb-4"
+                  className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 animate-scale-in no-underline hover:no-underline mb-4"
                   style={{ 
                     animationDelay: `${index * 0.1}s`,
                     textDecoration: 'none !important',
