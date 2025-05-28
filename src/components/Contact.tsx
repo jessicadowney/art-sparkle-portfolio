@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
               new opportunities. Let's connect and explore how we can create something amazing together.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 pb-4">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
