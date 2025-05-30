@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-8xl font-light mb-6 tracking-tight antialiased leading-tight md:leading-relaxed">
             <span className="block text-foreground/90 mb-2 md:mb-0">Senior</span>
-            <span className="block bg-gradient-to-r from-[#A0EDE6] via-[#D6B5FF] to-[#FFB2BC] bg-clip-text text-transparent glass-stroke leading-tight md:leading-[120px]">
+            <span className="block bg-gradient-to-r from-[#A0EDE6] via-[#D6B5FF] to-[#FFB2BC] bg-clip-text text-transparent leading-tight md:leading-[120px]">
               Product Designer
             </span>
           </h1>
