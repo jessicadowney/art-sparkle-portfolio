@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -150,11 +149,11 @@ const PhoneNumberCart = () => {
                   
                   <div className="space-y-4">
                     <img 
-                      src="/public/lovable-uploads/phone-number-purchased.png" 
-                      alt="Successful phone number purchase confirmation"
+                      src="/lovable-uploads/0c45c94e-1ee7-470b-9ef4-4c95fa90bcf1.png" 
+                      alt="Phone numbers management table showing purchased numbers"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
                     />
-                    <p className="text-sm text-foreground/60 text-center">Confirmation of successful phone number purchase</p>
+                    <p className="text-sm text-foreground/60 text-center">Managing purchased phone numbers in the dashboard</p>
                   </div>
                 </div>
 
