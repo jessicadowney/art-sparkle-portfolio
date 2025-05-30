@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -42,6 +43,17 @@ const Azure = () => {
               </div>
 
               <div className="prose prose-lg max-w-none">
+                <div className="bg-accent/30 rounded-lg p-6 mb-8">
+                  <h2 className="text-2xl font-semibold mb-4 text-primary">TL;DR</h2>
+                  <ul className="space-y-2 text-foreground/80 text-lg">
+                    <li>• Led UX design for Virtual Visit Sample Builder to simplify Azure Communication Services adoption</li>
+                    <li>• Facilitated Microsoft's first remote design sprint from problem definition to customer validation</li>
+                    <li>• Created no-code builder generating deployable ARM templates and project assets</li>
+                    <li>• Designed Fluent UI-compliant interface supporting healthcare and enterprise scenarios</li>
+                    <li>• Delivered tool now used across Microsoft field teams and partner engagements</li>
+                  </ul>
+                </div>
+
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
                   Azure Communication Services enables developers to integrate voice, video, chat, and SMS into their applications using the same reliable platform that powers Microsoft Teams. In May 2021, I led the UX and UI design for the **Virtual Visit Sample Builder**—a tool designed to help developers quickly create and customize virtual appointments experiences using Azure Communication Services.

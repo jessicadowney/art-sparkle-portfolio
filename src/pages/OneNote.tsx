@@ -56,15 +56,26 @@ const OneNote = () => {
                 </div>
               </div>
 
-              <div className="mb-12">
-                <img 
-                  src="/lovable-uploads/ff2b8e20-f09f-46f7-a76b-4c18e3bd0f07.png" 
-                  alt="Microsoft OneNote Logo" 
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-              </div>
-
               <div className="prose prose-lg max-w-none">
+                <div className="bg-accent/30 rounded-lg p-6 mb-8">
+                  <h2 className="text-2xl font-semibold mb-4 text-primary">TL;DR</h2>
+                  <ul className="space-y-2 text-foreground/80 text-lg">
+                    <li>• Restored highly requested cloud attachment feature missing from OneNote UWP and Mac</li>
+                    <li>• Led end-to-end design from research through implementation across platforms</li>
+                    <li>• Created contextual file insertion prompts based on file type and user scenarios</li>
+                    <li>• Designed responsive, accessible, and localized modal experiences</li>
+                    <li>• Successfully shipped in 2019, bringing feature parity across OneNote platforms</li>
+                  </ul>
+                </div>
+
+                <div className="mb-12">
+                  <img 
+                    src="/lovable-uploads/ff2b8e20-f09f-46f7-a76b-4c18e3bd0f07.png" 
+                    alt="Microsoft OneNote Logo" 
+                    className="rounded-lg shadow-lg w-full h-auto"
+                  />
+                </div>
+
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
                   Microsoft OneNote is a collaborative note-taking platform used to capture and share ideas, drawings, clippings, and recordings. While working on the OneNote design team, I collaborated with product managers and engineers to deliver new features. Due to confidentiality, most of my work remains unreleased. However, one impactful feature I led—cloud attachment prompts—shipped in 2019 and is now available on OneNote for UWP (Universal Windows Platform) and Mac.

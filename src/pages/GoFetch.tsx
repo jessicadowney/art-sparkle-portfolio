@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThreeBackground from '@/components/ThreeBackground';
@@ -60,6 +61,17 @@ const GoFetch = () => {
               </div>
 
               <div className="prose prose-lg max-w-none">
+                <div className="bg-accent/30 rounded-lg p-6 mb-8">
+                  <h2 className="text-2xl font-semibold mb-4 text-primary">TL;DR</h2>
+                  <ul className="space-y-2 text-foreground/80 text-lg">
+                    <li>• Led design practice at pet care startup from basement to established company</li>
+                    <li>• Unified fragmented experiences across iOS app and website with consistent design system</li>
+                    <li>• Redesigned mobile-first sitter application flow, doubling conversion from 6% to 12%</li>
+                    <li>• Created cross-platform information architecture and visual identity</li>
+                    <li>• Established design team and processes during rapid company growth phase</li>
+                  </ul>
+                </div>
+
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
                   GoFetch set out to simplify dog ownership by connecting dog parents with trusted care providers. 

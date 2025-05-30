@@ -59,19 +59,25 @@ const Slim = () => {
                 </div>
               </div>
 
-              <div className="mb-12">
-                <img 
-                  src="/lovable-uploads/43c5653f-5641-40d0-be8c-5fc6bc7ca71b.png" 
-                  alt="Siemens Brand Identity" 
-                  className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                />
-              </div>
-
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
-                <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  syngo® Lab Inventory Manager (sLIM) is a cloud-based inventory management system developed by Siemens Healthineers that leverages RFID technology to streamline inventory across labs. Originally released with a complex interface, the product was facing usability complaints from customers. I was brought on as an interaction design consultant at Siemens Corporate Research to help redesign the experience.
-                </p>
+                <div className="bg-accent/30 rounded-lg p-6 mb-8">
+                  <h2 className="text-2xl font-semibold mb-4 text-primary">TL;DR</h2>
+                  <ul className="space-y-2 text-foreground/80 text-lg">
+                    <li>• Redesigned complex cloud-based inventory management system facing usability complaints</li>
+                    <li>• Led information architecture overhaul, reducing navigation from 3 levels to 2</li>
+                    <li>• Facilitated stakeholder workshops and card sorting exercises to streamline user flows</li>
+                    <li>• Delivered wireframes and visual design that improved interface consistency and efficiency</li>
+                    <li>• Final design replaced original software and is still used by Siemens Healthineers globally</li>
+                  </ul>
+                </div>
+
+                <div className="mb-12">
+                  <img 
+                    src="/lovable-uploads/43c5653f-5641-40d0-be8c-5fc6bc7ca71b.png" 
+                    alt="Siemens Brand Identity" 
+                    className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
+                  />
+                </div>
 
                 <div className="mb-12">
                   <h3 className="text-2xl font-semibold mb-4 text-primary">My Role</h3>
@@ -82,8 +88,6 @@ const Slim = () => {
                   </ul>
                 </div>
 
-  
-                
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-12">
                   <div>
                     <img 
