@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Lightbulb, Target, Award } from 'lucide-react';
 
@@ -35,8 +36,8 @@ const About: React.FC = () => {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-16">
-            <div className="lg:col-span-2 animate-fade-in glass-container rounded-2xl p-8">
+          <div className="mb-16">
+            <div className="animate-fade-in glass-container rounded-2xl p-8">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
                 Hi! I'm Jessica — a senior UX designer who makes messy ideas click.
               </p>
@@ -55,34 +56,6 @@ const About: React.FC = () => {
               <p className="text-lg text-foreground/80 leading-relaxed">
                 Want to see how I approach design from zero? Here's something I wrote: <a target="_blank" href="https://medium.com/@jessicadowney/jumpstarting-your-app-conception-without-drawing-any-ui-8e5be35876c9#.h8nbq1bfn/">Jumpstarting your app conception without drawing any UI</a>.
               </p>
-            </div>
-            
-            <div className="lg:col-span-1 animate-scale-in">
-              <div className="flex flex-col items-center space-y-6 max-w-xs mx-auto">
-                <div className="w-48 h-48 group cursor-pointer">
-                  <img 
-                    src="/lovable-uploads/daec6d9b-bfe6-4ff8-a782-31d6d1d0a88f.png" 
-                    alt="Jessica with baby in hiking carrier"
-                    className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
-                  />
-                </div>
-                
-                <div className="w-48 h-48 group cursor-pointer">
-                  <img 
-                    src="/lovable-uploads/90982b97-9bcd-4f49-bde7-1c2f08f108e6.png" 
-                    alt="Jessica under cherry blossoms"
-                    className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
-                  />
-                </div>
-                
-                <div className="w-48 h-48 group cursor-pointer">
-                  <img 
-                    src="/lovable-uploads/e1547e16-1b69-4e9f-ad12-438f3d035dd3.png" 
-                    alt="Jessica with heart sunglasses making peace sign"
-                    className="w-full h-full object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105 shadow-lg"
-                  />
-                </div>
-              </div>
             </div>
           </div>
           
