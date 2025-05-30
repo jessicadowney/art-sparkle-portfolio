@@ -186,7 +186,6 @@ const PhoneNumberCart = () => {
                   </Button>
                 </div>
               </div>
-            </div>
           </div>
         </main>
         <Footer />
