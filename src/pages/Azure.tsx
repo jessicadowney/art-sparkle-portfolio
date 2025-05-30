@@ -47,7 +47,7 @@ const Azure = () => {
                   <h2 className="text-2xl font-semibold mb-4 text-primary">TL;DR</h2>
                   <ul className="space-y-2 text-foreground/80 text-lg">
                     <li>• Led UX design for Virtual Visit Sample Builder to simplify Azure Communication Services adoption</li>
-                    <li>• Facilitated Microsoft's first remote design sprint from problem definition to customer validation</li>
+                    <li>• Facilitated Azure Communication Services's first remote design sprint from problem definition to customer validation</li>
                     <li>• Created no-code builder generating deployable ARM templates and project assets</li>
                     <li>• Designed Fluent UI-compliant interface supporting healthcare and enterprise scenarios</li>
                     <li>• Delivered tool now used across Microsoft field teams and partner engagements</li>
