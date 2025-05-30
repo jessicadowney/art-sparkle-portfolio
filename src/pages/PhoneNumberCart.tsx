@@ -147,14 +147,7 @@ const PhoneNumberCart = () => {
                     <p className="text-sm text-foreground/60 text-center">Reviewing the order before finalizing purchase</p>
                   </div>
                   
-                  <div className="space-y-4">
-                    <img 
-                      src="/lovable-uploads/0c45c94e-1ee7-470b-9ef4-4c95fa90bcf1.png" 
-                      alt="Phone numbers management table showing purchased numbers"
-                      className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
-                    />
-                    <p className="text-sm text-foreground/60 text-center">Managing purchased phone numbers in the dashboard</p>
-                  </div>
+                 
                 </div>
 
                 <div className="border-l-2 border-primary/30 pl-6 mb-8">
