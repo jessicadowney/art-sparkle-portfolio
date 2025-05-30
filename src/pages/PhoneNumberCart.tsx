@@ -138,7 +138,14 @@ const PhoneNumberCart = () => {
                     <p className="text-sm text-foreground/60 text-center">Managing multiple numbers in the shopping cart</p>
                   </div>
                   
-                  
+                  <div className="space-y-4">
+                    <img 
+                      src="/lovable-uploads/get-phone-number-review.png" 
+                      alt="Reviewing phone number order before purchase"
+                      className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
+                    />
+                    <p className="text-sm text-foreground/60 text-center">Reviewing the order before finalizing purchase</p>
+                  </div>
                   
                   <div className="space-y-4">
                     <img 
