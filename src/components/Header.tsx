@@ -51,9 +51,12 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <button 
             onClick={handleLogoClick}
-            className="text-2xl font-bold hover:opacity-80 transition-opacity flex items-center gap-2 font-pixelify text-foreground"
+            className="text-2xl font-bold hover:opacity-80 transition-opacity flex items-center gap-2 font-pixelify"
           >
-            👩‍💻 Jessica Downey
+            <span>👩‍💻</span>
+            <span className="bg-gradient-to-r from-[#A0EDE6] via-[#D6B5FF] to-[#FFB2BC] bg-clip-text text-transparent">
+              Jessica Downey
+            </span>
           </button>
           
           <div className="hidden md:flex items-center space-x-8">
