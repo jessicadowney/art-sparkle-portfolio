@@ -150,7 +150,7 @@ const PhoneNumberCart = () => {
                   
                   <div className="space-y-4">
                     <img 
-                      src="public/lovable-uploads/phone-number-purchased.png" 
+                      src="/public/lovable-uploads/phone-number-purchased.png" 
                       alt="Successful phone number purchase confirmation"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
                     />
