@@ -7,15 +7,19 @@ export const createHourglass = (vibrantColors: number[]) => {
   // Top bulb with more detail
   const topBulbGeometry = new THREE.SphereGeometry(0.6, 32, 16);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
+  
+  // Frosted glass effect for hourglass
   const glassMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
     transparent: true,
-    opacity: 0.8,
-    roughness: 0.0,
+    opacity: opacity,
+    roughness: 0.7,
     metalness: 0.0,
-    transmission: 0.95,
-    ior: 1.5,
-    clearcoat: 1.0
+    clearcoat: 0.4,
+    clearcoatRoughness: 0.8,
+    transmission: 0.4,
+    ior: 1.3
   });
   
   const topBulb = new THREE.Mesh(topBulbGeometry, glassMaterial);

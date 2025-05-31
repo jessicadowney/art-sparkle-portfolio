@@ -8,12 +8,19 @@ export const createHandCursor = (vibrantColors: number[]) => {
   const palmGeometry = new THREE.BoxGeometry(0.8, 1.2, 0.4);
   palmGeometry.translate(0, 0, 0);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
+  
+  // Shiny translucency for hand cursor
   const skinMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
-    roughness: 0.6,
+    transparent: true,
+    opacity: opacity,
+    roughness: 0.1,
     metalness: 0.0,
-    clearcoat: 0.4,
-    clearcoatRoughness: 0.3
+    clearcoat: 0.8,
+    clearcoatRoughness: 0.1,
+    transmission: 0.6,
+    ior: 1.4
   });
   const palm = new THREE.Mesh(palmGeometry, skinMaterial);
   group.add(palm);

@@ -35,16 +35,21 @@ export const createOctagramStar = (vibrantColors: number[]) => {
 
   const starGeometry = new THREE.ExtrudeGeometry(starShape, extrudeSettings);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
+  
+  // Shiny translucency for stars
   const starMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
     transparent: true,
-    opacity: 0.95,
+    opacity: opacity,
     roughness: 0.0,
-    metalness: 0.0,
-    clearcoat: 0.0,
+    metalness: 0.2,
+    clearcoat: 1.0,
     clearcoatRoughness: 0.0,
+    transmission: 0.9,
+    ior: 1.6,
     emissive: randomColor,
-    emissiveIntensity: 0.3
+    emissiveIntensity: 0.25
   });
   const star = new THREE.Mesh(starGeometry, starMaterial);
   

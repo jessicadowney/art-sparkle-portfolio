@@ -16,17 +16,24 @@ export const createCroissant = (vibrantColors: number[]) => {
   
   const tubeGeometry = new THREE.TubeGeometry(curve, 32, 0.25, 16, false);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
+  
+  // Frosted glass effect for croissants
   const croissantMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
-    roughness: 0.7,
+    transparent: true,
+    opacity: opacity,
+    roughness: 0.9,
     metalness: 0.0,
-    clearcoat: 0.3,
-    clearcoatRoughness: 0.4
+    clearcoat: 0.2,
+    clearcoatRoughness: 1.0,
+    transmission: 0.5,
+    ior: 1.2
   });
   const croissant = new THREE.Mesh(tubeGeometry, croissantMaterial);
   group.add(croissant);
   
-  // Add texture bumps
+  // Add texture bumps with same material
   for (let i = 0; i < 15; i++) {
     const bumpGeometry = new THREE.SphereGeometry(0.05, 8, 8);
     const bump = new THREE.Mesh(bumpGeometry, croissantMaterial);

@@ -7,12 +7,19 @@ export const createSmilingEmoji = (vibrantColors: number[]) => {
   // Face with more segments for smoothness
   const faceGeometry = new THREE.CylinderGeometry(0.8, 0.8, 0.15, 64);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
+  
+  // Shiny translucency for emoji face
   const faceMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
-    roughness: 0.1,
-    metalness: 0.0,
-    clearcoat: 0.9,
-    clearcoatRoughness: 0.1
+    transparent: true,
+    opacity: opacity,
+    roughness: 0.05,
+    metalness: 0.1,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.05,
+    transmission: 0.7,
+    ior: 1.4
   });
   const face = new THREE.Mesh(faceGeometry, faceMaterial);
   group.add(face);

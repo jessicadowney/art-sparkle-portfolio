@@ -28,16 +28,21 @@ export const createTinyHeart = (vibrantColors: number[]) => {
 
   const heartGeometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
+  
+  // Shiny translucency for hearts
   const heartMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
     transparent: true,
-    opacity: 0.95,
-    roughness: 0.05,
+    opacity: opacity,
+    roughness: 0.0,
     metalness: 0.1,
     clearcoat: 1.0,
-    clearcoatRoughness: 0.05,
+    clearcoatRoughness: 0.0,
+    transmission: 0.8,
+    ior: 1.5,
     emissive: randomColor,
-    emissiveIntensity: 0.6
+    emissiveIntensity: 0.2
   });
   
   const heart = new THREE.Mesh(heartGeometry, heartMaterial);
