@@ -6,8 +6,8 @@ export const createOctagramStar = (vibrantColors: number[]) => {
   
   // Create octagram star shape (8-pointed star)
   const starShape = new THREE.Shape();
-  const outerRadius = 0.2;
-  const innerRadius = 0.1;
+  const outerRadius = 0.25;
+  const innerRadius = 0.12;
   const points = 8;
   
   for (let i = 0; i < points * 2; i++) {
@@ -25,33 +25,40 @@ export const createOctagramStar = (vibrantColors: number[]) => {
   starShape.closePath();
 
   const extrudeSettings = {
-    depth: 0.05,
+    depth: 0.1,
     bevelEnabled: true,
-    bevelSegments: 4,
-    steps: 1,
-    bevelSize: 0.01,
-    bevelThickness: 0.01
+    bevelSegments: 12,
+    steps: 3,
+    bevelSize: 0.025,
+    bevelThickness: 0.025
   };
 
   const starGeometry = new THREE.ExtrudeGeometry(starShape, extrudeSettings);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
-  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
+  const opacity = 0.4 + Math.random() * 0.5;
   
-  // Shiny translucency for stars
+  // Layered frosted glass and resin-like material
   const starMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
     transparent: true,
     opacity: opacity,
-    roughness: 0.0,
-    metalness: 0.2,
+    roughness: 0.05,
+    metalness: 0.0,
     clearcoat: 1.0,
-    clearcoatRoughness: 0.0,
-    transmission: 0.9,
+    clearcoatRoughness: 0.05,
+    transmission: 0.98,
     ior: 1.6,
+    thickness: 0.6,
     emissive: randomColor,
-    emissiveIntensity: 0.25
+    emissiveIntensity: 0.2,
+    sheen: 1.0,
+    sheenRoughness: 0.05,
+    sheenColor: new THREE.Color(randomColor).multiplyScalar(0.5)
   });
+  
   const star = new THREE.Mesh(starGeometry, starMaterial);
+  star.castShadow = false;
+  star.receiveShadow = false;
   
   group.add(star);
   return group;

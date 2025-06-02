@@ -16,34 +16,41 @@ export const createMouseCursor = (vibrantColors: number[]) => {
   arrowShape.lineTo(0, 0);
 
   const extrudeSettings = {
-    depth: 0.1,
+    depth: 0.12,
     bevelEnabled: true,
-    bevelSegments: 8,
-    steps: 2,
-    bevelSize: 0.02,
-    bevelThickness: 0.02
+    bevelSegments: 16,
+    steps: 4,
+    bevelSize: 0.04,
+    bevelThickness: 0.04
   };
 
   const arrowGeometry = new THREE.ExtrudeGeometry(arrowShape, extrudeSettings);
   const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
-  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
+  const opacity = 0.4 + Math.random() * 0.5;
   
-  // Frosted glass effect for cursors
+  // Layered frosted glass and resin-like material
   const arrowMaterial = new THREE.MeshPhysicalMaterial({ 
     color: randomColor,
     transparent: true,
     opacity: opacity,
-    roughness: 0.8,
+    roughness: 0.15,
     metalness: 0.0,
-    clearcoat: 0.3,
-    clearcoatRoughness: 0.9,
-    transmission: 0.6,
-    ior: 1.3,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.08,
+    transmission: 0.9,
+    ior: 1.5,
+    thickness: 0.8,
     emissive: randomColor,
-    emissiveIntensity: 0.1
+    emissiveIntensity: 0.12,
+    sheen: 0.9,
+    sheenRoughness: 0.1,
+    sheenColor: new THREE.Color(randomColor).multiplyScalar(0.4)
   });
+  
   const arrow = new THREE.Mesh(arrowGeometry, arrowMaterial);
   arrow.scale.set(0.8, 0.8, 0.8);
+  arrow.castShadow = false;
+  arrow.receiveShadow = false;
   
   group.add(arrow);
   return group;
