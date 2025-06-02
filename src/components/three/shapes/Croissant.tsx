@@ -1,5 +1,4 @@
-
-import * * THREE from 'three';
+import * as THREE from 'three';
 
 export const createCroissant = (vibrantColors: number[]) => {
   const group = new THREE.Group();
