@@ -4,86 +4,64 @@ import * as THREE from 'three';
 export const createSprinkledDonut = (vibrantColors: number[]) => {
   const group = new THREE.Group();
   
-  // Donut base
-  const donutGeometry = new THREE.TorusGeometry(0.9, 0.4, 32, 80);
+  // Donut base with higher segments
+  const donutGeometry = new THREE.TorusGeometry(0.8, 0.35, 24, 64);
   const baseColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
-  const opacity = 0.4 + Math.random() * 0.5;
+  const opacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
   
-  // Layered frosted glass and resin-like material for donut
+  // Frosted glass effect for donut base
   const donutMaterial = new THREE.MeshPhysicalMaterial({ 
     color: baseColor,
     transparent: true,
     opacity: opacity,
-    roughness: 0.15,
+    roughness: 0.8,
     metalness: 0.0,
-    clearcoat: 0.9,
-    clearcoatRoughness: 0.12,
-    transmission: 0.88,
-    ior: 1.35,
-    thickness: 0.8,
-    emissive: baseColor,
-    emissiveIntensity: 0.1,
-    sheen: 0.8,
-    sheenRoughness: 0.15,
-    sheenColor: new THREE.Color(baseColor).multiplyScalar(0.35)
+    clearcoat: 0.3,
+    clearcoatRoughness: 0.9,
+    transmission: 0.5,
+    ior: 1.2
   });
-  
   const donut = new THREE.Mesh(donutGeometry, donutMaterial);
-  donut.castShadow = false;
-  donut.receiveShadow = false;
   group.add(donut);
   
-  // Glazing
-  const glazingGeometry = new THREE.TorusGeometry(0.92, 0.28, 24, 80);
+  // Glazing that actually sits on top
+  const glazingGeometry = new THREE.TorusGeometry(0.82, 0.25, 16, 64);
   const glazingColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
-  const glazingOpacity = 0.4 + Math.random() * 0.5;
+  const glazingOpacity = 0.4 + Math.random() * 0.5; // 40-90% opacity
   
-  // Enhanced layered material for glazing
+  // Shiny translucency for glazing
   const glazingMaterial = new THREE.MeshPhysicalMaterial({ 
     color: glazingColor,
     transparent: true,
     opacity: glazingOpacity,
-    roughness: 0.05,
-    metalness: 0.0,
+    roughness: 0.0,
+    metalness: 0.1,
     clearcoat: 1.0,
-    clearcoatRoughness: 0.05,
-    transmission: 0.95,
-    ior: 1.6,
-    thickness: 0.3,
-    emissive: glazingColor,
-    emissiveIntensity: 0.2,
-    sheen: 1.0,
-    sheenRoughness: 0.05,
-    sheenColor: new THREE.Color(glazingColor).multiplyScalar(0.7)
+    clearcoatRoughness: 0.0,
+    transmission: 0.8,
+    ior: 1.5
   });
-  
   const glazing = new THREE.Mesh(glazingGeometry, glazingMaterial);
-  glazing.position.y = 0.18;
-  glazing.castShadow = false;
-  glazing.receiveShadow = false;
+  glazing.position.y = 0.15; // Position on top
   group.add(glazing);
   
-  // Sprinkles
-  for (let i = 0; i < 30; i++) {
-    const sprinkleGeometry = new THREE.CylinderGeometry(0.02, 0.02, 0.15);
+  // Sprinkles that are actually ON the donut
+  for (let i = 0; i < 25; i++) {
+    const sprinkleGeometry = new THREE.CylinderGeometry(0.015, 0.015, 0.12);
     const sprinkleColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
     const sprinkleMaterial = new THREE.MeshPhysicalMaterial({ 
       color: sprinkleColor,
-      roughness: 0.1,
-      metalness: 0.0,
-      emissive: sprinkleColor,
-      emissiveIntensity: 0.3,
-      clearcoat: 0.8,
-      clearcoatRoughness: 0.1
+      roughness: 0.2,
+      metalness: 0.1
     });
     const sprinkle = new THREE.Mesh(sprinkleGeometry, sprinkleMaterial);
     
-    // Position sprinkles on the glazing surface
-    const angle = (i / 30) * Math.PI * 2;
-    const radius = 0.6 + Math.random() * 0.4;
+    // Position sprinkles ON the glazing surface
+    const angle = (i / 25) * Math.PI * 2;
+    const radius = 0.5 + Math.random() * 0.4;
     sprinkle.position.set(
       Math.cos(angle) * radius,
-      0.25 + Math.random() * 0.06,
+      0.22 + Math.random() * 0.05, // Slightly above glazing
       Math.sin(angle) * radius
     );
     sprinkle.rotation.set(
@@ -92,8 +70,6 @@ export const createSprinkledDonut = (vibrantColors: number[]) => {
       Math.random() * Math.PI
     );
     
-    sprinkle.castShadow = false;
-    sprinkle.receiveShadow = false;
     group.add(sprinkle);
   }
   
