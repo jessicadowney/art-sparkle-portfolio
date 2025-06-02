@@ -23,6 +23,27 @@ export const createSprinkledDonut = (vibrantColors: number[]) => {
   });
   const donut = new THREE.Mesh(donutGeometry, donutMaterial);
   group.add(donut);
+
+  // Add visible vertices for donut
+  const positions = donutGeometry.attributes.position;
+  const vertexMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.7 
+  });
+  
+  for (let i = 0; i < positions.count; i += 25) { // Show every 25th vertex
+    const vertexGeometry = new THREE.SphereGeometry(0.008, 6, 6);
+    const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+    
+    vertex.position.set(
+      positions.getX(i),
+      positions.getY(i),
+      positions.getZ(i)
+    );
+    
+    group.add(vertex);
+  }
   
   // Glazing that actually sits on top
   const glazingGeometry = new THREE.TorusGeometry(0.82, 0.25, 16, 64);

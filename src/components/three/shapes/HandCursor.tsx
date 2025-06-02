@@ -24,6 +24,27 @@ export const createHandCursor = (vibrantColors: number[]) => {
   });
   const palm = new THREE.Mesh(palmGeometry, skinMaterial);
   group.add(palm);
+
+  // Add visible vertices for palm
+  const positions = palmGeometry.attributes.position;
+  const vertexMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.9 
+  });
+  
+  for (let i = 0; i < positions.count; i += 4) { // Show every 4th vertex
+    const vertexGeometry = new THREE.SphereGeometry(0.012, 6, 6);
+    const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+    
+    vertex.position.set(
+      positions.getX(i),
+      positions.getY(i),
+      positions.getZ(i)
+    );
+    
+    group.add(vertex);
+  }
   
   // Detailed fingers with joints
   for (let i = 0; i < 4; i++) {

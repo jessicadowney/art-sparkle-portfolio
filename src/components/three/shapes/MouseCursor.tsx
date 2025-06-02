@@ -46,5 +46,27 @@ export const createMouseCursor = (vibrantColors: number[]) => {
   arrow.scale.set(0.8, 0.8, 0.8);
   
   group.add(arrow);
+
+  // Add visible vertices
+  const positions = arrowGeometry.attributes.position;
+  const vertexMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.8 
+  });
+  
+  for (let i = 0; i < positions.count; i += 8) { // Show every 8th vertex
+    const vertexGeometry = new THREE.SphereGeometry(0.008, 6, 6);
+    const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+    
+    vertex.position.set(
+      positions.getX(i) * 0.8,
+      positions.getY(i) * 0.8,
+      positions.getZ(i) * 0.8
+    );
+    
+    group.add(vertex);
+  }
+  
   return group;
 };

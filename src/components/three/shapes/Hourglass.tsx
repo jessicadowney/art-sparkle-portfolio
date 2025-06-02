@@ -36,6 +36,41 @@ export const createHourglass = (vibrantColors: number[]) => {
   const middleGeometry = new THREE.CylinderGeometry(0.12, 0.12, 0.3, 16);
   const middle = new THREE.Mesh(middleGeometry, glassMaterial);
   group.add(middle);
+
+  // Add visible vertices for top bulb
+  const topPositions = topBulbGeometry.attributes.position;
+  const vertexMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.6 
+  });
+  
+  for (let i = 0; i < topPositions.count; i += 20) { // Show every 20th vertex
+    const vertexGeometry = new THREE.SphereGeometry(0.01, 6, 6);
+    const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+    
+    vertex.position.set(
+      topPositions.getX(i),
+      topPositions.getY(i) * 0.8 + 0.8,
+      topPositions.getZ(i)
+    );
+    
+    group.add(vertex);
+  }
+
+  // Add visible vertices for bottom bulb
+  for (let i = 0; i < topPositions.count; i += 20) { // Show every 20th vertex
+    const vertexGeometry = new THREE.SphereGeometry(0.01, 6, 6);
+    const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+    
+    vertex.position.set(
+      topPositions.getX(i),
+      topPositions.getY(i) * 0.8 - 0.8,
+      topPositions.getZ(i)
+    );
+    
+    group.add(vertex);
+  }
   
   // Sand particles inside
   for (let i = 0; i < 50; i++) {

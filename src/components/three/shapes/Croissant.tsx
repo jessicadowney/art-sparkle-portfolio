@@ -32,6 +32,27 @@ export const createCroissant = (vibrantColors: number[]) => {
   });
   const croissant = new THREE.Mesh(tubeGeometry, croissantMaterial);
   group.add(croissant);
+
+  // Add visible vertices
+  const positions = tubeGeometry.attributes.position;
+  const vertexMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.7 
+  });
+  
+  for (let i = 0; i < positions.count; i += 12) { // Show every 12th vertex
+    const vertexGeometry = new THREE.SphereGeometry(0.008, 6, 6);
+    const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+    
+    vertex.position.set(
+      positions.getX(i),
+      positions.getY(i),
+      positions.getZ(i)
+    );
+    
+    group.add(vertex);
+  }
   
   // Add texture bumps with same material
   for (let i = 0; i < 15; i++) {

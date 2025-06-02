@@ -49,5 +49,27 @@ export const createTinyHeart = (vibrantColors: number[]) => {
   heart.scale.set(1.5, 1.5, 1.5); // Made them larger for better visibility
   
   group.add(heart);
+
+  // Add visible vertices
+  const positions = heartGeometry.attributes.position;
+  const vertexMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.8 
+  });
+  
+  for (let i = 0; i < positions.count; i += 10) { // Show every 10th vertex to avoid clutter
+    const vertexGeometry = new THREE.SphereGeometry(0.01, 8, 8);
+    const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+    
+    vertex.position.set(
+      positions.getX(i) * 1.5,
+      positions.getY(i) * 1.5,
+      positions.getZ(i) * 1.5
+    );
+    
+    group.add(vertex);
+  }
+  
   return group;
 };

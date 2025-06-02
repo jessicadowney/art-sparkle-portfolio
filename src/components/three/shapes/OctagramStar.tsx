@@ -54,5 +54,27 @@ export const createOctagramStar = (vibrantColors: number[]) => {
   const star = new THREE.Mesh(starGeometry, starMaterial);
   
   group.add(star);
+
+  // Add visible vertices
+  const positions = starGeometry.attributes.position;
+  const vertexMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0xffffff, 
+    transparent: true, 
+    opacity: 0.9 
+  });
+  
+  for (let i = 0; i < positions.count; i += 6) { // Show every 6th vertex
+    const vertexGeometry = new THREE.SphereGeometry(0.006, 6, 6);
+    const vertex = new THREE.Mesh(vertexGeometry, vertexMaterial);
+    
+    vertex.position.set(
+      positions.getX(i),
+      positions.getY(i),
+      positions.getZ(i)
+    );
+    
+    group.add(vertex);
+  }
+  
   return group;
 };
