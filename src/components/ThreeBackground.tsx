@@ -12,6 +12,7 @@ const ThreeBackground: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const animationFrameRef = useRef<number | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -30,24 +31,25 @@ const ThreeBackground: React.FC = () => {
 
     const renderer = new THREE.WebGLRenderer({ 
       alpha: true, 
-      antialias: true 
+      antialias: true,
+      powerPreference: "high-performance" // Performance optimization
     });
     rendererRef.current = renderer;
     
-    // Disable shadows for luminous effect
+    // Performance optimizations
     renderer.shadowMap.enabled = false;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
     
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create playful shapes with MORE hearts and better positioning
+    // Reduced number of shapes for better performance
     const shapes = [];
     
-    // Create hearts (80% of shapes - increased from 60%)
-    for (let i = 0; i < 50; i++) {
+    // Create hearts (reduced from 50 to 25)
+    for (let i = 0; i < 25; i++) {
       const heart = createTinyHeart(vibrantColors);
       
       // Disable shadows for luminous effect
@@ -55,14 +57,15 @@ const ThreeBackground: React.FC = () => {
         if (child instanceof THREE.Mesh) {
           child.castShadow = false;
           child.receiveShadow = false;
+          child.frustumCulled = true; // Performance optimization
         }
       });
       
       // Better positioning - closer to camera and more spread out
       heart.position.set(
-        (Math.random() - 0.5) * 40,
-        (Math.random() - 0.5) * 30,
-        (Math.random() - 0.5) * 20 - 5 // Bring them closer to camera
+        (Math.random() - 0.5) * 30, // Reduced spread
+        (Math.random() - 0.5) * 20,
+        (Math.random() - 0.5) * 15 - 5
       );
       
       // Random rotation
@@ -73,39 +76,33 @@ const ThreeBackground: React.FC = () => {
       );
 
       // Better scale variation for hearts
-      const scale = Math.random() * 0.8 + 0.6;
+      const scale = Math.random() * 0.6 + 0.4; // Smaller range for performance
       heart.scale.set(scale, scale, scale);
 
       scene.add(heart);
       shapes.push(heart);
-      
-      console.log(`Added heart ${i + 1} at position:`, heart.position);
     }
 
-    // Create fewer stars and cursors (20% of shapes)
+    // Create fewer stars and cursors (reduced from 12 to 8)
     const otherShapeCreators = [createOctagramStar, createMouseCursor];
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 8; i++) {
       const shapeCreator = otherShapeCreators[i % otherShapeCreators.length];
       const shape = shapeCreator(vibrantColors);
       
-      // Disable shadows for luminous effect
-      if (shape instanceof THREE.Mesh) {
-        shape.castShadow = false;
-        shape.receiveShadow = false;
-      } else {
-        shape.traverse((child) => {
-          if (child instanceof THREE.Mesh) {
-            child.castShadow = false;
-            child.receiveShadow = false;
-          }
-        });
-      }
+      // Performance optimizations
+      shape.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.castShadow = false;
+          child.receiveShadow = false;
+          child.frustumCulled = true;
+        }
+      });
       
       // Random positioning
       shape.position.set(
-        (Math.random() - 0.5) * 40,
         (Math.random() - 0.5) * 30,
-        (Math.random() - 0.5) * 20 - 5
+        (Math.random() - 0.5) * 20,
+        (Math.random() - 0.5) * 15 - 5
       );
       
       // Random rotation
@@ -116,7 +113,7 @@ const ThreeBackground: React.FC = () => {
       );
 
       // Random scale for other shapes
-      const scale = Math.random() * 0.8 + 0.6;
+      const scale = Math.random() * 0.6 + 0.4;
       shape.scale.set(scale, scale, scale);
 
       scene.add(shape);
@@ -126,35 +123,41 @@ const ThreeBackground: React.FC = () => {
     // Add soft lighting for luminous effect
     createSceneLighting(scene);
 
-    camera.position.z = 15; // Moved camera closer to see hearts better
+    camera.position.z = 12; // Moved camera closer
 
-    console.log(`Total shapes created: ${shapes.length} (${50} hearts + ${12} other shapes)`);
+    console.log(`Total shapes created: ${shapes.length} (${25} hearts + ${8} other shapes)`);
 
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
+    // Optimized animation loop
+    let lastTime = 0;
+    const animate = (currentTime: number) => {
+      animationFrameRef.current = requestAnimationFrame(animate);
 
-      // Rotate and float all shapes
+      // Throttle to 60fps max
+      if (currentTime - lastTime < 16.67) return;
+      lastTime = currentTime;
+
+      // Simplified rotation and float all shapes
+      const time = currentTime * 0.001;
       shapes.forEach((shape, index) => {
-        shape.rotation.x += 0.002 + index * 0.0005;
-        shape.rotation.y += 0.003 + index * 0.0007;
-        shape.rotation.z += 0.001 + index * 0.0003;
+        // Reduced rotation speed for performance
+        shape.rotation.x += 0.001 + index * 0.0002;
+        shape.rotation.y += 0.002 + index * 0.0003;
+        shape.rotation.z += 0.0005 + index * 0.0001;
         
-        // Floating motion with different rhythms
-        shape.position.y += Math.sin(Date.now() * 0.001 + index) * 0.002;
-        shape.position.x += Math.cos(Date.now() * 0.0008 + index * 0.5) * 0.001;
-        shape.position.z += Math.sin(Date.now() * 0.0006 + index * 0.3) * 0.001;
+        // Simplified floating motion
+        shape.position.y += Math.sin(time + index) * 0.001;
+        shape.position.x += Math.cos(time + index * 0.5) * 0.0005;
       });
 
-      // Gentle camera movement
-      camera.position.x = Math.sin(Date.now() * 0.0002) * 2;
-      camera.position.y = Math.cos(Date.now() * 0.0001) * 1.5;
+      // Simplified camera movement
+      camera.position.x = Math.sin(time * 0.0001) * 1;
+      camera.position.y = Math.cos(time * 0.00005) * 0.5;
       camera.lookAt(0, 0, 0);
 
       renderer.render(scene, camera);
     };
 
-    animate();
+    animate(0);
 
     // Handle resize
     const handleResize = () => {
@@ -168,6 +171,9 @@ const ThreeBackground: React.FC = () => {
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
       if (mountRef.current && renderer.domElement) {
         mountRef.current.removeChild(renderer.domElement);
       }
@@ -201,10 +207,10 @@ const ThreeBackground: React.FC = () => {
 
     // Update background and fog for luminous effect
     if (isDark) {
-      sceneRef.current.fog = new THREE.Fog(0x0f172a, 20, 80);
+      sceneRef.current.fog = new THREE.Fog(0x0f172a, 15, 60); // Reduced fog distance for performance
       rendererRef.current.setClearColor(0x0f172a, 0.05);
     } else {
-      sceneRef.current.fog = new THREE.Fog(0xf0f9ff, 20, 80);
+      sceneRef.current.fog = new THREE.Fog(0xf0f9ff, 15, 60);
       rendererRef.current.setClearColor(0xf0f9ff, 0.05);
     }
   }, [theme]);

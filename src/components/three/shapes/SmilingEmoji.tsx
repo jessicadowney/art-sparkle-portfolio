@@ -24,10 +24,11 @@ export const createSmilingEmoji = (vibrantColors: number[]) => {
   const face = new THREE.Mesh(faceGeometry, faceMaterial);
   group.add(face);
 
-  // Add visible vertices for face
+  // Add visible vertices for face with darker tone
   const positions = faceGeometry.attributes.position;
+  const darkerColor = new THREE.Color(randomColor).multiplyScalar(0.6); // 60% darker
   const vertexMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xffffff, 
+    color: darkerColor, 
     transparent: true, 
     opacity: 0.8 
   });

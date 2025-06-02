@@ -24,10 +24,11 @@ export const createSprinkledDonut = (vibrantColors: number[]) => {
   const donut = new THREE.Mesh(donutGeometry, donutMaterial);
   group.add(donut);
 
-  // Add visible vertices for donut
+  // Add visible vertices for donut with darker tone
   const positions = donutGeometry.attributes.position;
+  const darkerColor = new THREE.Color(baseColor).multiplyScalar(0.6); // 60% darker
   const vertexMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xffffff, 
+    color: darkerColor, 
     transparent: true, 
     opacity: 0.7 
   });

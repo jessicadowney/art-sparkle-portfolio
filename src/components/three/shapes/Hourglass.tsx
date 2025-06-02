@@ -37,10 +37,11 @@ export const createHourglass = (vibrantColors: number[]) => {
   const middle = new THREE.Mesh(middleGeometry, glassMaterial);
   group.add(middle);
 
-  // Add visible vertices for top bulb
+  // Add visible vertices for top bulb with darker tone
   const topPositions = topBulbGeometry.attributes.position;
+  const darkerColor = new THREE.Color(randomColor).multiplyScalar(0.6); // 60% darker
   const vertexMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xffffff, 
+    color: darkerColor, 
     transparent: true, 
     opacity: 0.6 
   });

@@ -55,10 +55,11 @@ export const createOctagramStar = (vibrantColors: number[]) => {
   
   group.add(star);
 
-  // Add visible vertices
+  // Add visible vertices with darker tone of the same color
   const positions = starGeometry.attributes.position;
+  const darkerColor = new THREE.Color(randomColor).multiplyScalar(0.6); // 60% darker
   const vertexMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xffffff, 
+    color: darkerColor, 
     transparent: true, 
     opacity: 0.9 
   });

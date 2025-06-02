@@ -25,10 +25,11 @@ export const createHandCursor = (vibrantColors: number[]) => {
   const palm = new THREE.Mesh(palmGeometry, skinMaterial);
   group.add(palm);
 
-  // Add visible vertices for palm
+  // Add visible vertices for palm with darker tone
   const positions = palmGeometry.attributes.position;
+  const darkerColor = new THREE.Color(randomColor).multiplyScalar(0.6); // 60% darker
   const vertexMaterial = new THREE.MeshBasicMaterial({ 
-    color: 0xffffff, 
+    color: darkerColor, 
     transparent: true, 
     opacity: 0.9 
   });
