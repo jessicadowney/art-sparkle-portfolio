@@ -1,14 +1,14 @@
 
-// Soft pastel colors for luminous three.js objects
+// Dawn and burnt orange colors with prismatic light effects
 export const vibrantColors = [
-  0xFAFA90, // Soft yellow
-  0xC7E4EB, // Light blue
-  0xFFCCC8, // Peach pink
-  0xEDEAE3, // Warm white
-  0xE4F4E1, // Light green
-  0xC4EFE4, // Mint green
-  0xADCBE7, // Sky blue
-  0xEAA1CC, // Soft pink
-  0xF28F52, // Warm orange
-  0xEAE37E  // Pale yellow
+  0xff8c42, // Burnt orange
+  0xffa726, // Warm amber
+  0xffcc02, // Golden yellow
+  0xff7043, // Sunset orange
+  0xe67e22, // Deep burnt orange
+  0xffd54f, // Light gold
+  0xff9800, // Vibrant orange
+  0xffb74d, // Soft orange
+  0xffc107, // Bright amber
+  0xff8a65  // Coral orange
 ];
