@@ -1,14 +1,14 @@
 
-// Dawn and burnt orange colors with prismatic light effects
+// Electric blue and purple neon colors with dark moody effects
 export const vibrantColors = [
-  0xff8c42, // Burnt orange
-  0xffa726, // Warm amber
-  0xffcc02, // Golden yellow
-  0xff7043, // Sunset orange
-  0xe67e22, // Deep burnt orange
-  0xffd54f, // Light gold
-  0xff9800, // Vibrant orange
-  0xffb74d, // Soft orange
-  0xffc107, // Bright amber
-  0xff8a65  // Coral orange
+  0x3b82f6, // Electric blue
+  0x60a5fa, // Bright blue
+  0x2563eb, // Deep blue
+  0x7c3aed, // Purple
+  0xa855f7, // Bright purple
+  0x9333ea, // Deep purple
+  0x1e40af, // Dark blue
+  0x6366f1, // Indigo
+  0x8b5cf6, // Violet
+  0x4f46e5  // Deep indigo
 ];
