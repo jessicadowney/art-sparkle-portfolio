@@ -1,34 +1,46 @@
-name: Deploy to GitHub Pages
+name: Build & deploy to jessicadowney.github.io
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
         cache: 'npm'
-        
+
     - name: Install dependencies
       run: npm ci
-      
+
     - name: Build
       run: npm run build
-      
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
+
+    # Publishes the built site to the repo that serves jessicadowney.com.
+    # Requires a DEPLOY_TOKEN repository secret: a fine-grained personal
+    # access token with "Contents: Read and write" permission scoped to
+    # the jessicadowney/jessicadowney.github.io repository only.
+    # Create one at github.com/settings/personal-access-tokens, then add it
+    # under this repo's Settings → Secrets and variables → Actions.
+    - name: Deploy to jessicadowney.github.io
+      uses: peaceiris/actions-gh-pages@v4
+      if: github.event_name != 'pull_request'
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        personal_token: ${{ secrets.DEPLOY_TOKEN }}
+        external_repository: jessicadowney/jessicadowney.github.io
+        publish_branch: master
         publish_dir: ./dist
