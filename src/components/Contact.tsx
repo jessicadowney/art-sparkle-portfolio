@@ -71,11 +71,11 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="glass-container rounded-2xl p-8 border border-border/50">
-              <h3 className="text-2xl font-semibold mb-4 antialiased">Let's make something click</h3>
+              <h3 className="text-2xl font-semibold mb-4 antialiased">Let's untangle something hard</h3>
               <p className="text-foreground/70 mb-6 antialiased">
-                I'm at Microsoft these days, designing for Copilot extensibility. I love talking with people
-                building thoughtful products — so if you're working on something where design could change its
-                trajectory, I'd love to hear about it.
+                I do my best work in the undefined spaces — turning messy problems into products that feel
+                obvious in hindsight. Currently at Microsoft, designing for Copilot extensibility. If you're
+                wrestling with something like that, I'd love to hear about it.
               </p>
               <Button 
                 size="lg"
