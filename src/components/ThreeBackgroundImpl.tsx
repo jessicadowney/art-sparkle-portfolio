@@ -338,7 +338,7 @@ const ThreeBackgroundImpl: React.FC = () => {
     rendererRef.current.setClearColor(fog, 0.05);
   }, [theme]);
 
-  return <div ref={mountRef} className="fixed inset-0 -z-10" style={{ pointerEvents: 'none' }} />;
+  return <div ref={mountRef} aria-hidden="true" className="fixed inset-0 -z-10" style={{ pointerEvents: 'none' }} />;
 };
 
 export default ThreeBackgroundImpl;

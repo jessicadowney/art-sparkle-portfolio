@@ -27,7 +27,7 @@ const OneNote = () => {
       <div className="min-h-screen relative">
         <ThreeBackground />
         <Header />
-        <main className="pt-24 pb-20">
+        <main id="main-content" tabIndex={-1} className="pt-24 pb-20">
           <div className="container mx-auto px-6 max-w-4xl">
             <Button 
               variant="ghost" 
@@ -76,11 +76,11 @@ const OneNote = () => {
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/ff2b8e20-f09f-46f7-a76b-4c18e3bd0f07.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/ff2b8e20-f09f-46f7-a76b-4c18e3bd0f07.png" 
                     alt="Microsoft OneNote Logo" 
                     className="rounded-lg shadow-lg w-full h-auto"
-                  />
+                  /></picture>
                 </div>
 
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Overview</h2>
@@ -115,11 +115,11 @@ const OneNote = () => {
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/33810cc1-c871-466c-a7ca-0a19b5abb118.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/33810cc1-c871-466c-a7ca-0a19b5abb118.png" 
                     alt="OneNote Cloud Attachment Prompt - Allow online file conversion" 
                     className="rounded-lg shadow-lg w-full h-auto"
-                  />
+                  /></picture>
                 </div>
 
                 <hr className="my-12 border-border/50" />
@@ -138,11 +138,11 @@ const OneNote = () => {
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/e12a3a45-18df-42cb-ad13-255fe2966928.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/e12a3a45-18df-42cb-ad13-255fe2966928.png" 
                     alt="File insertion options across different scenarios" 
                     className="rounded-lg shadow-lg w-full h-auto"
-                  />
+                  /></picture>
                 </div>
 
                 <hr className="my-12 border-border/50" />
@@ -163,18 +163,18 @@ const OneNote = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/44eb7cd7-93f3-4537-8bfb-5e030fb17b90.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/44eb7cd7-93f3-4537-8bfb-5e030fb17b90.png" 
                       alt="French localization - Comment voulez-vous insérer ce fichier?" 
                       className="rounded-lg shadow-lg w-full h-auto"
-                    />
+                    /></picture>
                   </div>
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/6fc51124-ba16-4f67-b7a0-9ca19ffcc0ff.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/6fc51124-ba16-4f67-b7a0-9ca19ffcc0ff.png" 
                       alt="File insertion dialog with three options" 
                       className="rounded-lg shadow-lg w-full h-auto"
-                    />
+                    /></picture>
                   </div>
                 </div>
 
@@ -189,18 +189,18 @@ const OneNote = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/3f4dfbe1-d9d2-49eb-96dd-134e23cc0365.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/3f4dfbe1-d9d2-49eb-96dd-134e23cc0365.png" 
                       alt="German localization - Wie wollen Sie diese Datei einfügen?" 
                       className="rounded-lg shadow-lg w-full h-auto"
-                    />
+                    /></picture>
                   </div>
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/4f7965c9-474f-4fa2-9b1d-aac92f409da6.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/4f7965c9-474f-4fa2-9b1d-aac92f409da6.png" 
                       alt="PDF file insertion options" 
                       className="rounded-lg shadow-lg w-full h-auto"
-                    />
+                    /></picture>
                   </div>
                 </div>
 
@@ -213,18 +213,18 @@ const OneNote = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/9cb21830-f039-4a89-be57-e013c6a33982.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/9cb21830-f039-4a89-be57-e013c6a33982.png" 
                       alt="Structural assessment file insertion dialog" 
                       className="rounded-lg shadow-lg w-full h-auto"
-                    />
+                    /></picture>
                   </div>
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/80dff5ae-a43e-47f8-b3e9-2f8a0104d036.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/80dff5ae-a43e-47f8-b3e9-2f8a0104d036.png" 
                       alt="Multiple files insertion dialog" 
                       className="rounded-lg shadow-lg w-full h-auto"
-                    />
+                    /></picture>
                   </div>
                 </div>
 
@@ -236,11 +236,11 @@ const OneNote = () => {
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/cede914a-c532-4dbe-86e7-5e395cf3e3e9.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/cede914a-c532-4dbe-86e7-5e395cf3e3e9.png" 
                     alt="OneNote design system and UI components overview" 
                     className="rounded-lg shadow-lg w-full h-auto"
-                  />
+                  /></picture>
                 </div>
 
                 <hr className="my-12 border-border/50" />
@@ -260,36 +260,36 @@ const OneNote = () => {
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/4e447225-25bc-414e-8180-3f2d58e1374e.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/4e447225-25bc-414e-8180-3f2d58e1374e.png" 
                     alt="High contrast design specifications and color coding" 
                     className="rounded-lg shadow-lg w-full h-auto"
-                  />
+                  /></picture>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/854feffc-fe90-447b-baf8-d72c2e3208d6.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/854feffc-fe90-447b-baf8-d72c2e3208d6.png" 
                       alt="French dialog with spacing specifications" 
                       className="rounded-lg shadow-lg w-full h-auto"
-                    />
+                    /></picture>
                   </div>
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/284582bd-5f18-4ffe-957a-3204aab29352.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/284582bd-5f18-4ffe-957a-3204aab29352.png" 
                       alt="French dialog in context with precise measurements" 
                       className="rounded-lg shadow-lg w-full h-auto"
-                    />
+                    /></picture>
                   </div>
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/44010bc8-c30e-47aa-b6ac-ad3d9b419761.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/44010bc8-c30e-47aa-b6ac-ad3d9b419761.png" 
                     alt="macOS implementation of cloud file insertion dialog" 
                     className="rounded-lg shadow-lg w-full h-auto"
-                  />
+                  /></picture>
                 </div>
 
                 <hr className="my-12 border-border/50" />

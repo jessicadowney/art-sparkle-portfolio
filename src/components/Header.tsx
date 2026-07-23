@@ -47,6 +47,12 @@ const Header: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-foreground focus:shadow-lg focus:ring-2 focus:ring-primary"
+      >
+        Skip to content
+      </a>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button 
@@ -93,15 +99,18 @@ const Header: React.FC = () => {
               size="icon"
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMobileMenuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border/20">
+          <div id="mobile-menu" className="md:hidden mt-4 pb-4 border-t border-border/20">
             <div className="flex flex-col space-y-4 pt-4">
               <button 
                 onClick={() => scrollToSection('about')}

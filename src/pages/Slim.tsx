@@ -27,7 +27,7 @@ const Slim = () => {
       <div className="min-h-screen relative">
         <ThreeBackground />
         <Header />
-        <main className="pt-24 pb-20">
+        <main id="main-content" tabIndex={-1} className="pt-24 pb-20">
           <div className="container mx-auto px-6 max-w-4xl">
             <Button 
               variant="ghost" 
@@ -79,11 +79,11 @@ const Slim = () => {
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/43c5653f-5641-40d0-be8c-5fc6bc7ca71b.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/43c5653f-5641-40d0-be8c-5fc6bc7ca71b.png" 
                     alt="Siemens Brand Identity" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                  />
+                  /></picture>
                 </div>
 
                 <div className="mb-12">
@@ -97,11 +97,11 @@ const Slim = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-12">
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/39a12b50-9924-444b-94a6-c018d2626fd8.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/39a12b50-9924-444b-94a6-c018d2626fd8.png" 
                       alt="sLIM Lab Workstation with RFID Scanner" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                    />
+                    /></picture>
                   </div>
                 </div>
 
@@ -120,19 +120,19 @@ const Slim = () => {
                   </ul>
                 </div>
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/59fc189a-118c-4664-b3bc-63eeb559d1dd.png" 
                     alt="Streamlined Workflow Management" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                  />
+                  /></picture>
                 </div>
                 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/7fb41454-02d2-47d7-b36c-0804a23c8bf6.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/7fb41454-02d2-47d7-b36c-0804a23c8bf6.png" 
                     alt="Original Interface - Complex Navigation System" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                  />
+                  /></picture>
                 </div>
 
                 <hr className="my-12 border-border/50" />
@@ -166,36 +166,36 @@ const Slim = () => {
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/e8eda6a9-4f4e-48bb-9024-830d86407f85.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/e8eda6a9-4f4e-48bb-9024-830d86407f85.png" 
                     alt="Redesigned Interface in Modern Lab Environment" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                  />
+                  /></picture>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/3ab16492-9e3d-41b7-95cf-5814e1c06b16.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/3ab16492-9e3d-41b7-95cf-5814e1c06b16.png" 
                       alt="Redesigned Current Stock Interface" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                    />
+                    /></picture>
                   </div>
                   <div>
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/5d9f6508-c786-48eb-96a2-53f489f1ee86.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/5d9f6508-c786-48eb-96a2-53f489f1ee86.png" 
                       alt="Improved Events Management Interface" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                    />
+                    /></picture>
                   </div>
                 </div>
 
                 <div className="mb-12">
-                  <img loading="lazy" decoding="async" 
+                  <picture className="contents"><source srcSet="/lovable-uploads/79203c79-54ec-4315-9155-bd95ef97d107.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                     src="/lovable-uploads/79203c79-54ec-4315-9155-bd95ef97d107.png" 
                     alt="Lab Professionals Using Redesigned sLIM System" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
-                  />
+                  /></picture>
                 </div>
 
                 <hr className="my-12 border-border/50" />

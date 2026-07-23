@@ -18,7 +18,7 @@ const Index = () => {
       <div className="min-h-screen relative">
         <ThreeBackground />
         <Header />
-        <main>
+        <main id="main-content" tabIndex={-1}>
           <Hero />
           <About />
           <Work />

@@ -30,11 +30,14 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
   return (
     <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer" onClick={handleClick}>
       <div className="aspect-video relative overflow-hidden">
-        <img loading="lazy" decoding="async" 
-          src={image} 
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        <picture className="contents">
+          <source srcSet={image.replace(/\.png$/, '.webp')} type="image/webp" />
+          <img loading="lazy" decoding="async"
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         <div className="absolute top-4 right-4">
           <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -68,12 +71,14 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
           ))}
         </div>
         
-        <Button 
-          variant="ghost" 
+        <Button
+          variant="ghost"
           className="p-0 h-auto font-medium text-primary hover:text-primary/80 group/btn"
+          onClick={(e) => { e.stopPropagation(); handleClick(); }}
+          aria-label={`View case study: ${title}`}
         >
           View Case Study
-          <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+          <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/btn:translate-x-1" aria-hidden="true" />
         </Button>
       </CardContent>
     </Card>
