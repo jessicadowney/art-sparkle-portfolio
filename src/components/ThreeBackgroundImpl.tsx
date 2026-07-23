@@ -21,6 +21,8 @@ const CONFIG = {
   hearts: 16,
   stars: 3,
   cursors: 3,
+  ibeams: 16,
+  carets: 16,
   dust: 130,
   parallax: true,
   pixelRatioCap: 1.5,
@@ -65,6 +67,36 @@ function cursorShape() {
   s.lineTo(0.4, 0.9);
   s.lineTo(0.8, 0.8);
   s.lineTo(0, 0);
+  return s;
+}
+// I-beam text cursor — a serifed "I" (top bar, stem, bottom bar).
+function ibeamShape() {
+  const s = new THREE.Shape();
+  const hw = 0.2, sw = 0.06, st = 0.12, hh = 0.5; // serif half-width, stem half-width, serif thickness, half height
+  s.moveTo(-hw, hh);
+  s.lineTo(hw, hh);
+  s.lineTo(hw, hh - st);
+  s.lineTo(sw, hh - st);
+  s.lineTo(sw, -hh + st);
+  s.lineTo(hw, -hh + st);
+  s.lineTo(hw, -hh);
+  s.lineTo(-hw, -hh);
+  s.lineTo(-hw, -hh + st);
+  s.lineTo(-sw, -hh + st);
+  s.lineTo(-sw, hh - st);
+  s.lineTo(-hw, hh - st);
+  s.closePath();
+  return s;
+}
+// Insertion caret — the slim blinking text-insertion bar.
+function caretShape() {
+  const s = new THREE.Shape();
+  const w = 0.055, hh = 0.5;
+  s.moveTo(-w, -hh);
+  s.lineTo(w, -hh);
+  s.lineTo(w, hh);
+  s.lineTo(-w, hh);
+  s.closePath();
   return s;
 }
 
@@ -219,6 +251,16 @@ const ThreeBackgroundImpl: React.FC = () => {
       new THREE.ExtrudeGeometry(cursorShape(), { depth: 0.1, bevelEnabled: true, bevelSegments: 8, steps: 2, bevelSize: 0.02, bevelThickness: 0.02 }),
       CONFIG.cursors,
       0.8
+    );
+    addInstanced(
+      new THREE.ExtrudeGeometry(ibeamShape(), { depth: 0.06, bevelEnabled: true, bevelSegments: 4, steps: 1, bevelSize: 0.015, bevelThickness: 0.015 }),
+      CONFIG.ibeams,
+      1.1
+    );
+    addInstanced(
+      new THREE.ExtrudeGeometry(caretShape(), { depth: 0.06, bevelEnabled: true, bevelSegments: 4, steps: 1, bevelSize: 0.02, bevelThickness: 0.02 }),
+      CONFIG.carets,
+      1.1
     );
 
     // Sparkles: a single Points draw replaces the per-vertex sphere meshes
