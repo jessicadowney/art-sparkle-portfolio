@@ -6,9 +6,16 @@ import Footer from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useSeo } from '@/hooks/useSeo';
 
 const Slim = () => {
   const navigate = useNavigate();
+  useSeo({
+    title: 'syngo Lab Inventory Manager (sLIM) — Siemens Healthineers',
+    description:
+      'Case study: redesigning a cloud lab-inventory system for Siemens Healthineers — simplifying complex navigation and improving usability for lab professionals.',
+    path: '/slim',
+  });
 
   useEffect(() => {
     // Scroll to top when component mounts

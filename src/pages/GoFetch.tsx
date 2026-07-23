@@ -7,9 +7,16 @@ import Footer from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useSeo } from '@/hooks/useSeo';
 
 const GoFetch = () => {
   const navigate = useNavigate();
+  useSeo({
+    title: 'GoFetch.ca — Pet Care Platform',
+    description:
+      'Case study: unifying the design system and lifting sitter conversion for GoFetch, a mobile-first platform connecting dog parents with trusted care providers.',
+    path: '/gofetch',
+  });
 
   useEffect(() => {
     // Scroll to top when component mounts

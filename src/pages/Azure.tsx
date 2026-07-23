@@ -7,9 +7,16 @@ import Footer from '@/components/Footer';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useSeo } from '@/hooks/useSeo';
 
 const Azure = () => {
   const navigate = useNavigate();
+  useSeo({
+    title: 'Virtual Visit Sample Builder — Azure Communication Services',
+    description:
+      'Case study: a no-code developer tool for Azure Communication Services to build and customize virtual healthcare visits, with ARM template generation and downloadable repos.',
+    path: '/azure-sample-builder',
+  });
 
   useEffect(() => {
     // Scroll to top when component mounts

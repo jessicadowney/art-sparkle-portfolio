@@ -6,9 +6,16 @@ import Footer from '@/components/Footer';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useSeo } from '@/hooks/useSeo';
 
 const PhoneNumberCart = () => {
   const navigate = useNavigate();
+  useSeo({
+    title: 'Phone Number Shopping Cart — Azure Communication Services',
+    description:
+      'Case study: redesigning phone-number acquisition in the Azure portal — replacing one-at-a-time purchasing with a flexible shopping cart for multi-number provisioning.',
+    path: '/azure-phone-numbers',
+  });
 
   useEffect(() => {
     // Scroll to top when component mounts

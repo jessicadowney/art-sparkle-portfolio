@@ -6,9 +6,16 @@ import Footer from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useSeo } from '@/hooks/useSeo';
 
 const OneNote = () => {
   const navigate = useNavigate();
+  useSeo({
+    title: 'Microsoft OneNote: Cloud Attachment Prompt',
+    description:
+      'Case study: reinstating cloud attachment insertion in OneNote with contextual, file-type-aware options to improve workflow and cross-platform parity.',
+    path: '/onenote',
+  });
 
   useEffect(() => {
     // Scroll to top when component mounts

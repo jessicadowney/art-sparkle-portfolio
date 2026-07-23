@@ -6,9 +6,16 @@ import Footer from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useSeo } from '@/hooks/useSeo';
 
 const Ally = () => {
   const navigate = useNavigate();
+  useSeo({
+    title: 'Amped Wireless Ally — Router Security App',
+    description:
+      'Case study: a white-labeled Wi-Fi security and parental-control app with streamlined setup and intuitive network management for families.',
+    path: '/ally',
+  });
 
   useEffect(() => {
     // Scroll to top when component mounts
