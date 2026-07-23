@@ -9,8 +9,10 @@ import Work from '@/components/Work';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { useSeo } from '@/hooks/useSeo';
 
 const Index = () => {
+  useSeo({ path: '/' });
   return (
     <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
       <div className="min-h-screen relative">

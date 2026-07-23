@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:jessica@jessicadowney.com",
+      href: "mailto:hello@jessicadowney.com",
       username: "hello@jessicadowney.com"
     },
     {
@@ -71,10 +71,11 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="glass-container rounded-2xl p-8 border border-border/50">
-              <h3 className="text-2xl font-semibold mb-4 antialiased">Open to exciting full-time opportunities</h3>
+              <h3 className="text-2xl font-semibold mb-4 antialiased">Open to the right full-time opportunity</h3>
               <p className="text-foreground/70 mb-6 antialiased">
-                I'm currently seeking meaningful full-time positions where I can contribute to innovative products, 
-                collaborate with passionate teams, and create impactful user experiences that make a difference.
+                I'm currently at Microsoft designing for Azure Communication Services — and passively open to the
+                right full-time role. If you're building innovative products where thoughtful design can change a
+                product's trajectory, I'd love to hear from you.
               </p>
               <Button 
                 size="lg"

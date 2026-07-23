@@ -7,9 +7,16 @@ import Footer from '@/components/Footer';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useSeo } from '@/hooks/useSeo';
 
 const Azure = () => {
   const navigate = useNavigate();
+  useSeo({
+    title: 'Virtual Visit Sample Builder — Azure Communication Services',
+    description:
+      'Case study: a no-code developer tool for Azure Communication Services to build and customize virtual healthcare visits, with ARM template generation and downloadable repos.',
+    path: '/azure-sample-builder',
+  });
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -60,7 +67,7 @@ const Azure = () => {
                 </p>
                 
                 <div className="mb-8">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/dfec2eed-75b5-42ba-b425-61980e91c034.png" 
                     alt="Azure Communication Services Virtual Visit Sample Builder"
                     className="w-full h-auto rounded-lg shadow-lg"
@@ -110,7 +117,7 @@ const Azure = () => {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-semibold mb-6 text-primary">Design Sprint Process</h3>
                   <div className="max-w-4xl mx-auto">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/4edd9b31-c7a9-47a5-aaf3-aea2d49ee270.png" 
                       alt="Design Sprint Process showing 6 phases: Understand, Define, Sketch, Decide, Prototype, and Validate with corresponding dates"
                       className="w-full h-auto rounded-lg shadow-lg"
@@ -175,14 +182,14 @@ const Azure = () => {
 
                 <div className="grid grid-cols-1 gap-8 mb-8">
                   <div className="rounded-lg overflow-hidden border border-border/50">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/2e2bc1f1-189f-4ecf-8660-b1a5a7318da8.png" 
                       alt="Azure Sample Builder - Template Selection and Call Interface"
                       className="w-full h-auto"
                     />
                   </div>
                   <div className="rounded-lg overflow-hidden border border-border/50">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/6c3557f2-5021-4c11-a363-91319eadb0f8.png" 
                       alt="Azure Sample Builder - Configuration and Review Interface"
                       className="w-full h-auto"
@@ -230,7 +237,7 @@ const Azure = () => {
                 </div>
 
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  The sample builder is still in active development. We are currently adding AI meeting capabilities to support more advanced scenarios and deepen the builder's value across sectors.
+                  The sample builder continued to evolve after launch — including work to add AI meeting capabilities that support more advanced scenarios and deepen its value across sectors.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-8 mb-12">

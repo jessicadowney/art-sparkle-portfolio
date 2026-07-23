@@ -54,7 +54,7 @@ const About: React.FC = () => {
                 Outside of work, I'm a food nerd, a corgi-walker, and a mom of two. (Ask me about mochi donuts or bingsu.)
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Want to see how I approach design from zero? Here's something I wrote: <a target="_blank" href="https://medium.com/@jessicadowney/jumpstarting-your-app-conception-without-drawing-any-ui-8e5be35876c9#.h8nbq1bfn/">Jumpstarting your app conception without drawing any UI</a>.
+                Want to see how I approach design from zero? Here's something I wrote: <a target="_blank" rel="noopener noreferrer" href="https://medium.com/@jessicadowney/jumpstarting-your-app-conception-without-drawing-any-ui-8e5be35876c9">Jumpstarting your app conception without drawing any UI</a>.
               </p>
             </div>
           </div>
