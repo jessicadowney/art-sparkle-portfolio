@@ -251,14 +251,15 @@
   }
 
   /* Neon animated gradient background */
+  /* Stops kept dark enough that white button text clears WCAG AA (>=4.5:1) at every point */
   .animated-gradient {
-    background: linear-gradient(45deg, #3b82f6, #7c3aed, #60a5fa, #a855f7, #3b82f6);
+    background: linear-gradient(45deg, #2563eb, #7c3aed, #4f46e5, #9333ea, #2563eb);
     background-size: 300% 300%;
     animation: gradientShift 6s ease infinite;
   }
 
   .animated-gradient:hover {
-    background: linear-gradient(45deg, #2563eb, #6d28d9, #3b82f6, #9333ea, #2563eb);
+    background: linear-gradient(45deg, #1d4ed8, #6d28d9, #4338ca, #7e22ce, #1d4ed8);
     background-size: 300% 300%;
     animation: gradientShift 3s ease infinite;
   }
