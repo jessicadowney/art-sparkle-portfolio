@@ -71,11 +71,11 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="glass-container rounded-2xl p-8 border border-border/50">
-              <h3 className="text-2xl font-semibold mb-4 antialiased">Open to the right full-time opportunity</h3>
+              <h3 className="text-2xl font-semibold mb-4 antialiased">Let's make something click</h3>
               <p className="text-foreground/70 mb-6 antialiased">
-                I'm currently at Microsoft designing for Copilot extensibility — and passively open to the
-                right full-time role. If you're building innovative products where thoughtful design can change a
-                product's trajectory, I'd love to hear from you.
+                I'm at Microsoft these days, designing for Copilot extensibility. I love talking with people
+                building thoughtful products — so if you're working on something where design could change its
+                trajectory, I'd love to hear about it.
               </p>
               <Button 
                 size="lg"

@@ -8,7 +8,7 @@ const Experience: React.FC = () => {
       company: "Microsoft - Copilot Extensibility",
       location: "Vancouver, BC, Canada",
       period: "Nov 2025 - Present",
-      description: "Designing for Copilot extensibility, currently focused on frontier tuning.",
+      description: "Designing for frontier tuning.",
       achievements: []
     },
     {
