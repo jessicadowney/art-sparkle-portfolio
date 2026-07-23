@@ -237,7 +237,7 @@ const Azure = () => {
                 </div>
 
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                  The sample builder is still in active development. We are currently adding AI meeting capabilities to support more advanced scenarios and deepen the builder's value across sectors.
+                  The sample builder continued to evolve after launch — including work to add AI meeting capabilities that support more advanced scenarios and deepen its value across sectors.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-8 mb-12">
