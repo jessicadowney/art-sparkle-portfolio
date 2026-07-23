@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['Poppins', 'ui-sans-serif', 'system-ui'],
+				'sans': ['Schibsted Grotesk', 'ui-sans-serif', 'system-ui'],
 				'pixelify': ['Pixelify Sans', 'monospace'],
 			},
 			colors: {

@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { useTheme } from './ThemeProvider';
-import { vibrantColors } from './three/constants/Colors';
+// Editorial palette — neutral greys so the shapes read as a quiet texture,
+// not neon, on the warm paper background.
+const vibrantColors = ['#2a2a2e', '#3a3a40', '#4a4a52', '#57565e', '#33333a'];
 
 // Optimized background renderer.
 //
@@ -16,16 +18,16 @@ import { vibrantColors } from './three/constants/Colors';
 // which removes the need for lights entirely. Raising the counts below is
 // nearly free — 100 shapes costs about the same as 25.
 const CONFIG = {
-  hearts: 25,
-  stars: 4,
-  cursors: 4,
-  dust: 250,
+  hearts: 16,
+  stars: 3,
+  cursors: 3,
+  dust: 130,
   parallax: true,
   pixelRatioCap: 1.5,
 };
 
-const FOG_DARK = 0x0f172a;
-const FOG_LIGHT = 0xf0f9ff;
+const FOG_DARK = 0x141210;
+const FOG_LIGHT = 0xefeee9;
 
 const rand = (a: number, b: number) => a + Math.random() * (b - a);
 const pick = <T,>(arr: T[]) => arr[Math.floor(Math.random() * arr.length)];
@@ -82,9 +84,9 @@ const glassFrag = /* glsl */`
   varying vec3 vColor; varying float vFres; varying float vDepth;
   uniform vec3 uFog; uniform float uFogNear, uFogFar;
   void main() {
-    vec3 col = vColor * 0.55 + vColor * vFres * 1.7 + vec3(1.0) * vFres * 0.18;
+    vec3 col = vColor * (0.85 + 0.5 * vFres);
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
-    float alpha = (0.35 + 0.6 * vFres) * (1.0 - fog);
+    float alpha = (0.16 + 0.34 * vFres) * (1.0 - fog);
     gl_FragColor = vec4(mix(col, uFog, fog), alpha);
   }`;
 const dustVert = /* glsl */`
@@ -110,7 +112,7 @@ const dustFrag = /* glsl */`
     if (d > 0.5) discard;
     float soft = smoothstep(0.5, 0.0, d);
     float fog = 1.0 - smoothstep(uFogNear, uFogFar, vDepth);
-    gl_FragColor = vec4(vColor, soft * vTwinkle * fog * 0.8);
+    gl_FragColor = vec4(vColor, soft * vTwinkle * fog * 0.45);
   }`;
 
 const ThreeBackgroundImpl: React.FC = () => {
