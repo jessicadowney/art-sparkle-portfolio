@@ -55,14 +55,12 @@ const Header: React.FC = () => {
       </a>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <button 
+          <button
             onClick={handleLogoClick}
-            className="text-2xl font-bold hover:opacity-80 transition-opacity flex items-center gap-2 font-pixelify"
+            className="text-xl font-bold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2.5"
           >
-            <span>👩‍💻</span>
-            <span className="bg-gradient-to-r from-[#A0EDE6] via-[#D6B5FF] to-[#FFB2BC] bg-clip-text text-transparent">
-              Jessica Downey
-            </span>
+            <span className="w-2 h-2 rounded-full bg-foreground"></span>
+            <span className="text-foreground">Jessica Downey</span>
           </button>
           
           <div className="hidden md:flex items-center space-x-8">
