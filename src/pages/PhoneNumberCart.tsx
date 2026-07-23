@@ -27,7 +27,7 @@ const PhoneNumberCart = () => {
       <div className="min-h-screen relative">
         <ThreeBackground />
         <Header />
-        <main className="pt-24 pb-20">
+        <main id="main-content" tabIndex={-1} className="pt-24 pb-20">
           <div className="container mx-auto px-6 max-w-4xl">
             <Button 
               variant="ghost" 
@@ -110,47 +110,47 @@ const PhoneNumberCart = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="space-y-4">
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/get-phone-number-start.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/get-phone-number-start.png" 
                       alt="Phone number acquisition starting page"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
-                    />
+                    /></picture>
                     <p className="text-sm text-foreground/60 text-center">Starting the phone number acquisition process</p>
                   </div>
                   
                   <div className="space-y-4">
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/get-phone-number-search.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/get-phone-number-search.png" 
                       alt="Phone number search interface"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
-                    />
+                    /></picture>
                     <p className="text-sm text-foreground/60 text-center">Searching for available phone numbers with filters</p>
                   </div>
                   
                   <div className="space-y-4">
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/get-phone-number-cart.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/get-phone-number-cart.png" 
                       alt="Phone numbers added to shopping cart"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
-                    />
+                    /></picture>
                     <p className="text-sm text-foreground/60 text-center">Adding multiple phone numbers to the cart</p>
                   </div>
                   
                   <div className="space-y-4">
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/get-phone-number-cart-2.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/get-phone-number-cart-2.png" 
                       alt="Shopping cart with multiple phone numbers"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
-                    />
+                    /></picture>
                     <p className="text-sm text-foreground/60 text-center">Managing multiple numbers in the shopping cart</p>
                   </div>
                   
                   <div className="space-y-4">
-                    <img loading="lazy" decoding="async" 
+                    <picture className="contents"><source srcSet="/lovable-uploads/get-phone-number-review.webp" type="image/webp" /><img loading="lazy" decoding="async" 
                       src="/lovable-uploads/get-phone-number-review.png" 
                       alt="Reviewing phone number order before purchase"
                       className="w-full rounded-lg border border-border/50 shadow-sm bg-white p-2"
-                    />
+                    /></picture>
                     <p className="text-sm text-foreground/60 text-center">Reviewing the order before finalizing purchase</p>
                   </div>
                   
