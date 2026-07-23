@@ -116,7 +116,7 @@ const GoFetch = () => {
                 </p>
 
                 <div className="mb-8 text-center">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/gfinitialioshome.png" 
                     alt="Initial iOS Home Screen" 
                     className="rounded-lg shadow-lg h-auto bg-white p-2 max-h-96 mx-auto"
@@ -131,14 +131,14 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/GoFetch-Web-Home.png" 
                       alt="GoFetch Web Home Page" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/Old-GoFetch-Web-Find.png" 
                       alt="Old GoFetch Web Find Page" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -147,7 +147,7 @@ const GoFetch = () => {
                 </div>
 
                 <div className="mb-8">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/Old-GoFetch-Web-Sitter.png" 
                     alt="Old GoFetch Web Sitter Profile" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -169,7 +169,7 @@ const GoFetch = () => {
                 </p>
 
                 <div className="mb-8">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/gofetch-sitemaps.png" 
                     alt="GoFetch Site Maps and Information Architecture" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -177,7 +177,7 @@ const GoFetch = () => {
                 </div>
 
                 <div className="mb-8">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/gf-brand-square001.png" 
                     alt="GoFetch Brand Guidelines" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -192,14 +192,14 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/GoFetch_UI_Kit_1.png" 
                       alt="GoFetch UI Kit Part 1" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/GoFetch_UI_Kit_2.png" 
                       alt="GoFetch UI Kit Part 2" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -218,21 +218,21 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/homepage-integration.png" 
                       alt="Homepage Integration" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/search-integration.png" 
                       alt="Search Integration" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/dashboard-integration.png" 
                       alt="Dashboard Integration" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -241,7 +241,7 @@ const GoFetch = () => {
                 </div>
 
                 <div className="mb-8 text-center">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/gfios-home.png" 
                     alt="Updated GoFetch iOS Home Screen" 
                     className="rounded-lg shadow-lg h-auto bg-white p-2 max-h-96 mx-auto"
@@ -256,7 +256,7 @@ const GoFetch = () => {
                 </p>
 
                 <div className="mb-8">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/gfinitialsprprocess.png" 
                     alt="Initial Service Provider Process" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -272,14 +272,14 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/gfga1.png" 
                       alt="Google Analytics Data Part 1" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/gfga2.png" 
                       alt="Google Analytics Data Part 2" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -288,7 +288,7 @@ const GoFetch = () => {
                 </div>
 
                 <div className="mb-8">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/gfinitialmobilesp.png" 
                     alt="Initial Mobile Service Provider Experience" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -309,21 +309,21 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/gfwiz1.png" 
                       alt="GoFetch Wizard Step 1" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/gfwiz2.png" 
                       alt="GoFetch Wizard Step 2" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/gfwiz3.png" 
                       alt="GoFetch Wizard Step 3" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -332,7 +332,7 @@ const GoFetch = () => {
                 </div>
 
                 <div className="mb-8">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/newgfspform.png" 
                     alt="New GoFetch Service Provider Form" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -341,14 +341,14 @@ const GoFetch = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/aboutyou-ftu.png" 
                       alt="About You - First Time User Flow" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
                     />
                   </div>
                   <div>
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/aboutyou-ru.png" 
                       alt="About You - Returning User Flow" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"

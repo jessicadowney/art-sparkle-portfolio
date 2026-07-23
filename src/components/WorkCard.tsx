@@ -30,7 +30,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
   return (
     <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer" onClick={handleClick}>
       <div className="aspect-video relative overflow-hidden">
-        <img 
+        <img loading="lazy" decoding="async" 
           src={image} 
           alt={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

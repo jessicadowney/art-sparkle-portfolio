@@ -76,7 +76,7 @@ const Ally = () => {
                 </div>
 
                 <div className="mb-12">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src="/lovable-uploads/247125df-8a71-4d2d-ab6a-d13b1a061447.png" 
                     alt="Amped Wireless Ally App Branding" 
                     className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -120,7 +120,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/4ef70443-9eb6-47ea-8fd9-97a1257e8ab6.png" 
                       alt="Setup Flow - Mobile Setup Process" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -147,7 +147,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/2f854d4a-e286-429f-9d93-a00755d55a5e.png" 
                       alt="Setup Flow - Decision Tree and User Paths" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -184,7 +184,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/28c1745a-4fd1-41d1-943c-9ffe7c4b0d28.png" 
                       alt="App Interface Concepts - Main Dashboard Screens" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -199,7 +199,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/5d8b7f40-f027-45bb-b649-888938af482f.png" 
                       alt="User Testing Results and Design Iterations" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -216,7 +216,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/4e2579b8-ffbd-43b4-b204-0c6669f4200d.png" 
                       alt="User Management Screens - Users List and Profile Details" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -224,7 +224,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/a72a1653-35a7-4b9b-8b48-212f2bf038c0.png" 
                       alt="Content Filtering and Device Management Screens" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -240,7 +240,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/3f8cb404-0f37-4ddd-b25d-b25208d8b1c1.png" 
                       alt="Security Features - AVG Protection Integration" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -248,7 +248,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/ec9681c4-9a25-43b2-8134-d97a49899d96.png" 
                       alt="Activity Monitoring and Time Management Features" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
@@ -256,7 +256,7 @@ const Ally = () => {
                   </div>
 
                   <div className="mb-12">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       src="/lovable-uploads/e238524c-864f-4019-8ed0-26f425c503d8.png" 
                       alt="Content Blocking and App Management Controls" 
                       className="rounded-lg shadow-lg w-full h-auto bg-white p-2"
