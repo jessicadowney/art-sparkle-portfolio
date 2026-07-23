@@ -5,9 +5,17 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       title: "Senior Product Designer",
+      company: "Microsoft - Copilot Extensibility",
+      location: "Vancouver, BC, Canada",
+      period: "Nov 2025 - Present",
+      description: "Designing for Copilot extensibility, currently focused on frontier tuning.",
+      achievements: []
+    },
+    {
+      title: "Senior Product Designer",
       company: "Microsoft - Azure Communication Services",
       location: "Vancouver, BC, Canada",
-      period: "2021 - Present",
+      period: "2021 - 2025",
       description: "Owning UX/UI vision and design direction for new Azure Communication Services features in Azure portal, including Short Codes & Sample Builder, improving developer adoption and usability.",
       achievements: [
         "Hacked a redesign of telephone number purchasing experience during FHL 2022, securing executive approval for full-scale redesign",
