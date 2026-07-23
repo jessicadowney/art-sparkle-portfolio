@@ -45,7 +45,7 @@ const About: React.FC = () => {
                 I turn ambiguity into clarity, aligning teams around intuitive solutions that solve real user problems and drive business outcomes. Whether I'm shaping product direction, untangling complex systems, or pushing pixels with intent, I design with both empathy and precision.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                Right now, I'm at Microsoft, designing at Azure Communication Services. I work best in spaces where things are a bit undefined — where sharp thinking, strong collaboration, and good taste can change the trajectory of a product.
+                Right now, I'm at Microsoft, designing for Copilot extensibility. I work best in spaces where things are a bit undefined — where sharp thinking, strong collaboration, and good taste can change the trajectory of a product.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
                 I've lived and worked across France, the US, the Netherlands, and now Canada, and I bring that global perspective into how I think, design, and lead. I believe good design makes technology feel human — not just usable, but considerate.

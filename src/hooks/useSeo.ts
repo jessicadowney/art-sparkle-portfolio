@@ -3,7 +3,7 @@ import { useEffect } from "react";
 const SITE = "https://jessicadowney.com";
 const DEFAULT_TITLE = "Jessica Downey - Senior Product Designer";
 const DEFAULT_DESCRIPTION =
-  "Portfolio of Jessica Downey, a senior product designer with 15+ years of experience across enterprise, industrial, and consumer products — currently designing for Azure Communication Services at Microsoft.";
+  "Portfolio of Jessica Downey, a senior product designer with 15+ years of experience across enterprise, industrial, and consumer products — currently designing for Copilot extensibility at Microsoft.";
 
 function upsertMeta(selector: string, attr: "name" | "property", key: string, content: string) {
   let el = document.head.querySelector<HTMLMetaElement>(selector);

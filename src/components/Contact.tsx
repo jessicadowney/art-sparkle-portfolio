@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
             <div className="glass-container rounded-2xl p-8 border border-border/50">
               <h3 className="text-2xl font-semibold mb-4 antialiased">Open to the right full-time opportunity</h3>
               <p className="text-foreground/70 mb-6 antialiased">
-                I'm currently at Microsoft designing for Azure Communication Services — and passively open to the
+                I'm currently at Microsoft designing for Copilot extensibility — and passively open to the
                 right full-time role. If you're building innovative products where thoughtful design can change a
                 product's trajectory, I'd love to hear from you.
               </p>
