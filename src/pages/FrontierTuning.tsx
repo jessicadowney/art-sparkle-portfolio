@@ -126,9 +126,8 @@ const FrontierTuning = () => {
                 <P>
                   I worked on the product’s conceptual model, evaluation and feedback experiences, terminology, and
                   end-to-end improvement journey, in close partnership with research, content design, product,
-                  science, and engineering. Interactive prototypes were my main instrument: for exploration, for
-                  engineering handoff, for Copilot Studio integration, and for extending the journey into GitHub
-                  Copilot and Cowork.
+                  science, and engineering. Interactive prototypes were my main instrument, for exploration and for
+                  engineering handoff.
                 </P>
 
                 <Divider />
@@ -193,15 +192,6 @@ const FrontierTuning = () => {
 
                 <Divider />
 
-                <H2>Integrate by adapting the model</H2>
-                <P>
-                  In Copilot Studio, the hard questions were structural: what belongs to an agent versus a reusable
-                  tuning environment, where evaluation lives, and what to build on rather than duplicate. In coded
-                  explorations, partners favored a guidance-led Build page over a skill-centric one because it set tuning
-                  apart from creating another agent. That drove a rethink of navigation and feature placement, not a
-                  reskin.
-                </P>
-
                 <H2>Terminology is interaction design</H2>
                 <P>
                   Terms like “rubric,” “world,” and “environment” shape what makers believe they’re controlling. In July
@@ -215,8 +205,8 @@ const FrontierTuning = () => {
 
                 <H2>From controls to a guided journey</H2>
                 <P>
-                  Across GitHub Copilot and Cowork explorations I designed skill selection, evaluation setup,
-                  before-and-after results, and acceptance of proposed changes. Makers were still diagnosing too much
+                  In later explorations I designed skill selection, evaluation setup, before-and-after results, and
+                  acceptance of proposed changes. Makers were still diagnosing too much
                   themselves, so the direction begins with the problem, not the mechanism:
                 </P>
                 <FlowList steps={journey} />
@@ -229,8 +219,8 @@ const FrontierTuning = () => {
 
                 <H2>Where it stands</H2>
                 <P>
-                  The work supported implementation and hands-on validation of internal experiences, and the GitHub
-                  Copilot and Cowork journey is in active development. The larger shift was in framing: from exposing
+                  The work supported implementation and hands-on validation of internal experiences, and the broader
+                  improvement journey is in active development. The larger shift was in framing: from exposing
                   tuning capabilities to helping people make an informed improvement decision.
                 </P>
                 <Callout>
@@ -239,7 +229,7 @@ const FrontierTuning = () => {
                 </Callout>
 
                 <div className="flex flex-wrap gap-3 mt-8">
-                  {["Product Design", "UX Research", "AI Agents", "Prototyping", "Copilot Studio", "Interaction Design"].map((tag) => (
+                  {["Product Design", "UX Research", "AI Agents", "Prototyping", "Interaction Design"].map((tag) => (
                     <span
                       key={tag}
                       className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"

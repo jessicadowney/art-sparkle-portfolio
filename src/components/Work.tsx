@@ -7,7 +7,7 @@ const Work: React.FC = () => {
     {
       title: "Frontier Tuning: Making AI Agent Improvement Understandable",
       description: "Research, coded prototypes, and a guided improvement journey that help makers and subject-matter experts improve AI agents without first needing to understand model training.",
-      tags: ["Product Design", "UX Research", "AI Agents", "Prototyping", "Copilot Studio"],
+      tags: ["Product Design", "UX Research", "AI Agents", "Prototyping", "Interaction Design"],
       image: "/placeholder.svg",
       link: "/frontier-tuning",
       year: "2025–2026",
