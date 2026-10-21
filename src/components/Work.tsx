@@ -10,7 +10,8 @@ const Work: React.FC = () => {
       tags: ["Product Design", "UX Research", "AI Agents", "Prototyping", "Copilot Studio"],
       image: "/placeholder.svg",
       link: "/frontier-tuning",
-      year: "2025–2026"
+      year: "2025–2026",
+      featured: true
     },
     {
       title: "Phone Number Shopping Cart for Azure Communication Services",
@@ -79,7 +80,7 @@ const Work: React.FC = () => {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="animate-scale-in"
+              className={`animate-scale-in ${project.featured ? 'md:col-span-2' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <WorkCard {...project} />

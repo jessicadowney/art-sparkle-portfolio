@@ -12,9 +12,10 @@ interface WorkCardProps {
   image: string;
   link?: string;
   year: string;
+  featured?: boolean;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, link, year }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, link, year, featured }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -28,8 +29,8 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
   };
 
   return (
-    <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer" onClick={handleClick}>
-      <div className="aspect-video relative overflow-hidden">
+    <Card className={`group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer ${featured ? 'md:grid md:grid-cols-2' : ''}`} onClick={handleClick}>
+      <div className={`aspect-video relative overflow-hidden ${featured ? 'md:aspect-auto md:min-h-[360px]' : ''}`}>
         <picture className="contents">
           {image.endsWith('.png') && (
             <source srcSet={image.replace(/\.png$/, '.webp')} type="image/webp" />
@@ -53,8 +54,8 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
         </div>
       </div>
       
-      <CardContent className="p-6">
-        <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+      <CardContent className={featured ? 'p-6 md:p-10 md:flex md:flex-col md:justify-center' : 'p-6'}>
+        <h3 className={`font-semibold mb-3 group-hover:text-primary transition-colors duration-300 ${featured ? 'text-xl md:text-3xl' : 'text-xl'}`}>
           {title}
         </h3>
         
@@ -75,7 +76,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
         
         <Button
           variant="ghost"
-          className="p-0 h-auto font-medium text-primary hover:text-primary/80 group/btn"
+          className={`p-0 h-auto font-medium text-primary hover:text-primary/80 group/btn ${featured ? 'self-start' : ''}`}
           onClick={(e) => { e.stopPropagation(); handleClick(); }}
           aria-label={`View case study: ${title}`}
         >
