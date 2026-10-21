@@ -5,12 +5,12 @@ import WorkCard from './WorkCard';
 const Work: React.FC = () => {
   const projects = [
     {
-      title: "Frontier Tuning at Microsoft Copilot Extensibility",
-      description: "TODO: one or two sentences on the problem, your role, and the outcome.",
-      tags: ["Product Design", "AI/ML", "Copilot Extensibility"],
+      title: "Frontier Tuning: Making AI Agent Improvement Understandable",
+      description: "Research, coded prototypes, and a guided improvement journey that help makers and subject-matter experts improve AI agents without first needing to understand model training.",
+      tags: ["Product Design", "UX Research", "AI Agents", "Prototyping", "Copilot Studio"],
       image: "/placeholder.svg",
       link: "/frontier-tuning",
-      year: "2025"
+      year: "2025–2026"
     },
     {
       title: "Phone Number Shopping Cart for Azure Communication Services",
