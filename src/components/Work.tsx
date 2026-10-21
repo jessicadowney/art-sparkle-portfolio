@@ -5,6 +5,15 @@ import WorkCard from './WorkCard';
 const Work: React.FC = () => {
   const projects = [
     {
+      title: "Frontier Tuning: Making AI Agent Improvement Understandable",
+      description: "Research, coded prototypes, and a guided improvement journey that help makers and subject-matter experts improve AI agents without first needing to understand model training.",
+      tags: ["Product Design", "UX Research", "AI Agents", "Prototyping", "Interaction Design"],
+      image: "/placeholder.svg",
+      link: "/frontier-tuning",
+      year: "2025–2026",
+      featured: true
+    },
+    {
       title: "Phone Number Shopping Cart for Azure Communication Services",
       description: "A redesigned phone number acquisition experience that replaced rigid one-at-a-time purchasing with a flexible shopping cart, enabling multi-number provisioning and improving user satisfaction.",
       tags: ["Product Design", "UX Research", "Azure Portal", "Developer Experience", "E-commerce UX"],
@@ -71,7 +80,7 @@ const Work: React.FC = () => {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="animate-scale-in"
+              className={`animate-scale-in ${project.featured ? 'md:col-span-2' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <WorkCard {...project} />
