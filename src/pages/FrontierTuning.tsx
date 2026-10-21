@@ -111,58 +111,58 @@ const FrontierTuning = () => {
 
               <div className="prose prose-lg max-w-none">
                 <P>
-                  An AI agent can give a convincing answer and still fail at the work an organization needs. Improving
-                  it means defining quality, finding failures, choosing a change, and checking that it helped. My work
-                  on Frontier Tuning made that process accessible to makers and subject-matter experts, not just people
-                  who understand model training.
+                  A capable agent can still fail at the work an organization needs it to do. Closing that gap means
+                  defining quality, diagnosing failures, choosing a change, and proving it helped, a loop that
+                  demands fluency in model training. Frontier Tuning set out to open it to the people who know what good
+                  work looks like: makers and subject-matter experts.
                 </P>
 
                 <Callout>
-                  The central design challenge: help people improve an agent without first requiring them to understand
-                  the infrastructure behind improvement.
+                  Design challenge: let people improve an agent without first understanding the infrastructure behind
+                  improvement.
                 </Callout>
 
-                <H2>My Role</H2>
+                <H2>Focus</H2>
                 <P>
-                  I shaped the product’s conceptual model, evaluation and feedback experiences, terminology, and
-                  end-to-end improvement journey, and built interactive prototypes for exploration, engineering
-                  handoff, and Copilot Studio integration, then explored extending it into GitHub Copilot and Cowork. I
-                  worked with research, content design, product, science, and engineering. I did not design the
-                  underlying tuning algorithms or independently own every part of the product.
+                  I worked on the product’s conceptual model, evaluation and feedback experiences, terminology, and
+                  end-to-end improvement journey, in close partnership with research, content design, product,
+                  science, and engineering. Interactive prototypes were my main instrument: for exploration, for
+                  engineering handoff, for Copilot Studio integration, and for extending the journey into GitHub
+                  Copilot and Cowork.
                 </P>
 
                 <Divider />
 
-                <H2>Starting with the maker</H2>
+                <H2>Start from the expert’s definition of quality</H2>
                 <P>
-                  In November 2025 I helped shape a qualitative study on what makers think tuning does and when it is
-                  worth the effort. I advocated recruiting people with domain expertise, because recognizing a good
-                  answer takes understanding the business process, not AI.
+                  In November 2025 I helped shape the first qualitative study of how makers understand tuning: what they
+                  think it does, when it’s worth the effort, and what they expect the system to handle. I pushed to
+                  recruit domain experts, because judging an answer takes knowledge of the business process, not of AI.
                 </P>
                 <Callout>
                   Does the experience help an expert express what good work looks like, or ask them to translate their
                   expertise into our technical model?
                 </Callout>
 
-                <H2>Feedback that explains what to change</H2>
+                <H2>Feedback has to explain its consequence</H2>
                 <P>
-                  A thumbs-up or thumbs-down doesn’t say what an agent should do differently. In a small A/B pilot (five
-                  participants per condition), showing evaluation criteria next to the output produced actionable
-                  feedback from <strong>4 of 5</strong> participants, versus <strong>3 of 5</strong> with the existing
-                  popover. It was directional, not conclusive: the criteria version also had lower thumbs-up rates and
-                  more confusion about where feedback went.
+                  A thumbs-down says something failed, not what to change. In a small A/B pilot (five participants per
+                  condition), showing evaluation criteria beside the output produced actionable feedback from{' '}
+                  <strong>4 of 5</strong> participants versus <strong>3 of 5</strong>. The signal was directional, and
+                  it came with a cost: fewer thumbs-ups and uncertainty about where feedback went.
                 </P>
                 <Callout>
-                  Making quality expectations visible helps people judge an answer, but the interface must also explain
-                  what their feedback will change.
+                  Visible quality expectations help people judge an answer. The interface also has to say what their
+                  feedback will change.
                 </Callout>
 
                 <Divider />
 
-                <H2>Making the improvement loop legible</H2>
+                <H2>Make the improvement loop legible</H2>
                 <P>
-                  By spring, skills, instructions, knowledge, samples, criteria, and model tuning added up to a
-                  difficult mental model. I synthesized early-access customer feedback into three connected problems:
+                  By spring, skills, instructions, knowledge, samples, criteria, and tuning had accumulated into a mental
+                  model nobody could hold. I synthesized early-access customer feedback into three problems, which
+                  reframed a pile of UI issues as a single product problem:
                 </P>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                   {frictions.map((f) => (
@@ -173,17 +173,19 @@ const FrontierTuning = () => {
                   ))}
                 </div>
                 <P>
-                  My designs emphasized observable outcomes (evaluation breakdowns, before-and-after comparisons, clear
-                  completion states) to make the loop visible:
+                  A clearer label wasn’t enough if makers couldn’t see how an edit, an evaluation result, and an agent’s
+                  behavior connect. I designed for observable outcomes: evaluation breakdowns, before-and-after
+                  comparison, and explicit completion states.
                 </P>
                 <FlowList steps={loop} />
 
-                <H2>Generated criteria are proposals, not authority</H2>
+                <H2>Generated criteria are proposals</H2>
                 <P>
-                  AI-generated evaluation criteria speed up setup, but can overwrite the maker’s intent or look more
-                  authoritative than they deserve. After science partner feedback, I simplified the direction: focus on
-                  first-generation criteria, collapse detailed checks, stack alternatives vertically, and present
-                  generated criteria for review and selection rather than silently replacing what a customer wrote.
+                  AI-generated criteria speed up setup, but they can overwrite a maker’s intent or look more
+                  authoritative than they are. After working through constraints with science, I narrowed the direction
+                  to first-generation criteria with collapsed detail and vertically stacked alternatives, and set the
+                  principle that generated criteria are offered for review and selection, never silently substituted for
+                  what a customer wrote.
                 </P>
                 <Callout>
                   Automation should reduce authoring effort without taking away ownership of the definition of quality.
@@ -191,51 +193,49 @@ const FrontierTuning = () => {
 
                 <Divider />
 
-                <H2>Integration, not transplanted screens</H2>
+                <H2>Integrate by adapting the model</H2>
                 <P>
-                  Moving into Copilot Studio raised questions a standalone UI could avoid: what belongs to an agent
-                  versus a reusable tuning environment, and which existing capabilities tuning should build on. In coded
-                  explorations, partners preferred a guidance-led Build page over a skill-centric one because it
-                  distinguished tuning from creating another agent, which prompted a rethink of navigation and feature
-                  placement, not a reskin.
+                  In Copilot Studio, the hard questions were structural: what belongs to an agent versus a reusable
+                  tuning environment, where evaluation lives, and what to build on rather than duplicate. In coded
+                  explorations, partners favored a guidance-led Build page over a skill-centric one because it set tuning
+                  apart from creating another agent. That drove a rethink of navigation and feature placement, not a
+                  reskin.
                 </P>
 
                 <H2>Terminology is interaction design</H2>
                 <P>
-                  In July terminology research, none of the <strong>11 participants</strong> chose “rubric”;
-                  “evaluation criteria” and “acceptance criteria” tied at three each, and I recommended{' '}
-                  <strong>evaluation criteria</strong> as the primary UI label. The environment definition may have
-                  primed one option, so the report recommended retesting with a neutral definition rather than
-                  declaring a winner.
+                  Terms like “rubric,” “world,” and “environment” shape what makers believe they’re controlling. In July
+                  research, none of <strong>11 participants</strong> preferred “rubric”; “evaluation criteria” and
+                  “acceptance criteria” tied at three each, and I recommended <strong>evaluation criteria</strong> as the
+                  primary label. Because the environment definition may have primed one option, I recommended retesting
+                  with a neutral definition before locking a name.
                 </P>
 
                 <Divider />
 
                 <H2>From controls to a guided journey</H2>
                 <P>
-                  In GitHub Copilot and Cowork explorations, I designed skill selection, evaluation setup,
-                  before-and-after results, and acceptance of proposed changes. Makers were still being asked to
-                  diagnose too much themselves, so the direction started from the problem, not the tuning mechanism:
+                  Across GitHub Copilot and Cowork explorations I designed skill selection, evaluation setup,
+                  before-and-after results, and acceptance of proposed changes. Makers were still diagnosing too much
+                  themselves, so the direction begins with the problem, not the mechanism:
                 </P>
                 <FlowList steps={journey} />
                 <P>
-                  Journey maps and narrated prototypes made the handoffs visible between a technical maker, a
-                  subject-matter expert who judges quality, and an administrator who controls access and cost. These
-                  remained active design questions, not a settled, shipped journey.
+                  Journey maps and narrated prototypes made role handoffs explicit: a technical maker configures, a
+                  subject-matter expert judges quality, an administrator governs access and cost.
                 </P>
 
                 <Divider />
 
-                <H2>Outcomes and reflection</H2>
+                <H2>Where it stands</H2>
                 <P>
-                  My work supported implementation and hands-on validation of internal experiences. The broader GitHub
-                  Copilot and Cowork journey is still in development, and the evidence doesn’t establish a single launch
-                  or attributable production metrics. The main shift was in framing: from exposing tuning capabilities
-                  to helping people make an informed improvement decision.
+                  The work supported implementation and hands-on validation of internal experiences, and the GitHub
+                  Copilot and Cowork journey is in active development. The larger shift was in framing: from exposing
+                  tuning capabilities to helping people make an informed improvement decision.
                 </P>
                 <Callout>
-                  The interface earns trust by making what good work looks like, what a change will affect, and what
-                  evidence shows it helped understandable, not by hiding the complexity behind a single “Tune” button.
+                  Trust comes from making three things clear: what good work looks like, what a change will affect, and
+                  what evidence shows it helped. It doesn’t come from hiding complexity behind a single “Tune” button.
                 </Callout>
 
                 <div className="flex flex-wrap gap-3 mt-8">
