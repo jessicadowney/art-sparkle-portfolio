@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // Each case study is its own chunk, so the landing page ships without them.
+const FrontierTuning = lazy(() => import("./pages/FrontierTuning"));
 const GoFetch = lazy(() => import("./pages/GoFetch"));
 const Azure = lazy(() => import("./pages/Azure"));
 const Ally = lazy(() => import("./pages/Ally"));
@@ -27,6 +28,7 @@ const App = () => (
         <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/frontier-tuning" element={<FrontierTuning />} />
           <Route path="/azure-phone-numbers" element={<PhoneNumberCart />} />
           <Route path="/gofetch" element={<GoFetch />} />
           <Route path="/azure-sample-builder" element={<Azure />} />

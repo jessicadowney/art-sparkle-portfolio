@@ -31,7 +31,9 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
     <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer" onClick={handleClick}>
       <div className="aspect-video relative overflow-hidden">
         <picture className="contents">
-          <source srcSet={image.replace(/\.png$/, '.webp')} type="image/webp" />
+          {image.endsWith('.png') && (
+            <source srcSet={image.replace(/\.png$/, '.webp')} type="image/webp" />
+          )}
           <img loading="lazy" decoding="async"
             src={image}
             alt={title}
