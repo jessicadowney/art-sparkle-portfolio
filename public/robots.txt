@@ -1,16 +1,21 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /frontier-tuning
 
 User-agent: Bingbot
 Allow: /
+Disallow: /frontier-tuning
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /frontier-tuning
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /frontier-tuning
 
 User-agent: *
 Allow: /
+Disallow: /frontier-tuning
 
 Sitemap: https://jessicadowney.com/sitemap.xml

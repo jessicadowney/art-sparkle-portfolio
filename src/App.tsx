@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // Each case study is its own chunk, so the landing page ships without them.
-const FrontierTuning = lazy(() => import("./pages/FrontierTuning"));
+const FrontierTuning = lazy(() => import("./pages/FrontierTuningGate"));
 const GoFetch = lazy(() => import("./pages/GoFetch"));
 const Azure = lazy(() => import("./pages/Azure"));
 const Ally = lazy(() => import("./pages/Ally"));

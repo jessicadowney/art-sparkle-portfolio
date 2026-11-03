@@ -105,7 +105,7 @@ const FrontierTuning = () => {
                 </div>
                 <div className="text-center">
                   <h3 className="font-semibold mb-2 text-primary">Timeline</h3>
-                  <p className="text-foreground/70">November 2025 – October 2026</p>
+                  <p className="text-foreground/70">November 2025 – present</p>
                 </div>
               </div>
 
