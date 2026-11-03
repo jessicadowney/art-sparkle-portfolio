@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
   };
 
   const openResume = () => {
-    window.open('https://drive.google.com/file/d/1UCw89u3GRPw3xHg0_14dQt18N3iD9S5E/view?usp=drive_link', '_blank');
+    window.open('/jessica-downey-cv.pdf', '_blank');
   };
 
   return (

@@ -93,7 +93,7 @@ const PhoneNumberCart = () => {
 
                 <h2 className="text-3xl font-semibold mb-6 text-primary">Design Strategy</h2>
                 <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-                  As the senior UX designer, I led the end-to-end redesign. My focus was on more than screens—it was about reshaping how users thought about phone number acquisition.
+                  As the product designer, I led the end-to-end redesign. My focus was on more than screens—it was about reshaping how users thought about phone number acquisition.
                 </p>
                 <p className="text-lg text-foreground/80 mb-4 leading-relaxed">
                   Key shifts included:
