@@ -39,7 +39,7 @@ const About: React.FC = () => {
           <div className="mb-16">
             <div className="animate-fade-in glass-container rounded-2xl p-8">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                Hi! I'm Jessica — a senior UX designer who makes messy ideas click.
+                Hi! I'm Jessica — a senior product designer who makes messy ideas click.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
                 I turn ambiguity into clarity, aligning teams around intuitive solutions that solve real user problems and drive business outcomes. Whether I'm shaping product direction, untangling complex systems, or pushing pixels with intent, I design with both empathy and precision.

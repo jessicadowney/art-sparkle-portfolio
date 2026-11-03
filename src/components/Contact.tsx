@@ -8,8 +8,8 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:hello@jessicadowney.com",
-      username: "hello@jessicadowney.com"
+      href: "mailto:contact@jessicadowney.com",
+      username: "contact@jessicadowney.com"
     },
     {
       icon: Linkedin,
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
                 size="lg"
                 className="animated-gradient glass-stroke px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
-               <a href="mailto:hello@jessicadowney.com"
+               <a href="mailto:contact@jessicadowney.com"
                   target="_blank"
                   className="!bg-transparent !border-none !p-0 !rounded-none hover:!bg-transparent !text-inherit !no-underline"
                   style={{ background: 'none !important', border: 'none !important', textDecoration: 'none !important' }}>Get In Touch</a>

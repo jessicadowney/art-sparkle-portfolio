@@ -2,6 +2,9 @@
 import React from 'react';
 import WorkCard from './WorkCard';
 
+// Index of the first project shown under the "Earlier work" label.
+const EARLIER_WORK_START = 3;
+
 const Work: React.FC = () => {
   const projects = [
     {
@@ -78,13 +81,19 @@ const Work: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <div 
-              key={index}
-              className={`animate-scale-in ${project.featured ? 'md:col-span-2' : ''}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <WorkCard {...project} />
-            </div>
+            <React.Fragment key={index}>
+              {index === EARLIER_WORK_START && (
+                <h3 className="md:col-span-2 text-2xl font-light tracking-tight mt-8 text-foreground/80">
+                  Earlier <span className="text-primary">work</span>
+                </h3>
+              )}
+              <div
+                className={`animate-scale-in ${project.featured ? 'md:col-span-2' : ''}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <WorkCard {...project} />
+              </div>
+            </React.Fragment>
           ))}
         </div>
       </div>
