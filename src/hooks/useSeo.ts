@@ -7,8 +7,8 @@ const DEFAULT_TITLE = {
   fr: "Jessica Downey - Designer produit senior",
 };
 const DEFAULT_DESCRIPTION = {
-  en: "Portfolio of Jessica Downey, a senior product designer with 15+ years of experience across enterprise, industrial, and consumer products — currently designing for Copilot extensibility at Microsoft.",
-  fr: "Portfolio de Jessica Downey, designer produit senior avec plus de 15 ans d'expérience en produits d'entreprise, industriels et grand public — actuellement en charge du design de l'extensibilité de Copilot chez Microsoft.",
+  en: "Portfolio of Jessica Downey, a senior product designer with 15+ years of experience across enterprise, industrial, and consumer products — currently working on Copilot extensibility at Microsoft.",
+  fr: "Portfolio de Jessica Downey, designer produit senior avec plus de 15 ans d'expérience en produits d'entreprise, industriels et grand public — actuellement sur l'extensibilité de Copilot chez Microsoft.",
 };
 
 function upsertMeta(selector: string, attr: "name" | "property", key: string, content: string) {

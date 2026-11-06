@@ -78,8 +78,8 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-semibold mb-4 antialiased">{t("Let's untangle something hard", 'Démêlons ensemble un sujet difficile')}</h3>
               <p className="text-foreground/70 mb-6 antialiased">
                 {t(
-                  "I do my best work in the undefined spaces — turning messy problems into products that feel obvious in hindsight. Currently at Microsoft, designing for Copilot extensibility. If you're wrestling with something like that, I'd love to hear about it.",
-                  "Je donne le meilleur de moi-même dans les espaces mal définis — transformer des problèmes confus en produits qui semblent évidents après coup. Actuellement chez Microsoft, je conçois l'extensibilité de Copilot. Si vous vous débattez avec un sujet de ce genre, j'aimerais en entendre parler."
+                  "I do my best work in the undefined spaces — turning messy problems into products that feel obvious in hindsight. Currently at Microsoft, working on Copilot extensibility. If you're wrestling with something like that, I'd love to hear about it.",
+                  "Je donne le meilleur de moi-même dans les espaces mal définis — transformer des problèmes confus en produits qui semblent évidents après coup. Actuellement chez Microsoft, je travaille sur l'extensibilité de Copilot. Si vous vous débattez avec un sujet de ce genre, j'aimerais en entendre parler."
                 )}
               </p>
               <Button 
