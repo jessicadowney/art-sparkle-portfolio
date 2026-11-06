@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useLanguage } from '@/i18n/LanguageProvider';
+import LanguageToggle from '@/components/LanguageToggle';
 
 // SHA-256 of the access password. This is a light gate for casual visitors, not
 // strong security: anything shipped to the browser can be extracted by a
@@ -30,6 +32,7 @@ function readUnlocked(): boolean {
 }
 
 const FrontierTuningGate = () => {
+  const { t } = useLanguage();
   const [unlocked, setUnlocked] = useState<boolean>(readUnlocked);
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
@@ -40,12 +43,12 @@ const FrontierTuningGate = () => {
     robots.content = 'noindex, nofollow';
     document.head.appendChild(robots);
     const previousTitle = document.title;
-    document.title = 'Password protected | Jessica Downey';
+    document.title = `${t('Password protected', 'Protégé par mot de passe')} | Jessica Downey`;
     return () => {
       robots.remove();
       document.title = previousTitle;
     };
-  }, []);
+  }, [t]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,13 +77,16 @@ const FrontierTuningGate = () => {
   return (
     <ThemeProvider>
       <main className="min-h-screen flex items-center justify-center px-6 bg-background text-foreground">
+        <div className="absolute top-4 right-4">
+          <LanguageToggle />
+        </div>
         <form onSubmit={submit} className="w-full max-w-sm space-y-4">
-          <h1 className="text-2xl font-semibold text-primary">This case study is password protected</h1>
+          <h1 className="text-2xl font-semibold text-primary">{t('This case study is password protected', 'Cette étude de cas est protégée par mot de passe')}</h1>
           <p className="text-foreground/70">
-            Enter the password I shared with you to read the Frontier Tuning case study.
+            {t('Enter the password I shared with you to read the Frontier Tuning case study.', "Saisissez le mot de passe que je vous ai communiqué pour lire l'étude de cas Frontier Tuning.")}
           </p>
           <label htmlFor="ft-password" className="sr-only">
-            Password
+            {t('Password', 'Mot de passe')}
           </label>
           <Input
             id="ft-password"
@@ -93,13 +99,13 @@ const FrontierTuningGate = () => {
           />
           {error && (
             <p id="ft-password-error" role="alert" className="text-sm text-destructive">
-              That password isn't right. Try again.
+              {t("That password isn't right. Try again.", "Ce mot de passe n'est pas le bon. Réessayez.")}
             </p>
           )}
           <div className="flex items-center gap-4">
-            <Button type="submit">View case study</Button>
+            <Button type="submit">{t('View case study', "Voir l'étude de cas")}</Button>
             <Link to="/" className="text-sm text-primary hover:underline">
-              Back to portfolio
+              {t('Back to portfolio', 'Retour au portfolio')}
             </Link>
           </div>
         </form>

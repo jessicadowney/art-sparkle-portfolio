@@ -1,9 +1,15 @@
 import { useEffect } from "react";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 const SITE = "https://jessicadowney.com";
-const DEFAULT_TITLE = "Jessica Downey - Senior Product Designer";
-const DEFAULT_DESCRIPTION =
-  "Portfolio of Jessica Downey, a senior product designer with 15+ years of experience across enterprise, industrial, and consumer products — currently designing for Copilot extensibility at Microsoft.";
+const DEFAULT_TITLE = {
+  en: "Jessica Downey - Senior Product Designer",
+  fr: "Jessica Downey - Designer produit senior",
+};
+const DEFAULT_DESCRIPTION = {
+  en: "Portfolio of Jessica Downey, a senior product designer with 15+ years of experience across enterprise, industrial, and consumer products — currently designing for Copilot extensibility at Microsoft.",
+  fr: "Portfolio de Jessica Downey, designer produit senior avec plus de 15 ans d'expérience en produits d'entreprise, industriels et grand public — actuellement en charge du design de l'extensibilité de Copilot chez Microsoft.",
+};
 
 function upsertMeta(selector: string, attr: "name" | "property", key: string, content: string) {
   let el = document.head.querySelector<HTMLMetaElement>(selector);
@@ -41,9 +47,10 @@ interface SeoOptions {
  * ones are created.
  */
 export function useSeo({ title, description, path = "/" }: SeoOptions = {}) {
+  const { lang } = useLanguage();
   useEffect(() => {
-    const fullTitle = title ? `${title} | Jessica Downey` : DEFAULT_TITLE;
-    const desc = description ?? DEFAULT_DESCRIPTION;
+    const fullTitle = title ? `${title} | Jessica Downey` : DEFAULT_TITLE[lang];
+    const desc = description ?? DEFAULT_DESCRIPTION[lang];
     const url = `${SITE}${path}`;
 
     document.title = fullTitle;
@@ -54,5 +61,5 @@ export function useSeo({ title, description, path = "/" }: SeoOptions = {}) {
     upsertMeta('meta[name="twitter:title"]', "name", "twitter:title", fullTitle);
     upsertMeta('meta[name="twitter:description"]', "name", "twitter:description", desc);
     upsertLink("canonical", url);
-  }, [title, description, path]);
+  }, [title, description, path, lang]);
 }

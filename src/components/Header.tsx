@@ -4,8 +4,11 @@ import { Menu, Mail, ExternalLink, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 const Header: React.FC = () => {
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,7 +54,7 @@ const Header: React.FC = () => {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-foreground focus:shadow-lg focus:ring-2 focus:ring-primary"
       >
-        Skip to content
+        {t('Skip to content', 'Aller au contenu')}
       </a>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -68,36 +71,37 @@ const Header: React.FC = () => {
               onClick={() => scrollToSection('about')}
               className="text-foreground/80 hover:text-foreground transition-colors duration-300"
             >
-              About
+              {t('About', 'À propos')}
             </button>
             <button 
               onClick={() => scrollToSection('work')}
               className="text-foreground/80 hover:text-foreground transition-colors duration-300"
             >
-              Work
+              {t('Work', 'Réalisations')}
             </button>
             <button 
               onClick={() => scrollToSection('experience')}
               className="text-foreground/80 hover:text-foreground transition-colors duration-300"
             >
-              Experience
+              {t('Experience', 'Expérience')}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="text-foreground/80 hover:text-foreground transition-colors duration-300"
             >
-              Contact
+              {t('Contact', 'Contact')}
             </button>
           </div>
 
           <div className="flex items-center space-x-2">
+            <LanguageToggle />
             <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={isMobileMenuOpen ? t('Close menu', 'Fermer le menu') : t('Open menu', 'Ouvrir le menu')}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
             >
@@ -114,25 +118,25 @@ const Header: React.FC = () => {
                 onClick={() => scrollToSection('about')}
                 className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
               >
-                About
+                {t('About', 'À propos')}
               </button>
               <button 
                 onClick={() => scrollToSection('work')}
                 className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
               >
-                Work
+                {t('Work', 'Réalisations')}
               </button>
               <button 
                 onClick={() => scrollToSection('experience')}
                 className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
               >
-                Experience
+                {t('Experience', 'Expérience')}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
               >
-                Contact
+                {t('Contact', 'Contact')}
               </button>
             </div>
           </div>

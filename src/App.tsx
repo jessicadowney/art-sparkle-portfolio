@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { LanguageProvider } from "./i18n/LanguageProvider";
 
 // Each case study is its own chunk, so the landing page ships without them.
 const FrontierTuning = lazy(() => import("./pages/FrontierTuningGate"));
@@ -20,6 +21,7 @@ const PhoneNumberCart = lazy(() => import("./pages/PhoneNumberCart"));
 const queryClient = new QueryClient();
 
 const App = () => (
+  <LanguageProvider>
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -45,6 +47,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
+  </LanguageProvider>
 );
 
 export default App;

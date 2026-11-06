@@ -2,12 +2,14 @@
 import React from 'react';
 import { Mail, Linkedin, Github, Smile } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const socialLinks = [
     {
       icon: Mail,
-      label: "Email",
+      label: t("Email", "E-mail"),
       href: "mailto:contact@jessicadowney.com",
       username: "contact@jessicadowney.com"
     },
@@ -37,12 +39,14 @@ const Contact: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight antialiased">
-              Let's <span className="italic">Connect</span>
+              {t("Let's", 'Restons en')} <span className="italic">{t('Connect', 'contact')}</span>
             </h2>
             
             <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed antialiased">
-              I'm passionate about creating meaningful digital experiences and always excited to discuss 
-              new opportunities. Let's connect and explore how we can create something amazing together.
+              {t(
+                "I'm passionate about creating meaningful digital experiences and always excited to discuss new opportunities. Let's connect and explore how we can create something amazing together.",
+                "Je suis passionnée par la création d'expériences numériques porteuses de sens et toujours ravie de discuter de nouvelles opportunités. Échangeons et voyons ce que nous pouvons créer d'extraordinaire ensemble."
+              )}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -71,11 +75,12 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="glass-container rounded-2xl p-8 border border-border/50">
-              <h3 className="text-2xl font-semibold mb-4 antialiased">Let's untangle something hard</h3>
+              <h3 className="text-2xl font-semibold mb-4 antialiased">{t("Let's untangle something hard", 'Démêlons ensemble un sujet difficile')}</h3>
               <p className="text-foreground/70 mb-6 antialiased">
-                I do my best work in the undefined spaces — turning messy problems into products that feel
-                obvious in hindsight. Currently at Microsoft, designing for Copilot extensibility. If you're
-                wrestling with something like that, I'd love to hear about it.
+                {t(
+                  "I do my best work in the undefined spaces — turning messy problems into products that feel obvious in hindsight. Currently at Microsoft, designing for Copilot extensibility. If you're wrestling with something like that, I'd love to hear about it.",
+                  "Je donne le meilleur de moi-même dans les espaces mal définis — transformer des problèmes confus en produits qui semblent évidents après coup. Actuellement chez Microsoft, je conçois l'extensibilité de Copilot. Si vous vous débattez avec un sujet de ce genre, j'aimerais en entendre parler."
+                )}
               </p>
               <Button 
                 size="lg"
@@ -84,7 +89,7 @@ const Contact: React.FC = () => {
                <a href="mailto:contact@jessicadowney.com"
                   target="_blank"
                   className="!bg-transparent !border-none !p-0 !rounded-none hover:!bg-transparent !text-inherit !no-underline"
-                  style={{ background: 'none !important', border: 'none !important', textDecoration: 'none !important' }}>Get In Touch</a>
+                  style={{ background: 'none !important', border: 'none !important', textDecoration: 'none !important' }}>{t('Get In Touch', 'Me contacter')}</a>
                 <Mail className="ml-2 h-5 w-5" />
               </Button>
             </div>

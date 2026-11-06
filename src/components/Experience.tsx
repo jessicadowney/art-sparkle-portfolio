@@ -1,105 +1,107 @@
 import React from 'react';
 import { Calendar, MapPin } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 const Experience: React.FC = () => {
+  const { t } = useLanguage();
   const experiences = [
     {
-      title: "Senior Product Designer",
+      title: t("Senior Product Designer", "Designer produit senior"),
       company: "Microsoft - Copilot Extensibility",
-      location: "Vancouver, BC, Canada",
-      period: "Nov 2025 - Present",
-      description: "Designing how makers and subject-matter experts improve AI agents without needing to understand model training.",
+      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
+      period: t("Nov 2025 - Present", "nov. 2025 - présent"),
+      description: t("Designing how makers and subject-matter experts improve AI agents without needing to understand model training.", "Je conçois la façon dont les créateurs et les experts métier améliorent des agents IA sans avoir besoin de comprendre l'entraînement des modèles."),
       achievements: [
-        "Shaped the conceptual model, evaluation and feedback experiences, terminology and end-to-end improvement journey",
-        "Used interactive prototypes for exploration and engineering handoff, in close partnership with research, content design, product, science and engineering"
+        t("Shaped the conceptual model, evaluation and feedback experiences, terminology and end-to-end improvement journey", "Définition du modèle conceptuel, des expériences d'évaluation et de retour, de la terminologie et du parcours d'amélioration de bout en bout"),
+        t("Used interactive prototypes for exploration and engineering handoff, in close partnership with research, content design, product, science and engineering", "Utilisation de prototypes interactifs pour l'exploration et la transmission à l'ingénierie, en étroite collaboration avec la recherche, le content design, le produit, la science des données et l'ingénierie")
       ]
     },
     {
-      title: "Senior Product Designer",
+      title: t("Senior Product Designer", "Designer produit senior"),
       company: "Microsoft - Azure Communication Services",
-      location: "Vancouver, BC, Canada",
+      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
       period: "2021 - 2025",
-      description: "Owning UX/UI vision and design direction for new Azure Communication Services features in Azure portal, including Short Codes & Sample Builder, improving developer adoption and usability.",
+      description: t("Owning UX/UI vision and design direction for new Azure Communication Services features in Azure portal, including Short Codes & Sample Builder, improving developer adoption and usability.", "Responsable de la vision UX/UI et de la direction de design des nouvelles fonctionnalités d'Azure Communication Services dans le portail Azure, dont Short Codes et Sample Builder, afin d'améliorer l'adoption et l'utilisabilité pour les développeurs."),
       achievements: [
-        "Hacked a redesign of telephone number purchasing experience during FHL 2022, securing executive approval for full-scale redesign",
-        "Facilitated cross-functional alignment to drive API evolution supporting UX improvements across global markets",
-        "Validated design hypotheses using hypothesis testing framework with usability testing, A/B testing, and heuristic evaluations",
-        "Led team ideation sessions and cross-functional design sprints with PMs and engineers for data-driven decisions"
+        t("Hacked a redesign of telephone number purchasing experience during FHL 2022, securing executive approval for full-scale redesign", "Prototypage express d'une refonte de l'achat de numéros de téléphone pendant le FHL 2022, qui a obtenu l'aval de la direction pour une refonte complète"),
+        t("Facilitated cross-functional alignment to drive API evolution supporting UX improvements across global markets", "Facilitation de l'alignement interfonctionnel pour faire évoluer les API et soutenir les améliorations UX sur les marchés mondiaux"),
+        t("Validated design hypotheses using hypothesis testing framework with usability testing, A/B testing, and heuristic evaluations", "Validation des hypothèses de design via un cadre de test d'hypothèses combinant tests d'utilisabilité, tests A/B et évaluations heuristiques"),
+        t("Led team ideation sessions and cross-functional design sprints with PMs and engineers for data-driven decisions", "Animation de sessions d'idéation et de design sprints interfonctionnels avec les chefs de produit et les ingénieurs pour prendre des décisions fondées sur les données")
       ]
     },
     {
-      title: "Product Designer",
+      title: t("Product Designer", "Designer produit"),
       company: "Microsoft - Azure Communication Services",
-      location: "Vancouver, BC, Canada",
-      period: "Jan 2021 - Sep 2021",
-      description: "Designing wireframes, UI and prototypes for Azure Communication Services, focusing on Direct Routing UX and improving customer onboarding in Azure Portal.",
+      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
+      period: t("Jan 2021 - Sep 2021", "janv. 2021 - sept. 2021"),
+      description: t("Designing wireframes, UI and prototypes for Azure Communication Services, focusing on Direct Routing UX and improving customer onboarding in Azure Portal.", "Conception de wireframes, d'interfaces et de prototypes pour Azure Communication Services, avec un focus sur l'UX de Direct Routing et l'amélioration de l'intégration des clients dans le portail Azure."),
       achievements: [
-        "Created UX for Direct Routing functionality",
-        "Improved customer onboarding experience for Azure Communication Services",
-        "Contributed to design systems through wireframes and high-fidelity mockups"
+        t("Created UX for Direct Routing functionality", "Création de l'UX de la fonctionnalité Direct Routing"),
+        t("Improved customer onboarding experience for Azure Communication Services", "Amélioration de l'intégration des clients à Azure Communication Services"),
+        t("Contributed to design systems through wireframes and high-fidelity mockups", "Contribution aux systèmes de design via des wireframes et des maquettes haute fidélité")
       ]
     },
     {
-      title: "Product Designer",
+      title: t("Product Designer", "Designer produit"),
       company: "Microsoft - OneNote",
-      location: "Vancouver, BC, Canada",
+      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
       period: "2018 - 2021",
-      description: "Designing wireframes, UI and prototypes for Microsoft OneNote, focusing on integration improvements and syncing concepts across platforms.",
+      description: t("Designing wireframes, UI and prototypes for Microsoft OneNote, focusing on integration improvements and syncing concepts across platforms.", "Conception de wireframes, d'interfaces et de prototypes pour Microsoft OneNote, avec un focus sur l'amélioration des intégrations et des concepts de synchronisation entre plateformes."),
       achievements: [
-        "Improved integration of OneNote Online in Microsoft Teams",
-        "Adapted new syncing concept from OneNote Desktop to OneNote Online",
-        "Enhanced cross-platform user experience consistency"
+        t("Improved integration of OneNote Online in Microsoft Teams", "Amélioration de l'intégration de OneNote Online dans Microsoft Teams"),
+        t("Adapted new syncing concept from OneNote Desktop to OneNote Online", "Adaptation du nouveau concept de synchronisation de OneNote Desktop à OneNote Online"),
+        t("Enhanced cross-platform user experience consistency", "Renforcement de la cohérence de l'expérience utilisateur entre plateformes")
       ]
     },
     {
-      title: "Head of Product Design",
+      title: t("Head of Product Design", "Responsable du design produit"),
       company: "GoFetch.ca",
-      location: "Vancouver, BC, Canada",
+      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
       period: "2017 - 2018",
-      description: "Leading design meetings and running brainstorming sessions for new feature development. Provided UX and art direction to redesign web & iOS platforms.",
+      description: t("Leading design meetings and running brainstorming sessions for new feature development. Provided UX and art direction to redesign web & iOS platforms.", "Animation des réunions de design et des séances de brainstorming pour le développement de nouvelles fonctionnalités. Direction UX et artistique de la refonte des plateformes web et iOS."),
       achievements: [
-        "Led requirements definition and UX architecture for platform redesign",
-        "Designed wireframes, UI and prototypes for web, iOS and Android features",
-        "Created unified experience across all platforms",
-        "Implemented new UI using HTML/SASS and React JS"
+        t("Led requirements definition and UX architecture for platform redesign", "Pilotage de la définition des besoins et de l'architecture UX pour la refonte de la plateforme"),
+        t("Designed wireframes, UI and prototypes for web, iOS and Android features", "Conception de wireframes, d'interfaces et de prototypes pour des fonctionnalités web, iOS et Android"),
+        t("Created unified experience across all platforms", "Création d'une expérience unifiée sur toutes les plateformes"),
+        t("Implemented new UI using HTML/SASS and React JS", "Intégration de la nouvelle interface en HTML/SASS et React JS")
       ]
     },
     {
-      title: "Senior Interaction Designer",
+      title: t("Senior Interaction Designer", "Designer d'interaction senior"),
       company: "AVG Technologies - Innovation Group",
-      location: "Amsterdam, Netherlands",
+      location: t("Amsterdam, Netherlands", "Amsterdam, Pays-Bas"),
       period: "2015 - 2016",
-      description: "Supported concept development within the Innovation Group, facilitating design sprints and creating high-fidelity prototypes for user testing.",
+      description: t("Supported concept development within the Innovation Group, facilitating design sprints and creating high-fidelity prototypes for user testing.", "Soutien au développement de concepts au sein de l'Innovation Group, avec animation de design sprints et création de prototypes haute fidélité pour les tests utilisateurs."),
       achievements: [
-        "Facilitated design sprints and design iteration sessions",
-        "Created concept designs through storyboards, wireframes & prototypes",
-        "Provided UX support for Scrum development teams",
-        "Coded interactive prototypes for mobile, web & desktop products"
+        t("Facilitated design sprints and design iteration sessions", "Animation de design sprints et de sessions d'itération de design"),
+        t("Created concept designs through storyboards, wireframes & prototypes", "Création de concepts via des storyboards, des wireframes et des prototypes"),
+        t("Provided UX support for Scrum development teams", "Soutien UX aux équipes de développement Scrum"),
+        t("Coded interactive prototypes for mobile, web & desktop products", "Développement de prototypes interactifs pour des produits mobiles, web et desktop")
       ]
     },
     {
-      title: "Interaction Designer",
+      title: t("Interaction Designer", "Designer d'interaction"),
       company: "AVG Technologies - Innovation Group",
-      location: "Amsterdam, Netherlands",
+      location: t("Amsterdam, Netherlands", "Amsterdam, Pays-Bas"),
       period: "2012 - 2015",
-      description: "Supported concept development within the Innovation Group with focus on concept generation, storyboarding, and rapid prototyping.",
+      description: t("Supported concept development within the Innovation Group with focus on concept generation, storyboarding, and rapid prototyping.", "Soutien au développement de concepts au sein de l'Innovation Group, avec un focus sur la génération de concepts, les storyboards et le prototypage rapide."),
       achievements: [
-        "Led concept generation and wireframe sketching processes",
-        "Created quick prototypes for concept validation",
-        "Contributed to innovation initiatives across multiple product lines"
+        t("Led concept generation and wireframe sketching processes", "Pilotage des processus de génération de concepts et d'esquisse de wireframes"),
+        t("Created quick prototypes for concept validation", "Création de prototypes rapides pour valider les concepts"),
+        t("Contributed to innovation initiatives across multiple product lines", "Contribution à des initiatives d'innovation sur plusieurs gammes de produits")
       ]
     },
     {
-      title: "IXD/UX Designer",
+      title: t("IXD/UX Designer", "Designer IXD/UX"),
       company: "Siemens Corporate Research USA",
-      location: "Princeton, NJ, USA",
+      location: t("Princeton, NJ, USA", "Princeton (New Jersey), États-Unis"),
       period: "2011 - 2012", 
-      description: "Designed user interfaces for new Siemens products & systems, leading requirements definition and UX for healthcare & industry sector products.",
+      description: t("Designed user interfaces for new Siemens products & systems, leading requirements definition and UX for healthcare & industry sector products.", "Conception d'interfaces pour de nouveaux produits et systèmes Siemens, avec pilotage de la définition des besoins et de l'UX de produits des secteurs de la santé et de l'industrie."),
       achievements: [
-        "Led new product development from requirement elicitation to final visual assets",
-        "Conducted user testing and stakeholder alignment for agile teams",
-        "Produced information architecture and wireframes for stakeholder approval",
-        "Provided UX consultancy across healthcare and industry business units"
+        t("Led new product development from requirement elicitation to final visual assets", "Pilotage du développement de nouveaux produits, du recueil des besoins aux visuels finaux"),
+        t("Conducted user testing and stakeholder alignment for agile teams", "Réalisation de tests utilisateurs et alignement des parties prenantes pour des équipes agiles"),
+        t("Produced information architecture and wireframes for stakeholder approval", "Production de l'architecture de l'information et de wireframes pour validation par les parties prenantes"),
+        t("Provided UX consultancy across healthcare and industry business units", "Conseil UX auprès des unités métier santé et industrie")
       ]
     }
   ];
@@ -110,10 +112,11 @@ const Experience: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight antialiased">
-              <span className="text-primary">Experience</span>
+              <span className="text-primary">{t('Experience', 'Expérience')}</span>
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto antialiased">
-Designing at the intersection of UX and product for 15+ years — across enterprise, industrial, and consumer experiences.            </p>
+              {t('Designing at the intersection of UX and product for 15+ years — across enterprise, industrial, and consumer experiences.', "Plus de 15 ans à concevoir à l'intersection de l'UX et du produit — pour des expériences d'entreprise, industrielles et grand public.")}
+            </p>
           </div>
           
           <div className="space-y-0">

@@ -4,6 +4,7 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/i18n/LanguageProvider';
 
 interface WorkCardProps {
   title: string;
@@ -17,6 +18,7 @@ interface WorkCardProps {
 
 const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, link, year, featured }) => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleClick = () => {
     if (link) {
@@ -78,9 +80,9 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
           variant="ghost"
           className={`p-0 h-auto font-medium text-primary hover:text-primary/80 group/btn ${featured ? 'self-start' : ''}`}
           onClick={(e) => { e.stopPropagation(); handleClick(); }}
-          aria-label={`View case study: ${title}`}
+          aria-label={`${t('View case study', "Voir l'étude de cas")} : ${title}`}
         >
-          View Case Study
+          {t('View Case Study', "Voir l'étude de cas")}
           <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/btn:translate-x-1" aria-hidden="true" />
         </Button>
       </CardContent>
