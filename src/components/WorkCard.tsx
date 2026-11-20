@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight, Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -8,15 +8,17 @@ import { useLanguage } from '@/i18n/LanguageProvider';
 
 interface WorkCardProps {
   title: string;
-  description: string;
-  tags: string[];
+  role: string;
+  problem: string;
+  made: string;
+  locked?: boolean;
   image: string;
   link?: string;
   year: string;
   featured?: boolean;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, link, year, featured }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, locked, image, link, year, featured }) => {
   const navigate = useNavigate();
   const { t } = useLanguage();
 
@@ -56,24 +58,29 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
           {title}
         </h3>
         
-        <p className="text-foreground/70 mb-4 leading-relaxed">
-          {description}
-        </p>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag, index) => (
-            <span 
-              key={index}
-              className="px-3 py-1 bg-accent rounded-full text-xs font-medium text-accent-foreground"
-            >
-              {tag}
-            </span>
+        <dl className="mb-4 space-y-3 text-foreground/80 leading-relaxed">
+          {[
+            [t('Role', 'Rôle'), role],
+            [t('Problem', 'Problème'), problem],
+            [t('What I made', "Ce que j'ai conçu"), made],
+          ].map(([label, text]) => (
+            <div key={label}>
+              <dt className="text-sm text-muted-foreground">{label}</dt>
+              <dd>{text}</dd>
+            </div>
           ))}
-        </div>
-        
+        </dl>
+
+        {locked && (
+          <p className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
+            <Lock className="h-4 w-4" aria-hidden="true" />
+            {t('Password protected', 'Protégé par mot de passe')}
+          </p>
+        )}
+
         <Button
           variant="ghost"
-          className={`p-0 h-auto font-medium text-primary hover:text-primary/80 group/btn ${featured ? 'self-start' : ''}`}
+          className={`px-0 py-3 h-auto font-medium text-primary hover:text-primary/80 group/btn ${featured ? 'self-start' : ''}`}
           onClick={(e) => { e.stopPropagation(); handleClick(); }}
           aria-label={`${t('View case study', "Voir l'étude de cas")} : ${title}`}
         >

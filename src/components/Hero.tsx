@@ -13,62 +13,41 @@ const Hero: React.FC = () => {
     }
   };
 
-  const openResume = () => {
-    window.open(lang === 'fr' ? '/jessica-downey-cv-fr.pdf' : '/jessica-downey-cv.pdf', '_blank');
-  };
 
   return (
     <section className="min-h-screen flex items-center justify-center relative py-20">
       <div className="container mx-auto px-6 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-8xl font-light mb-6 tracking-tight antialiased leading-tight md:leading-relaxed">
-            <span className="block text-foreground/90 mb-2 md:mb-0">{t('Senior', 'Designer')}</span>
-            <span className="block italic text-foreground leading-tight md:leading-[120px]">
-              {t('Product Designer', 'produit senior')}
-            </span>
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-light mb-6 tracking-tight antialiased leading-[1.05] text-balance">
+            {t('I make messy ideas ', 'Je rends les idées confuses ')}
+            <span className="italic">{t('click.', 'limpides.')}</span>
           </h1>
-          
+
           <p className="text-lg md:text-xl lg:text-2xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed antialiased mt-4">
             {t(
-              'Designing intuitive, human-centered digital experiences that solve real problems and create meaningful connections between users and technology.',
-              'Je conçois des expériences numériques intuitives et centrées sur l\'humain, qui résolvent de vrais problèmes et créent des liens significatifs entre les utilisateurs et la technologie.'
+              'Senior product designer at Microsoft, working on how people extend and steer Copilot.',
+              'Designer produit senior chez Microsoft, je travaille sur la façon dont on étend et on pilote Copilot.'
             )}
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
               onClick={scrollToWork}
               size="lg"
-              className="animated-gradient glass-stroke px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
+              className="animated-gradient glass-stroke px-8 py-3 rounded-full text-lg antialiased"
             >
               {t('View My Work', 'Voir mes réalisations')}
               <ArrowDown className="ml-2 h-5 w-5" />
             </Button>
-            
-            <Button 
-              onClick={openResume}
-              variant="outline"
-              size="lg"
-              className="px-8 py-3 rounded-full text-lg border-2 hover:bg-accent transition-all duration-300 hover:scale-105 antialiased"
+            <a
+              href={lang === 'fr' ? '/jessica-downey-cv-fr.pdf' : '/jessica-downey-cv.pdf'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-2 py-3 text-lg"
             >
               {t('Download Resume', 'Télécharger mon CV')}
-              <Download className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-          
-          <div className="flex justify-center space-x-8 text-sm text-foreground/60 antialiased">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">15+</div>
-              <div>{t('Years Experience', "Ans d'expérience")}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">Microsoft</div>
-              <div>{t('Senior Designer', 'Designer senior')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">{t('Global', 'Mondial')}</div>
-              <div>{t('Scale Impact', 'Impact à grande échelle')}</div>
-            </div>
+              <Download className="h-5 w-5" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
