@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, ArrowRight, Lock } from 'lucide-react';
+import { ArrowRight, Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -40,20 +40,10 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, locked,
           alt={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-        <div className="absolute top-4 right-4">
-          <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-            <ExternalLink className="h-5 w-5 text-white" />
-          </div>
-        </div>
-        <div className="absolute top-4 left-4">
-          <div className="bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
-            {year}
-          </div>
-        </div>
       </div>
       
       <CardContent className={featured ? 'p-6 md:p-8 md:flex md:flex-col md:justify-center' : 'p-6'}>
+        <p className="mb-2 text-sm text-muted-foreground tabular-nums">{year}</p>
         <h3 className={`font-semibold mb-3 group-hover:text-primary transition-colors duration-300 ${featured ? 'text-xl md:text-3xl' : 'text-xl'}`}>
           {title}
         </h3>

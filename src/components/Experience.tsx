@@ -121,12 +121,12 @@ const Experience: React.FC = () => {
   );
 
   return (
-    <section id="experience" className="py-20 bg-accent/30">
+    <section id="experience" className="py-24 md:py-32 bg-accent/30">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight antialiased">
-              <span className="text-primary">{t('Experience', 'Expérience')}</span>
+              <em>{t('Experience', 'Expérience')}</em>
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto antialiased">
               {t('Designing at the intersection of UX and product for 15+ years — across enterprise, industrial, and consumer experiences.', "Plus de 15 ans à concevoir à l'intersection de l'UX et du produit — pour des expériences d'entreprise, industrielles et grand public.")}
@@ -136,7 +136,7 @@ const Experience: React.FC = () => {
           <div className="divide-y divide-border border-y border-border">
             {experiences.slice(0, CURRENT_ROLES).map((exp) => (
               <div key={exp.period} className="grid gap-4 py-8 md:grid-cols-[12rem_1fr] md:gap-8">
-                <p className="text-muted-foreground">{exp.period}</p>
+                <p className="text-muted-foreground tabular-nums">{exp.period}</p>
                 <div>
                   <h3 className="text-2xl font-semibold mb-1 antialiased">{exp.title}</h3>
                   <p className="text-lg text-primary font-medium mb-4 antialiased"><Company exp={exp} /></p>
@@ -152,13 +152,13 @@ const Experience: React.FC = () => {
           </div>
 
           <h3 className="text-2xl font-light tracking-tight mt-16 mb-4 text-foreground/80">
-            {t('Earlier', 'Parcours')} <span className="text-primary">{t('roles', 'antérieur')}</span>
+            {t('Earlier', 'Parcours')} <em>{t('roles', 'antérieur')}</em>
           </h3>
           <div className="divide-y divide-border border-y border-border">
             {experiences.slice(CURRENT_ROLES).map((exp) => (
               <details key={exp.period + exp.company + exp.title} className="group py-4">
                 <summary className="relative grid cursor-pointer list-none gap-1 md:grid-cols-[12rem_1fr_2fr_1.5rem] md:gap-8 [&::-webkit-details-marker]:hidden">
-                  <span className="text-muted-foreground">{exp.period}</span>
+                  <span className="text-muted-foreground tabular-nums">{exp.period}</span>
                   <span className="pr-8 md:pr-0">
                     <span className="block font-medium">{exp.title}</span>
                     <span className="block text-foreground/70"><Company exp={exp} /></span>

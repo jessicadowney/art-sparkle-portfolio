@@ -4,6 +4,32 @@ import { ArrowDown, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/i18n/LanguageProvider';
 
+const OFFSETS = [
+  { r: -16, y: -0.3 }, { r: 11, y: 0.22 }, { r: -9, y: -0.12 }, { r: 14, y: 0.3 },
+  { r: -12, y: -0.2 }, { r: 8, y: 0.16 }, { r: -14, y: -0.28 }, { r: 12, y: 0.12 },
+];
+
+// Each letter starts slightly off its line and settles. Screen readers get the plain word.
+const Settling: React.FC<{ word: string }> = ({ word }) => (
+  <>
+    <span className="sr-only">{word}</span>
+    <span aria-hidden="true">
+      {[...word].map((ch, i) => {
+        const o = OFFSETS[i % OFFSETS.length];
+        return (
+          <span
+            key={i}
+            className="settle-letter"
+            style={{ '--r': `${o.r}deg`, '--y': `${o.y}em`, '--d': `${200 + i * 50}ms` } as React.CSSProperties}
+          >
+            {ch}
+          </span>
+        );
+      })}
+    </span>
+  </>
+);
+
 const Hero: React.FC = () => {
   const { t, lang } = useLanguage();
   const scrollToWork = () => {
@@ -19,8 +45,11 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-8xl font-light mb-6 tracking-tight antialiased leading-[1.05] text-balance">
-            {t('I make messy ideas ', 'Je rends les idées confuses ')}
-            <span className="italic">{t('click.', 'limpides.')}</span>
+            {lang === 'fr' ? (
+              <>Je rends les idées <Settling word="confuses" /> <span className="italic">limpides.</span></>
+            ) : (
+              <>I make <Settling word="messy" /> ideas <span className="italic">click.</span></>
+            )}
           </h1>
 
           <p className="text-lg md:text-xl lg:text-2xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed antialiased mt-4">
@@ -52,9 +81,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-6 w-6 text-foreground/40" />
-      </div>
     </section>
   );
 };
