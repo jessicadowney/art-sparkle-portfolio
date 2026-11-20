@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
               ))}
             </div>
             
-            <div className="glass-container rounded-2xl p-8 border border-border/50">
+            <div className="glass-container rounded-2xl p-6 md:p-8 border border-border/50">
               <h3 className="text-2xl font-semibold mb-4 antialiased">{t("Let's untangle something hard", 'Démêlons ensemble un sujet difficile')}</h3>
               <p className="text-foreground/70 mb-6 antialiased">
                 {t(

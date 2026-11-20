@@ -19,7 +19,7 @@ const About: React.FC = () => {
           </blockquote>
 
           <div className="mb-12">
-            <div className="animate-fade-in glass-container rounded-2xl p-8">
+            <div className="animate-fade-in glass-container rounded-2xl p-6 md:p-8">
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
                 {t("Hi! I'm Jessica — a senior product designer who makes messy ideas click.", "Bonjour ! Je suis Jessica — designer produit senior qui rend les idées confuses limpides.")}
               </p>

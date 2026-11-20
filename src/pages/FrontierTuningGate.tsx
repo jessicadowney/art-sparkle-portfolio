@@ -70,8 +70,8 @@ const FrontierTuningGate = () => {
 
   return (
     <main id="main-content" tabIndex={-1} className="min-h-screen flex items-center justify-center px-6 pt-24 text-foreground">
-      <form onSubmit={submit} className="w-full max-w-sm space-y-4">
-        <h1 className="text-2xl font-semibold text-primary">{t('This case study is password protected', 'Cette étude de cas est protégée par mot de passe')}</h1>
+      <form onSubmit={submit} className="w-full max-w-md space-y-4 glass-container rounded-2xl p-6 md:p-8">
+        <h1 className="text-3xl font-light tracking-tight text-balance">{t('This case study is password protected', 'Cette étude de cas est protégée par mot de passe')}</h1>
         <p className="text-foreground/70">
           {t('Enter the password I shared with you to read the Frontier Tuning case study.', "Saisissez le mot de passe que je vous ai communiqué pour lire l'étude de cas Frontier Tuning.")}
         </p>
@@ -94,7 +94,7 @@ const FrontierTuningGate = () => {
         )}
         <div className="flex items-center gap-4">
           <Button type="submit">{t('View case study', "Voir l'étude de cas")}</Button>
-          <Link to="/" className="text-sm text-primary hover:underline">
+          <Link to="/" className="py-3">
             {t('Back to portfolio', 'Retour au portfolio')}
           </Link>
         </div>
