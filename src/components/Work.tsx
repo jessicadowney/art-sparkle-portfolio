@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import WorkCard from './WorkCard';
+import SectionHeading from './SectionHeading';
 import { useLanguage } from '@/i18n/LanguageProvider';
 
 const Work: React.FC = () => {
@@ -68,18 +69,16 @@ const Work: React.FC = () => {
   return (
     <section id="work" className="py-24 md:py-32 bg-accent/30">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-            {t('Selected', 'Réalisations')} <em>{t('Work', 'choisies')}</em>
-          </h2>
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            {t(
+        <div className="max-w-6xl mx-auto">
+          <SectionHeading
+            title={<>{t('Selected', 'Réalisations')} <em>{t('Work', 'choisies')}</em></>}
+            intro={t(
               'A collection of projects that showcase my approach to solving complex design challenges and creating meaningful, accessible user experiences.',
               "Une sélection de projets qui illustrent ma façon de relever des défis de design complexes et de créer des expériences utilisateur utiles et accessibles."
             )}
-          </p>
+          />
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div

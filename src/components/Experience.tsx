@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 import { useLanguage } from '@/i18n/LanguageProvider';
 
 type Role = {
@@ -124,14 +125,10 @@ const Experience: React.FC = () => {
     <section id="experience" className="py-24 md:py-32 bg-accent/30">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight antialiased">
-              <em>{t('Experience', 'Expérience')}</em>
-            </h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto antialiased">
-              {t('Designing at the intersection of UX and product for 15+ years — across enterprise, industrial, and consumer experiences.', "Plus de 15 ans à concevoir à l'intersection de l'UX et du produit — pour des expériences d'entreprise, industrielles et grand public.")}
-            </p>
-          </div>
+          <SectionHeading
+            title={<em>{t('Experience', 'Expérience')}</em>}
+            intro={t('Designing at the intersection of UX and product for 15+ years — across enterprise, industrial, and consumer experiences.', "Plus de 15 ans à concevoir à l'intersection de l'UX et du produit — pour des expériences d'entreprise, industrielles et grand public.")}
+          />
 
           <div className="divide-y divide-border border-y border-border">
             {experiences.slice(0, CURRENT_ROLES).map((exp) => (
