@@ -9,6 +9,12 @@ import { useLanguage } from '@/i18n/LanguageProvider';
 
 const Header: React.FC = () => {
   const { t } = useLanguage();
+  const sections = [
+    ['about', t('About', 'À propos')],
+    ['work', t('Work', 'Réalisations')],
+    ['experience', t('Experience', 'Expérience')],
+    ['contact', t('Contact', 'Contact')],
+  ];
   const navigate = useNavigate();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,7 +25,7 @@ const Header: React.FC = () => {
     
     // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
-      navigate('/', { replace: true });
+      navigate('/');
       // Wait for navigation to complete, then scroll
       setTimeout(() => {
         const element = document.getElementById(id);
@@ -67,30 +73,15 @@ const Header: React.FC = () => {
           </button>
           
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="text-foreground/80 hover:text-foreground transition-colors duration-300"
-            >
-              {t('About', 'À propos')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('work')}
-              className="text-foreground/80 hover:text-foreground transition-colors duration-300"
-            >
-              {t('Work', 'Réalisations')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('experience')}
-              className="text-foreground/80 hover:text-foreground transition-colors duration-300"
-            >
-              {t('Experience', 'Expérience')}
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-foreground/80 hover:text-foreground transition-colors duration-300"
-            >
-              {t('Contact', 'Contact')}
-            </button>
+            {sections.map(([id, label]) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="text-foreground/80 hover:text-foreground transition-colors duration-300"
+              >
+                {label}
+              </button>
+            ))}
           </div>
 
           <div className="flex items-center space-x-2">
@@ -114,30 +105,15 @@ const Header: React.FC = () => {
         {isMobileMenuOpen && (
           <div id="mobile-menu" className="md:hidden mt-4 pb-4 border-t border-border/20">
             <div className="flex flex-col space-y-4 pt-4">
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
-              >
-                {t('About', 'À propos')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('work')}
-                className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
-              >
-                {t('Work', 'Réalisations')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('experience')}
-                className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
-              >
-                {t('Experience', 'Expérience')}
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
-              >
-                {t('Contact', 'Contact')}
-              </button>
+              {sections.map(([id, label]) => (
+                <button
+                  key={id}
+                  onClick={() => scrollToSection(id)}
+                  className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
+                >
+                  {label}
+                </button>
+              ))}
             </div>
           </div>
         )}
