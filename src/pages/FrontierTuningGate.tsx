@@ -69,7 +69,7 @@ const FrontierTuningGate = () => {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center px-6 pt-24 text-foreground">
+    <main id="main-content" tabIndex={-1} className="min-h-screen flex items-center justify-center px-6 pt-24 text-foreground">
       <form onSubmit={submit} className="w-full max-w-sm space-y-4">
         <h1 className="text-2xl font-semibold text-primary">{t('This case study is password protected', 'Cette étude de cas est protégée par mot de passe')}</h1>
         <p className="text-foreground/70">
