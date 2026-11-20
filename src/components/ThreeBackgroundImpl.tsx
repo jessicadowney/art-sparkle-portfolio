@@ -1,61 +1,44 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { useTheme } from './ThemeProvider';
-// Editorial palette — neutral greys so the shapes read as a quiet texture,
-// not neon, on the warm paper background.
-const vibrantColors = ['#2a2a2e', '#3a3a40', '#4a4a52', '#57565e', '#33333a'];
 
-// Optimized background renderer.
-//
-// The previous implementation drew each shape as its own mesh with a
-// physically-based transmission (refraction) material, plus one tiny sphere
-// mesh per Nth geometry vertex as "sparkles" — about 17,000 meshes and
-// ~16,800 draw calls per frame. This version renders the same scene in
-// 4 draw calls:
-//   - one InstancedMesh per shape family (hearts, stars, cursors)
-//   - one Points cloud for the sparkles
-// Glass is approximated with a fresnel shader instead of real refraction,
-// which removes the need for lights entirely. Raising the counts below is
-// nearly free — 100 shapes costs about the same as 25.
-const CONFIG = {
-  hearts: 16,
-  stars: 3,
-  cursors: 3,
-  ibeams: 16,
-  carets: 16,
-  dust: 130,
-  parallax: true,
-  pixelRatioCap: 1.5,
-};
+// "Messy ideas click." Design-tool glyphs (frames, circles, cursors, text carets) start
+// scattered and tumbling, then snap into neat columns as the page scrolls or the pointer
+// nears them. Shapes live in the page margins so they never cross the reading column.
+// One InstancedMesh per shape family and a fresnel shader instead of real glass keep it
+// to a handful of draw calls.
+const PALETTE_LIGHT = ['#2a2a2e', '#3a3a40', '#4a4a52', '#57565e', '#33333a'];
+const PALETTE_DARK = ['#d9d2c4', '#c4bdae', '#aaa496', '#948e82', '#cfc8b9'];
 
+const COUNTS = { frames: 7, circles: 7, cursors: 5, ibeams: 8, carets: 8 }; // 35 shapes
+const CONTENT_HALF_WIDTH = 576; // px, matches the 1152px reading column
+const NARROW = 768; // below this there are no margins: shapes get quieter instead
 const FOG_DARK = 0x141210;
 const FOG_LIGHT = 0xefeee9;
+const FOV = 75;
+const CAM_Z = 12;
 
 const rand = (a: number, b: number) => a + Math.random() * (b - a);
-const pick = <T,>(arr: T[]) => arr[Math.floor(Math.random() * arr.length)];
+const smooth = (t: number) => t * t * (3 - 2 * t);
+const clamp01 = (t: number) => Math.min(1, Math.max(0, t));
 
-// Same outlines as three/shapes/TinyHeart, OctagramStar, MouseCursor —
-// only the outline is needed here; materials are handled by the shader.
-function heartShape() {
+function frameShape() {
   const s = new THREE.Shape();
-  s.moveTo(0.25, 0.25);
-  s.bezierCurveTo(0.25, 0.25, 0.1, 0, 0, 0);
-  s.bezierCurveTo(-0.15, 0, -0.15, 0.175, -0.15, 0.175);
-  s.bezierCurveTo(-0.15, 0.275, -0.075, 0.375, 0.125, 0.475);
-  s.bezierCurveTo(0.325, 0.375, 0.4, 0.275, 0.4, 0.175);
-  s.bezierCurveTo(0.4, 0.175, 0.4, 0, 0.25, 0);
-  s.bezierCurveTo(0.1, 0, 0.25, 0.25, 0.25, 0.25);
+  const hw = 0.42, r = 0.12;
+  s.moveTo(-hw + r, -hw);
+  s.lineTo(hw - r, -hw);
+  s.quadraticCurveTo(hw, -hw, hw, -hw + r);
+  s.lineTo(hw, hw - r);
+  s.quadraticCurveTo(hw, hw, hw - r, hw);
+  s.lineTo(-hw + r, hw);
+  s.quadraticCurveTo(-hw, hw, -hw, hw - r);
+  s.lineTo(-hw, -hw + r);
+  s.quadraticCurveTo(-hw, -hw, -hw + r, -hw);
   return s;
 }
-function starShape() {
+function circleShape() {
   const s = new THREE.Shape();
-  for (let i = 0; i < 16; i++) {
-    const a = (i / 16) * Math.PI * 2;
-    const r = i % 2 === 0 ? 0.2 : 0.1;
-    if (i === 0) s.moveTo(Math.cos(a) * r, Math.sin(a) * r);
-    else s.lineTo(Math.cos(a) * r, Math.sin(a) * r);
-  }
-  s.closePath();
+  s.absarc(0, 0, 0.42, 0, Math.PI * 2, false);
   return s;
 }
 function cursorShape() {
@@ -70,10 +53,10 @@ function cursorShape() {
   s.lineTo(0, 0);
   return s;
 }
-// I-beam text cursor — a serifed "I" (top bar, stem, bottom bar).
+// I-beam text cursor: a serifed "I" (top bar, stem, bottom bar).
 function ibeamShape() {
   const s = new THREE.Shape();
-  const hw = 0.2, sw = 0.06, st = 0.12, hh = 0.5; // serif half-width, stem half-width, serif thickness, half height
+  const hw = 0.2, sw = 0.06, st = 0.12, hh = 0.5;
   s.moveTo(-hw, hh);
   s.lineTo(hw, hh);
   s.lineTo(hw, hh - st);
@@ -89,7 +72,7 @@ function ibeamShape() {
   s.closePath();
   return s;
 }
-// Insertion caret — the slim blinking text-insertion bar.
+// Insertion caret: the slim text-insertion bar.
 function caretShape() {
   const s = new THREE.Shape();
   const w = 0.055, hh = 0.5;
@@ -115,43 +98,37 @@ const glassVert = /* glsl */ `
   }`;
 const glassFrag = /* glsl */`
   varying vec3 vColor; varying float vFres; varying float vDepth;
-  uniform vec3 uFog; uniform float uFogNear, uFogFar;
+  uniform vec3 uFog; uniform float uFogNear, uFogFar, uAlpha;
   void main() {
     vec3 col = vColor * (0.85 + 0.5 * vFres);
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
-    float alpha = (0.16 + 0.34 * vFres) * (1.0 - fog);
+    float alpha = (0.16 + 0.34 * vFres) * (1.0 - fog) * uAlpha;
     gl_FragColor = vec4(mix(col, uFog, fog), alpha);
   }`;
-const dustVert = /* glsl */`
-  attribute vec3 aColor; attribute float aPhase; attribute float aSize;
-  varying vec3 vColor; varying float vTwinkle; varying float vDepth;
-  uniform float uTime;
-  void main() {
-    vColor = aColor;
-    vec3 p = position;
-    p.y += sin(uTime * 0.3 + aPhase) * 0.6;
-    p.x += cos(uTime * 0.2 + aPhase * 1.7) * 0.4;
-    vec4 mv = modelViewMatrix * vec4(p, 1.0);
-    vTwinkle = 0.6 + 0.4 * sin(uTime * 1.5 + aPhase * 5.0);
-    vDepth = -mv.z;
-    gl_PointSize = aSize * vTwinkle * (140.0 / -mv.z);
-    gl_Position = projectionMatrix * mv;
-  }`;
-const dustFrag = /* glsl */`
-  varying vec3 vColor; varying float vTwinkle; varying float vDepth;
-  uniform float uFogNear, uFogFar;
-  void main() {
-    float d = length(gl_PointCoord - 0.5);
-    if (d > 0.5) discard;
-    float soft = smoothstep(0.5, 0.0, d);
-    float fog = 1.0 - smoothstep(uFogNear, uFogFar, vDepth);
-    gl_FragColor = vec4(vColor, soft * vTwinkle * fog * 0.45);
-  }`;
+
+type Inst = {
+  side: number; // -1 left margin, 1 right margin
+  mx: number; // 0..1 across the margin when scattered
+  my: number; // -1..1 down the viewport when scattered
+  z: number;
+  slotSide: number;
+  slotY: number; // -1..1, the neat column position
+  messScale: number;
+  mess: THREE.Vector2; // scattered position in screen space (NDC)
+  slot: THREE.Vector2; // clicked-into-place position in screen space (NDC)
+  cur: THREE.Vector2;
+  rot: THREE.Euler;
+  spin: THREE.Vector3;
+  seed: number;
+  color: number;
+  o: number; // 0 = scattered, 1 = clicked into place
+};
 
 const ThreeBackgroundImpl: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const fogColorRef = useRef<THREE.Color | null>(null);
+  const paletteRef = useRef<((dark: boolean) => void) | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -166,18 +143,14 @@ const ThreeBackgroundImpl: React.FC = () => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 12;
+    const camera = new THREE.PerspectiveCamera(FOV, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = CAM_Z;
 
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-      powerPreference: 'default',
-    });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'default' });
     rendererRef.current = renderer;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, CONFIG.pixelRatioCap));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
@@ -185,6 +158,7 @@ const ThreeBackgroundImpl: React.FC = () => {
       uFog: { value: new THREE.Color(FOG_LIGHT) },
       uFogNear: { value: 15 },
       uFogFar: { value: 40 },
+      uAlpha: { value: 1 },
     };
     fogColorRef.current = fogUniforms.uFog.value;
 
@@ -196,143 +170,146 @@ const ThreeBackgroundImpl: React.FC = () => {
       depthWrite: false,
     });
 
-    type InstState = {
-      pos: THREE.Vector3;
-      rot: THREE.Euler;
-      scale: number;
-      spin: THREE.Vector3;
-      seed: number;
-    };
-    const instanced: { mesh: THREE.InstancedMesh; state: InstState[] }[] = [];
     const dummy = new THREE.Object3D();
-
-    const addInstanced = (geo: THREE.BufferGeometry, count: number, baseScale: number) => {
-      const mesh = new THREE.InstancedMesh(geo, glassMat, count);
-      const state: InstState[] = [];
-      for (let i = 0; i < count; i++) {
-        const s: InstState = {
-          pos: new THREE.Vector3(
-            (Math.random() - 0.5) * 30,
-            (Math.random() - 0.5) * 20,
-            (Math.random() - 0.5) * 15 - 5
-          ),
-          rot: new THREE.Euler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI),
-          scale: rand(0.4, 1) * baseScale,
-          spin: new THREE.Vector3(
-            0.001 + Math.random() * 0.005,
-            0.002 + Math.random() * 0.007,
-            0.0005 + Math.random() * 0.002
-          ),
-          seed: Math.random() * 100,
-        };
-        state.push(s);
-        dummy.position.copy(s.pos);
-        dummy.rotation.copy(s.rot);
-        dummy.scale.setScalar(s.scale);
-        dummy.updateMatrix();
-        mesh.setMatrixAt(i, dummy.matrix);
-        mesh.setColorAt(i, new THREE.Color(pick(vibrantColors)));
-      }
-      mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-      scene.add(mesh);
-      instanced.push({ mesh, state });
+    const families: { mesh: THREE.InstancedMesh; items: Inst[]; orderScale: number }[] = [];
+    const geo = (shape: THREE.Shape, depth: number, scale: number) => {
+      const g = new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelSegments: 4, steps: 1, bevelSize: 0.02, bevelThickness: 0.02 });
+      g.center();
+      g.scale(scale, scale, scale);
+      return g;
     };
+    const defs: [THREE.ExtrudeGeometry, number, number][] = [
+      [geo(frameShape(), 0.06, 1), COUNTS.frames, 0.9],
+      [geo(circleShape(), 0.06, 1), COUNTS.circles, 0.9],
+      [geo(cursorShape(), 0.1, 0.7), COUNTS.cursors, 0.9],
+      [geo(ibeamShape(), 0.06, 1), COUNTS.ibeams, 1],
+      [geo(caretShape(), 0.06, 1), COUNTS.carets, 1],
+    ];
+    const total = defs.reduce((n, d) => n + d[1], 0);
 
-    addInstanced(
-      new THREE.ExtrudeGeometry(heartShape(), { depth: 0.05, bevelEnabled: true, bevelSegments: 6, steps: 2, bevelSize: 0.02, bevelThickness: 0.02 }),
-      CONFIG.hearts,
-      1.5
-    );
-    addInstanced(
-      new THREE.ExtrudeGeometry(starShape(), { depth: 0.05, bevelEnabled: true, bevelSegments: 4, steps: 1, bevelSize: 0.01, bevelThickness: 0.01 }),
-      CONFIG.stars,
-      1
-    );
-    addInstanced(
-      new THREE.ExtrudeGeometry(cursorShape(), { depth: 0.1, bevelEnabled: true, bevelSegments: 8, steps: 2, bevelSize: 0.02, bevelThickness: 0.02 }),
-      CONFIG.cursors,
-      0.8
-    );
-    addInstanced(
-      new THREE.ExtrudeGeometry(ibeamShape(), { depth: 0.06, bevelEnabled: true, bevelSegments: 4, steps: 1, bevelSize: 0.015, bevelThickness: 0.015 }),
-      CONFIG.ibeams,
-      1.1
-    );
-    addInstanced(
-      new THREE.ExtrudeGeometry(caretShape(), { depth: 0.06, bevelEnabled: true, bevelSegments: 4, steps: 1, bevelSize: 0.02, bevelThickness: 0.02 }),
-      CONFIG.carets,
-      1.1
-    );
-
-    // Sparkles: a single Points draw replaces the per-vertex sphere meshes
-    const n = CONFIG.dust;
-    const dustGeo = new THREE.BufferGeometry();
-    const pos = new Float32Array(n * 3);
-    const col = new Float32Array(n * 3);
-    const phase = new Float32Array(n);
-    const size = new Float32Array(n);
-    const c = new THREE.Color();
-    for (let i = 0; i < n; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 34;
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 24;
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 18 - 4;
-      c.set(pick(vibrantColors)).multiplyScalar(0.9);
-      col[i * 3] = c.r;
-      col[i * 3 + 1] = c.g;
-      col[i * 3 + 2] = c.b;
-      phase[i] = Math.random() * Math.PI * 2;
-      size[i] = rand(0.5, 2.2);
+    // Neat column slots, half per margin, handed out in shuffled order so shape types mix.
+    const slots: { side: number; y: number }[] = [];
+    const perSide = Math.ceil(total / 2);
+    for (let k = 0; k < perSide; k++) {
+      const y = -0.92 + (1.84 * k) / (perSide - 1);
+      slots.push({ side: -1, y }, { side: 1, y });
     }
-    dustGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    dustGeo.setAttribute('aColor', new THREE.BufferAttribute(col, 3));
-    dustGeo.setAttribute('aPhase', new THREE.BufferAttribute(phase, 1));
-    dustGeo.setAttribute('aSize', new THREE.BufferAttribute(size, 1));
-    const dustUniforms = { uTime: { value: 0 }, uFogNear: fogUniforms.uFogNear, uFogFar: fogUniforms.uFogFar };
-    const dust = new THREE.Points(
-      dustGeo,
-      new THREE.ShaderMaterial({
-        vertexShader: dustVert,
-        fragmentShader: dustFrag,
-        uniforms: dustUniforms,
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-      })
-    );
-    scene.add(dust);
+    for (let i = slots.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [slots[i], slots[j]] = [slots[j], slots[i]];
+    }
 
-    const mouse = { x: 0, y: 0 };
-    const onPointerMove = (e: PointerEvent) => {
-      mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
-      mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
+    let slotIdx = 0;
+    for (const [g, count, orderScale] of defs) {
+      const mesh = new THREE.InstancedMesh(g, glassMat, count);
+      mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+      const items: Inst[] = [];
+      for (let i = 0; i < count; i++) {
+        const slot = slots[slotIdx++ % slots.length];
+        items.push({
+          side: slot.side, // scattered and settled on the same margin, so shapes never cross the page
+          mx: Math.random(),
+          my: rand(-1, 1),
+          z: rand(-9, 2),
+          slotSide: slot.side,
+          slotY: slot.y,
+          messScale: rand(0.5, 1.5),
+          mess: new THREE.Vector2(),
+          slot: new THREE.Vector2(),
+          cur: new THREE.Vector2(),
+          rot: new THREE.Euler(rand(-Math.PI, Math.PI), rand(-Math.PI, Math.PI), rand(-Math.PI, Math.PI)),
+          spin: new THREE.Vector3(rand(0.001, 0.006), rand(0.002, 0.008), rand(0.0005, 0.002)),
+          seed: Math.random() * 100,
+          color: Math.floor(Math.random() * 5),
+          o: 0,
+        });
+      }
+      scene.add(mesh);
+      families.push({ mesh, items, orderScale });
+    }
+
+    // Positions live in screen space (NDC) so the margins track the viewport and shapes
+    // travel between scattered and settled without ever crossing the reading column.
+    let dark = document.documentElement.classList.contains('dark');
+    let narrow = false;
+    const layout = () => {
+      const w = window.innerWidth;
+      narrow = w < NARROW;
+      const inner = narrow ? 0 : Math.min(0.9, CONTENT_HALF_WIDTH / (w / 2));
+      fogUniforms.uAlpha.value = (narrow ? 0.4 : 1) * (dark ? 1.8 : 1);
+      for (const { items } of families) {
+        for (const s of items) {
+          s.mess.set(s.side * (inner + (1.05 - inner) * s.mx), s.my * 1.05);
+          s.slot.set(s.slotSide * (narrow ? 0.9 : inner + (1 - inner) * 0.5), s.slotY);
+        }
+      }
     };
-    if (CONFIG.parallax && !reduced) window.addEventListener('pointermove', onPointerMove);
+    layout();
 
+    paletteRef.current = (isDark: boolean) => {
+      dark = isDark;
+      fogUniforms.uAlpha.value = (narrow ? 0.4 : 1) * (dark ? 1.8 : 1);
+      const palette = isDark ? PALETTE_DARK : PALETTE_LIGHT;
+      const c = new THREE.Color();
+      for (const { mesh, items } of families) {
+        items.forEach((s, i) => mesh.setColorAt(i, c.set(palette[s.color])));
+        if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+      }
+    };
+    paletteRef.current(dark);
+
+    // Scroll progress drives how settled the whole field is; the pointer settles shapes locally.
+    let scrollOrder = reduced ? 0.7 : 0;
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? clamp01(window.scrollY / max) : 0;
+      scrollOrder = smooth(clamp01((p - 0.02) / 0.83)) * 0.9;
+    };
+    const pointer = { x: 9, y: 9 }; // NDC; parked off screen until the pointer moves
+    const onPointerMove = (e: PointerEvent) => {
+      pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
+      pointer.y = -((e.clientY / window.innerHeight) * 2 - 1);
+    };
+    if (!reduced) {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pointermove', onPointerMove);
+      onScroll();
+    }
+
+    const tan = Math.tan(THREE.MathUtils.degToRad(FOV / 2));
     let raf: number | null = null;
     const renderFrame = (t: number) => {
       const time = t * 0.001;
-      dustUniforms.uTime.value = time;
-      for (const { mesh, state } of instanced) {
-        for (let i = 0; i < state.length; i++) {
-          const s = state[i];
-          s.rot.x += s.spin.x;
-          s.rot.y += s.spin.y;
-          s.rot.z += s.spin.z;
-          dummy.position.set(
-            s.pos.x + Math.cos(time * 0.3 + s.seed * 0.5) * 0.5,
-            s.pos.y + Math.sin(time * 0.4 + s.seed) * 0.7,
-            s.pos.z
-          );
-          dummy.rotation.copy(s.rot);
-          dummy.scale.setScalar(s.scale);
+      const aspect = window.innerWidth / window.innerHeight;
+      for (const { mesh, items, orderScale } of families) {
+        items.forEach((s, i) => {
+          // Local pull: shapes near the pointer click into place sooner than the rest.
+          const d = Math.hypot((s.cur.x - pointer.x) * aspect, s.cur.y - pointer.y);
+          const target = reduced ? scrollOrder : Math.max(scrollOrder, 1 - smooth(clamp01((d - 0.12) / 0.45)));
+          s.o += (target - s.o) * (reduced ? 1 : 0.06);
+          const e = smooth(s.o);
+          const loose = 1 - e;
+          if (!reduced) {
+            s.rot.x = THREE.MathUtils.euclideanModulo(s.rot.x + s.spin.x * loose + Math.PI, Math.PI * 2) - Math.PI;
+            s.rot.y = THREE.MathUtils.euclideanModulo(s.rot.y + s.spin.y * loose + Math.PI, Math.PI * 2) - Math.PI;
+            s.rot.z = THREE.MathUtils.euclideanModulo(s.rot.z + s.spin.z * loose + Math.PI, Math.PI * 2) - Math.PI;
+          }
+          s.cur.lerpVectors(s.mess, s.slot, e);
+          const z = THREE.MathUtils.lerp(s.z, 0, e);
+          const halfH = tan * (CAM_Z - z);
+          const driftX = Math.cos(time * 0.3 + s.seed * 0.5) * 0.03 * loose;
+          const driftY = Math.sin(time * 0.4 + s.seed) * 0.05 * loose;
+          dummy.position.set((s.cur.x + driftX) * halfH * aspect, (s.cur.y + driftY) * halfH, z);
+          dummy.rotation.set(s.rot.x * loose, s.rot.y * loose, s.rot.z * loose);
+          dummy.scale.setScalar(THREE.MathUtils.lerp(s.messScale, orderScale * 0.7, e));
           dummy.updateMatrix();
           mesh.setMatrixAt(i, dummy.matrix);
-        }
+        });
         mesh.instanceMatrix.needsUpdate = true;
       }
-      if (CONFIG.parallax) {
-        camera.position.x += (mouse.x * 1.6 - camera.position.x) * 0.03;
-        camera.position.y += (-mouse.y * 1.0 - camera.position.y) * 0.03;
+      if (!reduced) {
+        camera.position.x += (pointer.x * 0.8 - camera.position.x) * 0.03 * (Math.abs(pointer.x) > 1 ? 0 : 1);
+        camera.position.y += (pointer.y * 0.5 - camera.position.y) * 0.03 * (Math.abs(pointer.y) > 1 ? 0 : 1);
       }
       camera.lookAt(0, 0, 0);
       renderer.render(scene, camera);
@@ -342,7 +319,7 @@ const ThreeBackgroundImpl: React.FC = () => {
       renderFrame(t);
     };
     if (reduced) {
-      renderFrame(0); // a single static frame — no animation for reduced-motion users
+      renderFrame(0); // one static, mostly settled frame for reduced-motion visitors
     } else {
       raf = requestAnimationFrame(loop);
     }
@@ -351,11 +328,15 @@ const ThreeBackgroundImpl: React.FC = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
+      layout();
+      if (reduced) renderFrame(0);
+      else onScroll();
     };
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', onScroll);
       window.removeEventListener('pointermove', onPointerMove);
       if (raf !== null) cancelAnimationFrame(raf);
       if (mountRef.current && renderer.domElement) {
@@ -370,14 +351,17 @@ const ThreeBackgroundImpl: React.FC = () => {
       renderer.dispose();
       rendererRef.current = null;
       fogColorRef.current = null;
+      paletteRef.current = null;
     };
   }, []);
 
   useEffect(() => {
     if (!rendererRef.current || !fogColorRef.current) return;
-    const fog = theme === 'dark' ? FOG_DARK : FOG_LIGHT;
+    const dark = theme === 'dark';
+    const fog = dark ? FOG_DARK : FOG_LIGHT;
     fogColorRef.current.set(fog);
     rendererRef.current.setClearColor(fog, 0.05);
+    paletteRef.current?.(dark);
   }, [theme]);
 
   return <div ref={mountRef} aria-hidden="true" className="fixed inset-0 -z-10" style={{ pointerEvents: 'none' }} />;
