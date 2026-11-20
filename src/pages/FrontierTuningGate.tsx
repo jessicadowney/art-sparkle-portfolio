@@ -9,7 +9,7 @@ import { useLanguage } from '@/i18n/LanguageProvider';
 // strong security: anything shipped to the browser can be extracted by a
 // determined person. The case study text is in a public JS chunk, so keep
 // anything truly confidential off this site.
-const PASSWORD_HASH = '878c240fd717f39d8cec9f7a5cf936873ffcc0757beef703ad2c5f9ed1890344';
+const PASSWORD_HASH = '9372c470eeadd5ecd9c3c74c2b3cb633f8e2f2fad799250a0f70d652b6b825e4';
 const STORAGE_KEY = 'ft-access';
 
 // The case study stays in its own chunk and is only requested after unlock.
