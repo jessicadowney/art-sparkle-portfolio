@@ -27,6 +27,11 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
+    - name: Lint and type-check
+      run: |
+        npm run lint
+        npx tsc --noEmit -p tsconfig.app.json
+
     - name: Build
       run: npm run build
 
@@ -37,7 +42,7 @@ jobs:
     # Create one at github.com/settings/personal-access-tokens, then add it
     # under this repo's Settings → Secrets and variables → Actions.
     - name: Deploy to jessicadowney.github.io
-      uses: peaceiris/actions-gh-pages@v4
+      uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0, pinned: it receives the deploy token
       if: github.event_name != 'pull_request'
       with:
         personal_token: ${{ secrets.DEPLOY_TOKEN }}
