@@ -1,3 +1,4 @@
+import { readStorage, writeStorage } from '@/lib/safeStorage';
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 export type Lang = 'en' | 'fr';
@@ -14,12 +15,8 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
 
 function detectInitialLang(): Lang {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === 'en' || stored === 'fr') return stored;
-  } catch {
-    // Storage can be unavailable (private windows); fall through to the browser language.
-  }
+  const stored = readStorage(STORAGE_KEY);
+  if (stored === 'en' || stored === 'fr') return stored;
   if (typeof navigator !== 'undefined' && navigator.language?.toLowerCase().startsWith('fr')) {
     return 'fr';
   }
@@ -34,11 +31,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [lang]);
 
   const setLang = useCallback((next: Lang) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, next);
-    } catch {
-      // Ignore: the choice still applies for this visit.
-    }
+    writeStorage(STORAGE_KEY, next);
     setLangState(next);
   }, []);
 

@@ -22,7 +22,7 @@ const Work: React.FC = () => {
       title: t("Phone Number Shopping Cart for Azure Communication Services", "Panier d'achat de numéros de téléphone pour Azure Communication Services"),
       description: t("A redesigned phone number acquisition experience that replaced rigid one-at-a-time purchasing with a flexible shopping cart, enabling multi-number provisioning and improving user satisfaction.", "Une expérience d'acquisition de numéros de téléphone repensée, qui remplace l'achat rigide un numéro à la fois par un panier flexible, permettant d'obtenir plusieurs numéros et d'améliorer la satisfaction des utilisateurs."),
       tags: [t("Product Design", "Design produit"), t("UX Research", "Recherche UX"), t("Azure Portal", "Portail Azure"), t("Developer Experience", "Expérience développeur"), t("E-commerce UX", "UX e-commerce")],
-      image: "/lovable-uploads/e8fbc49c-4872-4595-a175-5180913da088.png",
+      image: "/lovable-uploads/og-image.png",
       link: "/azure-phone-numbers",
       year: "2022"
     },

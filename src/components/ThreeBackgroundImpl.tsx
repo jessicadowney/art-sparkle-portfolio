@@ -52,7 +52,8 @@ function starShape() {
   for (let i = 0; i < 16; i++) {
     const a = (i / 16) * Math.PI * 2;
     const r = i % 2 === 0 ? 0.2 : 0.1;
-    i === 0 ? s.moveTo(Math.cos(a) * r, Math.sin(a) * r) : s.lineTo(Math.cos(a) * r, Math.sin(a) * r);
+    if (i === 0) s.moveTo(Math.cos(a) * r, Math.sin(a) * r);
+    else s.lineTo(Math.cos(a) * r, Math.sin(a) * r);
   }
   s.closePath();
   return s;

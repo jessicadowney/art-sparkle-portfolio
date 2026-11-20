@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { readStorage, writeStorage } from '@/lib/safeStorage';
 import { useLanguage } from '@/i18n/LanguageProvider';
 import LanguageToggle from '@/components/LanguageToggle';
 
 // SHA-256 of the access password. This is a light gate for casual visitors, not
 // strong security: anything shipped to the browser can be extracted by a
-// determined person.
+// determined person. The case study text is in a public JS chunk, so keep
+// anything truly confidential off this site.
 const PASSWORD_HASH = '878c240fd717f39d8cec9f7a5cf936873ffcc0757beef703ad2c5f9ed1890344';
 const STORAGE_KEY = 'ft-access';
 
@@ -23,13 +25,7 @@ async function sha256(text: string): Promise<string> {
     .join('');
 }
 
-function readUnlocked(): boolean {
-  try {
-    return sessionStorage.getItem(STORAGE_KEY) === PASSWORD_HASH;
-  } catch {
-    return false;
-  }
-}
+const readUnlocked = () => readStorage(STORAGE_KEY, 'session') === PASSWORD_HASH;
 
 const FrontierTuningGate = () => {
   const { t } = useLanguage();
@@ -43,22 +39,22 @@ const FrontierTuningGate = () => {
     robots.content = 'noindex, nofollow';
     document.head.appendChild(robots);
     const previousTitle = document.title;
-    document.title = `${t('Password protected', 'Protégé par mot de passe')} | Jessica Downey`;
     return () => {
       robots.remove();
       document.title = previousTitle;
     };
-  }, [t]);
+  }, []);
+
+  useEffect(() => {
+    if (unlocked) return; // the case study sets its own title
+    document.title = `${t('Password protected', 'Protégé par mot de passe')} | Jessica Downey`;
+  }, [t, unlocked]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const hash = await sha256(value.trim());
     if (hash === PASSWORD_HASH) {
-      try {
-        sessionStorage.setItem(STORAGE_KEY, hash);
-      } catch {
-        // Storage can be unavailable (private windows); the page still unlocks for this visit.
-      }
+      writeStorage(STORAGE_KEY, hash, 'session');
       setError(false);
       setUnlocked(true);
     } else {
