@@ -13,7 +13,7 @@ const Work: React.FC = () => {
       title: t("Frontier Tuning: Making AI Agent Improvement Understandable", "Frontier Tuning : rendre l'amélioration des agents IA compréhensible"),
       description: t("Research, coded prototypes, and a guided improvement journey that help makers and subject-matter experts improve AI agents without first needing to understand model training.", "Recherche, prototypes codés et parcours d'amélioration guidé qui aident les créateurs et les experts métier à améliorer des agents IA sans avoir besoin de maîtriser l'entraînement des modèles."),
       tags: [t("Password protected", "Protégé par mot de passe"), t("Product Design", "Design produit"), t("UX Research", "Recherche UX"), t("AI Agents", "Agents IA"), t("Prototyping", "Prototypage"), t("Interaction Design", "Design d'interaction")],
-      image: "/placeholder.svg",
+      image: "/lovable-uploads/frontier-tuning-evaluation-criteria.webp",
       link: "/frontier-tuning",
       year: "2025–2026",
       featured: true

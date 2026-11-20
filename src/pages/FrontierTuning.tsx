@@ -172,6 +172,16 @@ const FrontierTuning = () => {
                   {t("Automation should reduce authoring effort without taking away ownership of the definition of quality.", "L'automatisation doit réduire l'effort de rédaction sans retirer la maîtrise de la définition de la qualité.")}
                 </Callout>
 
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="/lovable-uploads/frontier-tuning-evaluation-criteria.webp"
+                  width={2000}
+                  height={1130}
+                  alt={t("Evaluation criteria for a report-generation skill, each with a priority and checkable statements, shown beside the skill instructions", "Critères d'évaluation d'une compétence de génération de rapports, chacun avec une priorité et des énoncés vérifiables, affichés à côté des instructions de la compétence")}
+                  className="rounded-lg shadow-lg w-full h-auto bg-white p-2 mb-8"
+                />
+
                 <Divider />
 
                 <H2>{t("Terminology is interaction design", "La terminologie fait partie du design d'interaction")}</H2>
@@ -186,6 +196,16 @@ const FrontierTuning = () => {
                   {t("In later explorations I designed skill selection, evaluation setup, before-and-after results, and acceptance of proposed changes. Makers were still diagnosing too much themselves, so the direction begins with the problem, not the mechanism:", "Dans les explorations suivantes, j'ai conçu la sélection des compétences, la configuration de l'évaluation, les résultats avant/après et l'acceptation des changements proposés. Les créateurs diagnostiquaient encore trop de choses eux-mêmes ; la direction part donc du problème, pas du mécanisme :")}
                 </P>
                 <FlowList steps={journey} />
+
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="/lovable-uploads/frontier-tuning-environment-skills.webp"
+                  width={2000}
+                  height={1130}
+                  alt={t("The Environment panel listing suggested skills and the skills already configured for the agent", "Le panneau Environnement listant les compétences suggérées et celles déjà configurées pour l'agent")}
+                  className="rounded-lg shadow-lg w-full h-auto bg-white p-2 mb-8"
+                />
                 <P>
                   {t("Journey maps and narrated prototypes made role handoffs explicit: a technical maker configures, a subject-matter expert judges quality, an administrator governs access and cost.", "Des parcours cartographiés et des prototypes commentés ont rendu explicites les passages de relais entre les rôles : un créateur technique configure, un expert métier juge la qualité, un administrateur gouverne l'accès et les coûts.")}
                 </P>
