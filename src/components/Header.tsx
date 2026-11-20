@@ -66,7 +66,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={handleLogoClick}
-            className="text-xl font-bold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2.5"
+            className="py-2 text-xl font-bold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2.5"
           >
             <span className="w-2 h-2 rounded-full bg-foreground"></span>
             <span className="text-foreground">Jessica Downey</span>
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className="text-foreground/80 hover:text-foreground transition-colors duration-300"
+                className="py-3 text-foreground/80 hover:text-foreground transition-colors duration-300"
               >
                 {label}
               </button>
@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                 <button
                   key={id}
                   onClick={() => scrollToSection(id)}
-                  className="text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
+                  className="py-2 text-foreground/80 hover:text-foreground transition-colors duration-300 text-left"
                 >
                   {label}
                 </button>

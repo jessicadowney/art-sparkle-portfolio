@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           
           <div className="flex items-center text-sm text-foreground/60">
             <span>{t('Made with', 'Fait avec')}</span>
-            <Heart className="h-4 w-4 mx-1 text-red-500 fill-current" />
+            <Heart className="h-4 w-4 mx-1 text-destructive fill-current" />
             <span>{t(', matcha drinks and vibe coding.', ', des matchas et du vibe coding.')}</span>
           </div>
         </div>
