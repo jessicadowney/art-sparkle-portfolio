@@ -22,7 +22,7 @@ const Work: React.FC = () => {
       title: t("Phone Number Shopping Cart for Azure Communication Services", "Panier d'achat de numéros de téléphone pour Azure Communication Services"),
       description: t("A redesigned phone number acquisition experience that replaced rigid one-at-a-time purchasing with a flexible shopping cart, enabling multi-number provisioning and improving user satisfaction.", "Une expérience d'acquisition de numéros de téléphone repensée, qui remplace l'achat rigide un numéro à la fois par un panier flexible, permettant d'obtenir plusieurs numéros et d'améliorer la satisfaction des utilisateurs."),
       tags: [t("Product Design", "Design produit"), t("UX Research", "Recherche UX"), t("Azure Portal", "Portail Azure"), t("Developer Experience", "Expérience développeur"), t("E-commerce UX", "UX e-commerce")],
-      image: "/lovable-uploads/og-image.png",
+      image: "/lovable-uploads/og-image.webp",
       link: "/azure-phone-numbers",
       year: "2022"
     },
@@ -30,7 +30,7 @@ const Work: React.FC = () => {
       title: t("Virtual Visit Sample Builder for Azure Communication Services", "Générateur d'exemples de consultations virtuelles pour Azure Communication Services"),
       description: t("A developer tool for Azure Communication Services that helps create and customize virtual healthcare experiences with no-code configuration, ARM template generation, and downloadable repositories.", "Un outil pour développeurs d'Azure Communication Services qui aide à créer et personnaliser des expériences de santé virtuelles grâce à une configuration sans code, à la génération de modèles ARM et à des dépôts téléchargeables."),
       tags: [t("Product Design", "Design produit"), t("Developer Experience", "Expérience développeur"), t("UX Research", "Recherche UX"), t("Design Systems", "Systèmes de design"), t("Azure", "Azure"), t("Healthcare Technology", "Technologies de santé")],
-      image: "/lovable-uploads/dfec2eed-75b5-42ba-b425-61980e91c034.png",
+      image: "/lovable-uploads/dfec2eed-75b5-42ba-b425-61980e91c034.webp",
       link: "/azure-sample-builder",
       year: "2021"
     },
@@ -38,7 +38,7 @@ const Work: React.FC = () => {
       title: "GoFetch.ca",
       description: t("A pet care service platform that connects dog parents with trusted care providers, featuring unified design systems and improved sitter conversion rates through mobile-first experiences.", "Une plateforme de services pour animaux qui met en relation les propriétaires de chiens et des gardiens de confiance, avec un système de design unifié et de meilleurs taux de conversion des gardiens grâce à des expériences pensées d'abord pour le mobile."),
       tags: [t("Product Design", "Design produit"), t("Design Systems", "Systèmes de design"), t("Mobile UX", "UX mobile"), t("Conversion Optimization", "Optimisation de la conversion"), t("Brand Design", "Design de marque")],
-      image: "/lovable-uploads/577cf926-a215-446a-b74a-b4da42e6c3ab.png",
+      image: "/lovable-uploads/577cf926-a215-446a-b74a-b4da42e6c3ab.webp",
       link: "/gofetch",
       year: "2018"
     },
@@ -46,7 +46,7 @@ const Work: React.FC = () => {
       title: "Amped Wireless Ally",
       description: t("A white-labeled security and parental control app designed for Wi-Fi routers, featuring streamlined setup flows and intuitive network management for families.", "Une application de sécurité et de contrôle parental en marque blanche pour routeurs Wi-Fi, avec des parcours de configuration simplifiés et une gestion intuitive du réseau pour les familles."),
       tags: [t("Mobile Design", "Design mobile"), t("UX Strategy", "Stratégie UX"), t("Information Architecture", "Architecture de l'information"), t("Mobile UX", "UX mobile")],
-      image: "/lovable-uploads/247125df-8a71-4d2d-ab6a-d13b1a061447.png",
+      image: "/lovable-uploads/247125df-8a71-4d2d-ab6a-d13b1a061447.webp",
       link: "/ally",
       year: "2016"
     },
@@ -54,7 +54,7 @@ const Work: React.FC = () => {
       title: t("Microsoft OneNote: Cloud Attachment Insertion Prompt", "Microsoft OneNote : invite d'insertion de pièces jointes cloud"),
       description: t("A collaborative note-taking platform feature that reinstated cloud attachment capabilities with contextual options based on file type, improving user workflow and platform parity.", "Une fonctionnalité de la plateforme collaborative de prise de notes qui rétablit les pièces jointes cloud avec des options contextuelles selon le type de fichier, améliorant le flux de travail et la parité entre plateformes."),
       tags: [t("Product Design", "Design produit"), t("UX Research", "Recherche UX"), t("Accessibility", "Accessibilité"), t("Fluent UI", "Fluent UI")],
-      image: "/lovable-uploads/ff2b8e20-f09f-46f7-a76b-4c18e3bd0f07.png",
+      image: "/lovable-uploads/ff2b8e20-f09f-46f7-a76b-4c18e3bd0f07.webp",
       link: "/onenote",
       year: "2019"
     },
@@ -62,7 +62,7 @@ const Work: React.FC = () => {
       title: "syngo® Lab Inventory Manager (sLIM)",
       description: t("A cloud-based inventory management system redesign for Siemens Healthineers, focusing on simplifying complex navigation and improving usability for lab professionals.", "La refonte d'un système de gestion des stocks dans le cloud pour Siemens Healthineers, centrée sur la simplification d'une navigation complexe et l'amélioration de l'utilisabilité pour les professionnels de laboratoire."),
       tags: [t("Information Architecture", "Architecture de l'information"), t("UX Research", "Recherche UX"), t("Interface Design", "Design d'interface"), t("Healthcare Technology", "Technologies de santé")],
-      image: "/lovable-uploads/1679930e-73ec-4331-bbf1-af89667007ec.png",
+      image: "/lovable-uploads/1679930e-73ec-4331-bbf1-af89667007ec.webp",
       link: "/slim",
       year: "2012"
     }

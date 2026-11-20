@@ -1,33 +1,22 @@
 
 import React from 'react';
-import { ThemeProvider } from '@/components/ThemeProvider';
-import ThreeBackground from '@/components/ThreeBackground';
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Work from '@/components/Work';
 import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
 import { useSeo } from '@/hooks/useSeo';
 
 const Index = () => {
   useSeo({ path: '/' });
   return (
-    <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
-      <div className="min-h-screen relative">
-        <ThreeBackground />
-        <Header />
-        <main id="main-content" tabIndex={-1}>
-          <Hero />
-          <About />
-          <Work />
-          <Experience />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <main id="main-content" tabIndex={-1}>
+      <Hero />
+      <About />
+      <Work />
+      <Experience />
+      <Contact />
+    </main>
   );
 };
 
