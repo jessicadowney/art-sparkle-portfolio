@@ -1,14 +1,25 @@
 import React from 'react';
-import { Calendar, MapPin } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageProvider';
+
+type Role = {
+  title: string;
+  company: string;
+  location?: string; // only set when it isn't Vancouver
+  period: string;
+  description: string;
+  achievements: string[];
+};
+
+// The two most recent roles carry the story and stay open; older roles collapse to one row.
+const CURRENT_ROLES = 2;
 
 const Experience: React.FC = () => {
   const { t } = useLanguage();
-  const experiences = [
+  const experiences: Role[] = [
     {
       title: t("Senior Product Designer", "Designer produit senior"),
       company: "Microsoft - Copilot Extensibility",
-      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
       period: t("Nov 2025 - Present", "nov. 2025 - présent"),
       description: t("Designing how makers and subject-matter experts improve AI agents without needing to understand model training.", "Je conçois la façon dont les créateurs et les experts métier améliorent des agents IA sans avoir besoin de comprendre l'entraînement des modèles."),
       achievements: [
@@ -19,7 +30,6 @@ const Experience: React.FC = () => {
     {
       title: t("Senior Product Designer", "Designer produit senior"),
       company: "Microsoft - Azure Communication Services",
-      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
       period: "2021 - 2025",
       description: t("Owning UX/UI vision and design direction for new Azure Communication Services features in Azure portal, including Short Codes & Sample Builder, improving developer adoption and usability.", "Responsable de la vision UX/UI et de la direction de design des nouvelles fonctionnalités d'Azure Communication Services dans le portail Azure, dont Short Codes et Sample Builder, afin d'améliorer l'adoption et l'utilisabilité pour les développeurs."),
       achievements: [
@@ -32,7 +42,6 @@ const Experience: React.FC = () => {
     {
       title: t("Product Designer", "Designer produit"),
       company: "Microsoft - Azure Communication Services",
-      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
       period: t("Jan 2021 - Sep 2021", "janv. 2021 - sept. 2021"),
       description: t("Designing wireframes, UI and prototypes for Azure Communication Services, focusing on Direct Routing UX and improving customer onboarding in Azure Portal.", "Conception de wireframes, d'interfaces et de prototypes pour Azure Communication Services, avec un focus sur l'UX de Direct Routing et l'amélioration de l'intégration des clients dans le portail Azure."),
       achievements: [
@@ -44,7 +53,6 @@ const Experience: React.FC = () => {
     {
       title: t("Product Designer", "Designer produit"),
       company: "Microsoft - OneNote",
-      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
       period: "2018 - 2021",
       description: t("Designing wireframes, UI and prototypes for Microsoft OneNote, focusing on integration improvements and syncing concepts across platforms.", "Conception de wireframes, d'interfaces et de prototypes pour Microsoft OneNote, avec un focus sur l'amélioration des intégrations et des concepts de synchronisation entre plateformes."),
       achievements: [
@@ -56,7 +64,6 @@ const Experience: React.FC = () => {
     {
       title: t("Head of Product Design", "Responsable du design produit"),
       company: "GoFetch.ca",
-      location: t("Vancouver, BC, Canada", "Vancouver (C.-B.), Canada"),
       period: "2017 - 2018",
       description: t("Leading design meetings and running brainstorming sessions for new feature development. Provided UX and art direction to redesign web & iOS platforms.", "Animation des réunions de design et des séances de brainstorming pour le développement de nouvelles fonctionnalités. Direction UX et artistique de la refonte des plateformes web et iOS."),
       achievements: [
@@ -106,10 +113,17 @@ const Experience: React.FC = () => {
     }
   ];
 
+  const Company = ({ exp }: { exp: Role }) => (
+    <>
+      {exp.company}
+      {exp.location && <span className="text-muted-foreground">{`, ${exp.location}`}</span>}
+    </>
+  );
+
   return (
     <section id="experience" className="py-20 bg-accent/30">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight antialiased">
               <span className="text-primary">{t('Experience', 'Expérience')}</span>
@@ -118,53 +132,46 @@ const Experience: React.FC = () => {
               {t('Designing at the intersection of UX and product for 15+ years — across enterprise, industrial, and consumer experiences.', "Plus de 15 ans à concevoir à l'intersection de l'UX et du produit — pour des expériences d'entreprise, industrielles et grand public.")}
             </p>
           </div>
-          
-          <div className="space-y-0">
-            {experiences.map((exp, index) => (
-              <div 
-                key={index}
-                className="relative pl-8 pb-8 animate-fade-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="absolute left-0 top-0 w-px h-full bg-border"></div>
-                <div className="absolute left-0 top-2 w-2 h-2 bg-primary rounded-full transform -translate-x-0.5"></div>
-                
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 ml-6 hover:shadow-lg transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-1 antialiased">{exp.title}</h3>
-                      <h4 className="text-lg text-primary font-medium antialiased">{exp.company}</h4>
-                    </div>
-                    
-                    <div className="flex flex-col md:items-end text-sm text-foreground/60 mt-2 md:mt-0 antialiased">
-                      <div className="flex items-center mb-1">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        {exp.period}
-                      </div>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        {exp.location}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-foreground/80 mb-4 leading-relaxed antialiased">
-                    {exp.description}
-                  </p>
-                  
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, achievementIndex) => (
-                      <li 
-                        key={achievementIndex}
-                        className="flex items-start text-sm text-foreground/70 antialiased"
-                      >
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        {achievement}
-                      </li>
+
+          <div className="divide-y divide-border border-y border-border">
+            {experiences.slice(0, CURRENT_ROLES).map((exp) => (
+              <div key={exp.period} className="grid gap-4 py-8 md:grid-cols-[12rem_1fr] md:gap-8">
+                <p className="text-muted-foreground">{exp.period}</p>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-1 antialiased">{exp.title}</h3>
+                  <p className="text-lg text-primary font-medium mb-4 antialiased"><Company exp={exp} /></p>
+                  <p className="text-foreground/80 mb-4 leading-relaxed antialiased">{exp.description}</p>
+                  <ul className="space-y-2 text-foreground/70 leading-relaxed antialiased">
+                    {exp.achievements.map((achievement) => (
+                      <li key={achievement}>{achievement}</li>
                     ))}
                   </ul>
                 </div>
               </div>
+            ))}
+          </div>
+
+          <h3 className="text-2xl font-light tracking-tight mt-16 mb-4 text-foreground/80">
+            {t('Earlier', 'Parcours')} <span className="text-primary">{t('roles', 'antérieur')}</span>
+          </h3>
+          <div className="divide-y divide-border border-y border-border">
+            {experiences.slice(CURRENT_ROLES).map((exp) => (
+              <details key={exp.period + exp.company + exp.title} className="group py-4">
+                <summary className="relative grid cursor-pointer list-none gap-1 md:grid-cols-[12rem_1fr_2fr_1.5rem] md:gap-8 [&::-webkit-details-marker]:hidden">
+                  <span className="text-muted-foreground">{exp.period}</span>
+                  <span className="pr-8 md:pr-0">
+                    <span className="block font-medium">{exp.title}</span>
+                    <span className="block text-foreground/70"><Company exp={exp} /></span>
+                  </span>
+                  <span className="text-foreground/80 leading-relaxed">{exp.description}</span>
+                  <ChevronDown className="absolute right-0 top-0 md:static h-5 w-5 text-muted-foreground transition-transform group-open:rotate-180" aria-hidden="true" />
+                </summary>
+                <ul className="mt-4 space-y-2 text-foreground/70 leading-relaxed md:ml-[calc(12rem+2rem)] md:mr-[calc(1.5rem+2rem)]">
+                  {exp.achievements.map((achievement) => (
+                    <li key={achievement}>{achievement}</li>
+                  ))}
+                </ul>
+              </details>
             ))}
           </div>
         </div>

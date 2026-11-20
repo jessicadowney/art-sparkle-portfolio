@@ -66,9 +66,8 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={handleLogoClick}
-            className="py-2 text-xl font-bold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2.5"
+            className="py-2 text-xl font-bold tracking-tight hover:opacity-80 transition-opacity"
           >
-            <span className="w-2 h-2 rounded-full bg-foreground"></span>
             <span className="text-foreground">Jessica Downey</span>
           </button>
           

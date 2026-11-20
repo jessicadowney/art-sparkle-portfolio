@@ -58,10 +58,6 @@ const PhoneNumberCart = () => {
               </ul>
             </div>
 
-            <div className="border-l-2 border-primary/30 pl-6 mb-8">
-              <div className="w-4 h-4 bg-primary rounded-full transform -translate-x-8 mb-2"></div>
-            </div>
-
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Background", "Contexte")}</h2>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               {t("Phone number acquisition is one of the first interactions new users have with the platform—and one of the most complex. Each number comes with eligibility rules, legal disclaimers, and usage limitations depending on location and carrier. The original flow surfaced critical requirements too late, confusing users and generating a high volume of support tickets.", "L'acquisition d'un numéro de téléphone est l'une des premières interactions des nouveaux utilisateurs avec la plateforme — et l'une des plus complexes. Chaque numéro est assorti de règles d'éligibilité, de mentions légales et de restrictions d'usage selon le lieu et l'opérateur. Le parcours d'origine révélait les exigences essentielles trop tard, ce qui déroutait les utilisateurs et générait un grand nombre de tickets de support.")}
@@ -70,10 +66,6 @@ const PhoneNumberCart = () => {
               {t("Despite being high-friction and support-heavy, the problem wasn't on the roadmap. I decided to take it on as my personal project during Microsoft's FHL2022 innovation sprint. My early explorations revealed just how misaligned the experience was with user expectations—and how preventable the pain points were.", "Bien que très frictionnel et générateur de nombreuses demandes de support, ce problème ne figurait pas sur la feuille de route. J'ai décidé d'en faire mon projet personnel pendant le sprint d'innovation FHL2022 de Microsoft. Mes premières explorations ont montré à quel point l'expérience était en décalage avec les attentes des utilisateurs — et à quel point ces points de douleur étaient évitables.")}
             </p>
 
-            <div className="border-l-2 border-primary/30 pl-6 mb-8">
-              <div className="w-4 h-4 bg-primary rounded-full transform -translate-x-8 mb-2"></div>
-            </div>
-
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Initiating the Work", "Lancement du projet")}</h2>
             <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
               {t("I built a functional prototype to reframe the flow through a clearer, modular cart-based system. The concept consolidated requirements upfront, gave users more control and visibility, and clarified legal disclosures without overloading them.", "J'ai construit un prototype fonctionnel pour repenser le parcours autour d'un système de panier modulaire, plus clair. Le concept regroupait les exigences dès le départ, donnait aux utilisateurs plus de contrôle et de visibilité, et clarifiait les mentions légales sans les surcharger.")}
@@ -81,10 +73,6 @@ const PhoneNumberCart = () => {
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               {t("After testing the prototype with internal stakeholders and support teams, I pitched the work to senior leadership. With their support, I brought in product management and engineering to scope the initiative and align on a path to production.", "Après avoir testé le prototype avec des parties prenantes internes et les équipes de support, j'ai présenté le travail à la direction. Avec son soutien, j'ai impliqué la gestion de produit et l'ingénierie pour cadrer l'initiative et définir un chemin vers la production.")}
             </p>
-
-            <div className="border-l-2 border-primary/30 pl-6 mb-8">
-              <div className="w-4 h-4 bg-primary rounded-full transform -translate-x-8 mb-2"></div>
-            </div>
 
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Design Strategy", "Stratégie de design")}</h2>
             <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
@@ -160,10 +148,6 @@ const PhoneNumberCart = () => {
               </div>
               
              
-            </div>
-
-            <div className="border-l-2 border-primary/30 pl-6 mb-8">
-              <div className="w-4 h-4 bg-primary rounded-full transform -translate-x-8 mb-2"></div>
             </div>
 
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Outcome", "Résultat")}</h2>
