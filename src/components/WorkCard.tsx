@@ -33,7 +33,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, locked,
   };
 
   return (
-    <Card className={`group overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer ${featured ? 'md:grid md:grid-cols-2' : ''}`} onClick={handleClick}>
+    <Card className={`group overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer h-full ${featured ? 'md:grid md:grid-cols-2' : 'flex flex-col'}`} onClick={handleClick}>
       <div className={`aspect-video relative overflow-hidden ${featured ? 'md:aspect-auto md:h-[345px]' : ''}`}>
         <img loading="lazy" decoding="async"
           src={image}
@@ -42,7 +42,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, locked,
         />
       </div>
       
-      <CardContent className={featured ? 'p-6 md:p-8 md:flex md:flex-col md:justify-center' : 'p-6'}>
+      <CardContent className={featured ? 'p-6 md:p-8 md:flex md:flex-col md:justify-center' : 'p-6 flex flex-1 flex-col'}>
         <p className="mb-2 text-sm text-muted-foreground tabular-nums">{year}</p>
         <h3 className={`font-semibold mb-3 group-hover:text-primary transition-colors duration-300 ${featured ? 'text-xl md:text-3xl' : 'text-xl'}`}>
           {title}
@@ -70,7 +70,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, locked,
 
         <Button
           variant="ghost"
-          className={`px-0 py-3 h-auto font-medium text-primary hover:text-primary/80 group/btn ${featured ? 'self-start' : ''}`}
+          className={`px-0 py-3 h-auto font-medium text-primary hover:text-primary/80 group/btn self-start ${featured ? '' : 'mt-auto'}`}
           onClick={(e) => { e.stopPropagation(); handleClick(); }}
           aria-label={`${t('View case study', "Voir l'étude de cas")} : ${title}`}
         >
