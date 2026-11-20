@@ -1,7 +1,7 @@
 
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
+import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./i18n/LanguageProvider";
@@ -17,10 +17,9 @@ const PhoneNumberCart = lazy(() => import("./pages/PhoneNumberCart"));
 
 const App = () => (
   <LanguageProvider>
-    <TooltipProvider>
-      <BrowserRouter>
-        <Suspense fallback={null}>
-        <Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
           <Route path="/" element={<Index />} />
           <Route path="/frontier-tuning" element={<FrontierTuning />} />
           <Route path="/azure-phone-numbers" element={<PhoneNumberCart />} />
@@ -29,15 +28,14 @@ const App = () => (
           <Route path="/ally" element={<Ally />} />
           <Route path="/slim" element={<Slim />} />
           <Route path="/onenote" element={<OneNote />} />
-          {/* Legacy slugs — redirect so previously shared links keep working */}
-          <Route path="/phone-number-cart" element={<Navigate to="/azure-phone-numbers" replace />} />
-          <Route path="/azure" element={<Navigate to="/azure-sample-builder" replace />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
+        </Route>
+        {/* Legacy slugs — redirect so previously shared links keep working */}
+        <Route path="/phone-number-cart" element={<Navigate to="/azure-phone-numbers" replace />} />
+        <Route path="/azure" element={<Navigate to="/azure-sample-builder" replace />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   </LanguageProvider>
 );
 

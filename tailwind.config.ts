@@ -21,7 +21,6 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Schibsted Grotesk', 'ui-sans-serif', 'system-ui'],
-				'pixelify': ['Pixelify Sans', 'monospace'],
 			},
 			colors: {
 				border: 'var(--border)',

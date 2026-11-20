@@ -1,11 +1,9 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeProvider } from '@/components/ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { readStorage, writeStorage } from '@/lib/safeStorage';
 import { useLanguage } from '@/i18n/LanguageProvider';
-import LanguageToggle from '@/components/LanguageToggle';
 
 // SHA-256 of the access password. This is a light gate for casual visitors, not
 // strong security: anything shipped to the browser can be extracted by a
@@ -71,42 +69,37 @@ const FrontierTuningGate = () => {
   }
 
   return (
-    <ThemeProvider>
-      <main className="min-h-screen flex items-center justify-center px-6 bg-background text-foreground">
-        <div className="absolute top-4 right-4">
-          <LanguageToggle />
-        </div>
-        <form onSubmit={submit} className="w-full max-w-sm space-y-4">
-          <h1 className="text-2xl font-semibold text-primary">{t('This case study is password protected', 'Cette étude de cas est protégée par mot de passe')}</h1>
-          <p className="text-foreground/70">
-            {t('Enter the password I shared with you to read the Frontier Tuning case study.', "Saisissez le mot de passe que je vous ai communiqué pour lire l'étude de cas Frontier Tuning.")}
+    <main className="min-h-screen flex items-center justify-center px-6 pt-24 text-foreground">
+      <form onSubmit={submit} className="w-full max-w-sm space-y-4">
+        <h1 className="text-2xl font-semibold text-primary">{t('This case study is password protected', 'Cette étude de cas est protégée par mot de passe')}</h1>
+        <p className="text-foreground/70">
+          {t('Enter the password I shared with you to read the Frontier Tuning case study.', "Saisissez le mot de passe que je vous ai communiqué pour lire l'étude de cas Frontier Tuning.")}
+        </p>
+        <label htmlFor="ft-password" className="sr-only">
+          {t('Password', 'Mot de passe')}
+        </label>
+        <Input
+          id="ft-password"
+          type="password"
+          autoComplete="off"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          aria-invalid={error}
+          aria-describedby={error ? 'ft-password-error' : undefined}
+        />
+        {error && (
+          <p id="ft-password-error" role="alert" className="text-sm text-destructive">
+            {t("That password isn't right. Try again.", "Ce mot de passe n'est pas le bon. Réessayez.")}
           </p>
-          <label htmlFor="ft-password" className="sr-only">
-            {t('Password', 'Mot de passe')}
-          </label>
-          <Input
-            id="ft-password"
-            type="password"
-            autoComplete="off"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            aria-invalid={error}
-            aria-describedby={error ? 'ft-password-error' : undefined}
-          />
-          {error && (
-            <p id="ft-password-error" role="alert" className="text-sm text-destructive">
-              {t("That password isn't right. Try again.", "Ce mot de passe n'est pas le bon. Réessayez.")}
-            </p>
-          )}
-          <div className="flex items-center gap-4">
-            <Button type="submit">{t('View case study', "Voir l'étude de cas")}</Button>
-            <Link to="/" className="text-sm text-primary hover:underline">
-              {t('Back to portfolio', 'Retour au portfolio')}
-            </Link>
-          </div>
-        </form>
-      </main>
-    </ThemeProvider>
+        )}
+        <div className="flex items-center gap-4">
+          <Button type="submit">{t('View case study', "Voir l'étude de cas")}</Button>
+          <Link to="/" className="text-sm text-primary hover:underline">
+            {t('Back to portfolio', 'Retour au portfolio')}
+          </Link>
+        </div>
+      </form>
+    </main>
   );
 };
 

@@ -33,16 +33,11 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
   return (
     <Card className={`group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer ${featured ? 'md:grid md:grid-cols-2' : ''}`} onClick={handleClick}>
       <div className={`aspect-video relative overflow-hidden ${featured ? 'md:aspect-auto md:h-[345px]' : ''}`}>
-        <picture className="contents">
-          {image.endsWith('.png') && (
-            <source srcSet={image.replace(/\.png$/, '.webp')} type="image/webp" />
-          )}
-          <img loading="lazy" decoding="async"
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </picture>
+        <img loading="lazy" decoding="async"
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         <div className="absolute top-4 right-4">
           <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm">

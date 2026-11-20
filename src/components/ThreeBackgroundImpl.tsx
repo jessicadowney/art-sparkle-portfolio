@@ -172,7 +172,7 @@ const ThreeBackgroundImpl: React.FC = () => {
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
-      powerPreference: 'high-performance',
+      powerPreference: 'default',
     });
     rendererRef.current = renderer;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
