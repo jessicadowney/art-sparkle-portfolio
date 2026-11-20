@@ -13,7 +13,7 @@ const OFFSETS = [
 const Settling: React.FC<{ word: string }> = ({ word }) => (
   <>
     <span className="sr-only">{word}</span>
-    <span aria-hidden="true">
+    <span aria-hidden="true" className="inline-block whitespace-nowrap">
       {[...word].map((ch, i) => {
         const o = OFFSETS[i % OFFSETS.length];
         return (

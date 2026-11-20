@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
                 size="lg"
                 className="animated-gradient glass-stroke px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
-                <a href="mailto:contact@jessicadowney.com">
+                <a href="mailto:contact@jessicadowney.com" className="no-underline">
                   {t('Get In Touch', 'Me contacter')}
                   <Mail className="ml-2 h-5 w-5" />
                 </a>

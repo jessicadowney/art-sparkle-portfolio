@@ -109,9 +109,12 @@
     letter-spacing: -0.006em;
   }
 
-  /* Editorial links — quiet, underlined, no neon boxes */
-  a[href] {
+  /* Editorial links — quiet, underlined, no neon boxes.
+     Colour sits at zero specificity so buttons and pills styled as links keep their own. */
+  :where(a[href]) {
     color: inherit;
+  }
+  a[href] {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;

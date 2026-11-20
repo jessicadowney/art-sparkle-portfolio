@@ -35,7 +35,7 @@ const OneNote = () => {
         
         <div className="glass-container rounded-lg p-6 md:p-8 mb-8">
           <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight text-balance">
               Microsoft OneNote: <span className="text-primary">{t("Cloud Attachment Insertion Prompt", "Invite d'insertion de pièces jointes cloud")}</span>
             </h1>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
@@ -61,12 +61,12 @@ const OneNote = () => {
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-primary">{t("TL;DR", "En bref")}</h2>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Restored highly requested cloud attachment feature missing from OneNote UWP and Mac", "Rétablissement d'une fonctionnalité de pièces jointes cloud très demandée, absente de OneNote UWP et Mac")}</li>
-                <li>• {t("Led end-to-end design from research through implementation across platforms", "Direction du design de bout en bout, de la recherche à l'implémentation, sur toutes les plateformes")}</li>
-                <li>• {t("Created contextual file insertion prompts based on file type and user scenarios", "Création d'invites d'insertion de fichiers contextuelles selon le type de fichier et les scénarios d'usage")}</li>
-                <li>• {t("Designed responsive, accessible, and localized modal experiences", "Conception d'expériences modales adaptatives, accessibles et localisées")}</li>
-                <li>• {t("Successfully shipped in 2019, bringing feature parity across OneNote platforms", "Livraison réussie en 2019, assurant la parité fonctionnelle entre les plateformes OneNote")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Restored highly requested cloud attachment feature missing from OneNote UWP and Mac", "Rétablissement d'une fonctionnalité de pièces jointes cloud très demandée, absente de OneNote UWP et Mac")}</li>
+                <li>{t("Led end-to-end design from research through implementation across platforms", "Direction du design de bout en bout, de la recherche à l'implémentation, sur toutes les plateformes")}</li>
+                <li>{t("Created contextual file insertion prompts based on file type and user scenarios", "Création d'invites d'insertion de fichiers contextuelles selon le type de fichier et les scénarios d'usage")}</li>
+                <li>{t("Designed responsive, accessible, and localized modal experiences", "Conception d'expériences modales adaptatives, accessibles et localisées")}</li>
+                <li>{t("Successfully shipped in 2019, bringing feature parity across OneNote platforms", "Livraison réussie en 2019, assurant la parité fonctionnelle entre les plateformes OneNote")}</li>
               </ul>
             </div>
 
@@ -87,11 +87,11 @@ const OneNote = () => {
 
             <div className="mb-12">
               <h3 className="text-2xl font-semibold mb-4 text-primary">{t("My Role", "Mon rôle")}</h3>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Product Designer leading user flow and interface design", "Designer produit responsable des parcours utilisateur et du design d'interface")}</li>
-                <li>• {t("Collaborated closely with PM and 3 engineers", "Collaboration étroite avec le chef de produit et 3 ingénieurs")}</li>
-                <li>• {t("Conducted design analysis across Microsoft ecosystem", "Analyse des pratiques de design dans l'ensemble de l'écosystème Microsoft")}</li>
-                <li>• {t("Delivered responsive, localized, and accessible designs", "Livraison de designs adaptatifs, localisés et accessibles")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Product Designer leading user flow and interface design", "Designer produit responsable des parcours utilisateur et du design d'interface")}</li>
+                <li>{t("Collaborated closely with PM and 3 engineers", "Collaboration étroite avec le chef de produit et 3 ingénieurs")}</li>
+                <li>{t("Conducted design analysis across Microsoft ecosystem", "Analyse des pratiques de design dans l'ensemble de l'écosystème Microsoft")}</li>
+                <li>{t("Delivered responsive, localized, and accessible designs", "Livraison de designs adaptatifs, localisés et accessibles")}</li>
               </ul>
             </div>
 
@@ -104,10 +104,10 @@ const OneNote = () => {
 
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-primary">{t("Goals:", "Objectifs :")}</h3>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Reinstate cloud attachments to OneNote UWP and Mac", "Rétablir les pièces jointes cloud dans OneNote UWP et Mac")}</li>
-                <li>• {t("Provide contextual options based on file type", "Proposer des options contextuelles selon le type de fichier")}</li>
-                <li>• {t("Align with Microsoft's Fluent UI and accessibility guidelines", "Respecter Fluent UI de Microsoft et les directives d'accessibilité")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Reinstate cloud attachments to OneNote UWP and Mac", "Rétablir les pièces jointes cloud dans OneNote UWP et Mac")}</li>
+                <li>{t("Provide contextual options based on file type", "Proposer des options contextuelles selon le type de fichier")}</li>
+                <li>{t("Align with Microsoft's Fluent UI and accessibility guidelines", "Respecter Fluent UI de Microsoft et les directives d'accessibilité")}</li>
               </ul>
             </div>
 
@@ -130,9 +130,9 @@ const OneNote = () => {
 
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-primary">{t("Key insights:", "Enseignements clés :")}</h3>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Different file types require different insert options", "Chaque type de fichier appelle des options d'insertion différentes")}</li>
-                <li>• {t("A modal format was the preferred and expected pattern", "Le format modal était le modèle préféré et attendu")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Different file types require different insert options", "Chaque type de fichier appelle des options d'insertion différentes")}</li>
+                <li>{t("A modal format was the preferred and expected pattern", "Le format modal était le modèle préféré et attendu")}</li>
               </ul>
             </div>
 
@@ -155,10 +155,10 @@ const OneNote = () => {
               <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                 {t("I mapped scenarios based on file type:", "J'ai cartographié les scénarios selon le type de fichier :")}
               </p>
-              <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-                <li>• <strong>{t("Office Files (Word, Excel, PowerPoint):", "Fichiers Office (Word, Excel, PowerPoint) :")}</strong> {t("Show 3 options with disclaimer", "Afficher 3 options avec un avertissement")}</li>
-                <li>• <strong>{t("PDFs:", "PDF :")}</strong> {t("Show 3 options", "Afficher 3 options")}</li>
-                <li>• <strong>{t("Other File Types or Mixed Files:", "Autres types de fichiers ou fichiers mixtes :")}</strong> {t("Show 2 options", "Afficher 2 options")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
+                <li><strong>{t("Office Files (Word, Excel, PowerPoint):", "Fichiers Office (Word, Excel, PowerPoint) :")}</strong> {t("Show 3 options with disclaimer", "Afficher 3 options avec un avertissement")}</li>
+                <li><strong>{t("PDFs:", "PDF :")}</strong> {t("Show 3 options", "Afficher 3 options")}</li>
+                <li><strong>{t("Other File Types or Mixed Files:", "Autres types de fichiers ou fichiers mixtes :")}</strong> {t("Show 2 options", "Afficher 2 options")}</li>
               </ul>
             </div>
 
@@ -185,10 +185,10 @@ const OneNote = () => {
 
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-primary">{t("Modal Options:", "Options de la fenêtre modale :")}</h3>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Upload to OneDrive and insert link", "Téléverser vers OneDrive et insérer le lien")}</li>
-                <li>• {t("Insert as attachment", "Insérer en tant que pièce jointe")}</li>
-                <li>• {t("Insert as printout (when applicable)", "Insérer en tant qu'impression (le cas échéant)")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Upload to OneDrive and insert link", "Téléverser vers OneDrive et insérer le lien")}</li>
+                <li>{t("Insert as attachment", "Insérer en tant que pièce jointe")}</li>
+                <li>{t("Insert as printout (when applicable)", "Insérer en tant qu'impression (le cas échéant)")}</li>
               </ul>
             </div>
 
@@ -266,11 +266,11 @@ const OneNote = () => {
             </p>
 
             <div className="mb-8">
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Responsive modals for all use cases", "Des fenêtres modales adaptatives pour tous les cas d'usage")}</li>
-                <li>• {t("Redlines and specs for engineering", "Des annotations de design (redlines) et des spécifications pour l'ingénierie")}</li>
-                <li>• {t("High contrast accessibility visuals", "Des visuels d'accessibilité en contraste élevé")}</li>
-                <li>• {t("Assets for both UWP and Mac platforms", "Des ressources pour les plateformes UWP et Mac")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Responsive modals for all use cases", "Des fenêtres modales adaptatives pour tous les cas d'usage")}</li>
+                <li>{t("Redlines and specs for engineering", "Des annotations de design (redlines) et des spécifications pour l'ingénierie")}</li>
+                <li>{t("High contrast accessibility visuals", "Des visuels d'accessibilité en contraste élevé")}</li>
+                <li>{t("Assets for both UWP and Mac platforms", "Des ressources pour les plateformes UWP et Mac")}</li>
               </ul>
             </div>
 
@@ -324,10 +324,10 @@ const OneNote = () => {
 
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-primary">{t("Impact:", "Impact :")}</h3>
-              <ul className="space-y-2 text-foreground/80 mb-8">
-                <li>• {t("Met user demand for a highly requested feature", "Réponse à la demande des utilisateurs pour une fonctionnalité très attendue")}</li>
-                <li>• {t("Increased parity across OneNote platforms", "Parité accrue entre les plateformes OneNote")}</li>
-                <li>• {t("Reinforced design consistency with Microsoft ecosystem", "Cohérence de design renforcée avec l'écosystème Microsoft")}</li>
+              <ul className="space-y-2 text-foreground/80 mb-8 list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Met user demand for a highly requested feature", "Réponse à la demande des utilisateurs pour une fonctionnalité très attendue")}</li>
+                <li>{t("Increased parity across OneNote platforms", "Parité accrue entre les plateformes OneNote")}</li>
+                <li>{t("Reinforced design consistency with Microsoft ecosystem", "Cohérence de design renforcée avec l'écosystème Microsoft")}</li>
               </ul>
             </div>
 
