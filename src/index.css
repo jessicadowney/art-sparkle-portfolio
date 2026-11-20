@@ -109,9 +109,12 @@
     letter-spacing: -0.006em;
   }
 
-  /* Editorial links — quiet, underlined, no neon boxes */
-  a[href] {
+  /* Editorial links — quiet, underlined, no neon boxes.
+     Colour sits at zero specificity so buttons and pills styled as links keep their own. */
+  :where(a[href]) {
     color: inherit;
+  }
+  a[href] {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -172,6 +175,20 @@
 
 html { scroll-behavior: smooth; }
 
+/* Selection and caret take the palette instead of the browser blue */
+::selection { background: color-mix(in srgb, var(--foreground) 16%, transparent); color: inherit; }
+input, textarea { caret-color: var(--foreground); }
+
+/* Hero: the letters of "messy" start scattered and settle into line, once.
+   Offsets are inline vars; reduced motion removes the animation entirely. */
+.settle-letter {
+  display: inline-block;
+  animation: settle 1300ms cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms) backwards;
+}
+@keyframes settle {
+  from { transform: translateY(var(--y, 0)) rotate(var(--r, 0deg)); }
+}
+
 /* Header bar — light translucent */
 .glass {
   backdrop-filter: blur(10px);
@@ -199,5 +216,4 @@ html { scroll-behavior: smooth; }
 :focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
-  border-radius: 4px;
 }

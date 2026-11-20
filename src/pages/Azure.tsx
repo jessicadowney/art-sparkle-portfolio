@@ -36,7 +36,7 @@ const Azure = () => {
         
         <div className="glass-container rounded-lg p-6 md:p-8 mb-8">
           <div className="text-center mb-12">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light mb-6 tracking-tight leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light mb-6 tracking-tight text-balance leading-tight">
               <span className="text-primary break-words">Azure Communication Services</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
@@ -47,12 +47,12 @@ const Azure = () => {
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-primary">{t("TL;DR", "En bref")}</h2>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Led UX design for Virtual Visit Sample Builder to simplify Azure Communication Services adoption", "Direction de l'UX du Virtual Visit Sample Builder pour simplifier l'adoption d'Azure Communication Services")}</li>
-                <li>• {t("Facilitated Azure Communication Services's first remote design sprint from problem definition to customer validation", "Animation du premier design sprint à distance d'Azure Communication Services, de la définition du problème à la validation client")}</li>
-                <li>• {t("Created no-code builder generating deployable ARM templates and project assets", "Création d'un générateur sans code produisant des modèles ARM déployables et les ressources du projet")}</li>
-                <li>• {t("Designed Fluent UI-compliant interface supporting healthcare and enterprise scenarios", "Conception d'une interface conforme à Fluent UI, adaptée aux scénarios de santé et d'entreprise")}</li>
-                <li>• {t("Delivered tool now used across Microsoft field teams and partner engagements", "Livraison d'un outil désormais utilisé par les équipes terrain de Microsoft et dans les missions avec des partenaires")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Led UX design for Virtual Visit Sample Builder to simplify Azure Communication Services adoption", "Direction de l'UX du Virtual Visit Sample Builder pour simplifier l'adoption d'Azure Communication Services")}</li>
+                <li>{t("Facilitated Azure Communication Services's first remote design sprint from problem definition to customer validation", "Animation du premier design sprint à distance d'Azure Communication Services, de la définition du problème à la validation client")}</li>
+                <li>{t("Created no-code builder generating deployable ARM templates and project assets", "Création d'un générateur sans code produisant des modèles ARM déployables et les ressources du projet")}</li>
+                <li>{t("Designed Fluent UI-compliant interface supporting healthcare and enterprise scenarios", "Conception d'une interface conforme à Fluent UI, adaptée aux scénarios de santé et d'entreprise")}</li>
+                <li>{t("Delivered tool now used across Microsoft field teams and partner engagements", "Livraison d'un outil désormais utilisé par les équipes terrain de Microsoft et dans les missions avec des partenaires")}</li>
               </ul>
             </div>
 
@@ -77,22 +77,22 @@ const Azure = () => {
 
             <div className="mb-12">
               <h3 className="text-2xl font-semibold mb-4 text-primary">{t("My Role", "Mon rôle")}</h3>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Lead Product Designer for developer experience", "Designer produit principal pour l'expérience développeur")}</li>
-                <li>• {t("Facilitated the remote design sprint", "Animation du design sprint à distance")}</li>
-                <li>• {t("Conducted customer validation and user research", "Validation auprès des clients et recherche utilisateur")}</li>
-                <li>• {t("Led research, information architecture, and UX/UI design", "Direction de la recherche, de l'architecture de l'information et du design UX/UI")}</li>
-                <li>• {t("Created the design system for all builder components", "Création du système de design de tous les composants du générateur")}</li>
-                <li>• {t("Collaborated closely with product managers, engineers, and technical writers", "Collaboration étroite avec les chefs de produit, les ingénieurs et les rédacteurs techniques")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Lead Product Designer for developer experience", "Designer produit principal pour l'expérience développeur")}</li>
+                <li>{t("Facilitated the remote design sprint", "Animation du design sprint à distance")}</li>
+                <li>{t("Conducted customer validation and user research", "Validation auprès des clients et recherche utilisateur")}</li>
+                <li>{t("Led research, information architecture, and UX/UI design", "Direction de la recherche, de l'architecture de l'information et du design UX/UI")}</li>
+                <li>{t("Created the design system for all builder components", "Création du système de design de tous les composants du générateur")}</li>
+                <li>{t("Collaborated closely with product managers, engineers, and technical writers", "Collaboration étroite avec les chefs de produit, les ingénieurs et les rédacteurs techniques")}</li>
               </ul>
             </div>
 
             <div className="mb-12">
               <h3 className="text-2xl font-semibold mb-4 text-primary">{t("Results", "Résultats")}</h3>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Delivered an interactive sample builder used across healthcare partner engagements", "Livraison d'un générateur d'exemples interactif utilisé dans les missions avec des partenaires du secteur de la santé")}</li>
-                <li>• {t("Supported faster proof-of-concept deployments by Microsoft field teams", "Accélération des déploiements de preuves de concept par les équipes terrain de Microsoft")}</li>
-                <li>• {t("Used as a demo and training resource for Azure Communication Services adoption", "Utilisé comme ressource de démonstration et de formation pour l'adoption d'Azure Communication Services")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Delivered an interactive sample builder used across healthcare partner engagements", "Livraison d'un générateur d'exemples interactif utilisé dans les missions avec des partenaires du secteur de la santé")}</li>
+                <li>{t("Supported faster proof-of-concept deployments by Microsoft field teams", "Accélération des déploiements de preuves de concept par les équipes terrain de Microsoft")}</li>
+                <li>{t("Used as a demo and training resource for Azure Communication Services adoption", "Utilisé comme ressource de démonstration et de formation pour l'adoption d'Azure Communication Services")}</li>
               </ul>
             </div>
 
@@ -103,12 +103,12 @@ const Azure = () => {
               {t("The project followed a structured five-phase design sprint:", "Le projet a suivi un design sprint structuré en cinq phases :")}
             </p>
 
-            <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-              <li>• {t("**Understand:** Lightning talks framed the problem space through customer journeys and competitive analysis.", "**Comprendre :** des présentations éclair ont cadré le problème à travers les parcours clients et l'analyse concurrentielle.")}</li>
-              <li>• {t("**Define:** We framed our core challenge: \"How might we stop hand-holding our customers and help them confidently build an Azure Communication Services virtual visits solution?\"", "**Définir :** nous avons formulé notre défi central : « Comment cesser de prendre nos clients par la main et les aider à construire en toute confiance une solution de consultations virtuelles avec Azure Communication Services ? »")}</li>
-              <li>• {t("**Sketch & Decide:** Through sketching and critique, we aligned on a storyboard for a no-code virtual visit builder.", "**Esquisser et décider :** grâce aux esquisses et aux critiques, nous nous sommes mis d'accord sur un storyboard pour un générateur de consultations virtuelles sans code.")}</li>
-              <li>• {t("**Prototype:** A clickable prototype was developed in Figma.", "**Prototyper :** un prototype cliquable a été développé dans Figma.")}</li>
-              <li>• {t("**Validate:** We tested the prototype with real customers including Microsoft CSE, CTCA, NTT, Avanade, and Specsavers.", "**Valider :** nous avons testé le prototype avec de vrais clients, dont Microsoft CSE, CTCA, NTT, Avanade et Specsavers.")}</li>
+            <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
+              <li>{t("**Understand:** Lightning talks framed the problem space through customer journeys and competitive analysis.", "**Comprendre :** des présentations éclair ont cadré le problème à travers les parcours clients et l'analyse concurrentielle.")}</li>
+              <li>{t("**Define:** We framed our core challenge: \"How might we stop hand-holding our customers and help them confidently build an Azure Communication Services virtual visits solution?\"", "**Définir :** nous avons formulé notre défi central : « Comment cesser de prendre nos clients par la main et les aider à construire en toute confiance une solution de consultations virtuelles avec Azure Communication Services ? »")}</li>
+              <li>{t("**Sketch & Decide:** Through sketching and critique, we aligned on a storyboard for a no-code virtual visit builder.", "**Esquisser et décider :** grâce aux esquisses et aux critiques, nous nous sommes mis d'accord sur un storyboard pour un générateur de consultations virtuelles sans code.")}</li>
+              <li>{t("**Prototype:** A clickable prototype was developed in Figma.", "**Prototyper :** un prototype cliquable a été développé dans Figma.")}</li>
+              <li>{t("**Validate:** We tested the prototype with real customers including Microsoft CSE, CTCA, NTT, Avanade, and Specsavers.", "**Valider :** nous avons testé le prototype avec de vrais clients, dont Microsoft CSE, CTCA, NTT, Avanade et Specsavers.")}</li>
             </ul>
 
             <div className="text-center mb-8">
@@ -130,10 +130,10 @@ const Azure = () => {
               {t("Many customers were overwhelmed by the amount of code required to build a virtual visit experience from scratch. They needed:", "De nombreux clients étaient submergés par la quantité de code nécessaire pour construire une expérience de consultation virtuelle de zéro. Ils avaient besoin de :")}
             </p>
 
-            <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-              <li>• {t("A guided entry point to try Azure Communication Services with minimal setup", "Un point d'entrée guidé pour essayer Azure Communication Services avec un minimum de configuration")}</li>
-              <li>• {t("Clarity on what was configurable versus hardcoded", "Savoir clairement ce qui est configurable et ce qui est codé en dur")}</li>
-              <li>• {t("A faster way to visualize Azure Communication Services features in action", "Un moyen plus rapide de voir les fonctionnalités d'Azure Communication Services en action")}</li>
+            <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
+              <li>{t("A guided entry point to try Azure Communication Services with minimal setup", "Un point d'entrée guidé pour essayer Azure Communication Services avec un minimum de configuration")}</li>
+              <li>{t("Clarity on what was configurable versus hardcoded", "Savoir clairement ce qui est configurable et ce qui est codé en dur")}</li>
+              <li>{t("A faster way to visualize Azure Communication Services features in action", "Un moyen plus rapide de voir les fonctionnalités d'Azure Communication Services en action")}</li>
             </ul>
 
             <h3 className="text-2xl font-semibold mb-6 text-primary">{t("Solution: Configurable Sample Builder", "Solution : un générateur d'exemples configurable")}</h3>
@@ -141,19 +141,19 @@ const Azure = () => {
               {t("We created an interactive sample builder that:", "Nous avons créé un générateur d'exemples interactif qui :")}
             </p>
 
-            <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-              <li>• {t("Allows users to select key experience settings (e.g., lobby type, user roles, branding)", "Permet de choisir les principaux paramètres de l'expérience (p. ex. type de salle d'attente, rôles des utilisateurs, image de marque)")}</li>
-              <li>• {t("Generates an Azure Resource Manager (ARM) template deployable to Azure", "Génère un modèle Azure Resource Manager (ARM) déployable sur Azure")}</li>
-              <li>• {t("Produces a downloadable repository containing all project assets", "Produit un dépôt téléchargeable contenant toutes les ressources du projet")}</li>
-              <li>• {t("Includes embedded documentation and guidance", "Intègre de la documentation et des conseils")}</li>
+            <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
+              <li>{t("Allows users to select key experience settings (e.g., lobby type, user roles, branding)", "Permet de choisir les principaux paramètres de l'expérience (p. ex. type de salle d'attente, rôles des utilisateurs, image de marque)")}</li>
+              <li>{t("Generates an Azure Resource Manager (ARM) template deployable to Azure", "Génère un modèle Azure Resource Manager (ARM) déployable sur Azure")}</li>
+              <li>{t("Produces a downloadable repository containing all project assets", "Produit un dépôt téléchargeable contenant toutes les ressources du projet")}</li>
+              <li>{t("Includes embedded documentation and guidance", "Intègre de la documentation et des conseils")}</li>
             </ul>
 
             <div className="mb-8">
               <h4 className="text-xl font-semibold mb-4 text-primary">{t("Key Features:", "Fonctionnalités clés :")}</h4>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("No-code configuration UI with live preview", "Interface de configuration sans code avec aperçu en direct")}</li>
-                <li>• {t("ARM template generation for Azure deployment", "Génération de modèles ARM pour le déploiement sur Azure")}</li>
-                <li>• {t("Clear instructional scaffolding for healthcare scenarios", "Un accompagnement pédagogique clair pour les scénarios de santé")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("No-code configuration UI with live preview", "Interface de configuration sans code avec aperçu en direct")}</li>
+                <li>{t("ARM template generation for Azure deployment", "Génération de modèles ARM pour le déploiement sur Azure")}</li>
+                <li>{t("Clear instructional scaffolding for healthcare scenarios", "Un accompagnement pédagogique clair pour les scénarios de santé")}</li>
               </ul>
             </div>
 
@@ -169,10 +169,10 @@ const Azure = () => {
               {t("I developed a UI concept based on Fluent UI and Azure Dev Portal conventions, featuring:", "J'ai développé un concept d'interface fondé sur Fluent UI et sur les conventions d'Azure Dev Portal, avec :")}
             </p>
 
-            <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-              <li>• {t("Tabbed configuration panels", "Des panneaux de configuration à onglets")}</li>
-              <li>• {t("Consistent input and validation behaviors", "Des comportements de saisie et de validation cohérents")}</li>
-              <li>• {t("Accessible layout with clear structure and interactions", "Une mise en page accessible, à la structure et aux interactions claires")}</li>
+            <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
+              <li>{t("Tabbed configuration panels", "Des panneaux de configuration à onglets")}</li>
+              <li>{t("Consistent input and validation behaviors", "Des comportements de saisie et de validation cohérents")}</li>
+              <li>{t("Accessible layout with clear structure and interactions", "Une mise en page accessible, à la structure et aux interactions claires")}</li>
             </ul>
 
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
@@ -203,11 +203,11 @@ const Azure = () => {
             <hr className="my-12 border-border/50" />
 
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Key Insights from Customer Validation", "Enseignements clés de la validation client")}</h2>
-            <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-              <li>• {t("Simplicity and accessibility were key, especially in healthcare and retail.", "La simplicité et l'accessibilité étaient essentielles, surtout dans la santé et le commerce de détail.")}</li>
-              <li>• {t("Customers valued customization of branding, layout, and user roles.", "Les clients appréciaient la personnalisation de l'image de marque, de la mise en page et des rôles des utilisateurs.")}</li>
-              <li>• {t("Must-have features included call recording, file and screen sharing, and integration with existing systems.", "Parmi les fonctionnalités indispensables : l'enregistrement des appels, le partage de fichiers et d'écran, et l'intégration aux systèmes existants.")}</li>
-              <li>• {t("Smaller orgs wanted turnkey solutions; larger enterprises viewed it as a customizable starting point.", "Les petites organisations voulaient des solutions clés en main ; les grandes entreprises y voyaient un point de départ personnalisable.")}</li>
+            <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
+              <li>{t("Simplicity and accessibility were key, especially in healthcare and retail.", "La simplicité et l'accessibilité étaient essentielles, surtout dans la santé et le commerce de détail.")}</li>
+              <li>{t("Customers valued customization of branding, layout, and user roles.", "Les clients appréciaient la personnalisation de l'image de marque, de la mise en page et des rôles des utilisateurs.")}</li>
+              <li>{t("Must-have features included call recording, file and screen sharing, and integration with existing systems.", "Parmi les fonctionnalités indispensables : l'enregistrement des appels, le partage de fichiers et d'écran, et l'intégration aux systèmes existants.")}</li>
+              <li>{t("Smaller orgs wanted turnkey solutions; larger enterprises viewed it as a customizable starting point.", "Les petites organisations voulaient des solutions clés en main ; les grandes entreprises y voyaient un point de départ personnalisable.")}</li>
             </ul>
 
             <hr className="my-12 border-border/50" />
@@ -217,10 +217,10 @@ const Azure = () => {
               {t("The final prototype offered:", "Le prototype final proposait :")}
             </p>
 
-            <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-              <li>• {t("A template-driven builder with branding and layout options", "Un générateur fondé sur des modèles, avec des options d'image de marque et de mise en page")}</li>
-              <li>• {t("Preview modes by device and user role", "Des modes d'aperçu par appareil et par rôle d'utilisateur")}</li>
-              <li>• {t("ARM template-based deployment to Azure", "Un déploiement sur Azure fondé sur des modèles ARM")}</li>
+            <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
+              <li>{t("A template-driven builder with branding and layout options", "Un générateur fondé sur des modèles, avec des options d'image de marque et de mise en page")}</li>
+              <li>{t("Preview modes by device and user role", "Des modes d'aperçu par appareil et par rôle d'utilisateur")}</li>
+              <li>{t("ARM template-based deployment to Azure", "Un déploiement sur Azure fondé sur des modèles ARM")}</li>
             </ul>
 
             <hr className="my-12 border-border/50" />
@@ -232,10 +232,10 @@ const Azure = () => {
 
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-primary">{t("Outcomes:", "Résultats :")}</h3>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Accelerated Azure Communication Services implementation", "Accélération de la mise en œuvre d'Azure Communication Services")}</li>
-                <li>• {t("Helped customers onboard with less friction", "Prise en main facilitée pour les clients, avec moins de frictions")}</li>
-                <li>• {t("Provided a base for future development", "Base solide pour les développements futurs")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Accelerated Azure Communication Services implementation", "Accélération de la mise en œuvre d'Azure Communication Services")}</li>
+                <li>{t("Helped customers onboard with less friction", "Prise en main facilitée pour les clients, avec moins de frictions")}</li>
+                <li>{t("Provided a base for future development", "Base solide pour les développements futurs")}</li>
               </ul>
             </div>
 

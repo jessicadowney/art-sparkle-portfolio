@@ -38,7 +38,7 @@ const PhoneNumberCart = () => {
             <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               2022
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 tracking-tight text-balance leading-tight">
               <span className="text-primary break-words">{t("Phone Number Shopping Cart", "Panier d'achat de numéros de téléphone")}</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
@@ -49,17 +49,13 @@ const PhoneNumberCart = () => {
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-primary">{t("TL;DR", "En bref")}</h2>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Initiated project independently during FHL2022, pitched and secured executive sponsorship", "Projet lancé de ma propre initiative pendant le FHL2022, présenté à la direction qui l'a parrainé")}</li>
-                <li>• {t("Led end-to-end UX for a complex, cross-functional revamp of the phone number acquisition flow", "Pilotage de l'UX de bout en bout d'une refonte complexe et interfonctionnelle du parcours d'acquisition de numéros de téléphone")}</li>
-                <li>• {t("Defined structure, logic, and visual system for a new cart-based model", "Définition de la structure, de la logique et du système visuel d'un nouveau modèle fondé sur le panier")}</li>
-                <li>• {t("Collaborated with legal, engineering, support, and product to balance compliance and usability", "Collaboration avec les équipes juridique, ingénierie, support et produit pour concilier conformité et utilisabilité")}</li>
-                <li>• {t("Launched to general availability with a significant drop in support tickets related to number acquisition", "Lancement en disponibilité générale avec une baisse significative des tickets de support liés à l'acquisition de numéros")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Initiated project independently during FHL2022, pitched and secured executive sponsorship", "Projet lancé de ma propre initiative pendant le FHL2022, présenté à la direction qui l'a parrainé")}</li>
+                <li>{t("Led end-to-end UX for a complex, cross-functional revamp of the phone number acquisition flow", "Pilotage de l'UX de bout en bout d'une refonte complexe et interfonctionnelle du parcours d'acquisition de numéros de téléphone")}</li>
+                <li>{t("Defined structure, logic, and visual system for a new cart-based model", "Définition de la structure, de la logique et du système visuel d'un nouveau modèle fondé sur le panier")}</li>
+                <li>{t("Collaborated with legal, engineering, support, and product to balance compliance and usability", "Collaboration avec les équipes juridique, ingénierie, support et produit pour concilier conformité et utilisabilité")}</li>
+                <li>{t("Launched to general availability with a significant drop in support tickets related to number acquisition", "Lancement en disponibilité générale avec une baisse significative des tickets de support liés à l'acquisition de numéros")}</li>
               </ul>
-            </div>
-
-            <div className="border-l-2 border-primary/30 pl-6 mb-8">
-              <div className="w-4 h-4 bg-primary rounded-full transform -translate-x-8 mb-2"></div>
             </div>
 
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Background", "Contexte")}</h2>
@@ -70,10 +66,6 @@ const PhoneNumberCart = () => {
               {t("Despite being high-friction and support-heavy, the problem wasn't on the roadmap. I decided to take it on as my personal project during Microsoft's FHL2022 innovation sprint. My early explorations revealed just how misaligned the experience was with user expectations—and how preventable the pain points were.", "Bien que très frictionnel et générateur de nombreuses demandes de support, ce problème ne figurait pas sur la feuille de route. J'ai décidé d'en faire mon projet personnel pendant le sprint d'innovation FHL2022 de Microsoft. Mes premières explorations ont montré à quel point l'expérience était en décalage avec les attentes des utilisateurs — et à quel point ces points de douleur étaient évitables.")}
             </p>
 
-            <div className="border-l-2 border-primary/30 pl-6 mb-8">
-              <div className="w-4 h-4 bg-primary rounded-full transform -translate-x-8 mb-2"></div>
-            </div>
-
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Initiating the Work", "Lancement du projet")}</h2>
             <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
               {t("I built a functional prototype to reframe the flow through a clearer, modular cart-based system. The concept consolidated requirements upfront, gave users more control and visibility, and clarified legal disclosures without overloading them.", "J'ai construit un prototype fonctionnel pour repenser le parcours autour d'un système de panier modulaire, plus clair. Le concept regroupait les exigences dès le départ, donnait aux utilisateurs plus de contrôle et de visibilité, et clarifiait les mentions légales sans les surcharger.")}
@@ -82,10 +74,6 @@ const PhoneNumberCart = () => {
               {t("After testing the prototype with internal stakeholders and support teams, I pitched the work to senior leadership. With their support, I brought in product management and engineering to scope the initiative and align on a path to production.", "Après avoir testé le prototype avec des parties prenantes internes et les équipes de support, j'ai présenté le travail à la direction. Avec son soutien, j'ai impliqué la gestion de produit et l'ingénierie pour cadrer l'initiative et définir un chemin vers la production.")}
             </p>
 
-            <div className="border-l-2 border-primary/30 pl-6 mb-8">
-              <div className="w-4 h-4 bg-primary rounded-full transform -translate-x-8 mb-2"></div>
-            </div>
-
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Design Strategy", "Stratégie de design")}</h2>
             <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
               {t("As the product designer, I led the end-to-end redesign. My focus was on more than screens—it was about reshaping how users thought about phone number acquisition.", "En tant que designer produit, j'ai dirigé la refonte de bout en bout. Mon objectif dépassait les écrans — il s'agissait de transformer la façon dont les utilisateurs envisageaient l'acquisition d'un numéro de téléphone.")}
@@ -93,11 +81,11 @@ const PhoneNumberCart = () => {
             <p className="text-lg text-foreground/80 mb-4 leading-relaxed">
               {t("Key shifts included:", "Les principaux changements :")}
             </p>
-            <ul className="space-y-3 text-foreground/80 text-lg mb-6 pl-6">
-              <li>• <strong>{t("Upfront transparency:", "Transparence dès le départ :")}</strong> {t("Eligibility rules and legal disclosures moved earlier in the flow, reducing surprise drop-offs.", "Les règles d'éligibilité et les mentions légales sont présentées plus tôt dans le parcours, ce qui réduit les abandons par surprise.")}</li>
-              <li>• <strong>{t("Cart-based interaction model:", "Modèle d'interaction par panier :")}</strong> {t("Let users select, review, and confirm numbers in one coherent space.", "Les utilisateurs sélectionnent, vérifient et confirment leurs numéros dans un espace unique et cohérent.")}</li>
-              <li>• <strong>{t("Progressive disclosure:", "Divulgation progressive :")}</strong> {t("Complex details shown only when relevant, to prevent cognitive overload.", "Les détails complexes ne s'affichent que lorsqu'ils sont pertinents, pour éviter la surcharge cognitive.")}</li>
-              <li>• <strong>{t("Reusable logic and components:", "Logique et composants réutilisables :")}</strong> {t("Created a UI framework and flow pattern that other acquisition surfaces could adapt.", "Création d'un cadre d'interface et d'un modèle de parcours que d'autres surfaces d'acquisition pouvaient adapter.")}</li>
+            <ul className="space-y-3 text-foreground/80 text-lg mb-6 list-disc pl-6 marker:text-muted-foreground">
+              <li><strong>{t("Upfront transparency:", "Transparence dès le départ :")}</strong> {t("Eligibility rules and legal disclosures moved earlier in the flow, reducing surprise drop-offs.", "Les règles d'éligibilité et les mentions légales sont présentées plus tôt dans le parcours, ce qui réduit les abandons par surprise.")}</li>
+              <li><strong>{t("Cart-based interaction model:", "Modèle d'interaction par panier :")}</strong> {t("Let users select, review, and confirm numbers in one coherent space.", "Les utilisateurs sélectionnent, vérifient et confirment leurs numéros dans un espace unique et cohérent.")}</li>
+              <li><strong>{t("Progressive disclosure:", "Divulgation progressive :")}</strong> {t("Complex details shown only when relevant, to prevent cognitive overload.", "Les détails complexes ne s'affichent que lorsqu'ils sont pertinents, pour éviter la surcharge cognitive.")}</li>
+              <li><strong>{t("Reusable logic and components:", "Logique et composants réutilisables :")}</strong> {t("Created a UI framework and flow pattern that other acquisition surfaces could adapt.", "Création d'un cadre d'interface et d'un modèle de parcours que d'autres surfaces d'acquisition pouvaient adapter.")}</li>
             </ul>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               {t("To get there, I partnered across legal, compliance, support, and engineering to untangle requirements, define exceptions, and ensure the redesign aligned with regulatory standards.", "Pour y parvenir, j'ai travaillé avec les équipes juridique, conformité, support et ingénierie afin de démêler les exigences, définir les exceptions et garantir que la refonte respecte les normes réglementaires.")}
@@ -162,18 +150,14 @@ const PhoneNumberCart = () => {
              
             </div>
 
-            <div className="border-l-2 border-primary/30 pl-6 mb-8">
-              <div className="w-4 h-4 bg-primary rounded-full transform -translate-x-8 mb-2"></div>
-            </div>
-
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Outcome", "Résultat")}</h2>
             <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
               {t("The feature shipped to general availability and is now the default experience for number acquisition. Since launch:", "La fonctionnalité est passée en disponibilité générale et constitue désormais l'expérience par défaut pour l'acquisition de numéros. Depuis son lancement :")}
             </p>
-            <ul className="space-y-3 text-foreground/80 text-lg mb-6 pl-6">
-              <li>• {t("Support tickets related to number purchases have dropped significantly", "Les tickets de support liés à l'achat de numéros ont considérablement diminué")}</li>
-              <li>• {t("Time-to-acquire is shorter, with clearer error handling and reduced back-and-forth", "Le temps d'acquisition est plus court, avec une meilleure gestion des erreurs et moins d'allers-retours")}</li>
-              <li>• {t("The new pattern has been adopted for other complex onboarding flows involving legal and regional constraints", "Ce nouveau modèle a été adopté pour d'autres parcours d'intégration complexes soumis à des contraintes juridiques et régionales")}</li>
+            <ul className="space-y-3 text-foreground/80 text-lg mb-6 list-disc pl-6 marker:text-muted-foreground">
+              <li>{t("Support tickets related to number purchases have dropped significantly", "Les tickets de support liés à l'achat de numéros ont considérablement diminué")}</li>
+              <li>{t("Time-to-acquire is shorter, with clearer error handling and reduced back-and-forth", "Le temps d'acquisition est plus court, avec une meilleure gestion des erreurs et moins d'allers-retours")}</li>
+              <li>{t("The new pattern has been adopted for other complex onboarding flows involving legal and regional constraints", "Ce nouveau modèle a été adopté pour d'autres parcours d'intégration complexes soumis à des contraintes juridiques et régionales")}</li>
             </ul>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               {t("This project is a strong example of how user-centered thinking—when paired with proactive leadership—can move cross-functional priorities forward, even off the roadmap.", "Ce projet illustre bien comment une démarche centrée sur l'utilisateur — associée à un leadership proactif — peut faire avancer des priorités interfonctionnelles, même en dehors de la feuille de route.")}

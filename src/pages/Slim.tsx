@@ -38,7 +38,7 @@ const Slim = () => {
             <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               2012
             </div>
-            <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight text-balance">
               syngo® Lab Inventory Manager <span className="text-primary">(sLIM)</span>
             </h1>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
@@ -64,12 +64,12 @@ const Slim = () => {
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-primary">{t("TL;DR", "En bref")}</h2>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Redesigned complex cloud-based inventory management system facing usability complaints", "Refonte d'un système complexe de gestion des stocks dans le cloud, qui faisait l'objet de plaintes d'utilisabilité")}</li>
-                <li>• {t("Led information architecture overhaul, reducing navigation from 3 levels to 2", "Direction de la refonte de l'architecture de l'information, qui a ramené la navigation de 3 niveaux à 2")}</li>
-                <li>• {t("Facilitated stakeholder workshops and card sorting exercises to streamline user flows", "Animation d'ateliers avec les parties prenantes et d'exercices de tri de cartes pour fluidifier les parcours utilisateur")}</li>
-                <li>• {t("Delivered wireframes and visual design that improved interface consistency and efficiency", "Livraison de wireframes et d'un design visuel qui ont amélioré la cohérence et l'efficacité de l'interface")}</li>
-                <li>• {t("Final design replaced original software and is still used by Siemens Healthineers globally", "Le design final a remplacé le logiciel d'origine et est toujours utilisé par Siemens Healthineers dans le monde entier")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Redesigned complex cloud-based inventory management system facing usability complaints", "Refonte d'un système complexe de gestion des stocks dans le cloud, qui faisait l'objet de plaintes d'utilisabilité")}</li>
+                <li>{t("Led information architecture overhaul, reducing navigation from 3 levels to 2", "Direction de la refonte de l'architecture de l'information, qui a ramené la navigation de 3 niveaux à 2")}</li>
+                <li>{t("Facilitated stakeholder workshops and card sorting exercises to streamline user flows", "Animation d'ateliers avec les parties prenantes et d'exercices de tri de cartes pour fluidifier les parcours utilisateur")}</li>
+                <li>{t("Delivered wireframes and visual design that improved interface consistency and efficiency", "Livraison de wireframes et d'un design visuel qui ont amélioré la cohérence et l'efficacité de l'interface")}</li>
+                <li>{t("Final design replaced original software and is still used by Siemens Healthineers globally", "Le design final a remplacé le logiciel d'origine et est toujours utilisé par Siemens Healthineers dans le monde entier")}</li>
               </ul>
             </div>
 
@@ -85,10 +85,10 @@ const Slim = () => {
 
             <div className="mb-12">
               <h3 className="text-2xl font-semibold mb-4 text-primary">{t("My Role", "Mon rôle")}</h3>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Led redesign of information architecture and UI", "Direction de la refonte de l'architecture de l'information et de l'interface")}</li>
-                <li>• {t("Facilitated stakeholder workshops and user research", "Animation d'ateliers avec les parties prenantes et de recherche utilisateur")}</li>
-                <li>• {t("Delivered wireframes and updated visual design", "Livraison de wireframes et d'un design visuel renouvelé")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Led redesign of information architecture and UI", "Direction de la refonte de l'architecture de l'information et de l'interface")}</li>
+                <li>{t("Facilitated stakeholder workshops and user research", "Animation d'ateliers avec les parties prenantes et de recherche utilisateur")}</li>
+                <li>{t("Delivered wireframes and updated visual design", "Livraison de wireframes et d'un design visuel renouvelé")}</li>
               </ul>
             </div>
 
@@ -112,10 +112,10 @@ const Slim = () => {
             </p>
 
             <div className="mb-8">
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("A three-tiered navigation system that was hard to understand", "Un système de navigation à trois niveaux, difficile à comprendre")}</li>
-                <li>• {t("Too much horizontal space taken by menus, leaving little room for content", "Les menus occupaient trop d'espace horizontal, laissant peu de place au contenu")}</li>
-                <li>• {t("Important buttons changed location dynamically, frustrating users", "Des boutons importants changeaient d'emplacement de façon dynamique, ce qui frustrait les utilisateurs")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("A three-tiered navigation system that was hard to understand", "Un système de navigation à trois niveaux, difficile à comprendre")}</li>
+                <li>{t("Too much horizontal space taken by menus, leaving little room for content", "Les menus occupaient trop d'espace horizontal, laissant peu de place au contenu")}</li>
+                <li>{t("Important buttons changed location dynamically, frustrating users", "Des boutons importants changeaient d'emplacement de façon dynamique, ce qui frustrait les utilisateurs")}</li>
               </ul>
             </div>
             <div className="mb-12">
@@ -161,10 +161,10 @@ const Slim = () => {
               <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                 {t("With a clear structure defined, I created high-level wireframes and a refreshed look and feel. The layout emphasized:", "Une fois la structure définie, j'ai créé des wireframes de haut niveau et un nouveau style visuel. La mise en page privilégiait :")}
               </p>
-              <ul className="space-y-2 text-foreground/80 text-lg mb-8">
-                <li>• {t("Consistent button placement", "Un emplacement cohérent des boutons")}</li>
-                <li>• {t("Better use of screen real estate", "Une meilleure exploitation de l'espace écran")}</li>
-                <li>• {t("More intuitive content grouping", "Un regroupement des contenus plus intuitif")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Consistent button placement", "Un emplacement cohérent des boutons")}</li>
+                <li>{t("Better use of screen real estate", "Une meilleure exploitation de l'espace écran")}</li>
+                <li>{t("More intuitive content grouping", "Un regroupement des contenus plus intuitif")}</li>
               </ul>
             </div>
 
@@ -218,10 +218,10 @@ const Slim = () => {
 
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-primary">{t("Impact:", "Impact :")}</h3>
-              <ul className="space-y-2 text-foreground/80 mb-8">
-                <li>• {t("Drastically reduced user confusion", "Forte réduction de la confusion des utilisateurs")}</li>
-                <li>• {t("Improved interface consistency and efficiency", "Cohérence et efficacité de l'interface améliorées")}</li>
-                <li>• {t("Enhanced usability, supporting broader adoption across labs globally", "Utilisabilité renforcée, favorisant une adoption plus large dans les laboratoires du monde entier")}</li>
+              <ul className="space-y-2 text-foreground/80 mb-8 list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Drastically reduced user confusion", "Forte réduction de la confusion des utilisateurs")}</li>
+                <li>{t("Improved interface consistency and efficiency", "Cohérence et efficacité de l'interface améliorées")}</li>
+                <li>{t("Enhanced usability, supporting broader adoption across labs globally", "Utilisabilité renforcée, favorisant une adoption plus large dans les laboratoires du monde entier")}</li>
               </ul>
             </div>
 

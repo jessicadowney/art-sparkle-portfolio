@@ -81,7 +81,7 @@ const FrontierTuning = () => {
             <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               2025–2026
             </div>
-            <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight text-balance">
               Frontier <span className="text-primary">Tuning</span>
             </h1>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">

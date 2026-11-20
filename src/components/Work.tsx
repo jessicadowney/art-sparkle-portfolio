@@ -66,11 +66,11 @@ const Work: React.FC = () => {
   ];
 
   return (
-    <section id="work" className="py-20 bg-accent/30">
+    <section id="work" className="py-24 md:py-32 bg-accent/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-            {t('Selected', 'Réalisations')} <span className="text-primary">{t('Work', 'choisies')}</span>
+            {t('Selected', 'Réalisations')} <em>{t('Work', 'choisies')}</em>
           </h2>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             {t(
@@ -94,12 +94,12 @@ const Work: React.FC = () => {
 
         <div className="max-w-6xl mx-auto mt-16">
           <h3 className="text-2xl font-light tracking-tight mb-4 text-foreground/80">
-            {t('Earlier', 'Travaux')} <span className="text-primary">{t('work', 'antérieurs')}</span>
+            {t('Earlier', 'Travaux')} <em>{t('work', 'antérieurs')}</em>
           </h3>
           <ul className="divide-y divide-border border-y border-border">
             {earlier.map((item) => (
               <li key={item.link} className="grid gap-1 py-4 md:grid-cols-[5rem_1fr_2fr] md:gap-6">
-                <span className="text-muted-foreground">{item.year}</span>
+                <span className="text-muted-foreground tabular-nums">{item.year}</span>
                 <Link to={item.link} className="font-medium">{item.title}</Link>
                 <p className="text-foreground/80 leading-relaxed">{item.line}</p>
               </li>

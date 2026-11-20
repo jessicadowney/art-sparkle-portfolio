@@ -35,7 +35,7 @@ const Ally = () => {
         
         <div className="glass-container rounded-lg p-6 md:p-8 mb-8">
           <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight text-balance">
               Amped Wireless <span className="text-primary">Ally</span>
             </h1>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
@@ -61,12 +61,12 @@ const Ally = () => {
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">
               <h2 className="text-2xl font-semibold mb-4 text-primary">{t("TL;DR", "En bref")}</h2>
-              <ul className="space-y-2 text-foreground/80 text-lg">
-                <li>• {t("Led end-to-end UX design for white-labeled router security app at AVG Innovation Group", "Direction du design UX de bout en bout d'une application de sécurité pour routeur en marque blanche à l'AVG Innovation Group")}</li>
-                <li>• {t("Created mobile-first setup experience simplifying complex router installation", "Création d'une expérience de configuration pensée d'abord pour le mobile, qui simplifie l'installation complexe d'un routeur")}</li>
-                <li>• {t("Designed intuitive security and parental control features for non-technical users", "Conception de fonctionnalités de sécurité et de contrôle parental intuitives pour des utilisateurs non techniciens")}</li>
-                <li>• {t("Established design system and information architecture across iOS and Android", "Mise en place du système de design et de l'architecture de l'information sur iOS et Android")}</li>
-                <li>• {t("Successfully launched as key differentiator for Amped Wireless router product line", "Lancement réussi, devenu un atout différenciant majeur de la gamme de routeurs Amped Wireless")}</li>
+              <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                <li>{t("Led end-to-end UX design for white-labeled router security app at AVG Innovation Group", "Direction du design UX de bout en bout d'une application de sécurité pour routeur en marque blanche à l'AVG Innovation Group")}</li>
+                <li>{t("Created mobile-first setup experience simplifying complex router installation", "Création d'une expérience de configuration pensée d'abord pour le mobile, qui simplifie l'installation complexe d'un routeur")}</li>
+                <li>{t("Designed intuitive security and parental control features for non-technical users", "Conception de fonctionnalités de sécurité et de contrôle parental intuitives pour des utilisateurs non techniciens")}</li>
+                <li>{t("Established design system and information architecture across iOS and Android", "Mise en place du système de design et de l'architecture de l'information sur iOS et Android")}</li>
+                <li>{t("Successfully launched as key differentiator for Amped Wireless router product line", "Lancement réussi, devenu un atout différenciant majeur de la gamme de routeurs Amped Wireless")}</li>
               </ul>
             </div>
 
@@ -92,11 +92,11 @@ const Ally = () => {
 
               <div className="mb-12">
                 <h3 className="text-2xl font-semibold mb-4 text-primary">{t("My Role", "Mon rôle")}</h3>
-                <ul className="space-y-2 text-foreground/80 text-lg">
-                  <li>• {t("Led UX design and information architecture", "Direction du design UX et de l'architecture de l'information")}</li>
-                  <li>• {t("Created setup flows and security management UX", "Création des parcours de configuration et de l'UX de gestion de la sécurité")}</li>
-                  <li>• {t("Partnered with research and visual design", "Collaboration avec la recherche et le design visuel")}</li>
-                  <li>• {t("Delivered production-ready designs for iOS and Android", "Livraison de designs prêts pour la production sur iOS et Android")}</li>
+                <ul className="space-y-2 text-foreground/80 text-lg list-disc pl-6 marker:text-muted-foreground">
+                  <li>{t("Led UX design and information architecture", "Direction du design UX et de l'architecture de l'information")}</li>
+                  <li>{t("Created setup flows and security management UX", "Création des parcours de configuration et de l'UX de gestion de la sécurité")}</li>
+                  <li>{t("Partnered with research and visual design", "Collaboration avec la recherche et le design visuel")}</li>
+                  <li>{t("Delivered production-ready designs for iOS and Android", "Livraison de designs prêts pour la production sur iOS et Android")}</li>
                 </ul>
               </div>
 
@@ -109,10 +109,10 @@ const Ally = () => {
 
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4 text-primary">{t("Our goals:", "Nos objectifs :")}</h3>
-                <ul className="space-y-2 text-foreground/80">
-                  <li>• {t("Create a mobile-first, simplified setup experience", "Créer une expérience de configuration simplifiée, pensée d'abord pour le mobile")}</li>
-                  <li>• {t("Minimize steps required", "Réduire au minimum le nombre d'étapes")}</li>
-                  <li>• {t("Use plain language and visuals to guide the user", "Guider l'utilisateur avec un langage simple et des visuels")}</li>
+                <ul className="space-y-2 text-foreground/80 list-disc pl-6 marker:text-muted-foreground">
+                  <li>{t("Create a mobile-first, simplified setup experience", "Créer une expérience de configuration simplifiée, pensée d'abord pour le mobile")}</li>
+                  <li>{t("Minimize steps required", "Réduire au minimum le nombre d'étapes")}</li>
+                  <li>{t("Use plain language and visuals to guide the user", "Guider l'utilisateur avec un langage simple et des visuels")}</li>
                 </ul>
               </div>
 
@@ -135,10 +135,10 @@ const Ally = () => {
 
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4 text-primary">{t("Design Outcomes:", "Résultats du design :")}</h3>
-                <ul className="space-y-2 text-foreground/80 mb-6">
-                  <li>• {t("Created a streamlined, mobile-first setup flow", "Création d'un parcours de configuration fluide, pensé d'abord pour le mobile")}</li>
-                  <li>• {t("Reduced technical jargon and simplified inputs", "Réduction du jargon technique et simplification des saisies")}</li>
-                  <li>• {t("Designed for both single routers and mesh network expansion", "Conception adaptée aussi bien à un routeur seul qu'à l'extension d'un réseau maillé")}</li>
+                <ul className="space-y-2 text-foreground/80 mb-6 list-disc pl-6 marker:text-muted-foreground">
+                  <li>{t("Created a streamlined, mobile-first setup flow", "Création d'un parcours de configuration fluide, pensé d'abord pour le mobile")}</li>
+                  <li>{t("Reduced technical jargon and simplified inputs", "Réduction du jargon technique et simplification des saisies")}</li>
+                  <li>{t("Designed for both single routers and mesh network expansion", "Conception adaptée aussi bien à un routeur seul qu'à l'extension d'un réseau maillé")}</li>
                 </ul>
                 <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
                   {t("As the partnership evolved, I adapted the flow to account for Amped Wireless's specific hardware installation needs.", "Au fil du partenariat, j'ai adapté le parcours aux besoins d'installation spécifiques du matériel d'Amped Wireless.")}
@@ -213,10 +213,10 @@ const Ally = () => {
 
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4 text-primary">{t("User Profile Management:", "Gestion des profils utilisateurs :")}</h3>
-                <ul className="space-y-2 text-foreground/80 mb-8">
-                  <li>• {t("Users can assign devices to custom profiles", "Les utilisateurs peuvent associer des appareils à des profils personnalisés")}</li>
-                  <li>• {t("Profiles allow setting time limits and blocking content categories", "Les profils permettent de fixer des limites de temps et de bloquer des catégories de contenu")}</li>
-                  <li>• {t("Profiles work seamlessly across family and non-family use cases", "Les profils fonctionnent aussi bien dans un cadre familial que non familial")}</li>
+                <ul className="space-y-2 text-foreground/80 mb-8 list-disc pl-6 marker:text-muted-foreground">
+                  <li>{t("Users can assign devices to custom profiles", "Les utilisateurs peuvent associer des appareils à des profils personnalisés")}</li>
+                  <li>{t("Profiles allow setting time limits and blocking content categories", "Les profils permettent de fixer des limites de temps et de bloquer des catégories de contenu")}</li>
+                  <li>{t("Profiles work seamlessly across family and non-family use cases", "Les profils fonctionnent aussi bien dans un cadre familial que non familial")}</li>
                 </ul>
               </div>
 
@@ -242,9 +242,9 @@ const Ally = () => {
 
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4 text-primary">{t("Onboarding:", "Prise en main :")}</h3>
-                <ul className="space-y-2 text-foreground/80 mb-8">
-                  <li>• {t("Personalized tips and security alerts at launch", "Conseils personnalisés et alertes de sécurité dès le lancement")}</li>
-                  <li>• {t("Prompt users to enable key parental and malware protection features", "Invitation à activer les principales protections parentales et contre les logiciels malveillants")}</li>
+                <ul className="space-y-2 text-foreground/80 mb-8 list-disc pl-6 marker:text-muted-foreground">
+                  <li>{t("Personalized tips and security alerts at launch", "Conseils personnalisés et alertes de sécurité dès le lancement")}</li>
+                  <li>{t("Prompt users to enable key parental and malware protection features", "Invitation à activer les principales protections parentales et contre les logiciels malveillants")}</li>
                 </ul>
               </div>
 
@@ -280,10 +280,10 @@ const Ally = () => {
 
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4 text-primary">{t("Final Design Deliverables:", "Livrables de design finaux :")}</h3>
-                <ul className="space-y-2 text-foreground/80 mb-8">
-                  <li>• {t("High-fidelity screens for onboarding, content filtering, scheduling, and security alerts", "Écrans haute fidélité pour la prise en main, le filtrage de contenu, la planification et les alertes de sécurité")}</li>
-                  <li>• {t("Delivered production specs to developers", "Livraison des spécifications de production aux développeurs")}</li>
-                  <li>• {t("Shipped on time for launch in 2017 on both iOS and Android", "Livraison dans les délais pour le lancement de 2017 sur iOS et Android")}</li>
+                <ul className="space-y-2 text-foreground/80 mb-8 list-disc pl-6 marker:text-muted-foreground">
+                  <li>{t("High-fidelity screens for onboarding, content filtering, scheduling, and security alerts", "Écrans haute fidélité pour la prise en main, le filtrage de contenu, la planification et les alertes de sécurité")}</li>
+                  <li>{t("Delivered production specs to developers", "Livraison des spécifications de production aux développeurs")}</li>
+                  <li>{t("Shipped on time for launch in 2017 on both iOS and Android", "Livraison dans les délais pour le lancement de 2017 sur iOS et Android")}</li>
                 </ul>
               </div>
 
@@ -296,10 +296,10 @@ const Ally = () => {
 
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4 text-primary">{t("Impact:", "Impact :")}</h3>
-                <ul className="space-y-2 text-foreground/80 mb-8">
-                  <li>• {t("Enabled Amped Wireless to enter the smart home market with a strong UX differentiator", "Permet à Amped Wireless d'entrer sur le marché de la maison connectée avec un solide atout différenciant en matière d'UX")}</li>
-                  <li>• {t("Increased customer confidence in setting up and managing their networks", "Renforcement de la confiance des clients dans la configuration et la gestion de leur réseau")}</li>
-                  <li>• {t("Provided AVG with a scalable model for future white-labeled security products", "Un modèle évolutif pour les futurs produits de sécurité en marque blanche d'AVG")}</li>
+                <ul className="space-y-2 text-foreground/80 mb-8 list-disc pl-6 marker:text-muted-foreground">
+                  <li>{t("Enabled Amped Wireless to enter the smart home market with a strong UX differentiator", "Permet à Amped Wireless d'entrer sur le marché de la maison connectée avec un solide atout différenciant en matière d'UX")}</li>
+                  <li>{t("Increased customer confidence in setting up and managing their networks", "Renforcement de la confiance des clients dans la configuration et la gestion de leur réseau")}</li>
+                  <li>{t("Provided AVG with a scalable model for future white-labeled security products", "Un modèle évolutif pour les futurs produits de sécurité en marque blanche d'AVG")}</li>
                 </ul>
               </div>
 

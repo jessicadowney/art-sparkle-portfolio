@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 min-h-fit">
+    <section id="contact" className="py-24 md:py-32 min-h-fit">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
                 size="lg"
                 className="animated-gradient glass-stroke px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
-                <a href="mailto:contact@jessicadowney.com">
+                <a href="mailto:contact@jessicadowney.com" className="no-underline">
                   {t('Get In Touch', 'Me contacter')}
                   <Mail className="ml-2 h-5 w-5" />
                 </a>

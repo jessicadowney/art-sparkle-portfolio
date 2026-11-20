@@ -5,12 +5,12 @@ import { useLanguage } from '@/i18n/LanguageProvider';
 const About: React.FC = () => {
   const { t } = useLanguage();
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-24 md:py-32">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-              {t("About", "À propos")} <span className="text-primary">{t("Me", "de moi")}</span>
+              {t("About", "À propos")} <em>{t("Me", "de moi")}</em>
             </h2>
           </div>
           
