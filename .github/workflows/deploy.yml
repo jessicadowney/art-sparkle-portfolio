@@ -49,3 +49,4 @@ jobs:
         external_repository: jessicadowney/jessicadowney.github.io
         publish_branch: master
         publish_dir: ./dist
+        force_orphan: true # built output only: keep one commit so the publish repo stops growing

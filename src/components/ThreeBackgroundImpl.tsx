@@ -375,10 +375,7 @@ const ThreeBackgroundImpl: React.FC = () => {
 
   useEffect(() => {
     if (!rendererRef.current || !fogColorRef.current) return;
-    const isDark =
-      theme === 'dark' ||
-      (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    const fog = isDark ? FOG_DARK : FOG_LIGHT;
+    const fog = theme === 'dark' ? FOG_DARK : FOG_LIGHT;
     fogColorRef.current.set(fog);
     rendererRef.current.setClearColor(fog, 0.05);
   }, [theme]);

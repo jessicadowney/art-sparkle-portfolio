@@ -82,15 +82,15 @@ const Contact: React.FC = () => {
                   "Je donne le meilleur de moi-même dans les espaces mal définis — transformer des problèmes confus en produits qui semblent évidents après coup. Actuellement chez Microsoft, je travaille sur l'extensibilité de Copilot. Si vous vous débattez avec un sujet de ce genre, j'aimerais en entendre parler."
                 )}
               </p>
-              <Button 
+              <Button
+                asChild
                 size="lg"
                 className="animated-gradient glass-stroke px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105 antialiased"
               >
-               <a href="mailto:contact@jessicadowney.com"
-                  target="_blank"
-                  className="!bg-transparent !border-none !p-0 !rounded-none hover:!bg-transparent !text-inherit !no-underline"
-                  style={{ background: 'none !important', border: 'none !important', textDecoration: 'none !important' }}>{t('Get In Touch', 'Me contacter')}</a>
-                <Mail className="ml-2 h-5 w-5" />
+                <a href="mailto:contact@jessicadowney.com">
+                  {t('Get In Touch', 'Me contacter')}
+                  <Mail className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
