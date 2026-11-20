@@ -31,7 +31,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, description, tags, image, li
   };
 
   return (
-    <Card className={`group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer ${featured ? 'md:grid md:grid-cols-2' : ''}`} onClick={handleClick}>
+    <Card className={`group overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer ${featured ? 'md:grid md:grid-cols-2' : ''}`} onClick={handleClick}>
       <div className={`aspect-video relative overflow-hidden ${featured ? 'md:aspect-auto md:h-[345px]' : ''}`}>
         <img loading="lazy" decoding="async"
           src={image}

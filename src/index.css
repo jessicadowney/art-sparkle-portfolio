@@ -29,7 +29,7 @@
     --secondary-foreground: #16151a;
 
     --muted: #e4e3dc;
-    --muted-foreground: #6f6d65;
+    --muted-foreground: #5f5d56;
 
     --accent: #e7e6e0;
     --accent-foreground: #16151a;
@@ -180,14 +180,20 @@ html { scroll-behavior: smooth; }
 }
 
 /* ── Accessibility ── */
+/* Reduced motion: drop movement (animations, lifts, scaling, smooth scroll) but keep
+   colour/opacity transitions so hover and state changes stay visible. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition-property: color, background-color, border-color, text-decoration-color, opacity !important;
     scroll-behavior: auto !important;
   }
-  html { scroll-behavior: auto; }
+  [class*="hover:-translate"]:hover,
+  [class*="hover:scale"]:hover,
+  [class*="group-hover:scale"],
+  [class*="group-hover/btn:translate"] {
+    transform: none !important;
+  }
 }
 
 :focus-visible {
