@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useSeo } from '@/hooks/useSeo';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import FactsStrip from '@/components/FactsStrip';
 
 
 const H2: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -89,20 +90,11 @@ const FrontierTuning = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Role", "Rôle")}</h3>
-              <p className="text-foreground/70">{t("Senior Product Designer", "Designer produit senior")}</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Company", "Entreprise")}</h3>
-              <p className="text-foreground/70">Microsoft - Copilot Extensibility</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Timeline", "Calendrier")}</h3>
-              <p className="text-foreground/70">{t("November 2025 – present", "novembre 2025 – aujourd'hui")}</p>
-            </div>
-          </div>
+          <FactsStrip
+            role={t("Senior Product Designer", "Designer produit senior")}
+            company="Microsoft - Copilot Extensibility"
+            timeline={t("November 2025 – present", "novembre 2025 – aujourd'hui")}
+          />
 
           <div className="prose prose-lg max-w-none">
             <P>

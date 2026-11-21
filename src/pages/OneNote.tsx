@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useSeo } from '@/hooks/useSeo';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import FactsStrip from '@/components/FactsStrip';
 
 
 const OneNote = () => {
@@ -43,20 +44,12 @@ const OneNote = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Role", "Rôle")}</h3>
-              <p className="text-foreground/70">{t("Product Designer", "Designer produit")}</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Company", "Entreprise")}</h3>
-              <p className="text-foreground/70">Microsoft</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Platform", "Plateforme")}</h3>
-              <p className="text-foreground/70">{t("UWP & Mac", "UWP et Mac")}</p>
-            </div>
-          </div>
+          <FactsStrip
+            role={t("Product Designer", "Designer produit")}
+            company="Microsoft"
+            timeline="2019"
+            platform={t("UWP & Mac", "UWP et Mac")}
+          />
 
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">

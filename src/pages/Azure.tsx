@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useSeo } from '@/hooks/useSeo';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import FactsStrip from '@/components/FactsStrip';
 
 
 const Azure = () => {
@@ -43,6 +44,13 @@ const Azure = () => {
               {t("Virtual Visit Sample Builder", "Générateur d'exemples de consultations virtuelles")}
             </p>
           </div>
+
+          <FactsStrip
+            role={t("Lead Product Designer, developer experience", "Designer produit principal, expérience développeur")}
+            company="Microsoft - Azure Communication Services"
+            timeline="2021"
+            platform={t("Web", "Web")}
+          />
 
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">

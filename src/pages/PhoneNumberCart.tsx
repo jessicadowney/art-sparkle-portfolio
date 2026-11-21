@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useSeo } from '@/hooks/useSeo';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import FactsStrip from '@/components/FactsStrip';
 
 
 const PhoneNumberCart = () => {
@@ -45,6 +46,13 @@ const PhoneNumberCart = () => {
               {t("Redesigned a critical acquisition flow to reduce friction, increase transparency, and lower support burden", "Refonte d'un parcours d'acquisition critique pour réduire les frictions, gagner en transparence et alléger la charge du support")}
             </p>
           </div>
+
+          <FactsStrip
+            role={t("Lead UX designer, self-initiated", "Responsable UX, projet lancé de ma propre initiative")}
+            company="Microsoft - Azure Communication Services"
+            timeline="2022"
+            platform="Azure portal"
+          />
 
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">

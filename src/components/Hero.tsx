@@ -3,6 +3,8 @@ import React from 'react';
 import { ArrowDown, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import { resumeHref } from '@/lib/resume';
+import { track } from '@/lib/analytics';
 
 const OFFSETS = [
   { r: -16, y: -0.3 }, { r: 11, y: 0.22 }, { r: -9, y: -0.12 }, { r: 14, y: 0.3 },
@@ -52,12 +54,14 @@ const Hero: React.FC = () => {
             )}
           </h1>
 
-          <p className="text-lg md:text-xl lg:text-2xl text-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed antialiased mt-4">
+          <p className="text-lg md:text-xl lg:text-2xl text-foreground/70 mb-3 max-w-2xl mx-auto leading-relaxed antialiased mt-4">
             {t(
               'Senior product designer at Microsoft, working on how people extend and steer Copilot.',
               'Designer produit senior chez Microsoft, je travaille sur la façon dont on étend et on pilote Copilot.'
             )}
           </p>
+
+          <p className="text-base text-muted-foreground mb-8">{t('Based in Vancouver, Canada', 'Basée à Vancouver, au Canada')}</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
@@ -69,7 +73,8 @@ const Hero: React.FC = () => {
               <ArrowDown className="ml-2 h-5 w-5" />
             </Button>
             <a
-              href={lang === 'fr' ? '/jessica-downey-cv-fr.pdf' : '/jessica-downey-cv.pdf'}
+              href={resumeHref(lang)}
+              onClick={() => track('resume_download', { location: 'hero' })}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-2 py-3 text-lg"
