@@ -12,9 +12,11 @@ const PALETTE_DARK = ['#d9d2c4', '#c4bdae', '#aaa496', '#948e82', '#cfc8b9'];
 
 const COUNTS = { frames: 7, circles: 7, cursors: 5, ibeams: 8, carets: 8 }; // 35 shapes
 const CONTENT_HALF_WIDTH = 576; // px, matches the 1152px reading column
-const NARROW = 768; // below this there are no margins: shapes get quieter instead
+const NARROW = 1100; // below this the content fills the screen: shapes get quieter instead of living in margins
 const FOG_DARK = 0x141210;
 const FOG_LIGHT = 0xefeee9;
+const INTRO_SPREAD = 0.9; // seconds over which shapes arrive, staggered
+const INTRO_TIME = 1.1; // seconds each shape takes to arrive
 const FOV = 75;
 const CAM_Z = 12;
 
@@ -117,11 +119,17 @@ type Inst = {
   mess: THREE.Vector2; // scattered position in screen space (NDC)
   slot: THREE.Vector2; // clicked-into-place position in screen space (NDC)
   cur: THREE.Vector2;
-  rot: THREE.Euler;
-  spin: THREE.Vector3;
+  q: THREE.Quaternion; // tumbling orientation while scattered
+  axis: THREE.Vector3; // axis it tumbles around
+  speed: number; // rad/s
   seed: number;
   color: number;
   o: number; // 0 = scattered, 1 = clicked into place
+  v: number; // spring velocity of o
+  k: number; // spring stiffness (about 0.6-1s to settle); varies per shape so the field lands as a ripple
+  delay: number; // seconds before the entrance starts
+  clicked: boolean;
+  pulse: number; // 1 -> 0 over the "tick" as a shape lands
 };
 
 const ThreeBackgroundImpl: React.FC = () => {
@@ -217,11 +225,17 @@ const ThreeBackgroundImpl: React.FC = () => {
           mess: new THREE.Vector2(),
           slot: new THREE.Vector2(),
           cur: new THREE.Vector2(),
-          rot: new THREE.Euler(rand(-Math.PI, Math.PI), rand(-Math.PI, Math.PI), rand(-Math.PI, Math.PI)),
-          spin: new THREE.Vector3(rand(0.001, 0.006), rand(0.002, 0.008), rand(0.0005, 0.002)),
+          q: new THREE.Quaternion().setFromEuler(new THREE.Euler(rand(-Math.PI, Math.PI), rand(-Math.PI, Math.PI), rand(-Math.PI, Math.PI))),
+          axis: new THREE.Vector3(rand(-1, 1), rand(-1, 1), rand(-0.4, 0.4)).normalize(),
+          speed: rand(0.12, 0.5),
           seed: Math.random() * 100,
           color: Math.floor(Math.random() * 5),
           o: 0,
+          v: 0,
+          k: rand(26, 62),
+          delay: Math.random() * INTRO_SPREAD,
+          clicked: false,
+          pulse: 0,
         });
       }
       scene.add(mesh);
@@ -277,49 +291,77 @@ const ThreeBackgroundImpl: React.FC = () => {
     }
 
     const tan = Math.tan(THREE.MathUtils.degToRad(FOV / 2));
+    const identity = new THREE.Quaternion();
+    const tmpQ = new THREE.Quaternion();
+    const dq = new THREE.Quaternion();
     let raf: number | null = null;
-    const renderFrame = (t: number) => {
+    let last = 0;
+    let t0 = -1;
+
+    // dt-based so motion is the same on 60Hz and 120Hz screens.
+    const renderFrame = (t: number, dt: number) => {
       const time = t * 0.001;
+      if (t0 < 0) t0 = time;
       const aspect = window.innerWidth / window.innerHeight;
       for (const { mesh, items, orderScale } of families) {
         items.forEach((s, i) => {
           // Local pull: shapes near the pointer click into place sooner than the rest.
           const d = Math.hypot((s.cur.x - pointer.x) * aspect, s.cur.y - pointer.y);
           const target = reduced ? scrollOrder : Math.max(scrollOrder, 1 - smooth(clamp01((d - 0.12) / 0.45)));
-          s.o += (target - s.o) * (reduced ? 1 : 0.06);
+          if (reduced) {
+            s.o = target;
+          } else {
+            // Critically damped spring: eases in, eases out, never overshoots.
+            s.v += (s.k * (target - s.o) - 2 * Math.sqrt(s.k) * s.v) * dt;
+            s.o = clamp01(s.o + s.v * dt);
+          }
           const e = smooth(s.o);
           const loose = 1 - e;
+
+          // The tick: a short, soft swell as a shape lands in its column.
           if (!reduced) {
-            s.rot.x = THREE.MathUtils.euclideanModulo(s.rot.x + s.spin.x * loose + Math.PI, Math.PI * 2) - Math.PI;
-            s.rot.y = THREE.MathUtils.euclideanModulo(s.rot.y + s.spin.y * loose + Math.PI, Math.PI * 2) - Math.PI;
-            s.rot.z = THREE.MathUtils.euclideanModulo(s.rot.z + s.spin.z * loose + Math.PI, Math.PI * 2) - Math.PI;
+            if (!s.clicked && e > 0.985) { s.clicked = true; s.pulse = 1; }
+            else if (s.clicked && e < 0.9) s.clicked = false;
+            s.pulse = Math.max(0, s.pulse - dt / 0.3);
+            dq.setFromAxisAngle(s.axis, s.speed * dt * loose);
+            s.q.premultiply(dq).normalize();
           }
+
+          // Entrance: each shape drifts in from beyond its margin and grows in, staggered.
+          const p = reduced ? 1 : clamp01((time - t0 - s.delay) / INTRO_TIME);
+          const arrive = 1 - Math.pow(1 - p, 4);
+
           s.cur.lerpVectors(s.mess, s.slot, e);
           const z = THREE.MathUtils.lerp(s.z, 0, e);
           const halfH = tan * (CAM_Z - z);
-          const driftX = Math.cos(time * 0.3 + s.seed * 0.5) * 0.03 * loose;
+          const driftX = Math.cos(time * 0.3 + s.seed * 0.5) * 0.03 * loose + s.side * 0.2 * (1 - arrive);
           const driftY = Math.sin(time * 0.4 + s.seed) * 0.05 * loose;
           dummy.position.set((s.cur.x + driftX) * halfH * aspect, (s.cur.y + driftY) * halfH, z);
-          dummy.rotation.set(s.rot.x * loose, s.rot.y * loose, s.rot.z * loose);
-          dummy.scale.setScalar(THREE.MathUtils.lerp(s.messScale, orderScale * 0.7, e));
+          // Settling takes the shortest turn back to upright instead of lerping Euler angles.
+          dummy.quaternion.copy(tmpQ.copy(s.q).slerp(identity, e));
+          const swell = 1 + 0.1 * Math.sin(Math.PI * (1 - s.pulse)) * (s.pulse > 0 ? 1 : 0);
+          dummy.scale.setScalar(THREE.MathUtils.lerp(s.messScale, orderScale * 0.7, e) * swell * arrive);
           dummy.updateMatrix();
           mesh.setMatrixAt(i, dummy.matrix);
         });
         mesh.instanceMatrix.needsUpdate = true;
       }
       if (!reduced) {
-        camera.position.x += (pointer.x * 0.8 - camera.position.x) * 0.03 * (Math.abs(pointer.x) > 1 ? 0 : 1);
-        camera.position.y += (pointer.y * 0.5 - camera.position.y) * 0.03 * (Math.abs(pointer.y) > 1 ? 0 : 1);
+        const a = 1 - Math.exp(-dt * 2);
+        camera.position.x += (pointer.x * 0.8 - camera.position.x) * a * (Math.abs(pointer.x) > 1 ? 0 : 1);
+        camera.position.y += (pointer.y * 0.5 - camera.position.y) * a * (Math.abs(pointer.y) > 1 ? 0 : 1);
       }
       camera.lookAt(0, 0, 0);
       renderer.render(scene, camera);
     };
     const loop = (t: number) => {
       raf = requestAnimationFrame(loop);
-      renderFrame(t);
+      const dt = last ? Math.min((t - last) / 1000, 0.05) : 0; // clamp so a hidden tab can't jump
+      last = t;
+      renderFrame(t, dt);
     };
     if (reduced) {
-      renderFrame(0); // one static, mostly settled frame for reduced-motion visitors
+      renderFrame(0, 0); // one static, mostly settled frame for reduced-motion visitors
     } else {
       raf = requestAnimationFrame(loop);
     }
@@ -329,7 +371,7 @@ const ThreeBackgroundImpl: React.FC = () => {
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
       layout();
-      if (reduced) renderFrame(0);
+      if (reduced) renderFrame(0, 0);
       else onScroll();
     };
     window.addEventListener('resize', handleResize);
