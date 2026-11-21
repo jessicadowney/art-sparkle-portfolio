@@ -6,9 +6,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import { resumeHref } from '@/lib/resume';
+import { track } from '@/lib/analytics';
 
 const Header: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const sections = [
     ['about', t('About', 'À propos')],
     ['work', t('Work', 'Réalisations')],
@@ -84,6 +86,15 @@ const Header: React.FC = () => {
           </div>
 
           <div className="flex items-center space-x-2">
+            <a
+              href={resumeHref(lang)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track('resume_download', { location: 'header' })}
+              className="hidden md:inline-flex items-center px-2 py-3 text-foreground/80 hover:text-foreground"
+            >
+              {t('Resume', 'CV')}
+            </a>
             <LanguageToggle />
             <ThemeToggle />
             <Button
@@ -113,6 +124,15 @@ const Header: React.FC = () => {
                   {label}
                 </button>
               ))}
+              <a
+                href={resumeHref(lang)}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track('resume_download', { location: 'mobile_menu' })}
+                className="py-2 text-foreground/80 hover:text-foreground"
+              >
+                {t('Resume', 'CV')}
+              </a>
             </div>
           </div>
         )}

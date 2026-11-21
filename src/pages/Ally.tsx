@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useSeo } from '@/hooks/useSeo';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import FactsStrip from '@/components/FactsStrip';
 
 
 const Ally = () => {
@@ -43,20 +44,12 @@ const Ally = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Role", "Rôle")}</h3>
-              <p className="text-foreground/70">{t("Senior Product Designer", "Designer produit senior")}</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Company", "Entreprise")}</h3>
-              <p className="text-foreground/70">AVG Innovation Group</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Platform", "Plateforme")}</h3>
-              <p className="text-foreground/70">{t("iOS & Android", "iOS et Android")}</p>
-            </div>
-          </div>
+          <FactsStrip
+            role={t("Senior Product Designer", "Designer produit senior")}
+            company="AVG Innovation Group"
+            timeline="2016"
+            platform={t("iOS & Android", "iOS et Android")}
+          />
 
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">

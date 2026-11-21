@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useSeo } from '@/hooks/useSeo';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import FactsStrip from '@/components/FactsStrip';
 
 
 const Slim = () => {
@@ -46,20 +47,12 @@ const Slim = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Role", "Rôle")}</h3>
-              <p className="text-foreground/70">{t("Interaction Design Consultant", "Consultante en design d'interaction")}</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Company", "Entreprise")}</h3>
-              <p className="text-foreground/70">Siemens Corporate Research</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Platform", "Plateforme")}</h3>
-              <p className="text-foreground/70">{t("Web Application", "Application web")}</p>
-            </div>
-          </div>
+          <FactsStrip
+            role={t("Interaction Design Consultant", "Consultante en design d'interaction")}
+            company="Siemens Corporate Research"
+            timeline="2012"
+            platform={t("Web Application", "Application web")}
+          />
 
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">

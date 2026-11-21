@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useSeo } from '@/hooks/useSeo';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import FactsStrip from '@/components/FactsStrip';
 
 
 const GoFetch = () => {
@@ -47,20 +48,12 @@ const GoFetch = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Role", "Rôle")}</h3>
-              <p className="text-foreground/70">{t("Lead Product Designer", "Designer produit principal")}<br/>{t("Head of Design", "Responsable du design")}</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Duration", "Durée")}</h3>
-              <p className="text-foreground/70">{t("November 2016 - May 2018", "novembre 2016 - mai 2018")}</p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold mb-2 text-primary">{t("Platform", "Plateforme")}</h3>
-              <p className="text-foreground/70">{t("Web & iOS Application", "Application web et iOS")}</p>
-            </div>
-          </div>
+          <FactsStrip
+            role={<>{t("Lead Product Designer", "Designer produit principal")}, {t("Head of Design", "Responsable du design")}</>}
+            company="GoFetch.ca"
+            timeline={t("November 2016 – May 2018", "novembre 2016 – mai 2018")}
+            platform={t("Web & iOS Application", "Application web et iOS")}
+          />
 
           <div className="prose prose-lg max-w-none">
             <div className="bg-accent/30 rounded-lg p-6 mb-8">

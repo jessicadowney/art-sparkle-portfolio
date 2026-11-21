@@ -5,12 +5,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import { track } from '@/lib/analytics';
 
 interface WorkCardProps {
   title: string;
   role: string;
   problem: string;
   made: string;
+  outcome?: string;
   locked?: boolean;
   image: string;
   link?: string;
@@ -18,11 +20,12 @@ interface WorkCardProps {
   featured?: boolean;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, locked, image, link, year, featured }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, outcome, locked, image, link, year, featured }) => {
   const navigate = useNavigate();
   const { t } = useLanguage();
 
   const handleClick = () => {
+    track('case_study_open', { project: title });
     if (link) {
       if (link.startsWith('http')) {
         window.open(link, '_blank', 'noopener,noreferrer');
@@ -53,6 +56,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, locked,
             [t('Role', 'Rôle'), role],
             [t('Problem', 'Problème'), problem],
             [t('What I made', "Ce que j'ai conçu"), made],
+            ...(outcome ? [[t('Outcome', 'Résultat'), outcome]] : []),
           ].map(([label, text]) => (
             <div key={label}>
               <dt className="text-sm text-muted-foreground">{label}</dt>

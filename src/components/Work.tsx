@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { track } from '@/lib/analytics';
 import WorkCard from './WorkCard';
 import SectionHeading from './SectionHeading';
 import { useLanguage } from '@/i18n/LanguageProvider';
@@ -24,6 +25,7 @@ const Work: React.FC = () => {
       role: t("Led UX end to end. Self-initiated during Microsoft's FHL2022, then pitched and secured executive sponsorship.", "Responsable UX de bout en bout. Projet lancé de ma propre initiative lors du FHL2022 de Microsoft, puis présenté et soutenu par la direction."),
       problem: t("Buying phone numbers was rigid and one at a time, and key requirements and legal disclosures surfaced too late.", "L'achat de numéros était rigide, un à la fois, et les exigences et mentions légales apparaissaient trop tard."),
       made: t("A modular cart-based flow that gathers requirements upfront and explains legal disclosures, built as a working prototype.", "Un parcours modulaire à panier qui réunit les exigences en amont et clarifie les mentions légales, construit sous forme de prototype fonctionnel."),
+      outcome: t("Launched to general availability, with a significant drop in support tickets for number acquisition.", "Lancement en disponibilité générale, avec une baisse significative des tickets de support liés à l'acquisition de numéros."),
       image: "/lovable-uploads/og-image.webp",
       link: "/azure-phone-numbers",
       year: "2022"
@@ -33,6 +35,7 @@ const Work: React.FC = () => {
       role: t("Lead Product Designer for developer experience", "Designer produit principal pour l'expérience développeur"),
       problem: t("Developers found it hard to get started with Azure Communication Services for virtual healthcare visits.", "Les développeurs avaient du mal à démarrer avec Azure Communication Services pour des consultations de santé virtuelles."),
       made: t("A no-code builder that generates deployable ARM templates and project assets, on a Fluent UI interface. I also facilitated the team's first remote design sprint.", "Un générateur sans code qui produit des modèles ARM déployables et des ressources de projet, sur une interface Fluent UI. J'ai aussi animé le premier design sprint à distance de l'équipe."),
+      outcome: t("Now used across Microsoft field teams and partner engagements.", "Désormais utilisé par les équipes terrain de Microsoft et dans les missions avec des partenaires."),
       image: "/lovable-uploads/dfec2eed-75b5-42ba-b425-61980e91c034.webp",
       link: "/azure-sample-builder",
       year: "2021"
@@ -42,25 +45,25 @@ const Work: React.FC = () => {
   const earlier = [
     {
       title: "GoFetch.ca",
-      line: t("Lead Product Designer and Head of Design. Unified an iOS app and website under one design system and redesigned the sitter application flow.", "Designer produit principal et responsable du design. J'ai unifié une application iOS et un site web dans un même système de design et repensé le parcours de candidature des gardiens."),
+      line: t("Lead Product Designer and Head of Design. Unified an iOS app and website under one design system and redesigned the sitter application flow, doubling conversion from 6% to 12%.", "Designer produit principal et responsable du design. J'ai unifié une application iOS et un site web dans un même système de design et repensé le parcours de candidature des gardiens, doublant la conversion de 6 % à 12 %."),
       link: "/gofetch",
       year: "2018"
     },
     {
       title: "Amped Wireless Ally",
-      line: t("Senior Product Designer. Mobile-first router setup and parental controls for non-technical people, on iOS and Android.", "Designer produit senior. Configuration de routeur pensée d'abord pour le mobile et contrôle parental pour des non-spécialistes, sur iOS et Android."),
+      line: t("Senior Product Designer. Mobile-first router setup and parental controls for non-technical people, on iOS and Android. Launched as a key differentiator for the router line.", "Designer produit senior. Configuration de routeur pensée d'abord pour le mobile et contrôle parental pour des non-spécialistes, sur iOS et Android. Lancé comme atout différenciant de la gamme de routeurs."),
       link: "/ally",
       year: "2016"
     },
     {
       title: t("Microsoft OneNote: Cloud Attachment Insertion Prompt", "Microsoft OneNote : invite d'insertion de pièces jointes cloud"),
-      line: t("Product Designer. Brought cloud attachments back to OneNote on UWP and Mac, with insertion prompts that adapt to the file type.", "Designer produit. Retour des pièces jointes cloud dans OneNote sur UWP et Mac, avec des invites d'insertion adaptées au type de fichier."),
+      line: t("Product Designer. Brought cloud attachments back to OneNote on UWP and Mac, with insertion prompts that adapt to the file type. Shipped in 2019.", "Designer produit. Retour des pièces jointes cloud dans OneNote sur UWP et Mac, avec des invites d'insertion adaptées au type de fichier. Livré en 2019."),
       link: "/onenote",
       year: "2019"
     },
     {
       title: "syngo® Lab Inventory Manager (sLIM)",
-      line: t("Interaction Design Consultant. Rebuilt the information architecture of Siemens Healthineers' lab inventory system, cutting navigation from three levels to two.", "Consultant en design d'interaction. Refonte de l'architecture de l'information du système de gestion des stocks de laboratoire de Siemens Healthineers, ramenant la navigation de trois niveaux à deux."),
+      line: t("Interaction Design Consultant. Rebuilt the information architecture of Siemens Healthineers' lab inventory system, cutting navigation from three levels to two. Still used by Siemens Healthineers globally.", "Consultante en design d'interaction. Refonte de l'architecture de l'information du système de gestion des stocks de laboratoire de Siemens Healthineers, ramenant la navigation de trois niveaux à deux. Toujours utilisé par Siemens Healthineers dans le monde entier."),
       link: "/slim",
       year: "2012"
     }
@@ -99,7 +102,7 @@ const Work: React.FC = () => {
             {earlier.map((item) => (
               <li key={item.link} className="grid gap-1 py-4 md:grid-cols-[5rem_1fr_2fr] md:gap-6">
                 <span className="text-muted-foreground tabular-nums">{item.year}</span>
-                <Link to={item.link} className="font-medium">{item.title}</Link>
+                <Link to={item.link} className="font-medium" onClick={() => track('case_study_open', { project: item.title })}>{item.title}</Link>
                 <p className="text-foreground/80 leading-relaxed">{item.line}</p>
               </li>
             ))}

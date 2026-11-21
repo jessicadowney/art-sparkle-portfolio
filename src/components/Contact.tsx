@@ -4,6 +4,7 @@ import { Mail, Linkedin, Github, Smile, ArrowUpRight } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/i18n/LanguageProvider';
+import { track } from '@/lib/analytics';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -60,7 +61,7 @@ const Contact: React.FC = () => {
                 size="lg"
                 className="animated-gradient glass-stroke px-8 py-3 rounded-full text-lg antialiased"
               >
-                <a href="mailto:contact@jessicadowney.com" className="no-underline">
+                <a href="mailto:contact@jessicadowney.com" className="no-underline" onClick={() => track('contact_click', { method: 'email', location: 'contact_button' })}>
                   {t('Get In Touch', 'Me contacter')}
                   <Mail className="ml-2 h-5 w-5" />
                 </a>
@@ -74,6 +75,7 @@ const Contact: React.FC = () => {
                     href={link.href}
                     target={link.href.startsWith('mailto:') ? undefined : '_blank'}
                     rel="noopener noreferrer"
+                    onClick={() => track('contact_click', { method: link.label, location: 'contact_list' })}
                     className="group flex items-center gap-4 py-5 no-underline"
                   >
                     <link.icon className="h-5 w-5 shrink-0 text-muted-foreground" aria-hidden="true" />
