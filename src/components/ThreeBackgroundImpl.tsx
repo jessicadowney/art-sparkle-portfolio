@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { useTheme } from './ThemeProvider';
 
-// "Messy ideas click." Design-tool glyphs (frames, circles, cursors, text carets) start
+// "Messy ideas click." Design-tool glyphs (frames, sparkles, cursors, text carets) start
 // scattered and tumbling, then snap into neat columns as the page scrolls or the pointer
 // nears them. Shapes live in the page margins so they never cross the reading column.
 // One InstancedMesh per shape family and a fresnel shader instead of real glass keep it
@@ -10,7 +10,7 @@ import { useTheme } from './ThemeProvider';
 const PALETTE_LIGHT = ['#2a2a2e', '#3a3a40', '#4a4a52', '#57565e', '#33333a'];
 const PALETTE_DARK = ['#d9d2c4', '#c4bdae', '#aaa496', '#948e82', '#cfc8b9'];
 
-const COUNTS = { frames: 6, circles: 6, cursors: 4, ibeams: 6, carets: 6 }; // 28 shapes: 14 per margin, so settled neighbours don't touch
+const COUNTS = { frames: 6, sparkles: 6, cursors: 4, ibeams: 6, carets: 6 }; // 28 shapes: 14 per margin, so settled neighbours don't touch
 const CONTENT_HALF_WIDTH = 576; // px, matches the 1152px reading column
 const NARROW = 1100; // below this the content fills the screen: shapes get quieter instead of living in margins
 const FOG_DARK = 0x141210;
@@ -38,9 +38,15 @@ function frameShape() {
   s.quadraticCurveTo(-hw, -hw, -hw + r, -hw);
   return s;
 }
-function circleShape() {
+// Four-pointed sparkle with concave sides, the same glint as the ones on the hero title.
+function sparkleShape() {
   const s = new THREE.Shape();
-  s.absarc(0, 0, 0.42, 0, Math.PI * 2, false);
+  const r = 0.55, c = 0.07;
+  s.moveTo(0, r);
+  s.quadraticCurveTo(c, c, r, 0);
+  s.quadraticCurveTo(c, -c, 0, -r);
+  s.quadraticCurveTo(-c, -c, -r, 0);
+  s.quadraticCurveTo(-c, c, 0, r);
   return s;
 }
 function cursorShape() {
@@ -88,6 +94,7 @@ function caretShape() {
 
 const glassVert = /* glsl */ `
   varying vec3 vColor; varying float vFres; varying float vDepth;
+  varying vec3 vN; varying vec3 vP; varying float vSeed;
   void main() {
     vColor = instanceColor;
     mat4 im = instanceMatrix;
@@ -96,15 +103,24 @@ const glassVert = /* glsl */ `
     vec3 v = normalize(-mv.xyz);
     vFres = pow(1.0 - abs(dot(n, v)), 2.0);
     vDepth = -mv.z;
+    vN = n; vP = mv.xyz;
+    vSeed = im[3].x * 0.13 + im[3].y * 0.09; // differs per shape, drifts as it moves
     gl_Position = projectionMatrix * mv;
   }`;
+// Grey glass with a pearl sheen: a soft pink/lilac/icy-blue/champagne tint that shifts with
+// the viewing angle and slowly with time, plus a narrow bright band that glides over each face.
 const glassFrag = /* glsl */`
   varying vec3 vColor; varying float vFres; varying float vDepth;
-  uniform vec3 uFog; uniform float uFogNear, uFogFar, uAlpha;
+  varying vec3 vN; varying vec3 vP; varying float vSeed;
+  uniform vec3 uFog; uniform float uFogNear, uFogFar, uAlpha, uTime;
   void main() {
+    float ph = dot(normalize(vN), vec3(0.55, 0.75, 0.35)) * 1.4 + vP.x * 0.05 + vP.y * 0.04 + vSeed + uTime * 0.05;
+    vec3 pearl = mix(vec3(1.0), 0.5 + 0.5 * cos(6.2831 * (ph + vec3(0.0, 0.1, 0.24))), 0.8);
+    float band = pow(0.5 + 0.5 * sin(6.2831 * (ph * 1.3 + 0.2)), 8.0);
     vec3 col = vColor * (0.85 + 0.5 * vFres);
+    col = mix(col, pearl, clamp(0.5 + 0.3 * vFres + 0.5 * band, 0.0, 1.0));
     float fog = smoothstep(uFogNear, uFogFar, vDepth);
-    float alpha = (0.16 + 0.34 * vFres) * (1.0 - fog) * uAlpha;
+    float alpha = (0.32 + 0.3 * vFres + 0.3 * band) * (1.0 - fog) * uAlpha;
     gl_FragColor = vec4(mix(col, uFog, fog), alpha);
   }`;
 
@@ -168,6 +184,7 @@ const ThreeBackgroundImpl: React.FC = () => {
       uFogNear: { value: 15 },
       uFogFar: { value: 40 },
       uAlpha: { value: 1 },
+      uTime: { value: 0 },
     };
     fogColorRef.current = fogUniforms.uFog.value;
 
@@ -189,7 +206,7 @@ const ThreeBackgroundImpl: React.FC = () => {
     };
     const defs: [THREE.ExtrudeGeometry, number, number][] = [
       [geo(frameShape(), 0.06, 1), COUNTS.frames, 0.9],
-      [geo(circleShape(), 0.06, 1), COUNTS.circles, 0.9],
+      [geo(sparkleShape(), 0.06, 1), COUNTS.sparkles, 0.9],
       [geo(cursorShape(), 0.1, 0.7), COUNTS.cursors, 0.9],
       [geo(ibeamShape(), 0.06, 1), COUNTS.ibeams, 1],
       [geo(caretShape(), 0.06, 1), COUNTS.carets, 1],
@@ -303,6 +320,7 @@ const ThreeBackgroundImpl: React.FC = () => {
     // dt-based so motion is the same on 60Hz and 120Hz screens.
     const renderFrame = (t: number, dt: number) => {
       const time = t * 0.001;
+      fogUniforms.uTime.value = time;
       if (t0 < 0) t0 = time;
       const aspect = window.innerWidth / window.innerHeight;
       for (const { mesh, items, orderScale } of families) {

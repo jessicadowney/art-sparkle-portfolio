@@ -11,7 +11,7 @@ interface WorkCardProps {
   title: string;
   role: string;
   problem: string;
-  made: string;
+  made?: string; // kept in the data for the case-study copy; not shown on the card
   outcome?: string;
   locked?: boolean;
   image: string;
@@ -20,7 +20,7 @@ interface WorkCardProps {
   featured?: boolean;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, outcome, locked, image, link, year, featured }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, outcome, locked, image, link, year, featured }) => {
   const navigate = useNavigate();
   const { t } = useLanguage();
 
@@ -36,34 +36,26 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, role, problem, made, outcome
   };
 
   return (
-    <Card className={`group overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer h-full ${featured ? 'md:grid md:grid-cols-2' : 'flex flex-col'}`} onClick={handleClick}>
+    <Card className={`group overflow-hidden bg-card/50 border border-border/50 cursor-pointer h-full ${featured ? 'md:grid md:grid-cols-2' : 'flex flex-col'}`} onClick={handleClick}>
       <div className={`aspect-video relative overflow-hidden ${featured ? 'md:aspect-auto md:h-[460px]' : ''}`}>
         <img loading="lazy" decoding="async"
           src={image}
           alt={title}
-          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${featured ? 'object-left-top' : ''}`}
+          className={`w-full h-full object-cover transition-transform duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.03] ${featured ? 'object-left-top' : ''}`}
         />
       </div>
       
       <CardContent className={featured ? 'p-6 md:p-8 md:flex md:flex-col md:justify-center' : 'p-6 flex flex-1 flex-col'}>
         <p className="mb-2 text-sm text-muted-foreground tabular-nums">{year}</p>
-        <h3 className={`font-semibold mb-3 group-hover:text-primary transition-colors duration-300 ${featured ? 'text-2xl md:text-4xl' : 'text-xl'}`}>
+        <h3 className={`font-semibold mb-2 ${featured ? 'text-2xl md:text-4xl' : 'text-xl'}`}>
           {title}
         </h3>
-        
-        <dl className="mb-4 space-y-3 text-foreground/80 leading-relaxed">
-          {[
-            [t('Role', 'Rôle'), role],
-            [t('Problem', 'Problème'), problem],
-            [t('What I made', "Ce que j'ai conçu"), made],
-            ...(outcome ? [[t('Outcome', 'Résultat'), outcome]] : []),
-          ].map(([label, text]) => (
-            <div key={label}>
-              <dt className="text-sm text-muted-foreground">{label}</dt>
-              <dd>{text}</dd>
-            </div>
-          ))}
-        </dl>
+        <p className="mb-4 text-sm text-muted-foreground">{role}</p>
+
+        <div className="mb-4 space-y-3 text-foreground/80 leading-relaxed">
+          <p>{problem}</p>
+          {outcome && <p className="text-foreground">{outcome}</p>}
+        </div>
 
         {locked && (
           <p className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">

@@ -189,6 +189,130 @@ input, textarea { caret-color: var(--foreground); }
   from { transform: translateY(var(--y, 0)) rotate(var(--r, 0deg)); }
 }
 
+/* Hero title: glass-prism look, in two parts. Nothing here follows the pointer.
+   1) Edge dispersion: six thin spectral fringes (red→violet), fixed, so each letter edge
+      refracts like cut glass. No fill change, no blur.
+   2) A narrow band of cool, uneven crystal facets (icy blue, lilac, pink, a touch of champagne,
+      split by white bevels), clipped to the glyphs, that glides across the title every few
+      seconds, then rests. */
+@property --gx { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
+@property --pl { syntax: '<percentage>'; inherits: true; initial-value: 30%; }
+.prism-title {
+  text-shadow:
+    -0.0056em -0.001em 0 #ffe14a,
+    0.0056em 0.001em 0 #38e0a0,
+    -0.0112em -0.002em 0 #ff9a2a,
+    0.0112em 0.002em 0 #2aa8ff,
+    -0.0168em -0.003em 0 #ff2a4d,
+    0.0168em 0.003em 0 #7a4dff;
+}
+.prism-glint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  color: transparent;
+  text-shadow: none;
+  /* A narrow band (~9% of the title wide) of uneven facets, centred on --gx. Deliberately not an
+     even red-to-violet stripe stack, which reads as a flag. Everything outside stays clear. */
+  background-image:
+    linear-gradient(100deg,
+      transparent calc(var(--gx) - 6%),
+      rgba(255, 255, 255, 0.85) calc(var(--gx) - 6%) calc(var(--gx) - 5.6%),
+      rgba(170, 228, 255, 0.6) calc(var(--gx) - 5.6%) calc(var(--gx) - 3.2%),
+      rgba(255, 255, 255, 0.5) calc(var(--gx) - 3.2%) calc(var(--gx) - 2.9%),
+      rgba(200, 180, 255, 0.6) calc(var(--gx) - 2.9%) calc(var(--gx) - 0.2%),
+      rgba(255, 192, 226, 0.55) calc(var(--gx) - 0.2%) calc(var(--gx) + 1.4%),
+      rgba(255, 255, 255, 0.85) calc(var(--gx) + 1.4%) calc(var(--gx) + 1.7%),
+      rgba(255, 232, 196, 0.5) calc(var(--gx) + 1.7%) calc(var(--gx) + 2.6%),
+      transparent calc(var(--gx) + 2.6%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Fades in once the letters have settled; its own letters never animate, because moving
+     inline-blocks inside a text-clipped layer render as a pile at the left edge. */
+  animation:
+    prism-sweep 9s cubic-bezier(0.45, 0, 0.25, 1) 1500ms infinite backwards,
+    prism-pearl 16s ease-in-out infinite alternate,
+    prism-in 500ms ease-out 1400ms backwards;
+}
+.prism-glint .settle-letter { animation: none; }
+@keyframes prism-in {
+  from { opacity: 0; }
+}
+/* The overlay is aria-hidden, and its clipped fill would paint the sr-only copy of "messy"
+   as a pile of letters at the left edge. */
+.prism-glint .sr-only { display: none; }
+/* Glide across (off one edge to off the other), then rest until the next pass. */
+@keyframes prism-sweep {
+  0% { --gx: -12%; }
+  40%, 100% { --gx: 112%; }
+}
+@keyframes prism-pearl {
+  from { --pl: 0%; }
+  to { --pl: 100%; }
+}
+
+/* Light theme: the body takes the floating shapes' grey, with a faint pearl tint that slowly
+   shifts between pink, mint, lilac and pale gold, with a hairline rim in the shapes' grey. A
+   narrow pastel spectrum and a thinner echo cross it in opposite directions. */
+:root:not(.dark) .prism-title {
+  color: #d3d3d9; /* the floating shapes' grey from the first frame; the glint layer fades in over it */
+  /* Light hairline rim on all four sides, the floating shapes' grey eased lighter (PALETTE_LIGHT
+     in ThreeBackgroundImpl). No drop shadow, so the title sits on the page like everything else. */
+  text-shadow:
+    0.6px 0 0 rgba(130, 130, 142, 0.42), -0.6px 0 0 rgba(130, 130, 142, 0.42),
+    0 0.6px 0 rgba(130, 130, 142, 0.42), 0 -0.6px 0 rgba(130, 130, 142, 0.42),
+    /* a crisp white glint on the upper-left edge, like light catching glass */
+    -1px -1px 0 rgba(255, 255, 255, 0.95);
+}
+:root:not(.dark) .prism-glint {
+  background-image:
+    linear-gradient(112deg,
+      transparent calc(var(--gx) - 5.6%),
+      rgba(255, 255, 255, 0.95) calc(var(--gx) - 5.6%) calc(var(--gx) - 5.2%),
+      rgba(160, 222, 255, 0.78) calc(var(--gx) - 5.2%) calc(var(--gx) - 2.9%),
+      rgba(255, 255, 255, 0.6) calc(var(--gx) - 2.9%) calc(var(--gx) - 2.6%),
+      rgba(196, 176, 255, 0.78) calc(var(--gx) - 2.6%) calc(var(--gx) - 0.2%),
+      rgba(255, 186, 226, 0.72) calc(var(--gx) - 0.2%) calc(var(--gx) + 1.5%),
+      rgba(255, 255, 255, 0.95) calc(var(--gx) + 1.5%) calc(var(--gx) + 1.8%),
+      rgba(255, 234, 200, 0.65) calc(var(--gx) + 1.8%) calc(var(--gx) + 2.6%),
+      transparent calc(var(--gx) + 2.6%)),
+    linear-gradient(68deg,
+      transparent calc(100% - var(--gx) - 3%),
+      rgba(255, 255, 255, 0.9) calc(100% - var(--gx) - 3%) calc(100% - var(--gx) - 2.7%),
+      rgba(190, 215, 255, 0.6) calc(100% - var(--gx) - 2.7%) calc(100% - var(--gx) - 0.6%),
+      rgba(255, 255, 255, 0.6) calc(100% - var(--gx) - 0.6%) calc(100% - var(--gx) - 0.3%),
+      rgba(228, 196, 255, 0.6) calc(100% - var(--gx) - 0.3%) calc(100% - var(--gx) + 1.6%),
+      rgba(255, 255, 255, 0.9) calc(100% - var(--gx) + 1.6%) calc(100% - var(--gx) + 1.9%),
+      transparent calc(100% - var(--gx) + 1.9%)),
+    /* body: the shapes' translucent grey with a faint pearl tint, drifting with --pl */
+    linear-gradient(100deg,
+      rgba(214, 211, 222, 0.92), rgba(204, 213, 228, 0.92) 22%, rgba(206, 224, 218, 0.92) 40%,
+      rgba(218, 210, 229, 0.92) 58%, rgba(228, 217, 207, 0.92) 78%, rgba(214, 211, 222, 0.92));
+  background-size: 100% 100%, 100% 100%, 220% 100%;
+  background-position: 0 0, 0 0, var(--pl) 0;
+}
+
+/* Four-pointed crystal glints that twinkle on the title. */
+.prism-spark {
+  position: absolute;
+  width: 0.34em;
+  height: 0.34em;
+  pointer-events: none;
+  animation: twinkle 3.8s ease-in-out var(--d, 0s) infinite;
+}
+.prism-spark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff 0%, #cfd8ff 30%, #ffc6e8 55%, #ffe9b8 75%, #bff0e0 100%);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+}
+@keyframes twinkle {
+  0%, 100% { transform: scale(0.1) rotate(0deg); opacity: 0; }
+  45%, 55% { transform: scale(1) rotate(25deg); opacity: 1; }
+}
+
 /* Header bar — light translucent */
 .glass {
   backdrop-filter: blur(10px);

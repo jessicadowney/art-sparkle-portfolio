@@ -8,6 +8,10 @@ import { useLanguage } from '@/i18n/LanguageProvider';
 import FactsStrip from '@/components/FactsStrip';
 
 
+// Copy strings use **bold** markers; render them instead of showing the asterisks.
+const bold = (s: string) =>
+  s.split('**').map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part));
+
 const Azure = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
@@ -66,7 +70,7 @@ const Azure = () => {
 
             <h2 className="text-3xl font-semibold mb-6 text-primary">{t("Overview", "Vue d'ensemble")}</h2>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-              {t("Azure Communication Services enables developers to integrate voice, video, chat, and SMS into their applications using the same reliable platform that powers Microsoft Teams. In May 2021, I led the UX and UI design for the **Virtual Visit Sample Builder**—a tool designed to help developers quickly create and customize virtual appointments experiences using Azure Communication Services.", "Azure Communication Services permet aux développeurs d'intégrer la voix, la vidéo, le chat et les SMS à leurs applications grâce à la même plateforme fiable que celle de Microsoft Teams. En mai 2021, j'ai dirigé le design UX et UI du **Virtual Visit Sample Builder** — un outil conçu pour aider les développeurs à créer et personnaliser rapidement des expériences de rendez-vous virtuels avec Azure Communication Services.")}
+              {bold(t("Azure Communication Services enables developers to integrate voice, video, chat, and SMS into their applications using the same reliable platform that powers Microsoft Teams. In May 2021, I led the UX and UI design for the **Virtual Visit Sample Builder**—a tool designed to help developers quickly create and customize virtual appointments experiences using Azure Communication Services.", "Azure Communication Services permet aux développeurs d'intégrer la voix, la vidéo, le chat et les SMS à leurs applications grâce à la même plateforme fiable que celle de Microsoft Teams. En mai 2021, j'ai dirigé le design UX et UI du **Virtual Visit Sample Builder** — un outil conçu pour aider les développeurs à créer et personnaliser rapidement des expériences de rendez-vous virtuels avec Azure Communication Services."))}
             </p>
             
             <div className="mb-8">
@@ -112,11 +116,11 @@ const Azure = () => {
             </p>
 
             <ul className="space-y-2 text-foreground/80 text-lg mb-8 list-disc pl-6 marker:text-muted-foreground">
-              <li>{t("**Understand:** Lightning talks framed the problem space through customer journeys and competitive analysis.", "**Comprendre :** des présentations éclair ont cadré le problème à travers les parcours clients et l'analyse concurrentielle.")}</li>
-              <li>{t("**Define:** We framed our core challenge: \"How might we stop hand-holding our customers and help them confidently build an Azure Communication Services virtual visits solution?\"", "**Définir :** nous avons formulé notre défi central : « Comment cesser de prendre nos clients par la main et les aider à construire en toute confiance une solution de consultations virtuelles avec Azure Communication Services ? »")}</li>
-              <li>{t("**Sketch & Decide:** Through sketching and critique, we aligned on a storyboard for a no-code virtual visit builder.", "**Esquisser et décider :** grâce aux esquisses et aux critiques, nous nous sommes mis d'accord sur un storyboard pour un générateur de consultations virtuelles sans code.")}</li>
-              <li>{t("**Prototype:** A clickable prototype was developed in Figma.", "**Prototyper :** un prototype cliquable a été développé dans Figma.")}</li>
-              <li>{t("**Validate:** We tested the prototype with real customers including Microsoft CSE, CTCA, NTT, Avanade, and Specsavers.", "**Valider :** nous avons testé le prototype avec de vrais clients, dont Microsoft CSE, CTCA, NTT, Avanade et Specsavers.")}</li>
+              <li>{bold(t("**Understand:** Lightning talks framed the problem space through customer journeys and competitive analysis.", "**Comprendre :** des présentations éclair ont cadré le problème à travers les parcours clients et l'analyse concurrentielle."))}</li>
+              <li>{bold(t("**Define:** We framed our core challenge: \"How might we stop hand-holding our customers and help them confidently build an Azure Communication Services virtual visits solution?\"", "**Définir :** nous avons formulé notre défi central : « Comment cesser de prendre nos clients par la main et les aider à construire en toute confiance une solution de consultations virtuelles avec Azure Communication Services ? »"))}</li>
+              <li>{bold(t("**Sketch & Decide:** Through sketching and critique, we aligned on a storyboard for a no-code virtual visit builder.", "**Esquisser et décider :** grâce aux esquisses et aux critiques, nous nous sommes mis d'accord sur un storyboard pour un générateur de consultations virtuelles sans code."))}</li>
+              <li>{bold(t("**Prototype:** A clickable prototype was developed in Figma.", "**Prototyper :** un prototype cliquable a été développé dans Figma."))}</li>
+              <li>{bold(t("**Validate:** We tested the prototype with real customers including Microsoft CSE, CTCA, NTT, Avanade, and Specsavers.", "**Valider :** nous avons testé le prototype avec de vrais clients, dont Microsoft CSE, CTCA, NTT, Avanade et Specsavers."))}</li>
             </ul>
 
             <div className="text-center mb-8">
